@@ -1,0 +1,317 @@
+\documentclass{myclass}
+
+\usepackage{verbatim}
+\usepackage{array}
+\usepackage{minted}
+\usepackage{fancyvrb}
+\usemintedstyle{murphy}
+
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,epsfig,epstopdf,titling,url,array}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{multicol}
+
+\newcommand{\norm}[1]{\lvert \lvert #1 \rvert \rvert }
+\newcommand{\cond}[1]{\text{cond(} #1 \text{)}}
+\renewcommand{\th}{\textbf{Th:} \ }
+\newcommand{\h}{\hspace{1em}}
+\newcommand{\R}{\mathbb{R}}
+
+\renewcommand{\phi}{\varphi}
+
+\newcommand{\T}{\mathcal{T}}
+\newcommand{\A}{\mathcal{A}}
+\renewcommand{\S}{\mathcal{S}}
+
+\newcommand{\st}{\ | \ }
+\newcommand{\K}{\mathbb{K}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\Rcal}{\mathcal{R}}
+\renewcommand{\A}{\mathbb{A}}
+\newcommand{\B}{\mathbb{B}}
+
+\title{Álgebra Multilineal}
+
+\begin{document}
+\watermark
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Formas de Jordan}
+Por el \textit{Primer teorema de Descomposición} tenemos que todo espacio se puede escribir como suma directa de núcleos de potencias de $f-\lambda_iI$, donde $\lambda_i$ son los VAPs del endomorfismo $f$:
+$$
+E = \ker(f-\lambda_1I)^m_1 \oplus \cdots \oplus \ker(f-\lambda_rI)^{m_r}
+$$
+Además, se cumple
+$$
+0 = \ker(f-\lambda_iI)^0\subset \ker(f-\lambda_iI)^1 \subset \cdots \subset \ker(f-\lambda_iI)^{m_i}=\cdots
+$$
+Es por esto por lo que todo endomorfismo se puede descomponer en endomorfismos más simples, ya que los VAPs generan subespacios invariante. Por ello trabajaremos con endomorfismos de un solo VAP (con multiplicidad $>1$) \\
+\\
+Para todo el capítulo definimos:
+\begin{itemize}
+    \item $f:E\to E,\ n = \dim (E)$
+    \item $Q_f(t) = (\lambda - t)^n,\ m_f(t) = (t-\lambda)^m$
+    \item $N^i = \ker(f-\lambda I)^i = \ker(g^i),\ d_i = \dim(N^i)$
+\end{itemize}
+Para hacerlo más visual desarrollaremos el concepto de \textit{Edificio de Jordan}. Calcularemos los subespacios $N^i$ y construiremos el edificio tal que el el $i-$ésimo piso haya vectores de $N^i$, pero no de $N^{i-1}$ y además sean l.i. entre sí. Buscaremos también que $g(u_{i,j})=u_{i-1, j}$, es decir, que para bajar un piso (en la misma columna) solo se deba aplicar $g$. Esto es lo que dará la forma a la matriz de Jordan.
+
+\begin{multicols}{2}
+
+ \text{\includegraphics[scale=0.3]{Jordan.png} } 
+\columnbreak 
+$$ 
+\implies \qquad 
+\begin{pmatrix}
+\lambda & & & & & & \\
+1& \lambda & & & & & \\
+& 1&\lambda  & & & & \\
+& & &\lambda  & & & \\
+& & &1 &\lambda  & & \\
+& & & & &\lambda  & \\
+& & & & & &\lambda 
+\end{pmatrix}
+$$
+
+\end{multicols}
+
+\textbf{Proposición}: Son equivalentes
+\begin{itemize}
+    \item $u_1, \ldots , u_s$ l.i. de $N^i$,\  $[u_1, \ldots , u_s]\cap N^{i-1}=0$
+    \item $\dim([u_1, \ldots, u_s]) = s, \ [u_1, \ldots , u_s]\oplus N^{i-1} \subseteq N^i$
+    \item $g(u_1), \ldots , g(u_s)$ l.i. de $N^{i-1}$,\  $[g(u_1), \ldots , g(u_s)]\cap N^{i-2}=0$
+    \item $\dim([g(u_1), \ldots, g(u_s)]) = s, \ [g(u_1), \ldots , g(u_s)]\oplus N^{i-2} \subseteq N^{i-1}$
+    \item $g^{i-1}(u_1), \ldots g^{i-1}(u_s)$ l.i. de $N^1$
+\end{itemize}
+
+\section{Formas cuadráticas}
+\subsection{Definiciones}
+Para esta sección $\varphi:E\to E$ será una forma bilineal simétrica y $\dim(E)=n$ \\
+\\
+Una forma cuadrática es una aplicación $q:E\to \mathbb{K}$ tal que existe $\varphi$ que cumple $q(x)=\phi(x,x)$. Existe una biyección entre las formas cuadráticas y formas bilineales simétricas:
+$$
+q(x) = \phi(x,x) \qquad \varphi(x,y)=\frac{1}{2}(q(x+y)-q(x) - q(y))
+$$
+
+
+
+La matriz $M_e(q)$ cumple $q(x)= x^TM_ex$ donde $x$ está escrito en base $e$. Por el \textit{Teorema Espectral}, como $M$ es simétrica, podemos diagonalizarla en una base ortogonal. Podemos usar la diagonalización o el Método de Gauss. \\
+\\
+\subsection{Rango, Radical e Indice}
+Nos encontramos con tres propiedades de las formas cuadráticas:
+\begin{itemize}
+    \item \textbf{Rango} $rang(\phi) = rang(M(\phi))$
+    \item \textbf{Radical} $rad(\phi)=\{x\in E \ | \ \phi(x,y)=0 \forall y\in E\}$
+    \item \textbf{Indice} $\begin{cases} 
+    i_+(\phi) &= \# \lambda_i>0 \\
+    i_-(\phi) &= \# \lambda_i<0 \\
+    i(\phi) &= \min(i_+, i_-)
+    \end{cases}$
+\end{itemize}
+
+\subsection{Clasificación Afín y Proyectiva}
+\textbf{Afín}\\
+$\phi:E\to E$ es \textit{Afín-equivalente} a $\psi:F\to F$ (\textbf{rellenar}) si existe un isomorfismo $\alpha:E\to F$ tal que $\psi = \phi\circ(\alpha^-1\times \alpha^-1)$ \\
+\\
+Si $\mathbb{K} = \mathbb{R} \implies rang(\phi) = rang(\psi), \ i_+(\phi) = i_+(\psi)$ \\
+\\
+\textbf{Proyectivo-equivalente}\\
+$\phi:E\to E$ es \textit{Proyectivo-equivalente} a $\psi:F\to F$ (\textbf{rellenar}) si existe un isomorfismo $\alpha:E\to F$ y un $\lambda\in \mathbb{K}-\{0\}$ tal que $\psi = \lambda\phi\circ(\alpha^-1\times \alpha^-1)$ \\
+Si $\mathbb{K} = \mathbb{R} \implies rang(\phi) = rang(\psi), \ i(\phi)  i(\psi)$
+
+
+\section{Tensores}
+Un \textit{p-q tensor} es un elemento $f$ del espacio vectorial definido como
+$$
+\boxed{\T_p^q(E)=\{E^{\times p}\times (E^*)^{\times q} \to \mathbb{K} \st f \text{ multilineal}\} = \mathcal{L}(E^{p)}, (E^*)^{q)};\mathcal{K})}
+$$
+Los tensores \textit{Covariantes} son los que pertenecen a $\T_p:=\T_p^0$ \\
+Los tensores \textit{Contravariantes} son los que pertenecen a $\T^q:=\T_0^q$ \\
+\\
+Podemos escribir la base de un tensor $f\in \T_p^q$ como
+$$
+\mathcal{B}_p^q=\{e^{i_1}\otimes \ldots \otimes e^{i_p}\otimes e_{j_1}\otimes \ldots \otimes e_{j_q} \st i_k, j_k\in [n]\} = \{e^{\otimes I}\otimes e_{\otimes J}\}
+$$
+Observamos que la dimensión de $f$ es $n^{(p+q)}$
+
+\subsection{Producto tensorial}
+Definimos el producto tensorial como
+$$
+f\otimes g:E^{\times(p+r)}\times (E^*)^{\times(q+s)} \to \mathbb{K} \text{ cumpliendo } \boxed{f\otimes g (x, y, u, v) = f(x, u)g(y,v)  }  
+$$
+
+\subsection{Cambio de base}
+El producto tensorial entre dos matrices (o producto de Kronecker) se define como
+$$
+M\otimes N = \begin{pmatrix}
+m_{1,1}N & \cdots & m_{1,r}N\\
+\vdots &  & \vdots \\
+m_{r,1}N & \cdots & m_{r,r}N
+\end{pmatrix}
+$$
+
+Sea $M_{u, e} = \begin{pmatrix}
+u_1(e^1) & u_2(e^1) \\
+u_1(e^2) & u_2(e^1)
+\end{pmatrix}$ y $M_{u^*, e^*} = \begin{pmatrix}
+u^1(e_1) & u^2(e_1) \\
+u^1(e_2) & u^2(e_1)
+\end{pmatrix}$ las matrices de cambio de base.\\
+Una propiedad importante es que $B^TA = I$.
+\\
+Si ahora queremos calcular el cambio de base de $u^*\otimes u$ a $e^*\otimes e$ tenemos que
+$$
+M_{u^*\otimes u, e^*\otimes e} = M_{u^*, e^*}\otimes M_{u,e}
+$$
+
+\subsection{Tensores simétricos y antisimétricos}
+$f\in\T_p(E)$ es \textit{Simétrico} ($f\in \S$) si $f(x_1, \ldots, x_i, \ldots, x_j, \ldots, x_p) = f(x_1, \ldots, x_j, \ldots, x_i, \ldots, x_p)$ \\
+$f\in\T_p(E)$ es \textit{Antisimétrico} ($f\in \A$) si $f(x_1, \ldots, x_i, \ldots, x_j, \ldots, x_p) = -f(x_1, \ldots, x_j, \ldots, x_i, \ldots, x_p)$ \\
+\\
+Podemos construir dos operadores: el de simetrización y el de antisimetrización
+$$
+\S(f) = \frac{1}{p!} \sum_{\sigma \in \frak{S}_n} \sigma f, \qquad \A(f) = \frac{1}{p!} \sum_{\sigma \in \frak{S}_n} \epsilon(\sigma)\sigma f
+$$
+
+Propiedades de estos operadores
+\begin{itemize}
+    \item $\S(f)\in \S_p(E)$ y $\A(f)\in \A_p(E)$
+    \item $\S, \A$ son proyectores $\S^2=\S. \A^2=\A$
+    \item $\T_p(E)=\S_p(E)\oplus \ker(\S) = \A_p(E)\oplus \ker(\A)$
+\end{itemize}
+
+\subsection{Producto exterior}
+Sean $f\in\T_p(E), g\in \T_q(E) $ definimos el producto exterior como
+$$
+f\wedge g := \frac{(p+q)!}{p!q!}\A(f\otimes g) = \frac{1}{p!q!}\sum_\sigma \epsilon(\sigma)(f\otimes g) \in \A_{p+q}(E)
+$$
+Algunas propiedades básicas son
+\begin{itemize}
+    \item $(f\wedge g)\wedge h=f\wedge(g\wedge h)$
+    \item $(\lambda f)\wedge(f\wedge g) = f\wedge(\lambda g)$
+    \item $f\wedge(g+g') = (f\wedge g) + (f\wedge g')$
+    \item $g\wedge f = (-1)^{pq} f\wedge g$
+\end{itemize}
+Podemos construir la siguiente base de el espacio de tensores antisimétricos $\A_p(E)$
+$$
+\mathcal{B} = \{ e^I \st I\in \mathcal{L}_p \}, \text{ donde } \mathcal{L}_p = \{ (i_1, \dots, i_p) \st 1\leq i_1 < \ldots <i_p\leq n \}
+$$
+
+\subsection{Propiedades}
+\begin{itemize}
+    \item $f=\sum f(e_{\times I}, e^{\times J})e^{\otimes I}e_{\otimes J}$
+    \item $\sigma (u^1\otimes \ldots \otimes u^p) = u^{\tau(1)}\otimes \ldots \otimes u^{\tau(p)}, \quad (\tau := \sigma^{-1})$
+    \item $\A(\A(f)\otimes g) = \A(f\otimes\A(g)) = \A(f\otimes g)$
+    \item $u^1\wedge \ldots \wedge u^p = p!\A(u^1\otimes \ldots \otimes u^p) = \sum_\sigma \epsilon(\sigma)u^{\sigma(1)}\otimes \ldots \otimes u^{\sigma(p)}$
+    \item $\sigma(u^1\wedge \ldots \wedge u^p) = \epsilon(\sigma)u^1\wedge \ldots \wedge u^p$
+    \item $(u^1\wedge \ldots \wedge u^p)(x_1, \ldots, x_p) = \det (u^i(x_j))$
+    \item $e^{\wedge I}(e_{\times J}) = \delta_I^J$
+\end{itemize}
+
+
+
+
+\section{Espacio proyectivo}
+\subsection{Definiciones}
+Un espacio proyectivo sobre el cuerpo $\K$ es una terna $(\P, E, \pi)$ siendo $\pi:E-{0}\to \P$ una aplicación exhaustiva que satisface $\pi(x)=\pi(y)\iff x=\lambda y$.\\
+Denotaremos $p = \pi(x) = [x]$. Definimos $\dim\P = \dim E -1$. \\
+\\
+Un Espacio proyectivo se puede pensar como la unión disjunta de un $\K$ espacio vectorial de la misma dimensión y un espacio proyectivo de una dimensión menos:
+$$
+\P^n = \K^n\amalg P^{n-1}
+$$
+
+\subsection{Variedades lineales proyectivas}
+Una variedad lineal proyectiva (vlp) $L = [F]$definida por el subespacio $F$ es el subconjunto de $\P$ definido como $\pi(F-{0})$. \\
+Propiedades:
+\begin{itemize}
+ \item $\dim L = \dim F - 1$
+ \item $L_1 \subseteq L_2 \iff F_1\subseteq F_2$
+ \item Si $L_1\subseteq L_2 \implies \dim L_1 \leq \dim L_2$
+ \item Si $L_1 \subseteq L_2 $ y $\dim L_1 = \dim L_2 \implies L_1 = L_2$
+\end{itemize}
+En cuanto a la intersección y el joint ($\vee$), sean $L_1 = [F_1], L_2 = [F_2]$:
+\begin{itemize}
+ \item $L_1\cap L_2 = [F_1\cap F_2]$
+ \item $L_1\vee L_2 = [F_1 + F_2]$
+ \item Grassmann: $ \dim L_1 + \dim L_2 = \dim L_1\cap L_2 + \dim L_1\vee L_2$
+\end{itemize}
+
+\subsection{Referencias proyectivas}
+Una referencia proyectiva es un conjunto $\Rcal = \{p_0, \ldots, p_n; U\}$ de $n+1$ puntos ordenados li y un punto unidad $U$ combinación lineal de todos los otros con ningún coeficiente 0. \\
+\\
+Cuando $U = [e_0 + \ldots + e_n]$ con $p_i = [e_i]$, entonces la referencia se denomina "adaptada". Este punto fuerza a que el factor de proporcionalidad sea constante, y por tanto, que las coordenadas estén bien definidas.
+
+\subsection{Cambio de base}
+Sean $\Rcal_1 = \{p_0, \ldots, p_n; U\}$, $\Rcal_2 = \{q_0, \ldots, q_n; V\}$ dos referencias proyectivas de $\P$. Sean $e_0, \ldots, e_n$ y $u_0, \ldots;u_n$ bases adaptadas. Sea $M_{u,e}$ la matriz de cambio de base. \\
+\\
+(Completar)
+
+\subsection{Coordenada Absoluta y razón doble}
+Sea $q = [xe_0 + ye_1]$. Definimos la \textit{coordenada absoluta} $\theta(q) = \frac{x}{y}$ si $q\neq p_0$ y $\theta(p_1) = \infty$. Esta aplicación $\theta \P^1 \to \Bar{\K}$ está bien definida. \\
+\\
+Definimos ahora la \textit{razón doble} de $q_1, q_2, q_3, q_4$:
+$$
+(q_1, q_2, q_3, q_4) = \frac{\det(v_1, v_3) \det(v_2, v_4)}{\det(v_1, v_4) \det(v_2, v_3)} = \frac{(\theta_3 - \theta_1)(\theta_4-\theta_2)}{(\theta_4 - \theta_1)(\theta_3 - \theta_2)}
+$$
+La razón doble de cuatro puntos no depende de la referencia. \\
+Propiedades:
+\begin{itemize}
+ \item $(q_1, q_2, q_3, q_4)(q_1, q_2, q_4, q_5) = (q_1, q_2, q_3, q_5)$
+ \item $(q_1, q_2, q_3, q_4) = 0 \iff q_1 = q_3$ ó $q_2 = q_4$
+ \item $(q_1, q_2, q_3, q_4) = \infty \iff q_2 = q_3$ ó $q_1 = q_4$
+ \item $(q_1, q_2, q_3, q_4) = 1 \iff q_1 = q_2$ ó $q_3 = q_4$
+\end{itemize}
+
+\subsection{Espacio proyectivo y espacio afín}
+Recordemos que un \textit{espacio afín} es una terna $(\A, E, s)$, que satisface:
+\begin{itemize}
+  \item $\exists \ s:\A \times E\to \A$ tal que $s(a, u) = a+u$
+  \item $(a+u) + v = a + (u + v)$
+  \item Para cada $a, b \in \A \ \exists ! \ u\in E $ tal que $a+ u = b$
+\end{itemize}
+La \textit{clausura proyectiva} de un espacio afín es un espacio proyectivo $\Bar{\A}$ tal que $\A \cong \Bar{\A}-\A_\infty$, donde $\A_\infty$ es el hiperplano del infinito. \\
+\\
+(Dibujo fancy)\\
+\\
+Podemos construir una aplicación $i: \A \to \P$ ... \\
+\\
+Sea $\B = \P-H$. Sea $L = [F]$ vlp no contenida en $H$. Si $q\in L\cap \B \implies L\cap B$  
+
+\subsection{Teoremas}
+\subsubsection{Teorema de Desargues}
+\subsubsection{Teorema de Pappus}
+ 
+
+\section{Espacios afines}
+
+\section{Dualidad}
+
+\section{Proyecciones}
+
+\subsection{Propiedades}
+Propiedades de las vlp:
+\begin{itemize}
+    \item Si $L = [F] \implies f(L) =  [\phi(F)]$ y $\dim f(F) = \dim L$
+    \item $f|_L: L\to f(L)$ definida por $f|_L = [\phi|_F]$
+    \item $L_1\subseteq L_2 \iff f(L_1) \subseteq f(L_2)$
+    \item $f(L_1\cap L_2) = f(L_1)\cap f(L_2)$
+    \item $f(L_1\vee L_2) = f(L_1)\vee f(L_2)$
+    \item $f(q_0\vee \ldots \vee q_m) = f(q_0)\vee \ldots \vee f(q_m)$
+    \item $q_0, \ldots, q_m$ l.i. $\implies f(q_0), \ldots, f(q_m)$ l.i.
+\end{itemize}
+Propiedades de las referencias:
+\begin{itemize}
+    \item Si $\R = \{x\}$
+\end{itemize}
+
+
+\section{Cuádricas}
+
+\end{document}

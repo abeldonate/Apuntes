@@ -1,0 +1,390 @@
+\documentclass{myclass}
+\usepackage{verbatim}
+\usepackage{array}
+\usepackage{minted}
+\usepackage{fancyvrb}
+\usemintedstyle{murphy}
+
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,epsfig,epstopdf,titling,url,array}
+\usepackage{hyperref}
+\usepackage{eso-pic}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+
+\newcommand{\norm}[1]{\lvert \lvert #1 \rvert \rvert }
+\newcommand{\cond}[1]{\text{cond(} #1 \text{)}}
+\renewcommand{\th}{  Th:  \ }
+\newcommand{\h}{\hspace{1em}}
+
+\newcommand{\algo}[2]{\boxed{\textbf{Algoritmo: }\textit{#1} \quad \mathcal{O}(#2)}}
+
+\newcommand{\ex}[1]{\underline{  Ejemplo:  #1}}
+
+\newcommand{\code}[1]{  #1 }
+
+\title{Algorítmia}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Costes computacionales}
+\subsection{Notación}
+Consideramos la función de coste $c(x)$, que nos devolverá el coste del algoritmo en función del input $|x|=n$. Como el coste no siempre es constante (no solo depende de $n$, sino también del input en sí) definimos:
+$$
+\begin{cases}
+c_{peor}(n) &= \max_x {c(x) : |x|=n} \\
+c_{mejor}(n) &= \min_x {c(x) : |x|=n} \\
+c_{media}(n) &= \frac{1}{N}\sum_{x:|x|=n} c(x) \\
+\end{cases}
+$$
+En cuestión de notación asintótica:
+$$
+\begin{cases}
+f = \mathcal{O}(g) \iff \exists c :f<cg \\ 
+f = \Omega(g) \iff \exists c :f>cg \\ 
+f = \Theta(g) \iff f=\mathcal{O}(g) \text{ y } f=\Omega(g) \\
+\end{cases}
+$$
+
+\subsection{Teoremas maestros}
+\textbf{Teorema de las recurrencias substractivas}
+$$
+T(n) = aT(n-c) + g(n), \ g(n) = \Theta(n^k) \implies T(n)=
+\begin{cases}
+\Theta(n^k) &\text{ si } a<1 \\
+\Theta(n^{k+1}) &\text{ si } a=1 \\
+\Theta(a^{\frac{n}{c}}) &\text{ si } a>1
+\end{cases}
+$$
+\textbf{Teorema de las recurrencias divisorias}
+$$
+T(n) = aT\left(\frac{n}{b}\right) + g(n), \ g(n) = \Theta(n^k), \ \alpha = \log_ba \implies T(n)=
+\begin{cases}
+\Theta(n^k) &\text{ si } \alpha<k \\
+\Theta(n^{k}\log n) &\text{ si } \alpha=k \\
+\Theta(n^\alpha) &\text{ si } \alpha>k
+\end{cases}
+$$
+
+\section{Programación dinámica}
+Nos serviremos siempre de la misma estructura. Construiremos una función recursiva que llame a un vector si en la posición de este vector no hay un $-1$, y en caso contrario haga una relación de recursión.
+
+\inputminted[firstline=10, lastline=15]{cpp}{template_dinamica.cpp}
+
+\section{Estructuras de datos}
+\subsection{Stacks y Queues}
+Tabla comparativa de estas dos
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{c|cc}
+        & \textbf{Funcionamiento} & \textbf{Funcines} \\
+        \hline
+        \textbf{Stack} & Puedes acceder al último elemento guardado &  .size(), .push(), .pop(), .top(), .empty()\\
+        \\
+        \textbf{Queue} & Puedes acceder al primer elemento guardado.  & .size(), .push(), .pop(), .front(), empty() \\
+        \\
+        \textbf{P.Queue} & Puedes acceder al primer elemento guardado.  & .size(), .push(), .pop(), .top(), empty() \\
+    \end{tabular}
+\end{table}
+\\
+Para revertir el orden de la priority\_queue podemos definirla así: 
+\begin{minted}{cpp}
+priority_queue<int, vector<int>, greater<int>> Q;
+\end{minted}
+
+\subsection{Tablas de Hash}
+
+\section{Grafos}
+\subsection{Algunas definiciones previas}
+\begin{itemize}
+    \item \textbf{DAG} Grafo dirigido acíclico
+\end{itemize}
+En cuanto a definiciones en el lenguaje de la estructura del grafo:
+\begin{itemize}
+    \item \code{VVI M;} Matriz de adyacencia
+    \item \code{VVI G;} Lista de aristas
+    \item \code{VP V;}  Pair con las aristas
+    \item \code{VVP GP;} Conjunto de vértices en pairs con costes (\code{pair<coste, arista>})
+    \item \code{int n = M.size();} Nodos
+    \item \code{int m = G.isze();} Aristas
+    \item \code{int INF = 1e9;}
+\end{itemize}
+
+\subsection{DFS y BFS}
+DFS $\implies$ recorre un camino en profundidad y va tirando hacia detrás. \\
+BFS $\implies$ recorre el grafo por orden de proximidad. \\
+\algo{DFS}{n+m}
+\begin{itemize}
+    \item Creamos un vector booleano \code{visited} que guarde los nodos visitados. 
+    \item Miramos los nodos adyacentes. \begin{itemize}
+        \item Si \code{visited} $\implies$ \code{return}
+        \item Si \code{not visited} $\implies$ aplicamos la función recursivamente sobre el adyacente.
+    \end{itemize}
+\end{itemize}
+\algo{BFS}{n+m}
+\begin{itemize}
+    \item Creamos un vector booleano \code{visited} que guarde los nodos visitados. 
+    \item Creamos una queue \code{q} y añadimos el nodo origen.
+    \item \code{while(not q.empty())} miramos los nodos adyacentes y si \code{not visited} los añadimos a la \code{q}
+\end{itemize}
+\ex{Distancia de un nodo a cualquier otro}\\
+Construimosun vector \code{dist} sobre los nodos y lo iniciamos a $-1$. \\
+Realizamos un BFS sobre el grafo y en cada paso sumamos uno al adyacente. \\
+\\
+\ex{Camino mínimo entre dos nodos}\\
+
+\subsection{Dijkstra}{}
+Cuando tenemos un grafo ponderado podemos utilizar Dikjstra para encontrar el camino más corto a cualquier nodo \\
+\\
+\algo{Dikjstra}{m + n\log n}
+\begin{itemize}
+    \item Consideramos el vector GP. Construimos los vectores sobre los nodos \code{dist, father} y la priority queue de distancias \code{q}
+    \item Inicializamos \code{dist[ini]=0, q.push(P(0, ini))}
+    \item \code{while(not q.empty())} seleccionamos el nodo de la \code{q} con menos distancia. Si esa distancia es igual a \code{dist} $\implies$ para cada nodo adyacente:
+    \begin{itemize}
+        \item Miramos si la suma de la distancia al original mas el peso de la arista es menor que la \code{dist} de la adyacente
+        \item Si es menor, la insertamos en \code{q}, en \code{dist} y decimos que su \code{father} es la original 
+    \end{itemize}
+\end{itemize}
+
+\subsection{Árbol Generador}
+Queremos obtener dado un grafo el árbol que genera ese grafo. \\
+Para ello nos ayudamos de la función \code{repr}, que dice cual es el nodo representante de una componente conexa. \\
+\\
+\algo{Árbol generador}{}
+\begin{itemize}
+    \item Construimos el vectore \code{father} que nos dice el padre de un nodo.
+    \item Empezamos con un grafo vacío (sin aristas), y, por tanto, con \code{comp = n} componentes conexas.
+    \item \code{for(u : V)} (para cada arista) vemos si los representantes de los nodos son iguales.
+    \item Si son diferentes $\implies$ el \code{father} de el representante de un nodo es el otro. Restamos uno a \code{comp}.
+    \item Acaba cuando solo tenemos una componente conexa (\code{comp = 1}).
+\end{itemize}
+
+\subsection{Ordenación topológica}
+La ordenación topológica es una ordenación lineal de todos los nodos que satisface que si \code{G} contiene la arista dirigida \code{uv} entonces el nodo \code{u} aparece antes del nodo \code{v}.\\
+\\
+\algo{Ordenación Topológica}{n+m}\\
+\begin{itemize}
+    \item Construimos el vector \code{deg}, que cuenta el grado de entrada de cada nodo y la stack \code{pila} 
+    \item \code{for(nodo)} si el \code{deg} del nodo tiene grado 0 $\implies$ añádelo a \code{pila}.
+    \item \code{while(not pila.empty())} print del nodo de la pila y restarle uno al \code{deg} sus adyacentes. Si alguno de esos adyacentes tiene \code{deg=0} $\implies$ añádelo a \code{pila}.
+\end{itemize}
+
+
+\subsection{Componentes fuertemente conexas (SCC)}
+$$
+[x] = [y] \text{ (están en la misma componente fuertemente conexa )} \iff \begin{cases}
+x\to y \\
+y\to x
+\end{cases} 
+$$
+Todo grafo dirigido es un DAG de sus SCC \\
+\\
+\algo{Identificación de las SCC}{} \\
+Sea $I$ el grafo con las direcciones invertidas. Numeramos los vértices de $I$ con un contador dfs. Sean $A, B$ dos SCC se cumple:
+$$
+A \to B \implies \max_{x\in A} dfs(x) > \max_{y\in B} dfs(y)
+$$
+Trasladamos copiamos la numeración en el grafo origina $G$
+
+\subsection{2-SAT problem (fancy)}
+Pongamos que queremos ver si se pueden elegir bools $a, b, c$ tal que 
+$$
+(a\vee b)(\Bar{a}\vee c)(\Bar{a}\vee b)(\Bar{b}\vee \Bar{d})
+$$
+
+\end{document}
+ \documentclass{myclass}
+ \usepackage{mypackage}
+ \usepackage{verbatim}
+ \usepackage{array}
+ \usepackage{minted}
+ \usepackage{fancyvrb}
+ \usemintedstyle{murphy}
+
+ \title{Algorítmia}
+
+ \begin{document}
+ \watermark
+ \maketitle
+ \tableofcontents
+ \newpage
+
+ \section{Costes computacionales}
+ \subsection{Notación}
+ Consideramos la función de coste $c(x)$, que nos devolverá el coste del algoritmo en función del input $|x|=n$. Como el coste no siempre es constante (no solo depende de $n$, sino también del input en sí) definimos:
+ $$
+ \begin{cases}
+   c_{peor}(n) &= \max_x {c(x) : |x|=n} \\
+   c_{mejor}(n) &= \min_x {c(x) : |x|=n} \\
+   c_{media}(n) &= \frac{1}{N}\sum_{x:|x|=n} c(x) \\
+   \end{cases}
+   $$
+   En cuestión de notación asintótica:
+   $$
+   \begin{cases}
+	 f = \mathcal{O}(g) \iff \exists c :f<cg \\ 
+	 f = \Omega(g) \iff \exists c :f>cg \\ 
+	 f = \Theta(g) \iff f=\mathcal{O}(g) \text{ y } f=\Omega(g) \\
+	 \end{cases}
+	 $$
+
+	 \subsection{Teoremas maestros}
+	 \textbf{Teorema de las recurrencias substractivas}
+	 $$
+	 T(n) = aT(n-c) + g(n), \ g(n) = \Theta(n^k) \implies T(n)=
+	 \begin{cases}
+	   \Theta(n^k) &\text{ si } a<1 \\
+	   \Theta(n^{k+1}) &\text{ si } a=1 \\
+	   \Theta(a^{\frac{n}{c}}) &\text{ si } a>1
+	   \end{cases}
+	   $$
+	   \textbf{Teorema de las recurrencias divisorias}
+	   $$
+	   T(n) = aT\left(\frac{n}{b}\right) + g(n), \ g(n) = \Theta(n^k), \ \alpha = \log_ba \implies T(n)=
+	   \begin{cases}
+		 \Theta(n^k) &\text{ si } \alpha<k \\
+		 \Theta(n^{k}\log n) &\text{ si } \alpha=k \\
+		 \Theta(n^\alpha) &\text{ si } \alpha>k
+		 \end{cases}
+		 $$
+
+		 \section{Programación dinámica}
+		 Nos serviremos siempre de la misma estructura. Construiremos una función recursiva que llame a un vector si en la posición de este vector no hay un $-1$, y en caso contrario haga una relación de recursión.
+
+		 \inputminted[firstline=10, lastline=15]{cpp}{template_dinamica.cpp}
+
+		 \section{Estructuras de datos}
+		 \subsection{Stacks y Queues}
+		 Tabla comparativa de estas dos
+		 \begin{table}[h!]
+		       \centering
+			       \begin{tabular}{c|cc}
+					         & \textbf{Funcionamiento} & \textbf{Funcines} \\
+							         \hline
+									         \textbf{Stack} & Puedes acceder al último elemento guardado &  .size(), .push(), .pop(), .top(), .empty()\\
+											         \\
+													         \textbf{Queue} & Puedes acceder al primer elemento guardado.  & .size(), .push(), .pop(), .front(), empty() \\
+															         \\
+																	         \textbf{P.Queue} & Puedes acceder al primer elemento guardado.  & .size(), .push(), .pop(), .top(), empty() \\
+																			     \end{tabular}
+																				 \end{table}
+																				 \\
+																				 Para revertir el orden de la priority\_queue podemos definirla así: 
+																				 \begin{minted}{cpp}
+																				 priority_queue<int, vector<int>, greater<int>> Q;
+																				 \end{minted}
+
+																				 \subsection{Tablas de Hash}
+
+																				 \section{Grafos}
+																				 \subsection{Algunas definiciones previas}
+																				 \begin{itemize}
+																				       \item \textbf{DAG} Grafo dirigido acíclico
+																						 \end{itemize}
+																						 En cuanto a definiciones en el lenguaje de la estructura del grafo:
+																						 \begin{itemize}
+																						       \item \code{VVI M;} Matriz de adyacencia
+																								     \item \code{VVI G;} Lista de aristas
+																									       \item \code{VP V;}  Pair con las aristas
+																											     \item \code{VVP GP;} Conjunto de vértices en pairs con costes (\code{pair<coste, arista>})
+																												       \item \code{int n = M.size();} Nodos
+																														     \item \code{int m = G.isze();} Aristas
+																															       \item \code{int INF = 1e9;}
+																																	 \end{itemize}
+
+																																	 \subsection{DFS y BFS}
+																																	 DFS $\implies$ recorre un camino en profundidad y va tirando hacia detrás. \\
+																																	 BFS $\implies$ recorre el grafo por orden de proximidad. \\
+																																	 \algo{DFS}{n+m}
+																																	 \begin{itemize}
+																																	       \item Creamos un vector booleano \code{visited} que guarde los nodos visitados. 
+																																			     \item Miramos los nodos adyacentes. \begin{itemize}
+																																					         \item Si \code{visited} $\implies$ \code{return}
+																																							           \item Si \code{not visited} $\implies$ aplicamos la función recursivamente sobre el adyacente.
+																																										     \end{itemize}
+																																											 \end{itemize}
+																																											 \algo{BFS}{n+m}
+																																											 \begin{itemize}
+																																											       \item Creamos un vector booleano \code{visited} que guarde los nodos visitados. 
+																																													     \item Creamos una queue \code{q} y añadimos el nodo origen.
+																																														       \item \code{while(not q.empty())} miramos los nodos adyacentes y si \code{not visited} los añadimos a la \code{q}
+																																																 \end{itemize}
+																																																 \ex{Distancia de un nodo a cualquier otro}\\
+																																																 Construimos un vector \code{dist} sobre los nodos y lo iniciamos a $-1$. \\
+																																																 Realizamos un BFS sobre el grafo y en cada paso sumamos uno al adyacente. \\
+																																																 \\
+																																																 \ex{Camino mínimo entre dos nodos}\\
+
+																																																 \subsection{Dijkstra}{}
+																																																 Cuando tenemos un grafo ponderado podemos utilizar Dikjstra para encontrar el camino más corto a cualquier nodo \\
+																																																 \\
+																																																 \algo{Dikjstra}{m + n\log n}
+																																																 \begin{itemize}
+																																																       \item Consideramos el vector GP. Construimos los vectores sobre los nodos \code{dist, father} y la priority queue de distancias \code{q}
+																																																		     \item Inicializamos \code{dist[ini]=0, q.push(P(0, ini))}
+																																																			       \item \code{while(not q.empty())} seleccionamos el nodo de la \code{q} con menos distancia. Si esa distancia es igual a \code{dist} $\implies$ para cada nodo adyacente:
+																																																					     \begin{itemize}
+																																																						           \item Miramos si la suma de la distancia al original mas el peso de la arista es menor que la \code{dist} de la adyacente
+																																																									         \item Si es menor, la insertamos en \code{q}, en \code{dist} y decimos que su \code{father} es la original 
+																																																											       \end{itemize}
+																																																												   \end{itemize}
+
+																																																												   \subsection{Árbol Generador}
+																																																												   Queremos obtener dado un grafo el árbol que genera ese grafo. \\
+																																																												   Para ello nos ayudamos de la función \code{repr}, que dice cual es el nodo representante de una componente conexa. \\
+																																																												   \\
+																																																												   \algo{Árbol generador}{}
+																																																												   \begin{itemize}
+																																																													     \item Construimos el vectore \code{father} que nos dice el padre de un nodo.
+																																																														       \item Empezamos con un grafo vacío (sin aristas), y, por tanto, con \code{comp = n} componentes conexas.
+																																																																     \item \code{for(u : V)} (para cada arista) vemos si los representantes de los nodos son iguales.
+																																																																	       \item Si son diferentes $\implies$ el \code{father} de el representante de un nodo es el otro. Restamos uno a \code{comp}.
+																																																																			     \item Acaba cuando solo tenemos una componente conexa (\code{comp = 1}).
+																																																																				   \end{itemize}
+
+																																																																				   \subsection{Ordenación topológica}
+																																																																				   La ordenación topológica es una ordenación lineal de todos los nodos que satisface que si \code{G} contiene la arista dirigida \code{uv} entonces el nodo \code{u} aparece antes del nodo \code{v}.\\
+																																																																				   \\
+																																																																				   \algo{Ordenación Topológica}{n+m}\\
+																																																																				   \begin{itemize}
+																																																																					     \item Construimos el vector \code{deg}, que cuenta el grado de entrada de cada nodo y la stack \code{pila} 
+																																																																						       \item \code{for(nodo)} si el \code{deg} del nodo tiene grado 0 $\implies$ añádelo a \code{pila}.
+																																																																								     \item \code{while(not pila.empty())} print del nodo de la pila y restarle uno al \code{deg} sus adyacentes. Si alguno de esos adyacentes tiene \code{deg=0} $\implies$ añádelo a \code{pila}.
+																																																																									   \end{itemize}
+
+
+																																																																									   \subsection{Componentes fuertemente conexas (SCC)}
+																																																																									   $$
+																																																																									   [x] = [y] \text{ (están en la misma componente fuertemente conexa )} \iff \begin{cases}
+																																																																										 x\to y \\
+																																																																										 y\to x
+																																																																										 \end{cases} 
+																																																																										 $$
+																																																																										 Todo grafo dirigido es un DAG de sus SCC \\
+																																																																										 \\
+																																																																										 \algo{Identificación de las SCC}{} \\
+																																																																										 Sea $I$ el grafo con las direcciones invertidas. Numeramos los vértices de $I$ con un contador dfs. Sean $A, B$ dos SCC se cumple:
+																																																																										 $$
+																																																																										 A \to B \implies \max_{x\in A} dfs(x) > \max_{y\in B} dfs(y)
+																																																																										 $$
+																																																																										 Trasladamos copiamos la numeración en el grafo origina $G$
+
+																																																																										 \subsection{2-SAT problem (fancy)}
+																																																																										 Pongamos que queremos ver si se pueden elegir bools $a, b, c$ tal que 
+																																																																										 $$
+																																																																										 (a\vee b)(\Bar{a}\vee c)(\Bar{a}\vee b)(\Bar{b}\vee \Bar{d})
+																																																																										 $$
+
+							  
+
+																																																																										 \end{document}
+
