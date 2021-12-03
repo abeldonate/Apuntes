@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.12.1)  3 DEC 2021 00:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.12.1)  3 DEC 2021 12:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Multi.tex
-(./Multi.tex
+**ProgramacionMatematica.tex
+(./ProgramacionMatematica.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18> (/home/abeldm3108/texmf/tex/latex/myclass.cls
 Document Class: myclass 2014/08/16 Class for Apuntes
@@ -217,7 +217,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@every@listing=\toks23
 \c@listing=\count286
 )
-runsystem(mkdir -p _minted-Multi)...disabled (restricted).
+runsystem(mkdir -p _minted-ProgramacionMatematica)...disabled (restricted).
 
 
 
@@ -227,7 +227,7 @@ See the minted package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.6 \usepackage
+l.5 \usepackage
                {fancyvrb}
 Pass the -shell-escape flag to LaTeX. Refer to the minted.sty documentation for
  more information.
@@ -829,7 +829,8 @@ Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 \colbreak@box=\box117
 \mc@col@check@num=\count340
 )
-runsystem(which pygmentize && touch Multi.aex)...disabled (restricted).
+runsystem(which pygmentize && touch ProgramacionMatematica.aex)...disabled (res
+tricted).
 
 
 
@@ -840,7 +841,7 @@ See the minted package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.40 \begin{document}
+l.29 \begin{document}
                      
 Refer to the installation instructions in the minted documentation for more inf
 ormation.
@@ -849,27 +850,28 @@ ormation.
 File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count341
 \l__pdf_internal_box=\box118
-) (./Multi.aux)
-\openout1 = `Multi.aux'.
+)
+(./ProgramacionMatematica.aux)
+\openout1 = `ProgramacionMatematica.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -919,7 +921,7 @@ LaTeX Font Info:    ... okay on input line 40.
 \makeMPintoPDFobject=\count347
 \everyMPtoPDFconversion=\toks50
 )
-Package hyperref Info: Link coloring OFF on input line 40.
+Package hyperref Info: Link coloring OFF on input line 29.
  (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -931,17 +933,17 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count348
 )
-LaTeX Info: Redefining \ref on input line 40.
-LaTeX Info: Redefining \pageref on input line 40.
-LaTeX Info: Redefining \nameref on input line 40.
+LaTeX Info: Redefining \ref on input line 29.
+LaTeX Info: Redefining \pageref on input line 29.
+LaTeX Info: Redefining \nameref on input line 29.
 
-(./Multi.out) (./Multi.out)
+(./ProgramacionMatematica.out) (./ProgramacionMatematica.out)
 \@outlinefile=\write6
-\openout6 = `Multi.out'.
+\openout6 = `ProgramacionMatematica.out'.
 
 
 ! Undefined control sequence.
-l.41 \watermark
+l.30 \watermark
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -949,139 +951,105 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 43.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 32.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 43.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 32.
 
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./Multi.toc)
+)
+(./ProgramacionMatematica.toc)
 \tf@toc=\write7
-\openout7 = `Multi.toc'.
+\openout7 = `ProgramacionMatematica.toc'.
 
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 54--58
-
- []
-
-<Jordan.png, id=150, 498.36188pt x 355.3275pt>
-File: Jordan.png Graphic file (type png)
-<use Jordan.png>
-Package pdftex.def Info: Jordan.png  used on input line 67.
-(pdftex.def)             Requested size: 149.5097pt x 106.59906pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 95--98
+Underfull \hbox (badness 10000) in paragraph at lines 44--48
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--106
+Underfull \hbox (badness 10000) in paragraph at lines 78--87
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--106
+Underfull \hbox (badness 10000) in paragraph at lines 78--87
 
  []
 
-[2 <./Jordan.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 119--127
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 119--127
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 133--138
-
- []
+[2]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.150 ...ango completo, $x$ será SBF y y=x+\theta
+                                                  ^*d$ \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--178
+Underfull \hbox (badness 10000) in paragraph at lines 150--153
 
  []
 
 [3]
-
-Package amsfonts Warning: Obsolete command \frak; \mathfrak should be used inst
-ead on input line 179.
-
-LaTeX Font Info:    Trying to load font information for U+euf on input line 179
-.
-(/usr/share/texmf-dist/tex/latex/amsfonts/ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
-Underfull \hbox (badness 10000) in paragraph at lines 222--226
+Underfull \hbox (badness 10000) in paragraph at lines 228--232
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 247--250
+Underfull \hbox (badness 10000) in paragraph at lines 260--270
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 252--255
+Underfull \hbox (badness 10000) in paragraph at lines 260--270
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 257--260
+Underfull \hbox (badness 10000) in paragraph at lines 272--285
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 279--286
+Underfull \hbox (badness 10000) in paragraph at lines 272--285
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 279--286
+Underfull \hbox (badness 10000) in paragraph at lines 272--285
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 279--286
+Underfull \hbox (badness 10000) in paragraph at lines 319--323
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 302--304
+Underfull \hbox (badness 10000) in paragraph at lines 353--356
 
  []
 
+[6] [7] (./ProgramacionMatematica.aux)
+Package rerunfilecheck Info: File `ProgramacionMatematica.out' has not changed.
 
-Underfull \hbox (badness 10000) in paragraph at lines 302--304
-
- []
-
-[6] [7] (./Multi.aux)
-
-Package rerunfilecheck Warning: File `Multi.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Multi.out':
-(rerunfilecheck)             Before: 83493BB2819713B323AB657CE4D9923E;3876
-(rerunfilecheck)             After:  89F600D43754AF93F72B7E468E896859;4045.
+(rerunfilecheck)             Checksum: E6B59A9FC08BA97DBCE8A75771B278DA;5014.
  ) 
 Here is how much of TeX's memory you used:
- 23568 strings out of 478994
- 428816 string characters out of 5864751
- 779792 words of memory out of 5000000
- 40576 multiletter control sequences out of 15000+600000
- 412981 words of font info for 64 fonts, out of 8000000 for 9000
+ 23557 strings out of 478994
+ 429053 string characters out of 5864751
+ 780002 words of memory out of 5000000
+ 40565 multiletter control sequences out of 15000+600000
+ 412892 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 87i,8n,89p,464b,420s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 87i,12n,89p,424b,470s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/publi
@@ -1090,19 +1058,17 @@ cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></us
 r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><
-/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pf
-b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/
-texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/share/texmf-dist/f
-onts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type
-1/public/cm-super/sfrm1000.pfb>
-Output written on ./Multi.pdf (7 pages, 230079 bytes).
+s/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><
+/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/m
+sbm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+</usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on ./ProgramacionMatematica.pdf (7 pages, 208892 bytes).
 PDF statistics:
- 262 PDF objects out of 1000 (max. 8388607)
- 230 compressed objects within 3 object streams
- 36 named destinations out of 1000 (max. 500000)
- 226 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 274 PDF objects out of 1000 (max. 8388607)
+ 245 compressed objects within 3 object streams
+ 42 named destinations out of 1000 (max. 500000)
+ 245 words of extra memory for PDF output out of 10000 (max. 10000000)
 
