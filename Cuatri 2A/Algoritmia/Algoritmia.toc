@@ -1,0 +1,16 @@
+\contentsline {section}{\numberline {1}Costes computacionales}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Notación}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Teoremas maestros}{2}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Programación dinámica}{2}{section.2}%
+\contentsline {section}{\numberline {3}Estructuras de datos}{2}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Stacks y Queues}{2}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Tablas de Hash}{2}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Grafos}{2}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Algunas definiciones previas}{2}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}DFS y BFS}{3}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Dijkstra}{3}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Árbol Generador}{4}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Ordenación topológica}{4}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Componentes fuertemente conexas (SCC)}{4}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}2-SAT problem (fancy)}{4}{subsection.4.7}%
+\contentsline {subsection}{\numberline {4.8}Flujo máximo}{4}{subsection.4.8}%

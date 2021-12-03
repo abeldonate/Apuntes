@@ -251,32 +251,48 @@ Cuando $U = [e_0 + \ldots + e_n]$ con $p_i = [e_i]$, entonces la referencia se d
 \subsection{Cambio de base}
 Sean $\Rcal_1 = \{p_0, \ldots, p_n; U\}$, $\Rcal_2 = \{q_0, \ldots, q_n; V\}$ dos referencias proyectivas de $\P$. Sean $e_0, \ldots, e_n$ y $u_0, \ldots;u_n$ bases adaptadas. Sea $M_{u,e}$ la matriz de cambio de base. \\
 \\
+La matriz de cambio de referencia de $\Rcal_2\to \Rcal_1$ es $[M_{u, e}]\in \P(M_{n+1}(\mathbb{K}))$\\
+\\
+Sean $x = x_0e_0 + \ldots + x_ne_n, y = y_0u_0 + \ldots + y_nu_n$. Podemos expresar sus coordenadas proyectivas como:
+$$
+X = \begin{pmatrix} x_0 \\ \vdots \\ x_n \end{pmatrix} = (x_0:\ldots:x_n) , \qquad Y = \begin{pmatrix} y_0 \\ \vdots \\ y_n \end{pmatrix} = (y_0:\ldots:y_n), \qquad X = M_{u, e}Y
+$$
+
 (Completar)
 
 \subsection{Coordenada Absoluta y razón doble}
-Sea $q = [xe_0 + ye_1]$. Definimos la \textit{coordenada absoluta} $\theta(q) = \frac{x}{y}$ si $q\neq p_0$ y $\theta(p_1) = \infty$. Esta aplicación $\theta \P^1 \to \Bar{\K}$ está bien definida. \\
+Sea $q = [xe_0 + ye_1]$. Definimos la \textit{coordenada absoluta} $\theta(q) = \frac{x}{y}$ si $q\neq p_0$ y $\theta(p_1) = \infty$. Esta aplicación $\theta :\P^1 \to \Bar{\K}$ está bien definida. \\
 \\
 Definimos ahora la \textit{razón doble} de $q_1, q_2, q_3, q_4$:
 $$
 (q_1, q_2, q_3, q_4) = \frac{\det(v_1, v_3) \det(v_2, v_4)}{\det(v_1, v_4) \det(v_2, v_3)} = \frac{(\theta_3 - \theta_1)(\theta_4-\theta_2)}{(\theta_4 - \theta_1)(\theta_3 - \theta_2)}
 $$
 La razón doble de cuatro puntos no depende de la referencia. \\
-Propiedades:
+Si $\Rcal=\{p_1, p_2;U\}$, algunas propiedades:
 \begin{itemize}
  \item $(q_1, q_2, q_3, q_4)(q_1, q_2, q_4, q_5) = (q_1, q_2, q_3, q_5)$
  \item $(q_1, q_2, q_3, q_4) = 0 \iff q_1 = q_3$ ó $q_2 = q_4$
  \item $(q_1, q_2, q_3, q_4) = \infty \iff q_2 = q_3$ ó $q_1 = q_4$
  \item $(q_1, q_2, q_3, q_4) = 1 \iff q_1 = q_2$ ó $q_3 = q_4$
+ \item $(p_1, p_2, q_3, q_4)=\frac{\theta(q_3)}{\theta(q_4)}$  
+ \item $(p_1, p_2, U, q_4)=\theta(q_4)$
 \end{itemize}
 
-\subsection{Espacio proyectivo y espacio afín}
+
+\subsection{Teoremas}
+\subsubsection{Teorema de Desargues}
+\subsubsection{Teorema de Pappus}
+ 
+
+\section{Espacio proyectivo y afín}
+\subsection{Clausura proyectiva}
 Recordemos que un \textit{espacio afín} es una terna $(\A, E, s)$, que satisface:
 \begin{itemize}
   \item $\exists \ s:\A \times E\to \A$ tal que $s(a, u) = a+u$
   \item $(a+u) + v = a + (u + v)$
   \item Para cada $a, b \in \A \ \exists ! \ u\in E $ tal que $a+ u = b$
 \end{itemize}
-La \textit{clausura proyectiva} de un espacio afín es un espacio proyectivo $\Bar{\A}$ tal que $\A \cong \Bar{\A}-\A_\infty$, donde $\A_\infty$ es el hiperplano del infinito. \\
+La \textit{clausura proyectiva} de un espacio afín es un espacio proyectivo $\bar{\A}$ tal que $\A \cong \bar{\A}-\A_\infty$, donde $\A_\infty$ es el hiperplano del infinito. \\
 \\
 (Dibujo fancy)\\
 \\
@@ -284,12 +300,8 @@ Podemos construir una aplicación $i: \A \to \P$ ... \\
 \\
 Sea $\B = \P-H$. Sea $L = [F]$ vlp no contenida en $H$. Si $q\in L\cap \B \implies L\cap B$  
 
-\subsection{Teoremas}
-\subsubsection{Teorema de Desargues}
-\subsubsection{Teorema de Pappus}
- 
+\subsection{Coordenadas}
 
-\section{Espacios afines}
 
 \section{Dualidad}
 El espacio dual de $\P$ es el conjunto $\P^* = \{H | H \text{ hiperplano de }\P\}$ \\
@@ -313,7 +325,17 @@ Propiedades:
 
 \subsection{Principio de dualidad}
 Una frase es dualizable y solo si es composición de dimensiones, inclusiones, contenciones, intensecciones y joins de vlps:
-
+\begin{itemize}
+  \item $\mathcal{F}_1: \dim L = d \implies \mathcal{F}_1^*: dim L = n-d-1$
+  \item $\mathcal{F}_2: L_1 \supset L_2 \implies \mathcal{F}_2^*: L_1 \subset L_2$
+  \item $\mathcal{F}_3: L_1 \subset L_2 \implies \mathcal{F}_3^*: L_1 \supset L_2$
+  \item $\mathcal{F}_4: L = L_1 \cap L_2 \implies \mathcal{F}_4^*: L_1 \vee L_2$
+  \item $\mathcal{F}_5: L = L_1 \vee L_2 \implies \mathcal{F}_5^*: L_1 \cap L_2$
+\end{itemize}
+Denotamos como \textit{enunciado} $\mathcal{E}$, una hipótesis $\mathcal{H}$ que implica una tesis $\mathcal{T}$: $\mathcal{E}: \mathcal{H}\to \mathcal{T}$.\\
+El \textit{Principio de dualidad} nos dice que si  $\mathcal{E}: \mathcal{H}\to \mathcal{T}$, entonces se cumple también $\mathcal{E}^*: \mathcal{H}^*\to \mathcal{T}^*$ \\
+\\
+Con este principio podemos dualizar los teoremas proyectivos que ya conocemos como Desargues o Pappus. En el caso de Desargues llegamos a su recíproco, y en el de Pappus a un nuevo resultado.
 
 
 
