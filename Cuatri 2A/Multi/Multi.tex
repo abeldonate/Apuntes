@@ -16,6 +16,16 @@
 \usepackage{graphicx}
 \usepackage{multicol}
 
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{figures/{#1}.pdf_tex}
+}
+
 \newcommand{\norm}[1]{\lvert \lvert #1 \rvert \rvert }
 \newcommand{\cond}[1]{\text{cond(} #1 \text{)}}
 \renewcommand{\th}{\textbf{Th:} \ }
@@ -226,6 +236,7 @@ Un Espacio proyectivo se puede pensar como la unión disjunta de un $\K$ espacio
 $$
 \P^n = \K^n\amalg P^{n-1}
 $$
+% \includegraphics[scale=1]{images/ProyectivoVisual.png}
 
 \subsection{Variedades lineales proyectivas}
 Una variedad lineal proyectiva (vlp) $L = [F]$definida por el subespacio $F$ es el subconjunto de $\P$ definido como $\pi(F-{0})$. \\
