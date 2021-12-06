@@ -1,10 +1,8 @@
 \documentclass{myclass}
 
-\usepackage{verbatim}
 \usepackage{array}
-\usepackage{minted}
 \usepackage{fancyvrb}
-\usemintedstyle{murphy}
+\usepackage{multicol}
 
 \usepackage[utf8]{inputenc}
 \usepackage{mathtools}
@@ -20,10 +18,11 @@
 \usepackage{xifthen}
 \usepackage{pdfpages}
 \usepackage{transparent}
+\usepackage{wrapfig}
 
 \newcommand{\incfig}[1]{%
-    \def\svgwidth{\columnwidth}
-    \import{figures/{#1}.pdf_tex}
+  \def\svgwidth{0.9\columnwidth}
+  \import{./figures/}{#1.pdf_tex}
 }
 
 \newcommand{\norm}[1]{\lvert \lvert #1 \rvert \rvert }
@@ -232,11 +231,33 @@ $$
 Un espacio proyectivo sobre el cuerpo $\K$ es una terna $(\P, E, \pi)$ siendo $\pi:E-{0}\to \P$ una aplicación exhaustiva que satisface $\pi(x)=\pi(y)\iff x=\lambda y$.\\
 Denotaremos $p = \pi(x) = [x]$. Definimos $\dim\P = \dim E -1$. \\
 \\
+%\begin{wrapfigure}{r}{0.5\textwidth}
+%  \begin{center}
+%    \incfig{ProyectivoVisual}
+%  \end{center}
+%  \caption{Plano Proyectivo}
+%\end{wrapfigure}
+
+\begin{multicols}{2}[\columnsep2em] 
 Un Espacio proyectivo se puede pensar como la unión disjunta de un $\K$ espacio vectorial de la misma dimensión y un espacio proyectivo de una dimensión menos:
 $$
-\P^n = \K^n\amalg P^{n-1}
+\P^n = \K^n \sqcup P^{n-1}
 $$
-% \includegraphics[scale=1]{images/ProyectivoVisual.png}
+\columnbreak
+
+
+    \incfig{ProyectivoVisual}
+
+\end{multicols}
+
+
+
+%Un Espacio proyectivo se puede pensar como la unión disjunta de un $\K$ espacio vectorial de la misma dimensión y un espacio proyectivo de una dimensión menos:
+%$$
+%\P^n = \K^n\amalg P^{n-1}
+%$$
+
+
 
 \subsection{Variedades lineales proyectivas}
 Una variedad lineal proyectiva (vlp) $L = [F]$definida por el subespacio $F$ es el subconjunto de $\P$ definido como $\pi(F-{0})$. \\
@@ -313,6 +334,24 @@ Sea $\B = \P-H$. Sea $L = [F]$ vlp no contenida en $H$. Si $q\in L\cap \B \impli
 
 \subsection{Coordenadas}
 
+\subsection{Pasar de coordenadas afines a proyectivas}
+\underline{Ejemplo 1} \\
+\[
+  L = \begin{pmatrix} 2 \\ 0\\0\\1 \end{pmatrix} + [\begin{pmatrix} 1\\0\\0\\1 \end{pmatrix} ] \implies \left(\begin{array}{@{}c|c@{}} 1 & x_1-2 \\ 0 & x_2 \\ 0 & x_3 \\ 1 & x_4-1 \end{array}  \right) \sim \left(\begin{array}{@{}c|c@{}} 1 & x_1-2 \\ 0 & x_2 \\ 0 & x_3 \\ 0 & x_4-x_1+1 \end{array} \right) \implies
+  \begin{cases}
+    x_2 = 0 \\
+	x_3 = 0 \\
+	x_4-x_1+1 = 0
+  \end{cases}
+\] 
+Para calcular $\overline{L}$ podemos (1) hacer el join de los puntos de la clausura (los puntos afines serán puntos con cordenada $x_0=1$ y los vectores puntos con coordenada $x_0=0$) o (2) homogeneizar las ecuaciones implícitas:
+ \[
+   (1): \overline{L} = (1:2:0:0:1)\vee (0:1:0:0:1) \qquad (2): \overline{L}:\begin{cases}
+     x_2=0\\
+	 x_3=0\\
+	 x_4-x_1+x_0=0
+   \end{cases}
+\] 
 
 \section{Dualidad}
 El espacio dual de $\P$ es el conjunto $\P^* = \{H | H \text{ hiperplano de }\P\}$ \\
