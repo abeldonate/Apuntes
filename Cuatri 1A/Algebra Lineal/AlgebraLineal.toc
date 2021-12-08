@@ -1,0 +1,28 @@
+\contentsline {section}{\numberline {1}Matrices y sistemas}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Matrices elementales}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Rouché-Frobenius}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Gauss-Jordan}{2}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Determinante}{3}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Espacios vectoriales}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Subespacios vectoriales}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Cambio de base}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Suma de espacios vectoriales}{3}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Buscando espacios vectoriales}{4}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Aplicaciones lineales}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Trabajando con bases}{4}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Espacio Dual}{4}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Diagonalización}{5}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Encontrar un endomorfismo diagonal}{5}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Teoremas de diagonalización y descomposición}{5}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Matrices positivas}{5}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Matrices estocásticas}{6}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Algunas propiedades}{6}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Ortogonalidad}{6}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Algunas definiciones}{6}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Algoritmo de Gram-Schmidt}{6}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Subespacio complementario ortogonal}{7}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Proyección ortogonal}{7}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Teorema espectral}{7}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Descomposición SVD}{7}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Teorema Fundamental del Álgebra}{8}{subsection.5.7}%
+\contentsline {subsection}{\numberline {5.8}Norma de una matriz}{8}{subsection.5.8}%

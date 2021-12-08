@@ -1,0 +1,914 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.12.1)  8 DEC 2021 16:07
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**Formulario.tex
+(./Formulario.tex
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18> (/usr/share/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+)
+\c@part=\count179
+\c@section=\count180
+\c@subsection=\count181
+\c@subsubsection=\count182
+\c@paragraph=\count183
+\c@subparagraph=\count184
+\c@figure=\count185
+\c@table=\count186
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+) (/usr/share/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
+\c@tracingmulticols=\count187
+\mult@box=\box47
+\multicol@leftmargin=\dimen139
+\c@unbalance=\count188
+\c@collectmore=\count189
+\doublecol@number=\count190
+\multicoltolerance=\count191
+\multicolpretolerance=\count192
+\full@width=\dimen140
+\page@free=\dimen141
+\premulticols=\dimen142
+\postmulticols=\dimen143
+\multicolsep=\skip49
+\multicolbaselineskip=\skip50
+\partial@page=\box48
+\last@line=\box49
+\maxbalancingoverflow=\dimen144
+\mult@rightbox=\box50
+\mult@grightbox=\box51
+\mult@gfirstbox=\box52
+\mult@firstbox=\box53
+\@tempa=\box54
+\@tempa=\box55
+\@tempa=\box56
+\@tempa=\box57
+\@tempa=\box58
+\@tempa=\box59
+\@tempa=\box60
+\@tempa=\box61
+\@tempa=\box62
+\@tempa=\box63
+\@tempa=\box64
+\@tempa=\box65
+\@tempa=\box66
+\@tempa=\box67
+\@tempa=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\c@minrows=\count193
+\c@columnbadness=\count194
+\c@finalcolumnbadness=\count195
+\last@try=\dimen145
+\multicolovershoot=\dimen146
+\multicolundershoot=\dimen147
+\mult@nat@firstbox=\box91
+\colbreak@box=\box92
+\mc@col@check@num=\count196
+) (/usr/share/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count197
+\calc@Bcount=\count198
+\calc@Adimen=\dimen148
+\calc@Bdimen=\dimen149
+\calc@Askip=\skip51
+\calc@Bskip=\skip52
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count199
+\calc@Cskip=\skip53
+) (/usr/share/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+) (/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+) (/usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (/usr/share/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+\Gm@cnth=\count266
+\Gm@cntv=\count267
+\c@Gm@tempcnt=\count268
+\Gm@bindingoffset=\dimen150
+\Gm@wd@mp=\dimen151
+\Gm@odd@mp=\dimen152
+\Gm@even@mp=\dimen153
+\Gm@layoutwidth=\dimen154
+\Gm@layoutheight=\dimen155
+\Gm@layouthoffset=\dimen156
+\Gm@layoutvoffset=\dimen157
+\Gm@dimlist=\toks16
+) (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count269
+\l__pdf_internal_box=\box93
+) (./Formulario.aux)
+\openout1 = `Formulario.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: landscape 
+* h-part:(L,W,R)=(36.135pt, 722.7pt, 36.135pt)
+* v-part:(T,H,B)=(36.135pt, 542.02501pt, 36.135pt)
+* \paperwidth=794.96999pt
+* \paperheight=614.295pt
+* \textwidth=722.7pt
+* \textheight=542.02501pt
+* \oddsidemargin=-36.135pt
+* \evensidemargin=-36.135pt
+* \topmargin=-73.135pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=134.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 83.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 83.
+./Formulario.tex:98: Undefined control sequence.
+<recently read> \Bar 
+                     
+l.98 \textbullet $\Bar
+                      {a}$ constante \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Formulario.tex:159: Undefined control sequence.
+<argument> @{}p{\linwidth 
+                          }@{}
+l.159 \begin{tabular}{@{}p{\linwidth}@{}}
+                                         
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Formulario.tex:161: Missing number, treated as zero.
+<to be read again> 
+                   !
+l.161 \textbullet
+                  Trabajo \\
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./Formulario.tex:161: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   !
+l.161 \textbullet
+                  Trabajo \\
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \hbox (39.47107pt too wide) in paragraph at lines 161--162
+[]\TS1/cmr/m/n/10 à\OT1/cmr/m/n/10 Trabajo| 
+ []
+
+./Formulario.tex:162: Missing number, treated as zero.
+<to be read again> 
+                   !
+l.162 $
+       W=\int_{r_a}^{r_b}{\bar{F}\cdot d\bar{r}}$
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./Formulario.tex:162: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   !
+l.162 $
+       W=\int_{r_a}^{r_b}{\bar{F}\cdot d\bar{r}}$
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \hbox (21.38885pt too wide) in paragraph at lines 162--164
+[]$\OML/cmm/m/it/10 W \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (41.24876pt too wide) in paragraph at lines 162--164
+[][] []$| 
+ []
+
+./Formulario.tex:164: Missing number, treated as zero.
+<to be read again> 
+                   !
+l.164 \\
+        
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./Formulario.tex:164: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   !
+l.164 \\
+        
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./Formulario.tex:166: Missing number, treated as zero.
+<to be read again> 
+                   !
+l.166 \textbullet
+                  Energ√≠as \\
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./Formulario.tex:166: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   !
+l.166 \textbullet
+                  Energ√≠as \\
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \hbox (42.4433pt too wide) in paragraph at lines 166--167
+[]\TS1/cmr/m/n/10 à\OT1/cmr/m/n/10 Energ^^S^^Pas| 
+ []
+
+./Formulario.tex:167: Missing number, treated as zero.
+<to be read again> 
+                   !
+l.167 C
+       in√©tica $K= \frac{1}{2}mv^2$ \\
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./Formulario.tex:167: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   !
+l.167 C
+       in√©tica $K= \frac{1}{2}mv^2$ \\
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \hbox (36.11118pt too wide) in paragraph at lines 167--168
+[]\OT1/cmr/m/n/10 Cin^^Setica
+ []
+
+
+Overfull \hbox (19.76384pt too wide) in paragraph at lines 167--168
+\OML/cmm/m/it/10 K \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (24.8584pt too wide) in paragraph at lines 167--168
+[]\OML/cmm/m/it/10 mv[]$| 
+ []
+
+./Formulario.tex:168: Missing number, treated as zero.
+<to be read again> 
+                   !
+l.168 P
+       ot. gravitatoria $U=mgh$ \\
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./Formulario.tex:168: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   !
+l.168 P
+       ot. gravitatoria $U=mgh$ \\
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \hbox (18.19449pt too wide) in paragraph at lines 168--169
+[]\OT1/cmr/m/n/10 Pot.
+ []
+
+
+Overfull \hbox (22.25005pt too wide) in paragraph at lines 168--169
+\OT1/cmr/m/n/10 grav-
+ []
+
+
+Overfull \hbox (6.11111pt too wide) in paragraph at lines 168--169
+\OT1/cmr/m/n/10 i-
+ []
+
+
+Overfull \hbox (12.22224pt too wide) in paragraph at lines 168--169
+\OT1/cmr/m/n/10 ta-
+ []
+
+
+Overfull \hbox (12.22224pt too wide) in paragraph at lines 168--169
+\OT1/cmr/m/n/10 to-
+ []
+
+
+Overfull \hbox (11.69447pt too wide) in paragraph at lines 168--169
+\OT1/cmr/m/n/10 ria
+ []
+
+
+Overfull \hbox (18.47354pt too wide) in paragraph at lines 168--169
+\OML/cmm/m/it/10 U \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (19.67018pt too wide) in paragraph at lines 168--169
+\OML/cmm/m/it/10 mgh$| 
+ []
+
+./Formulario.tex:169: Missing number, treated as zero.
+<to be read again> 
+                   !
+l.169 P
+       ot. el√°stica $U = \frac{1}{2}kx^2$
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./Formulario.tex:169: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   !
+l.169 P
+       ot. el√°stica $U = \frac{1}{2}kx^2$
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \hbox (18.19449pt too wide) in paragraph at lines 169--171
+[]\OT1/cmr/m/n/10 Pot.
+ []
+
+
+Overfull \hbox (32.27783pt too wide) in paragraph at lines 169--171
+\OT1/cmr/m/n/10 el^^Sastica
+ []
+
+
+Overfull \hbox (18.47354pt too wide) in paragraph at lines 169--171
+\OML/cmm/m/it/10 U \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (22.10837pt too wide) in paragraph at lines 169--171
+[]\OML/cmm/m/it/10 kx[]$| 
+ []
+
+./Formulario.tex:171: Missing number, treated as zero.
+<to be read again> 
+                   !
+l.171 \\
+        
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./Formulario.tex:171: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   !
+l.171 \\
+        
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./Formulario.tex:173: Missing number, treated as zero.
+<to be read again> 
+                   !
+l.173 \textbullet
+                  Impulso \\
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./Formulario.tex:173: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   !
+l.173 \textbullet
+                  Impulso \\
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \hbox (39.77664pt too wide) in paragraph at lines 173--174
+[]\TS1/cmr/m/n/10 à\OT1/cmr/m/n/10 Impulso| 
+ []
+
+./Formulario.tex:174: Missing number, treated as zero.
+<to be read again> 
+                   !
+l.174 $
+       I=\int_{t_1}^{t_2}{Fdt}=\Delta p$
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./Formulario.tex:174: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   !
+l.174 $
+       I=\int_{t_1}^{t_2}{Fdt}=\Delta p$
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \hbox (15.73605pt too wide) in paragraph at lines 174--176
+[]$\OML/cmm/m/it/10 I \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (42.94792pt too wide) in paragraph at lines 174--176
+[][] [] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (13.36461pt too wide) in paragraph at lines 174--176
+\OT1/cmr/m/n/10 ^^A\OML/cmm/m/it/10 p$| 
+ []
+
+./Formulario.tex:176: Missing number, treated as zero.
+<to be read again> 
+                   !
+l.176 \\
+        
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./Formulario.tex:176: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   !
+l.176 \\
+        
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./Formulario.tex:178: Missing number, treated as zero.
+<to be read again> 
+                   !
+l.178 \textbullet
+                  Potencia\\
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./Formulario.tex:178: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   !
+l.178 \textbullet
+                  Potencia\\
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \hbox (42.63774pt too wide) in paragraph at lines 178--179
+[]\TS1/cmr/m/n/10 à\OT1/cmr/m/n/10 Potencia| 
+ []
+
+./Formulario.tex:179: Missing number, treated as zero.
+<to be read again> 
+                   !
+l.179 $
+       P=\frac{dW}{dt}=Fv$
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./Formulario.tex:179: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   !
+l.179 $
+       P=\frac{dW}{dt}=Fv$
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \hbox (18.36455pt too wide) in paragraph at lines 179--181
+[]$\OML/cmm/m/it/10 P \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (25.71562pt too wide) in paragraph at lines 179--181
+[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (13.02547pt too wide) in paragraph at lines 179--181
+\OML/cmm/m/it/10 Fv$| 
+ []
+
+./Formulario.tex:181: Missing number, treated as zero.
+<to be read again> 
+                   !
+l.181 \\
+        
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./Formulario.tex:181: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   !
+l.181 \\
+        
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./Formulario.tex:183: Missing number, treated as zero.
+<to be read again> 
+                   !
+l.183 \textbullet
+                  En un campo conservativo \\
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./Formulario.tex:183: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   !
+l.183 \textbullet
+                  En un campo conservativo \\
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \hbox (17.35992pt too wide) in paragraph at lines 183--184
+[]\TS1/cmr/m/n/10 à\OT1/cmr/m/n/10 En
+ []
+
+
+Overfull \hbox (11.11115pt too wide) in paragraph at lines 183--184
+\OT1/cmr/m/n/10 un
+ []
+
+
+Overfull \hbox (28.61119pt too wide) in paragraph at lines 183--184
+\OT1/cmr/m/n/10 campo
+ []
+
+
+Overfull \hbox (18.33336pt too wide) in paragraph at lines 183--184
+\OT1/cmr/m/n/10 con-
+ []
+
+
+Overfull \hbox (15.63889pt too wide) in paragraph at lines 183--184
+\OT1/cmr/m/n/10 ser-
+ []
+
+
+Overfull \hbox (13.05559pt too wide) in paragraph at lines 183--184
+\OT1/cmr/m/n/10 va-
+ []
+
+
+Overfull \hbox (16.66672pt too wide) in paragraph at lines 183--184
+\OT1/cmr/m/n/10 tivo| 
+ []
+
+./Formulario.tex:184: Missing number, treated as zero.
+<to be read again> 
+                   !
+l.184 $
+       \bar{F}=-\nabla U$
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./Formulario.tex:184: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   !
+l.184 $
+       \bar{F}=-\nabla U$
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \hbox (18.37497pt too wide) in paragraph at lines 184--186
+[]$[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (24.02919pt too wide) in paragraph at lines 184--186
+\OMS/cmsy/m/n/10 ^^@r\OML/cmm/m/it/10 U$| 
+ []
+
+./Formulario.tex:186: Missing number, treated as zero.
+<to be read again> 
+                   !
+l.186 \\
+        
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./Formulario.tex:186: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   !
+l.186 \\
+        
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./Formulario.tex:188: Missing number, treated as zero.
+<to be read again> 
+                   !
+l.188 \textbullet
+                  Sistema no conservativo \\
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./Formulario.tex:188: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   !
+l.188 \textbullet
+                  Sistema no conservativo \\
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \hbox (38.9433pt too wide) in paragraph at lines 188--189
+[]\TS1/cmr/m/n/10 à\OT1/cmr/m/n/10 Sistema
+ []
+
+
+Overfull \hbox (10.55559pt too wide) in paragraph at lines 188--189
+\OT1/cmr/m/n/10 no
+ []
+
+
+Overfull \hbox (18.33336pt too wide) in paragraph at lines 188--189
+\OT1/cmr/m/n/10 con-
+ []
+
+
+Overfull \hbox (15.63889pt too wide) in paragraph at lines 188--189
+\OT1/cmr/m/n/10 ser-
+ []
+
+
+Overfull \hbox (13.05559pt too wide) in paragraph at lines 188--189
+\OT1/cmr/m/n/10 va-
+ []
+
+
+Overfull \hbox (16.66672pt too wide) in paragraph at lines 188--189
+\OT1/cmr/m/n/10 tivo| 
+ []
+
+./Formulario.tex:189: Missing number, treated as zero.
+<to be read again> 
+                   !
+l.189 $
+       E_{m_f}=E_{m_0}+W_{nc}$ \\
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./Formulario.tex:189: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   !
+l.189 $
+       E_{m_f}=E_{m_0}+W_{nc}$ \\
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \hbox (30.04402pt too wide) in paragraph at lines 189--190
+[]$\OML/cmm/m/it/10 E[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (26.65869pt too wide) in paragraph at lines 189--190
+\OML/cmm/m/it/10 E[] \OT1/cmr/m/n/10 +
+ []
+
+
+Overfull \hbox (18.46152pt too wide) in paragraph at lines 189--190
+\OML/cmm/m/it/10 W[]$| 
+ []
+
+./Formulario.tex:190: Missing number, treated as zero.
+<to be read again> 
+                   !
+l.190 $
+       W_{nc}=\Delta E_c + \Delta U$
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./Formulario.tex:190: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   !
+l.190 $
+       W_{nc}=\Delta E_c + \Delta U$
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \hbox (29.01703pt too wide) in paragraph at lines 190--192
+[]$\OML/cmm/m/it/10 W[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (27.56685pt too wide) in paragraph at lines 190--192
+\OT1/cmr/m/n/10 ^^A\OML/cmm/m/it/10 E[] \OT1/cmr/m/n/10 +
+ []
+
+
+Overfull \hbox (16.25139pt too wide) in paragraph at lines 190--192
+\OT1/cmr/m/n/10 ^^A\OML/cmm/m/it/10 U$| 
+ []
+
+./Formulario.tex:192: Missing number, treated as zero.
+<to be read again> 
+                   !
+l.192 \\
+        
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./Formulario.tex:192: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   !
+l.192 \\
+        
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+[1
+
+]
+Overfull \vbox (120.42772pt too high) has occurred while \output is active []
+
+ [2{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [3] [4] (./Formulario.aux) ) 
+Here is how much of TeX's memory you used:
+ 1206 strings out of 478994
+ 18444 string characters out of 5864751
+ 359766 words of memory out of 5000000
+ 18743 multiletter control sequences out of 15000+600000
+ 405885 words of font info for 35 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 68i,27n,74p,148b,312s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on Formulario.pdf (4 pages, 159362 bytes).
+PDF statistics:
+ 70 PDF objects out of 1000 (max. 8388607)
+ 50 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
