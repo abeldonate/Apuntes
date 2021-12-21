@@ -1,11 +1,12 @@
 \documentclass{myclass}
 \usepackage{verbatim}
 \usepackage{array}
-\usepackage{minted}
+%\usepackage{minted}
 \usepackage{fancyvrb}
-\usemintedstyle{murphy}
+%\usemintedstyle{murphy}
 
 \usepackage[utf8]{inputenc}
+\usepackage{multicol}
 \usepackage{mathtools}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -16,6 +17,14 @@
 \usepackage{tikz}
 \usepackage{graphicx}
 
+\newcommand{\incfig}[1]{%
+  \def\svgwidth{0.9\columnwidth}
+  \import{./figures/}{#1.pdf_tex}
+}
+
+\newcommand{\incimg}[1]{%
+    \includegraphics[width=0.9\columnwidth]{images/#1}
+}
 
 \newcommand{\norm}[1]{\lvert \lvert #1 \rvert \rvert }
 \newcommand{\cond}[1]{\text{cond(} #1 \text{)}}
@@ -24,7 +33,7 @@
 
 \newcommand{\algo}[2]{\boxed{\textbf{Algoritmo: }\textit{#1} \quad \mathcal{O}(#2)}}
 
-\newcommand{\ex}[1]{\underline{  Ejemplo:  #1}}
+\newcommand{\ex}[1]{\underline{Ejemplo:  #1}}
 
 \newcommand{\code}[1]{  #1 }
 
@@ -74,10 +83,36 @@ T(n) = aT\left(\frac{n}{b}\right) + g(n), \ g(n) = \Theta(n^k), \ \alpha = \log_
 \end{cases}
 $$
 
+\section{Algoritmos de ordenación}
+
+\subsection{Sin cotas}
+
+\subsection{Acotadas}
+Podemos ordenarlos en tiempo lineal si sabemos que los números serán enteros en $[0,\ldots, k]$
+\subsubsection{Counting-sort}
+\begin{itemize}
+  \item Guardamos los números en un vector \code{C} de longitud $k$ donde cada posición indica el número de elementos $\le i$
+  \item Empezamos por el final de \code{B} y si la diferencia con el anterior es $\ge 1 \implies $ \code{C[x]- -; B[x]++}. Si es $0$, miramos el anterior.
+\end{itemize}
+
+\subsection{Radix-sort}
+\begin{itemize}
+  \item En cada iteración ordenamos por el $i$-ésimo dígito con counting sort.
+  \item Como counting sort es estable, terminamos con el vector ordenado.
+\end{itemize}
+
+\subsection{Bucket-sort}
+Se realiza sobre una distribución uniforme del intervalo $[0, 1)$
+\begin{itemize}
+  \item Dividimos el intervalo en subintervalos de la misma longitud llamados buckets.
+  \item Repartimos los elementos
+  \item Ordenamos cada bucket con un algoritmo de ordenación
+\end{itemize}
+
 \section{Programación dinámica}
 Nos serviremos siempre de la misma estructura. Construiremos una función recursiva que llame a un vector si en la posición de este vector no hay un $-1$, y en caso contrario haga una relación de recursión.
 
-\inputminted[firstline=10, lastline=15]{cpp}{template_dinamica.cpp}
+%\inputminted[firstline=10, lastline=15]{cpp}{template_dinamica.cpp}
 
 \section{Estructuras de datos}
 \subsection{Stacks y Queues}
@@ -96,9 +131,9 @@ Tabla comparativa de estas dos
 \end{table}
 \\
 Para revertir el orden de la priority\_queue podemos definirla así: 
-\begin{minted}{cpp}
-priority_queue<int, vector<int>, greater<int>> Q;
-\end{minted}
+%\begin{minted}{cpp}
+%priority_queue<int, vector<int>, greater<int>> Q;
+%\end{minted}
 
 \subsection{Tablas de Hash}
 
@@ -112,7 +147,7 @@ En cuanto a definiciones en el lenguaje de la estructura del grafo:
     \item \code{VVI M;} Matriz de adyacencia
     \item \code{VVI G;} Lista de aristas
     \item \code{VP V;}  Pair con las aristas
-    \item \code{VVP GP;} Conjunto de vértices en pairs con costes (\code{pair<coste, arista>})
+    \item \code{VVP GP;} Conjunto de vértices en pairs con costes (\code{pair$<$coste, arista$>$})
     \item \code{int n = M.size();} Nodos
     \item \code{int m = G.isze();} Aristas
     \item \code{int INF = 1e9;}
@@ -141,7 +176,7 @@ Realizamos un BFS sobre el grafo y en cada paso sumamos uno al adyacente. \\
 \\
 \ex{Camino mínimo entre dos nodos}\\
 
-\subsection{Dijkstra}{}
+\subsection{Shortest path en ponderados}
 Cuando tenemos un grafo ponderado podemos utilizar Dikjstra para encontrar el camino más corto a cualquier nodo \\
 \\
 \algo{Dikjstra}{m + n\log n}
@@ -154,18 +189,50 @@ Cuando tenemos un grafo ponderado podemos utilizar Dikjstra para encontrar el ca
         \item Si es menor, la insertamos en \code{q}, en \code{dist} y decimos que su \code{father} es la original 
     \end{itemize}
 \end{itemize}
+Si queremos buscar la distancia entre dos nodos cualesquiera podemos usar Floyd-Warshall\\
+\\
+\algo{Floyd-Warshall}{n^3}
+\begin{itemize}
+  \item Definimos el vector \code{M[i, j]}, que inicialmente es la matriz de adyacencia de \code{G}.
+  \item Iteramos sobre $k, i, j$, y en cada iteración hacemos \code{M[i][j] = min(M[i][j], M[i][k] + M[k][j])}.    
+\end{itemize}
+Si en lugar de buscar el camino más corto buscamos el más largo desde un nodo, aplicamos un longest path:\\
+\algo{Longest path}{n+m}
+\begin{itemize}
+  \item Definimos un vector \code{dist} que nos el camino más largo y lo inicializamos a $-1$.
+  \item Si \code{dist[x]!=-1} retornamos dist[x] (programación dinámica)
+  \item Si \code{dist[x]==-1} retornamos \code{max(1+y)} para \code{y} vecino de \code{x} y lo igualamos a \code{dist[x]}.
+  
+\end{itemize}
+(terminar)
+
 
 \subsection{Árbol Generador}
-Queremos obtener dado un grafo el árbol que genera ese grafo. \\
-Para ello nos ayudamos de la función \code{repr}, que dice cual es el nodo representante de una componente conexa. \\
+Se trata de, dado un grafo $G$ calcular el subconjunto  $F\subset E$ mínimo tal que el grafo sea un árbol. \\
 \\
-\algo{Árbol generador}{}
+\algo{Árbol generador en un grafo no dirigido sin pesos}{}
+Definiremos un representante de cada componente conexa y crearemos una función \code{repr(x)} que nos diga cuál es ese representante. Además usaremos compresión de caminos para que los nodos estén a una distancia menor a sus representantes.
 \begin{itemize}
-    \item Construimos el vectore \code{father} que nos dice el padre de un nodo.
-    \item Empezamos con un grafo vacío (sin aristas), y, por tanto, con \code{comp = n} componentes conexas.
-    \item \code{for(u : V)} (para cada arista) vemos si los representantes de los nodos son iguales.
-    \item Si son diferentes $\implies$ el \code{father} de el representante de un nodo es el otro. Restamos uno a \code{comp}.
-    \item Acaba cuando solo tenemos una componente conexa (\code{comp = 1}).
+  \item Creamos el vector \code{pare}, que nos dirá el nodo padre de cada nodo. Creamos la función \code{repr()}. 
+  \item Si \code{pare(x) == -1} $\implies$ \code{x} es el nodo representante.
+  \item Si no lo es, \code{pare[x]=repr(pare[x])} y devuelve \code{pare{[x]}}. 
+\end{itemize}
+Una vez implementada la función \code{repr()} vamos con la función principal:
+\begin{itemize}
+  \item Definimos el entero \code{comp=n}, que nos indicará el número de componentes conexas.
+  \item Iteramos sobre el conjunto de aristas (definidas en pairs): 
+	\begin{itemize}
+	  \item Si los \code{repr(x) != repr(y)} $\implies$ hacemos que uno sea padre del otro.
+	  \item Retornamos la arista.
+	  \item Restamos $1$ a \code{comp}. Si es $1$ retornamos.
+	\end{itemize}
+\end{itemize}
+Si queremos hacer el Árbol mínimo de expansión en un grafo con pesos usaremos el algoritmo de Kruskal.\\
+\algo{Kruskal}{m\log m}
+Similar al de Árbol generador:
+\begin{itemize}
+  \item Ordenamos las aristas por coste. 
+  \item Al realizar el algoritmo anterior iteramos sobre las aristas por coste: si están en diferente componente conexa, la añadimos, si no, cogemos la siguiente.
 \end{itemize}
 
 \subsection{Ordenación topológica}
@@ -178,7 +245,6 @@ La ordenación topológica es una ordenación lineal de todos los nodos que sati
     \item \code{while(not pila.empty())} print del nodo de la pila y restarle uno al \code{deg} sus adyacentes. Si alguno de esos adyacentes tiene \code{deg=0} $\implies$ añádelo a \code{pila}.
 \end{itemize}
 
-
 \subsection{Componentes fuertemente conexas (SCC)}
 $$
 [x] = [y] \text{ (están en la misma componente fuertemente conexa )} \iff \begin{cases}
@@ -188,18 +254,24 @@ y\to x
 $$
 Todo grafo dirigido es un DAG de sus SCC \\
 \\
-\algo{Identificación de las SCC}{} \\
-Sea $I$ el grafo con las direcciones invertidas. Numeramos los vértices de $I$ con un contador dfs. Sean $A, B$ dos SCC se cumple:
-$$
-A \to B \implies \max_{x\in A} dfs(x) > \max_{y\in B} dfs(y)
-$$
-Trasladamos copiamos la numeración en el grafo origina $G$
-
-\subsection{2-SAT problem (fancy)}
+\algo{Identificación de las SCC}{n+m} 
+\begin{itemize}
+  \item Realizar un contador DFS sobre el grafo y guardar los vértices resultantes en en una stack \code{S}.
+  \item Construir el Grafo transpuesto \code{I} invirtiendo las direcciones de las aristas
+  \item Sobre I, miramos el elemento de la stack \code{S} y hacemos un DFS. Los nodos que recorra serán miembros de la misma componente conexa. Realizamos este proceso hasta que se vacíe \code{S}
+\end{itemize}
+\ex{2-SAT problem }\\
 Pongamos que queremos ver si se pueden elegir bools $a, b, c$ tal que:
 $$
-(a\vee b)\land(\bar{a}\vee c)\land(\bar{a}\vee b)\land(\bar{b}\vee \bar{d}) = true
+(a\vee b)\land(\bar{a}\vee c)\land(\bar{a}\vee b)\land(\bar{b}\vee \bar{d}) = true \implies \begin{cases}
+  \overline{a} \implies b, \quad \overline{b} \implies a \\
+  a \implies c, \quad \overline{c} \implies \overline{a} \\
+  a \implies b, \quad \overline{b} \implies \overline{a} \\
+  b \implies \overline{d}, \quad d \implies \overline{b}
+\end{cases}
 $$
+Podemos hacer un grafo dirigido con $2n$ nodos (los bools y sus complementarios)\\
+Si este grafo tiene una componente fuertemente conexa $\implies$ no se puede asignar.
 
 \subsection{Flujo máximo}
 Suponemos que tenemos ciertas ciudades (nodos) y carretaras (aristas dirigidas) con una cierta capacidad. Consideramos ir de una ciudad origen (fuente) a una final (pozo), cumpliendo, a demás las restricciones en las capacidades de las carreteras. La solución a la capacidad máxima es el \textit{flujo máximo}. \\
@@ -212,6 +284,34 @@ Suponemos que tenemos ciertas ciudades (nodos) y carretaras (aristas dirigidas) 
 \ex{Matching máximo}\\
 Buscamos en un grafo bipartido $V = E + D$ el máximo número de aparejamientos.\\
 Podemos replantear el problema añadiendo los nodos $s$ y $t$ tal y las aristas $s \to E, D\to t$. Realizando el maxflow del nuevo grafo de $s$ a $t$, la solución será el número de parejas.
+
+
+
+\section{Roura out of context}
+\subsection{P versus NP}
+\subsubsection{Definiciones}
+\begin{multicols}{2}[\columnsep2em]
+\begin{itemize}
+  \item \textbf{P:} Se pueden resolver en tiempo polinómico.
+  \item \textbf{NP:} Dada una solución se puede comprobar en tiempo polinómico.
+  \item \textbf{NP-Hard:} Todo problema NP se puede reducir a este problema.
+  \item \textbf{NP-Completo:} Se cumple que es NP y NP-Hard.
+\end{itemize}
+\columnbreak
+\incimg{PNP.png}
+\end{multicols}
+\noindent
+La pregunta es si $P=NP$ o  $P\neq NP$. En función de la respuesta tenemos los dos tipos de diagramas de Venn.
+\subsection{Teorema de Gödel}
+Problema de la parada
+\subsection{Jocs imparcials}
+Definimos los \textbf{nimbers} como la función:
+\[
+nim(x) = \min \ n\not\in \{nim(X') : X\to X'\}
+\]
+Se cumple $nim(x\oplus y) = nim(x) \wedge nim(y)$ donde $\wedge$ es la operación exclusive or.\\
+\\
+$p(x)$
 
 
 

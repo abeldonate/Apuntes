@@ -1,0 +1,22 @@
+\contentsline {section}{\numberline {1}Fundamentales}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Termómetro}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Varaibles intensivas y extensivas}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Dilatación y compresibilidad}{2}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Ecuación de estado}{2}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Diagrama de fase}{3}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Tipos de procesos}{4}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}Humedad}{4}{subsection.1.7}%
+\contentsline {section}{\numberline {2}Primer principio de la termodinámica}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Trabajo}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Calor específico}{4}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Calor}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Conducción}{5}{subsection.3.1}%
+\contentsline {section}{\numberline {4}Máquinas térmicas y Segundo Principio}{5}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Máquinas térmicas}{5}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Segundo principio}{5}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Ciclo de Carnot}{6}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Entropía y segundo principio}{6}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Definición}{6}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Cálculo de la entropía}{6}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Potenciales termodinámicos}{7}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Significado físico de los potenciales}{7}{subsection.6.1}%

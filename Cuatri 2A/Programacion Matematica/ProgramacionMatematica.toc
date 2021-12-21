@@ -26,4 +26,6 @@
 \contentsline {subsection}{\numberline {4.5}Modificaciones del método de Newton}{7}{subsection.4.5}%
 \contentsline {section}{\numberline {5}Optimización no lineal con restricciones}{7}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Definiciones}{7}{subsection.5.1}%
-\contentsline {subsubsection}{\numberline {5.1.1}Restricciones activas e inactivas}{7}{subsubsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.2}Multiplicadores de Lagrange}{8}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}KKT}{8}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Análisis de sensibilidad}{8}{subsection.5.4}%

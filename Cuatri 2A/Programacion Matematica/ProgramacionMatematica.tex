@@ -1,9 +1,6 @@
 \documentclass{myclass}
-\usepackage{verbatim}
 \usepackage{array}
-\usepackage{minted}
 \usepackage{fancyvrb}
-\usemintedstyle{murphy}
 
 \usepackage[utf8]{inputenc}
 \usepackage{mathtools}
@@ -27,7 +24,6 @@
 \title{Programación Matemática}
 
 \begin{document}
-\watermark
 \maketitle
 \tableofcontents
 \newpage
@@ -147,7 +143,7 @@ $$
 \end{enumerate}
 
 \subsection{Teoremas}
-Supondremos siempre $P_e$ no vacío y de rango completo, $x$ será SBF y y=x+\theta^*d$ \\
+Supondremos siempre $P_e$ no vacío y de rango completo, $x$ será SBF y $y=x+\theta^*d$ \\
 \\
 \textbf{Teorema 4} \textit{y SBF}
 \begin{itemize}
@@ -400,13 +396,83 @@ Entonces $\{x^k\}$ converge cuadráticamente a $x^*$ y $\{\norm{\N f(x^k)}\}$ co
 
 \section{Optimización no lineal con restricciones}
 \subsection{Definiciones}
-\subsubsection{Restricciones activas e inactivas}
 En un punto $x$ la restricción $g_i(x)\leq 0$ puede ser:
 \begin{itemize}
     \item \textbf{Activa} si $g_i(x)=0$
     \item \textbf{Inactiva} si $g_i(x)<0$
 \end{itemize}
 Las restricciones $h_i(x), i=1, \ldots, m$ son siempre activas.\\
-Denotamos $\mathcal{A}(x) = \{j\in \{1, \ldots, m\} : g_j(x)=0\}\}$ al conjunto de índices cuya restricción $g_i(x)$ es activa en $x$.
+Denotamos $\mathcal{A}(x) = \{j\in \{1, \ldots, m\} : g_j(x)=0\}\}$ al conjunto de índices cuya restricción $g_i(x)$ es activa en $x$.\\
+\\
+Denotamos $c_i(x)=0$ el conjunto de las restricciones activas en un punto dado. Esto es, el conjunto de las $h_i$ y el de las $g_i$ activas. \\
+\\
+Decimos que un punto $x^*$ es regular si los gradientes $\nabla c_i$ con linealmente independientes.\\
+\\
+Definimos el plano tangente $T = \{$derivadas de la curva diferencial que pasa por $x^*$\} \\
+\\
+Definimos el subespacio de direcciones $M = \{d:\nabla c(x^*)^Td = 0\}$\\
+\\
+Definimos el subespacio de direcciones $M' = \{d:\nabla h(x^*)^Td = 0, \quad \nabla g_j(x^*)^Td = 0 \quad \forall f\in \mathcal{A}(x^*)\cap \{j: \mu_j^* > 0\} \}$
+\subsection{Multiplicadores de Lagrange}
+Definimos la función Lagraniana:
+\[
+L(x, \lambda) = f(x) + \lambda^Th(x) \mu^Tg(x)
+\] 
+Condiciones de optimalidad:
+\begin{itemize}
+  \item Necesaria de 1º orden: $\nabla_xL(x^*, \lambda^*) = 0 $
+  \item Suficiente de 2º orden: $d^T\nabla^2_{x x}L(x^*, \lambda^*)d>0$ para todo $d: \nabla h(x^*)^Td = 0$
+\end{itemize}
+
+\subsection{KKT}
+\textbf{Teorema previo.} $x^*$ es regular en la superficie de $S$ definida por $c(x)=0 \implies T=M$ \\
+\\
+Condiciones KKT:
+\begin{itemize}
+  \item \textbf{Necesarias:}
+	\begin{itemize}
+	  \item Primer orden: $\begin{cases} h(x^*) = 0, g(x^*) \le 0 \\ \nabla_xL(x^*, \lambda^*, \mu^*) = \nabla f(x^*) + \nabla h(x^*)\lambda^* + \nabla g(x^*)\mu^* = 0 \\ \mu^*\geq 0, \mu^{*T}g(x^*) = 0, \quad (g_i \text{ inactiva } \implies \mu^*_i = 0) \end{cases}$
+	  \item Segundo orden: $d^T\nabla^2_{x x} L(x^*, \lambda^*, \mu^*)d \geq 0 \quad \forall d \in M$ 
+	\end{itemize}
+  \item \textbf{Suficientes:}
+	\begin{itemize}
+	  \item Segundo orden: $d^T\nabla^2_{x x}L(x^*, \lambda^*, \mu^*) d > 0 \quad \forall d\in M'$ 
+	\end{itemize}
+\end{itemize}
+
+\subsection{Análisis de sensibilidad}
+Planteamos el problema de programación no lineal:
+\begin{align*}
+  \min f(x) & \\
+  \text{s.a.  } h(x) &= \varepsilon \quad (h_i(x) = \varepsilon_i) \\
+  g(x) &\le \delta \quad (g_j(x)\le  \delta_j)
+\end{align*}
+Si la solución para $\varepsilon = \delta = 0$ es  $x^*$ regular y  $\lambda^*, \mu^*$ satisfacen KKT, entonces $\forall (\varepsilon, \delta) \in \mathcal{E}_{(0, 0)}$ hay una solución $x^*\varepsilon, \delta)$ tal que:
+\begin{align*}
+  x^*(0, 0) &= x^* \\
+  \nabla _\epsilon f(x(\epsilon, \delta))|_{(0, 0)} &= -\lambda^* \\
+  \nabla _\delta f(x(\epsilon, \delta))|_{(0,0)} &= -\mu^*
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}

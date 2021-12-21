@@ -3,6 +3,7 @@
 \usepackage{array}
 \usepackage{fancyvrb}
 \usepackage{multicol}
+\usepackage{centernot}
 
 \usepackage[utf8]{inputenc}
 \usepackage{mathtools}
@@ -29,7 +30,7 @@
 \newcommand{\cond}[1]{\text{cond(} #1 \text{)}}
 \renewcommand{\th}{\textbf{Th:} \ }
 \newcommand{\h}{\hspace{1em}}
-\newcommand{\R}{\mathbb{R}}
+\newcommand{\R}{\mathcal{R}}
 
 \renewcommand{\phi}{\varphi}
 
@@ -389,7 +390,10 @@ Con este principio podemos dualizar los teoremas proyectivos que ya conocemos co
 
 
 
-\section{Proyecciones}
+\section{Proyectividades}
+
+\subsection{Proyectividades}
+Una proyectividad es una aplicación $f:\P \to \P'$ inducida por un isomorfismo  $\varphi:E\to E'$ tal que  $f=[\varphi]$. En particular una homografía es una proyectividad $f:\P\to \P$
 
 \subsection{Propiedades}
 Propiedades de las vlp:
@@ -404,10 +408,62 @@ Propiedades de las vlp:
 \end{itemize}
 Propiedades de las referencias:
 \begin{itemize}
-    \item Si $\R = \{x\}$
+    \item Si $\R = \{p_0, \ldots, p_n; U\} \implies f(\R)=\{f(p_0), \ldots, f(p_n); U\}$ es referencia
+	\item Si $e$ es base adaptada a $\mathcal{R} \implies \phi(e)$ base adaptada a $f(\mathcal{R})$ 
+	\item $q_1, q_2, q_3, q_4$ alineados en $\P \implies$ $f(q_1), f(q_2), f(q_3), f(q_4)$ alineados y $(q_1, q_2, q_3, q_4) = (f(q_1), f(q_2), f(q_3), f(q_4))$
+	\item La proyectividad queda determinada por la imagen de la base.
 \end{itemize}
+
+\subsection{Implicaciones}
+Colineación $\centernot\implies$ Proyectividad \\
+En $\P^1$  $f$ proyectividad  $\iff f$ conserva la razón doble. \\
+$f:\P \to \P'$ biyectiva  $\dim\P \ge 1$. $f$ proyectividad  $\iff$  $\begin{cases}
+  f \text{ colineación} \\
+  f \text{ conserva razón doble}
+\end{cases}$
+
+\subsection{Matriz de una Proyectividad}
+Tenemos que $M_{\mathcal{R}, \mathcal{R}'} = [M_{u, v}(\varphi )]$ donde $[M] = [\lambda M]\ \forall \lambda\ \neq 0$ \\
+\\
+Propiedades
+\begin{itemize}
+  \item $M_{\mathcal{R}, \mathcal{R}''}(g\circ f)=M_{\mathcal{R}', \mathcal{R}''}(g)M_{\mathcal{R}, \mathcal{R}'}(f)$
+  \item $M_{\mathcal{R}', \mathcal{R}}(f^{-1}) = m_{\mathcal{R}, \mathcal{R}'}(f)^{-1}$ 
+  \item $M_{\mathcal{S}, \mathcal{S}'}(f) = M_{\mathcal{R}', \mathcal{S}'}M_{\mathcal{R}, \mathcal{R}'}(f) M_{\mathcal{S}, \mathcal{R}}$
+\end{itemize}
+
+\subsection{Clasificación de proyectividades}
+Clasificaremos las proyectividades respecto a su forma de Jordan como relación de equivalencia. $f\sim g \iff$
+el edificio de Jordan es el mismo. \\
+\\
+Se demuestra que si $L = [F]$ es $f$-invariante $\implies$ $[\rho^{-1}(F^\perp)]$ es invariante.\\
+\\
+\begin{itemize}
+  \item \textbf{Homologías} de eje $H$ hiperplano es una homografía  $f$ que deja fijo  $H$ y tiene un único punto fijo $p_H$. Además toda recta por $p_H$ es invariante.
+	 \begin{itemize}
+	  \item $p_H\notin H \implies$ homología general. $m_\varphi(t) = (t-a)(t-b)$
+	  \item $p_H\in H \implies$ homología especial. $m_\varphi (t) = (t-a)^2$
+	\end{itemize}
+\end{itemize}
+
+Toda homografía es composición de homologías.
+
+
 
 
 \section{Cuádricas}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}
