@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1639919105 "Multi.tex" "Multi.pdf" "Multi" 1639919106
+["pdflatex"] 1639919105 "Multi.tex" "Multi.pdf" "Multi" 1640198485
   "/home/abeldm3108/texmf/tex/latex/myclass.cls" 1638476637 285 799278343d07b6732daec6fe85486260 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1617738065 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1617738065 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -198,13 +198,13 @@
   "Jordan.png" 1638482362 6845 38cb2de29683815452388416e9fa5047 ""
   "Multi.aux" 1639919106 4832 303730673d7f2c276f6a935738d24edb "pdflatex"
   "Multi.out" 1639919106 5113 72236d68fb0b198f1d6a971b12914954 "pdflatex"
-  "Multi.tex" 1639919097 19102 9eb520686dfb5d93f8a244d0f6bdc002 ""
+  "Multi.tex" 1639933430 19102 9eb520686dfb5d93f8a244d0f6bdc002 ""
   "Multi.toc" 1639919106 2754 d0b29097303d6412e433643d6d0935bc "pdflatex"
   "figures//ProyectivoVisual.pdf" 1638795350 2255 f35f83d60254639ab38c1e544ce82e4c ""
   "figures/ProyectivoVisual.pdf_tex" 1638795350 3411 a69e757f2e15f3213622ac2f3f166869 ""
   (generated)
-  "Multi.out"
-  "Multi.toc"
-  "Multi.log"
-  "Multi.aux"
   "Multi.pdf"
+  "Multi.toc"
+  "Multi.aux"
+  "Multi.log"
+  "Multi.out"

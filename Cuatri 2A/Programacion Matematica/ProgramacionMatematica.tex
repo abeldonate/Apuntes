@@ -226,7 +226,55 @@ Factibilidad Dual $\implies r'_N = c'_N - c_B B^{-1} A_N = c'_N - \lambda' A_N \
 \\
 Si una solución es factible primal y dual, entonces es óptima. 
 
-\subsection{Programación Lineal Entera (PLE)}
+\section{Programación Lineal Entera (PLE)}
+Un problema de Programación Lineal Entera (PLE) es un problema de Programación Lineal donde algunas variables solo pueden tomar valores enteros. \\
+\\
+Definimos la Relajación Lineal (RL) como el problema de PL asociado al PLE donde hacemos las variables enteras reales.\\
+\\
+Tenemos las siguientes implicaciones:
+\begin{itemize}
+  \item RL óptimo $\implies$ PLE $\begin{cases}
+   \text{óptimo} \\
+   \text{infactible}   
+  \end{cases}$
+\item RL infactible $\implies$ PLE infactible
+\item RL ilimitado $\implies$ PLE $\begin{cases}
+  \text{óptimo (no si } A \text{ tiene coeficientes racionales)} \\
+  \text{infactible} \\
+  \text{ilimitado}
+\end{cases}$
+\end{itemize}
+\subsection{Branch and Bound}
+Definimos $K_{PEi}$ como una partición disjunta de PE menores tal que la suma es $PE$. Trivialmente se cumple:
+\begin{itemize}
+  \item $x^*_{PE} = x^*_{PE} \iff i = argmin{c'x^*_{PEi}}$ 
+  \item $K_{PE} = \emptyset \implies K_{PEi} = \emptyset$
+  \item $z_{PE}^*\to -\infty \iff \exists i: \ z_{PEi}^*\to \infty$
+  \item Podemos anidar las separaciones creando problemas PE más pequeños.
+\end{itemize}
+
+\subsubsection{Algoritmo del Branch and bound}
+Sea un PE con $L =$ {PE}, $k=1, z^* = \infty, z_{PE1}^*=-\infty$ \\
+Mientras que $L\neq \emptyset$:
+\begin{itemize}
+  \item Seleccionamos un problema $PEj\in L$
+  \item Resolvemos  $RLj \implies x^*_{RLj}, z^*_{PEj}\leftarrow z^*_{RLj}$
+  \item Si ($PLj$ es ilimitado)  ó  ($K_{RLj} = \emptyset $)  ó  ($z^*_{PEj} \ge  z^*$)  ó  ($x^*_{RLj}\in K_{PEj}$) :
+	\begin{itemize}
+	  \item $L \leftarrow L-\{PEj\}$
+	  \item Si $x^*_{RLj}\in K_{PEj}$:
+		\begin{itemize}
+		  \item Si $z_{RLj}^* \le z^* \implies x^* \leftarrow x^*_{RLj}, z^* \leftarrow z^*_{RLj}$
+		  \item Si $z^*\le z^*_{PEi}$ para algún $PEi$  \textbf{cosas a completar}
+		\end{itemize}
+	\end{itemize}
+  \item Si no:
+	\begin{itemize}
+	  \item Separamos $PEj = PE(k+1)\cup PE(k+2)$
+	  \item 
+	\end{itemize}
+\end{itemize}
+
 
 \section{Optimización no lineal}
 \subsection{Formulación general}

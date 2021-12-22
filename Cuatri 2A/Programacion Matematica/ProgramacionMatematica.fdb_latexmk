@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1640090601 "ProgramacionMatematica.tex" "ProgramacionMatematica.pdf" "ProgramacionMatematica" 1640090602
+["pdflatex"] 1640194376 "ProgramacionMatematica.tex" "ProgramacionMatematica.pdf" "ProgramacionMatematica" 1640194377
   "/home/abeldm3108/texmf/tex/latex/myclass.cls" 1638476637 285 799278343d07b6732daec6fe85486260 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1617738065 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1617738065 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -180,13 +180,13 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1617738065 39911 2da6c67557ec033436fe5418a70a8a61 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1639779069 5045527 a0ef06d06af438d62994481e52c2af5f ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1639779058 2812674 06b448f337b1f8b137f093429bb0f966 ""
-  "ProgramacionMatematica.aux" 1640090602 4666 3558d290b6ba1693f720fab925841c24 "pdflatex"
-  "ProgramacionMatematica.out" 1640090602 5231 56f258e1686a8f31e68b00c035a98638 "pdflatex"
-  "ProgramacionMatematica.tex" 1640090600 16599 d441f43a012ae464c456d816032d15ad ""
-  "ProgramacionMatematica.toc" 1640090602 2709 203dab4b2dc251c40cd7fd59e7126d4a "pdflatex"
+  "ProgramacionMatematica.aux" 1640194377 4926 3704b5399895cfa1bcf446771a8c3acf "pdflatex"
+  "ProgramacionMatematica.out" 1640194377 5591 80db7f59647abab0238873d49c7877cb "pdflatex"
+  "ProgramacionMatematica.tex" 1640194368 18538 d0323d2efb101842dd7ec6c255e3c981 ""
+  "ProgramacionMatematica.toc" 1640194377 2887 e5de9bde9e356fc48c95f1708c6ab34a "pdflatex"
   (generated)
-  "ProgramacionMatematica.log"
-  "ProgramacionMatematica.pdf"
-  "ProgramacionMatematica.toc"
   "ProgramacionMatematica.out"
   "ProgramacionMatematica.aux"
+  "ProgramacionMatematica.log"
+  "ProgramacionMatematica.toc"
+  "ProgramacionMatematica.pdf"
