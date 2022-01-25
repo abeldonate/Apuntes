@@ -203,7 +203,42 @@ $$
 $$
 Siendo $\alpha$ la difusividad térmica del medio
 
+\section{Aplicaciones del Primer Principio}
+\subsection{Relación de Mayer generalizada}
+\[
+  \left( \frac{\partial U}{\partial T} \right)_v = C_v , \quad \left( \frac{\partial H}{\partial T} \right)_p=C_p \implies C_p=C_v + \left( \left( \frac{\partial U}{\partial V} \right)_T + p  \right)V\alpha 
+\] 
+\subsection{Experimento Joule-Gay Lussac}
+Expansión de un gas hacia otro recipiente inicialmente en vacío. Se cumple:
+\[
+\Delta U = 0, \quad \Delta T=0, \left( \frac{\partial U}{\partial V}_T \right) =0
+\] 
 
+\subsection{Experimento de Joule-Kelvin}
+El proceso se trata de una expansión adiabática irreversible a través de una membrana. En un proceso de Joule-Kelvin se cumple:
+\[
+dH=0 
+\] 
+\subsection{Calores molares en un gas ideal}
+Sabemos por la relación de Mayer que $C_p = C_V + nR$
+ \begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+ & $c_V$ & $c_P$ \\
+\hline 
+  Gases monoatómicos & $\quad \frac{3}{2}R\quad$ & $\quad \frac{5}{2}R\quad$ \\
+  \hline
+  Gases diatómicos & $\quad\frac{5}{2}R\quad$ & $\quad\frac{7}{2}R\quad$ \\
+  \hline
+
+\end{tabular}
+\end{center}
+
+\subsection{Transformación adiabática}
+En una transformación adiabática reversible tenemos:
+\[
+dU = -pdV, \quad pv^\gamma=cte
+\] 
 
 \section{Máquinas térmicas y Segundo Principio}
 \subsection{Máquinas térmicas}
@@ -223,13 +258,14 @@ Una \textbf{Máquina térmica} es un dispositivo de funcionamiento cíclico que 
 \end{multicols}
 Podemos definir la eficiencia de una máquina frigorífica y de una bomba térmica como
 \[
-\mathcal{E}_{MF} = \frac{Q_2}{|W|} = \frac{Q_2}{|Q_1+ Q_2|}, \qquad \mathcal{E}_{BT} = \frac{Q_1}{|W|} = \frac{Q_1}{|Q_1+ Q_2|}
+\mathcal{E}_{MF} = \frac{Q_2}{|W|} = \frac{T_2}{|T_1- T_2|}, \qquad \mathcal{E}_{BT} = \frac{Q_1}{W} = \frac{T_1}{T_1- T_2}
 \]
+Donde las segundas igualdades se cumplen si y solo si el proceso es reversible
 
 \subsection{Segundo principio}
 Dos enunciados equivalentes del segundo principio:
 \begin{itemize}
-    \item \textbf{Kelvin-Planck:} $\nexists$ máquina térmica con $\nu = 1$
+    \item \textbf{Kelvin-Planck:} $\nexists$ máquina térmica con $\eta = 1$
     \item \textbf{Clausius:} $\nexists$ $\begin{cases}
     \text{bomba térmica} \\
     \text{máquina frigorífica}
@@ -327,6 +363,7 @@ jaja, ni puta idea
 \subsection{Ecuaciones $TdS$}
 
 
+\section{Transiciones de fase}
 
 
 
@@ -343,3 +380,4 @@ jaja, ni puta idea
 
 
 \end{document}
+

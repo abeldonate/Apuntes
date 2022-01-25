@@ -16,10 +16,13 @@
 \contentsline {section}{\numberline {4}One-electron Atoms}{3}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Previous considerations}{3}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}TDSE in 3D}{4}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Interpretation}{4}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Probability densities}{4}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.3}Quantum numbers}{4}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Probability densities}{5}{subsection.4.4}%
 \contentsline {subsection}{\numberline {4.5}Angular Momentum and Spin}{5}{subsection.4.5}%
 \contentsline {subsection}{\numberline {4.6}Magnetic Fields}{5}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Transition and selection rules}{5}{subsection.4.7}%
 \contentsline {section}{\numberline {5}Elementary Particles}{5}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Two particles system}{5}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Exclusion Principle}{5}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.2}Exclusion Principle}{6}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Multielectron Atoms}{6}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Combined Spin states}{6}{subsection.6.1}%

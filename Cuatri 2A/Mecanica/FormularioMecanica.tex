@@ -255,15 +255,15 @@ m\ddot{x} = -kx -b \dot{x} \implies \ddot{x} + 2 \gamma \dot{x} + \omega_0^2x = 
 \] 
 Forzados:
  \[
-m \ddot{x} + kx = F_0\cos(\Omega t) \implies  x = A\cos(\Omega t),  A = \frac{F_0 / m}{\omega_0^2 -\Omega^2}
+m \ddot{x} + kx = F_0\cos(\Omega t) \implies x =  A\cos(\omega_0 t + \delta)  + \frac{F_0 / m}{\omega_0^2 -\Omega^2}\cos(\Omega t)
 \] 
 Si hay resonancia ($\Omega = \omega_0$):
 \[
-x = \frac{F_0/m}{2\omega_0}t\sin(\omega_0t)
+x = \frac{F_0/m}{2\omega_0}t\cos(\omega_0t)
 \] 
 Forzados y amortiguados:
  \[
-m \ddot{x} + b\ddot{x} kx = F_0\cos(\Omega t) \implies x =  A\cos(\Omega t),  A = \frac{F_0 / m}{\omega_0^2 -\Omega^2}
+m \ddot{x} +b\dot{x}+ kx = F_0\cos(\Omega t) \implies x =  \frac{F_0/m}{\sqrt{(\omega_0^2-\Omega^2)^2 + 4\gamma^2\Omega^2}} \cos(\Omega t - \delta), \quad \tan \delta = \frac{2\gamma \Omega}{\omega_0^2 - \Omega^2}
 \] 
 La expresión general para un oscilador con fricción y forzado es:
  \[

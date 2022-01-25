@@ -1,14 +1,16 @@
 \documentclass{myclass}
 \usepackage{verbatim}
 \usepackage{array}
-%\usepackage{minted}
+\usepackage{listings}
 \usepackage{fancyvrb}
-%\usemintedstyle{murphy}
 
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
 \usepackage{multicol}
 \usepackage{mathtools}
 \usepackage{amsmath}
+\usepackage{wrapfig}
 \usepackage{amssymb}
 \usepackage{amsmath,amsfonts,amssymb,amsthm,epsfig,epstopdf,titling,url,array}
 \usepackage{hyperref}
@@ -17,19 +19,24 @@
 \usepackage{tikz}
 \usepackage{graphicx}
 
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+
 \newcommand{\incfig}[1]{%
   \def\svgwidth{0.9\columnwidth}
   \import{./figures/}{#1.pdf_tex}
 }
 
 \newcommand{\incimg}[1]{%
-    \includegraphics[width=0.9\columnwidth]{images/#1}
+\includegraphics[width=0.9\columnwidth]{images/#1}
 }
 
-\newcommand{\norm}[1]{\lvert \lvert #1 \rvert \rvert }
-\newcommand{\cond}[1]{\text{cond(} #1 \text{)}}
-\renewcommand{\th}{  Th:  \ }
-\newcommand{\h}{\hspace{1em}}
+
+\pdfsuppresswarningpagegroup=1
 
 \newcommand{\algo}[2]{\boxed{\textbf{Algoritmo: }\textit{#1} \quad \mathcal{O}(#2)}}
 
@@ -72,8 +79,7 @@ T(n) = aT(n-c) + g(n), \ g(n) = \Theta(n^k) \implies T(n)=
 \Theta(n^{k+1}) &\text{ si } a=1 \\
 \Theta(a^{\frac{n}{c}}) &\text{ si } a>1
 \end{cases}
-$$
-\textbf{Teorema de las recurrencias divisorias}
+$$ \textbf{Teorema de las recurrencias divisorias}
 $$
 T(n) = aT\left(\frac{n}{b}\right) + g(n), \ g(n) = \Theta(n^k), \ \alpha = \log_ba \implies T(n)=
 \begin{cases}
@@ -83,9 +89,56 @@ T(n) = aT\left(\frac{n}{b}\right) + g(n), \ g(n) = \Theta(n^k), \ \alpha = \log_
 \end{cases}
 $$
 
+\subsection{Divide y vencerás}
+La idea de divide y vencerás es computar subproblemas por separado y luego mezclarlos. Iterando el proceso podemos conseguir algoritmos más eficientes. \\
+\\
+\algo{Mergesort}{n\log n}\\
+Este es el ejemplo por excelencia. Para ordenar un vector podemos dividirlo en dos y ordenar cada una de sus partes. Luego juntamos los elementos. Repetimos este algoritmo recursivamente con cada parte. \\
+\\
+\algo{Exponenciación rápida}{\log n}\\
+Para calcular $a^n$ podemos calcular  $a^{\frac{n}{2}}$ recursivamente y multiplicarlo. Iterando llegamos a este algoritmo de coste $\log n$\\
+\\
+\algo{Karatsuba-Offmann para producto de dos números}{n^{\log_23}}\\
+Podemos multiplicar dos números $x, y$ (binarios) de la siguiente forma:\\
+Sea $x=a\times 2^{\frac{n}{2}} + b, y = c\times 2^{\frac{b}{2}} + d \implies xy = [(a+b)(c+d) - ac - bd]\times 2^{\frac{n}{2}} + ac\times 2^n + bd$, que solo son 3 operaciones. \\
+\\
+\algo{Algoritmo de Strassen para multiplicación de matrices cuadradas}{n^{\log_27}}\\
+Para multiplicar $AB$ dividimos las matrices de la manera indicada, y solo tenemos que realizar 7 productos.
+\[
+  AB = \begin{pmatrix} A_1 & A_2 \\ A_3 & A_4 \end{pmatrix}  \begin{pmatrix} B_1 & B_2 \\ B_3 & B_4 \end{pmatrix} 
+\] 
+\algo{Fibonacci}{\log n}\\
+Podemos reescribir la recurrencia como:
+\[
+  \begin{pmatrix} F_{k+1} \\ F_{k} \end{pmatrix} = \begin{pmatrix} 1&1\\1&1 \end{pmatrix}^k \begin{pmatrix} 1  \\ 0 \end{pmatrix} 
+\] 
+Y resolver la exponenciación de matrices con una exponenciación rápida.
+
+
+
+
 \section{Algoritmos de ordenación}
 
 \subsection{Sin cotas}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+ & \textbf{Coste Peor} & \textbf{Coste Mejor} & \textbf{Coste Medio} & \textbf{In-Situ} & \textbf{Estable} \\
+ \hline
+  \textbf{Selection} & $\theta(n^2)$ & $\theta(n^2)$ & $\theta(n^2)$ & SI & NO \\
+ \hline
+  \textbf{Insertion} & $\theta(n^2)$ & $\theta(n)$ & $\theta(n^2)$ & SI & SI \\
+ \hline
+  \textbf{Merge} & $\theta(n\log n)$ & $\theta(n\log n)$ & $\theta(n \log n)$ & NO & \\
+ \hline
+  \textbf{Quick} & $\theta(n^2)$ & $\theta(n\log n)$ & $\theta(n\log n)$ & SI & NO \\
+ \hline
+  \textbf{Bubble} & $\theta(n^2)$ & $\theta(n^2)$ & $\theta(n^2)$ & SI & SI \\
+ \hline
+  \textbf{Heap} & $\theta(n\log n)$ & $\theta(n\log n)$ & $\theta(n\log n)$ & SI & NO \\
+ \hline
+\end{tabular}
+\end{center}
 
 \subsection{Acotadas}
 Podemos ordenarlos en tiempo lineal si sabemos que los números serán enteros en $[0,\ldots, k]$
@@ -95,13 +148,13 @@ Podemos ordenarlos en tiempo lineal si sabemos que los números serán enteros e
   \item Empezamos por el final de \code{B} y si la diferencia con el anterior es $\ge 1 \implies $ \code{C[x]- -; B[x]++}. Si es $0$, miramos el anterior.
 \end{itemize}
 
-\subsection{Radix-sort}
+\subsubsection{Radix-sort}
 \begin{itemize}
   \item En cada iteración ordenamos por el $i$-ésimo dígito con counting sort.
   \item Como counting sort es estable, terminamos con el vector ordenado.
 \end{itemize}
 
-\subsection{Bucket-sort}
+\subsubsection{Bucket-sort}
 Se realiza sobre una distribución uniforme del intervalo $[0, 1)$
 \begin{itemize}
   \item Dividimos el intervalo en subintervalos de la misma longitud llamados buckets.
@@ -112,7 +165,7 @@ Se realiza sobre una distribución uniforme del intervalo $[0, 1)$
 \section{Programación dinámica}
 Nos serviremos siempre de la misma estructura. Construiremos una función recursiva que llame a un vector si en la posición de este vector no hay un $-1$, y en caso contrario haga una relación de recursión.
 
-%\inputminted[firstline=10, lastline=15]{cpp}{template_dinamica.cpp}
+\lstinputlisting[language=C++, firstline=1]{codes/template_dinamica.cpp}
 
 \section{Estructuras de datos}
 \subsection{Stacks y Queues}
@@ -134,6 +187,30 @@ Para revertir el orden de la priority\_queue podemos definirla así:
 %\begin{minted}{cpp}
 %priority_queue<int, vector<int>, greater<int>> Q;
 %\end{minted}
+
+\subsection{Maxheap}
+Una un maxheap es una estructura de datos similar a un vector con un orden parcial. Si lo visualizamos como un árbol binario se cumple que los hijos siempre son $\ge $ que los padres.\\
+\\
+Las operaciones básicas son:
+\begin{itemize}
+  \item \textbf{Inesrción:} Insertamos el elemento en la primera hoja disponible y hacemos un Heapyfy
+  \item \textbf{Borrado:} Cambiamos el primer elemento (la raíz) por el último y hacemos un Heapyfy.
+\end{itemize}
+Vemos como hacer la inserción del número $60$:\\
+\\
+\incfig{HeapInsertion}
+
+\subsection{Árboles AVL}
+Un AVL es un árbol binario balanceado (la diferencia de alturas entre cualesquiera dos hijos es $\le 1$). Podemos balancear cualquier árbol binario para convertirlo en un AVL con las siguientes operaciones llamadas rotaciones. Distinguimos tres tipos: \\
+\\
+\incfig{LLRotation}
+\\
+\begin{multicols}{2}[\columnsep2em]
+\noindent
+Vemos ahora como aplicarlo a un árbol general cuando $A, B, C$ están desbalanceados y hay que hacer una rotación sobre ellos
+\columnbreak
+\incfig{Rotation}
+\end{multicols}
 
 \subsection{Tablas de Hash}
 
@@ -181,7 +258,7 @@ Cuando tenemos un grafo ponderado podemos utilizar Dikjstra para encontrar el ca
 \\
 \algo{Dikjstra}{m + n\log n}
 \begin{itemize}
-    \item Consideramos el vector GP. Construimos los vectores sobre los nodos \code{dist, father} y la priority queue de distancias \code{q}
+    \item Consideramos el vector GP. Construimos los vectores sobre los nodos \code{dist, father} y la priority queue de distancias \code{q}. Inicializamos las distancias a \code{INF}.
     \item Inicializamos \code{dist[ini]=0, q.push(P(0, ini))}
     \item \code{while(not q.empty())} seleccionamos el nodo de la \code{q} con menos distancia. Si esa distancia es igual a \code{dist} $\implies$ para cada nodo adyacente:
     \begin{itemize}
@@ -302,6 +379,18 @@ Podemos replantear el problema añadiendo los nodos $s$ y $t$ tal y las aristas 
 \end{multicols}
 \noindent
 La pregunta es si $P=NP$ o  $P\neq NP$. En función de la respuesta tenemos los dos tipos de diagramas de Venn.
+
+\subsubsection{Ejemplos de Problemas NP-completos}
+\begin{itemize}
+  \item \textbf{3-SAT} Problema de decisión booleana. Similar al 2-SAT visto en la sección de algoritmos, pero con 3 variables en cada cláusula
+  \item \textbf{Knapsack} Dados unas cantidades de diferentes objetos, sus pesos y su valor, buscar el máximo de valor que se pueden meter en una mochila con capacidad de peso máxima dada.
+  \item \textbf{Subset Sum} dado un conjunto de números buscar un subconjunto de ellos que sume un determinado número
+  \item \textbf{Camino Hamiltoniano} Buscar un camino Hamiltoniano (que pase por todos los vértices una sola vez) en un grafo
+  \item \textbf{Clique} Buscar cliques (subgrafos completos) en un grafo
+  \item \textbf{Subgraph isomorphism} dados dos grafos $G_1, G_2$ ver si algún subgrafo de $G_1$ es isomorfo a $G_2$
+  \item \textbf{Vertex covering} Buscar el covering (subconjunto de vértices tal que toda arista tiene al menos un vértice en el) mínimo en un grafo
+  \item \textbf{Graph coloring} Mínimo numero de colores con el que se puede colorear un grafo
+\end{itemize}
 \subsection{Teorema de Gödel}
 Problema de la parada
 \subsection{Jocs imparcials}
@@ -312,6 +401,15 @@ nim(x) = \min \ n\not\in \{nim(X') : X\to X'\}
 Se cumple $nim(x\oplus y) = nim(x) \wedge nim(y)$ donde $\wedge$ es la operación exclusive or.\\
 \\
 $p(x)$
+
+\section{Apéndice de los códigos en C++}
+
+\lstinputlisting[language=C++, firstline=1]{codes/AlgoritmosGrafos.cpp}
+
+
+
+
+
 
 
 

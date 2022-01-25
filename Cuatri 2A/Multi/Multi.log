@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.12.17)  19 DEC 2021 14:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.12.17)  1 JAN 2022 21:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -720,18 +720,18 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 52.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./Multi.toc)
+) (./Multi.toc [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
 \tf@toc=\write6
 \openout6 = `Multi.toc'.
 
- [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+ [2]
 Underfull \hbox (badness 10000) in paragraph at lines 63--67
 
  []
 
-<Jordan.png, id=186, 498.36188pt x 355.3275pt>
+<Jordan.png, id=262, 498.36188pt x 355.3275pt>
 File: Jordan.png Graphic file (type png)
 <use Jordan.png>
 Package pdftex.def Info: Jordan.png  used on input line 76.
@@ -751,7 +751,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 113--115
 
  []
 
-[2 <./Jordan.png (PNG copy)>]
+[3 <./Jordan.png (PNG copy)>]
 Underfull \hbox (badness 10000) in paragraph at lines 128--136
 
  []
@@ -767,138 +767,241 @@ Underfull \hbox (badness 10000) in paragraph at lines 142--147
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 183--187
+Underfull \hbox (badness 10000) in paragraph at lines 149--153
 
  []
 
-[3]
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 188--192
 
-Package amsfonts Warning: Obsolete command \frak; \mathfrak should be used instead on input line 188.
+ []
 
-LaTeX Font Info:    Trying to load font information for U+euf on input line 188.
+
+Package amsfonts Warning: Obsolete command \frak; \mathfrak should be used instead on input line 193.
+
+LaTeX Font Info:    Trying to load font information for U+euf on input line 193.
 (/usr/share/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-Underfull \hbox (badness 10000) in paragraph at lines 231--240
+Underfull \hbox (badness 10000) in paragraph at lines 236--239
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 231--240
+Underfull \hbox (badness 10000) in paragraph at lines 236--239
 
  []
 
-[4] (./figures/ProyectivoVisual.pdf_tex
-<./figures//ProyectivoVisual.pdf, id=212, page=1, 399.56592pt x 286.97322pt>
+[5] (./figures/ProyectivoVisual.pdf_tex
+<./figures//ProyectivoVisual.pdf, id=286, page=1, 399.56592pt x 286.97322pt>
 File: ./figures//ProyectivoVisual.pdf Graphic file (type pdf)
 <use ./figures//ProyectivoVisual.pdf, page 1>
 Package pdftex.def Info: ./figures//ProyectivoVisual.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 194.83421pt x 139.93062pt.
-<./figures//ProyectivoVisual.pdf, id=213, page=2, 399.56592pt x 286.97322pt>
+<./figures//ProyectivoVisual.pdf, id=287, page=2, 399.56592pt x 286.97322pt>
 File: ./figures//ProyectivoVisual.pdf Graphic file (type pdf)
 <use ./figures//ProyectivoVisual.pdf, page 2>
 Package pdftex.def Info: ./figures//ProyectivoVisual.pdf , page2 used on input line 63.
 (pdftex.def)             Requested size: 194.83421pt x 139.93062pt.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 279--282
+Underfull \hbox (badness 10000) in paragraph at lines 278--281
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 284--289
+Underfull \hbox (badness 10000) in paragraph at lines 283--288
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 284--289
+Underfull \hbox (badness 10000) in paragraph at lines 283--288
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 296--299
-
- []
-
-[5 <./figures//ProyectivoVisual.pdf> <./figures//ProyectivoVisual.pdf
+[6 <./figures//ProyectivoVisual.pdf> <./figures//ProyectivoVisual.pdf
 
 pdfTeX warning: pdflatex (file ./figures//ProyectivoVisual.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 327--334
+Underfull \hbox (badness 10000) in paragraph at lines 295--298
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 327--334
+Underfull \hbox (badness 10000) in paragraph at lines 326--333
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 327--334
+Underfull \hbox (badness 10000) in paragraph at lines 326--333
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 338--339
-
- []
-
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 364--366
+Underfull \hbox (badness 10000) in paragraph at lines 326--333
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 364--366
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 385--389
+Underfull \hbox (badness 10000) in paragraph at lines 337--338
 
  []
 
 [7]
-Overfull \hbox (48.95854pt too wide) in paragraph at lines 413--414
+Underfull \hbox (badness 10000) in paragraph at lines 363--365
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 363--365
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--388
+
+ []
+
+[8]
+Overfull \hbox (48.95854pt too wide) in paragraph at lines 412--413
 []$\OML/cmm/m/it/10 q[]; q[]; q[]; q[]$ \OT1/cmr/m/n/10 alin-ea-dos en $\U/msb/m/n/10 P  \OT1/cmr/m/n/10 =[]\OMS/cmsy/m/n/10 ) $ $\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 q[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 q[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 q[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 q[]\OT1/cmr/m/n/10 )$ alin-ea-dos y $(\OML/cmm/m/it/10 q[]; q[]; q[]; q[]\OT1/cmr/m/n/10 ) = (\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 q[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 q[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 q[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 q[]\OT1/cmr/m/n/10 ))$ 
  []
 
+(./figures/Perspectividad.pdf_tex
+<./figures//Perspectividad.pdf, id=303, page=1, 428.41449pt x 288.29686pt>
+File: ./figures//Perspectividad.pdf Graphic file (type pdf)
+<use ./figures//Perspectividad.pdf, page 1>
+Package pdftex.def Info: ./figures//Perspectividad.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 122.30173pt x 82.30182pt.
+<./figures//Perspectividad.pdf, id=304, page=2, 428.41449pt x 288.29686pt>
+File: ./figures//Perspectividad.pdf Graphic file (type pdf)
+<use ./figures//Perspectividad.pdf, page 2>
+Package pdftex.def Info: ./figures//Perspectividad.pdf , page2 used on input line 62.
+(pdftex.def)             Requested size: 122.30173pt x 82.30182pt.
+)
+Overfull \hbox (2.2222pt too wide) in paragraph at lines 429--441
+$[]$ $[]$
+ []
 
-Underfull \hbox (badness 10000) in paragraph at lines 426--429
+(./figures/HomologiaGeneral.pdf_tex
+<./figures//HomologiaGeneral.pdf, id=305, page=1, 405.97772pt x 234.68277pt>
+File: ./figures//HomologiaGeneral.pdf Graphic file (type pdf)
+<use ./figures//HomologiaGeneral.pdf, page 1>
+Package pdftex.def Info: ./figures//HomologiaGeneral.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 122.30173pt x 70.69542pt.
+)
+Overfull \hbox (2.2222pt too wide) in paragraph at lines 443--453
+$[]$ $[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 455--460
+
+ []
+
+[9 <./figures//Perspectividad.pdf> <./figures//Perspectividad.pdf
+
+pdfTeX warning: pdflatex (file ./figures//Perspectividad.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./figures//HomologiaGeneral.pdf
+
+pdfTeX warning: pdflatex (file ./figures//HomologiaGeneral.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+Underfull \hbox (badness 10000) in paragraph at lines 463--466
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 436--441
+Underfull \hbox (badness 10000) in paragraph at lines 474--479
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 436--441
+Underfull \hbox (badness 10000) in paragraph at lines 474--479
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 436--441
+Underfull \hbox (badness 10000) in paragraph at lines 474--479
 
  []
 
-[8] (./Multi.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 483--490
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 483--490
+
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 496.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 496.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 496.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 514.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 514.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 514.
+
+
+Overfull \hbox (25.13022pt too wide) in paragraph at lines 517--536
+ [] 
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 544--549
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 544--549
+
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 566.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 566.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 566.
+
+[11] [12] (./Multi.aux)
 Package rerunfilecheck Info: File `Multi.out' has not changed.
-(rerunfilecheck)             Checksum: 72236D68FB0B198F1D6A971B12914954;5113.
+(rerunfilecheck)             Checksum: DB026DC66C2221AEF824265CF4740CF8;7624.
  ) 
 Here is how much of TeX's memory you used:
- 21963 strings out of 478994
- 389678 string characters out of 5864750
- 695761 words of memory out of 5000000
- 38965 multiletter control sequences out of 15000+600000
- 412981 words of font info for 64 fonts, out of 8000000 for 9000
+ 22019 strings out of 478994
+ 391028 string characters out of 5864750
+ 712785 words of memory out of 5000000
+ 38997 multiletter control sequences out of 15000+600000
+ 413689 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 87i,12n,89p,464b,394s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Multi.pdf (8 pages, 243425 bytes).
+ 87i,14n,89p,464b,397s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on Multi.pdf (12 pages, 266999 bytes).
 PDF statistics:
- 308 PDF objects out of 1000 (max. 8388607)
- 273 compressed objects within 3 object streams
- 43 named destinations out of 1000 (max. 500000)
- 292 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 408 PDF objects out of 1000 (max. 8388607)
+ 364 compressed objects within 4 object streams
+ 61 named destinations out of 1000 (max. 500000)
+ 419 words of extra memory for PDF output out of 10000 (max. 10000000)
 

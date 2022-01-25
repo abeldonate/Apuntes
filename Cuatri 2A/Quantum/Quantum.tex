@@ -2,9 +2,6 @@
 
 \usepackage{verbatim}
 \usepackage{array}
-\usepackage{minted}
-\usepackage{fancyvrb}
-\usemintedstyle{murphy}
 
 \usepackage[utf8]{inputenc}
 \usepackage{mathtools}
@@ -35,7 +32,6 @@
 \title{Quantum Physics}
 
 \begin{document}
-\watermark
 \maketitle
 \tableofcontents
 \newpage
@@ -108,7 +104,7 @@ Bohr's posutlates:
     \item Electron emmit radiation when hopping from orbit with frequency $\nu = \frac{E_i-E_f}{h}$
 \end{itemize}
 $$
-mvr = pr = n\hbar, \qquad p = \frac{h}{\lambda} \implies 2\pi \boxed{r=n\lambda}
+mvr = pr = n\hbar, \qquad p = \frac{h}{\lambda} \implies \boxed{2\pi r=n\lambda}
 $$
 Making equal the forces in the orbit
 $$
@@ -133,7 +129,7 @@ $$
 $$
 \textbf{Rydberg's constant}
 $$
-R_\infty = \left( \frac{1}{4\pi \epsiln_0}\right)^2\frac{me^4}{4\pi \hbar^3 c}, \qquad R_M = \frac{\mu}{m}R_\infty 
+R_\infty = \left( \frac{1}{4\pi \epsilon_0}\right)^2\frac{me^4}{4\pi \hbar^3 c}, \qquad R_M = \frac{\mu}{m}R_\infty 
 $$
 
 \subsection{TDSE in 3D}
@@ -174,13 +170,24 @@ $$
 $$
 
 
-\subsection{Interpretation}
+\subsection{Quantum numbers}
 Note that $\Psi$ depends of three parameters 
 \begin{itemize}
     \item Principal $n = 1, 2, 3, \ldots$ (Total Energy)
     \item Azimuthal $l= 0, 1, 2, \ldots, n-1$
     \item Magnetic $m_l = 0, \pm 1,\pm 2 \ldots, \pm l$
 \end{itemize}
+Other quantities appear such as:
+
+\begin{center}
+\begin{tabular}{ccccc}
+  Orbital angular momentum & $L = \sqrt{l(l+1)}\h$ & $\displaystyle \overline{u}_l = -\frac{g_I \mu_b}{\h}\overline{L}$ & $L_z = m_l\h$ & $u_{l_z} = -g_I\mu_b m_l$ \\
+  Spin angular momentum & $S = \sqrt{s(s+1)}\h$ & $ \displaystyle\overline{u}_s = -\frac{g_s \mu_b}{\h}\overline{S}$ & $S_z = m_s\h$ & $u_{s_z} = -g_s\mu_bm_s$ \\
+  Total angular momentum & $J=\sqrt{j(j+1)}\h $ & $\displaystyle\overline{J} = \overline{L} + \overline{S}$ & $J_z = m_j\h$ &  $m_j = m_l + m_s$ 
+\end{tabular}
+\end{center}
+
+Con $g_I = 1, \quad g_s = 2$
 
 \subsection{Probability densities}
 \textbf{Radial Probability density} \\
@@ -209,14 +216,22 @@ We write the magnetic dipole moment as:
 \overline{\mu}_l = -\frac{eL}{2m} =-\frac{g_I\mu_b}{\h}\overline{L} \qquad g_I = 1
 \] 
 \subsection{Magnetic Fields}
-If we introduce a magnetic field, the particle with magnetic moment $u_l$ experiences a torque $\tau = u_l \times B$ and change of potential energy  $\Delta E = -u_l \cdot B$ \\
+The experiment of Stern-Gerlach is as follows: (brief explanation)\\
 \\
-If the field is not uniform:
+Knowing the magnetic field gradient $\displaystyle F_z = \pm \frac{\partial B_z}{\partial z}\mu_b$, the temperature of the oven $T$, and the length of the detector $L$, we can compute the $Z$ deviation by:
 \[
-F_z = \frac{dB_z}{dz} u_l \hat{z}
+\frac{1}{2}v_x^2 = 2k_bT \implies v_x = \sqrt{\frac{4k_bT}{M}} \implies \tau = \frac{L}{v_x} = L\sqrt{\frac{M}{4k_bT}} \implies Z = \frac{1}{2} a_z \tau^2 = \frac{\frac{\partial B_z}{\partial z}\mu_bL^2}{8k_bT}  
 \] 
-The spin is a quantum number that does not come from the resolution of Schrödinger equation, but is added to match the theoretical developement with the experiments. \\
+The spin is a quantum number that does not come from the resolution of Schrödinger equation, but is added to match the theoretical development with the experiments. \\
 The value of the spin can only be $m_s = \pm \frac{1}{2}$
+
+\subsection{Transition and selection rules}
+A transition must obey $\Delta l = \pm 1, \quad \Delta j = 0, \pm 1$ \\
+\\
+We define the electric dipole as $\overline{p} = -e\overline{r}$. If we compute the expected value of $p_{ij} = \int \Psi_i^* er\Psi_jdV$. \\
+Knowing $\Psi(r, \pi-\theta, \varphi  + \pi) = (-1)^l\Psi(r, \theta, \varphi )$ \\
+\\
+The transmission rate is $\displaystyle R = \frac{16\pi^3\nu^3p_{ij}^2}{3 \epsilon_0 h c^3}$
 
 \section{Elementary Particles}
 \subsection{Two particles system}
@@ -246,14 +261,23 @@ In the case that they are confined in an infinite potential well of length $a$ a
 \subsection{Exclusion Principle}
 \textbf{Weak Exclusion Principle:} In a multi-electron atom, there can never be more than 1 electron in the same quantum state\\
 \\
-\textbf{Strong Exclusion Principle:} A system containing several electrons must be described by an antisymmetric eigenfunction \\
+\textbf{Strong Exclusion Principle:} A system containing several electrons (Fermions) must be described by an antisymmetric wave function \\
+\\
+Thus, a multi-electron atom can be described antisymmetric.
 
 
 
 
 
-
-
+\section{Multielectron Atoms}
+\subsection{Combined Spin states}
+If we have a system of 2 particles whose state of spin are $\alpha(), \beta()$ :
+\begin{itemize}
+  \item Symmetric: (Triplet) $\alpha(1)\alpha(2), \quad \beta(1)\beta(2), \quad \frac{1}{\sqrt{2} }\left( \alpha(1)\beta(2) + \alpha(2)\beta(1) \right)  $ \\
+	$s=1, m_s = 1, 0, -1$
+  \item Antisymmetric: (Singlet) $\frac{1}{\sqrt{2} }\left( \alpha(1)\beta(2)-\alpha(2)\beta(1) \right) $ \\
+	$s=0, m_s = 0$
+\end{itemize}
 
 
 

@@ -42,7 +42,7 @@
 \newcommand{\K}{\mathbb{K}}
 \renewcommand{\P}{\mathbb{P}}
 \newcommand{\Rcal}{\mathcal{R}}
-\renewcommand{\A}{\mathbb{A}}
+\renewcommand{\A}{\mathcal{A}}
 \newcommand{\B}{\mathbb{B}}
 
 \title{Álgebra Multilineal}
@@ -130,7 +130,7 @@ $\phi:E\to E$ es \textit{Afín-equivalente} a $\psi:F\to F$ (\textbf{rellenar}) 
 \\
 Si $\mathbb{K} = \mathbb{R} \implies rang(\phi) = rang(\psi), \ i_+(\phi) = i_+(\psi)$ \\
 \\
-\textbf{Proyectivo-equivalente}\\
+\textbf{Proyectiva}\\
 $\phi:E\to E$ es \textit{Proyectivo-equivalente} a $\psi:F\to F$ (\textbf{rellenar}) si existe un isomorfismo $\alpha:E\to F$ y un $\lambda\in \mathbb{K}-\{0\}$ tal que $\psi = \lambda\phi\circ(\alpha^-1\times \alpha^-1)$ \\
 Si $\mathbb{K} = \mathbb{R} \implies rang(\phi) = rang(\psi), \ i(\phi)  i(\psi)$
 
@@ -138,7 +138,7 @@ Si $\mathbb{K} = \mathbb{R} \implies rang(\phi) = rang(\psi), \ i(\phi)  i(\psi)
 \section{Tensores}
 Un \textit{p-q tensor} es un elemento $f$ del espacio vectorial definido como
 $$
-\boxed{\T_p^q(E)=\{E^{\times p}\times (E^*)^{\times q} \to \mathbb{K} \st f \text{ multilineal}\} = \mathcal{L}(E^{p)}, (E^*)^{q)};\mathcal{K})}
+\boxed{\T_p^q(E)=\{ f: E^{\times p}\times (E^*)^{\times q} \to \mathbb{K} \st f \text{ multilineal}\} = \mathcal{L}(E^{p)}, (E^*)^{q)};\mathcal{K})}
 $$
 Los tensores \textit{Covariantes} son los que pertenecen a $\T_p:=\T_p^0$ \\
 Los tensores \textit{Contravariantes} son los que pertenecen a $\T^q:=\T_0^q$ \\
@@ -147,7 +147,12 @@ Podemos escribir la base de un tensor $f\in \T_p^q$ como
 $$
 \mathcal{B}_p^q=\{e^{i_1}\otimes \ldots \otimes e^{i_p}\otimes e_{j_1}\otimes \ldots \otimes e_{j_q} \st i_k, j_k\in [n]\} = \{e^{\otimes I}\otimes e_{\otimes J}\}
 $$
-Observamos que la dimensión de $f$ es $n^{(p+q)}$
+Observamos que la dimensión de $f$ es $n^{(p+q)}$\\
+\\
+Si queremos expresar un tensor $f$ en la base $\mathcal{B}$ sus componentes son:
+\[
+  f= \sum f(e_{\times I}e^{\times J})(e^{\otimes I}e_{\otimes J})
+\] 
 
 \subsection{Producto tensorial}
 Definimos el producto tensorial como
@@ -172,7 +177,7 @@ u_1(e^2) & u_2(e^1)
 u^1(e_1) & u^2(e_1) \\
 u^1(e_2) & u^2(e_1)
 \end{pmatrix}$ las matrices de cambio de base.\\
-Una propiedad importante es que $B^TA = I$.
+Una propiedad importante es que $M_{u, e}^TM_{u^*, e^*} = I$.
 \\
 Si ahora queremos calcular el cambio de base de $u^*\otimes u$ a $e^*\otimes e$ tenemos que
 $$
@@ -191,7 +196,7 @@ $$
 Propiedades de estos operadores
 \begin{itemize}
     \item $\S(f)\in \S_p(E)$ y $\A(f)\in \A_p(E)$
-    \item $\S, \A$ son proyectores $\S^2=\S. \A^2=\A$
+    \item $\S, \A$ son proyectores $\S^2=\S,  \A^2=\A$
     \item $\T_p(E)=\S_p(E)\oplus \ker(\S) = \A_p(E)\oplus \ker(\A)$
 \end{itemize}
 
@@ -231,17 +236,11 @@ $$
 Un espacio proyectivo sobre el cuerpo $\K$ es una terna $(\P, E, \pi)$ siendo $\pi:E-{0}\to \P$ una aplicación exhaustiva que satisface $\pi(x)=\pi(y)\iff x=\lambda y$.\\
 Denotaremos $p = \pi(x) = [x]$. Definimos $\dim\P = \dim E -1$. \\
 \\
-%\begin{wrapfigure}{r}{0.5\textwidth}
-%  \begin{center}
-%    \incfig{ProyectivoVisual}
-%  \end{center}
-%  \caption{Plano Proyectivo}
-%\end{wrapfigure}
 
 \begin{multicols}{2}[\columnsep2em] 
 Un Espacio proyectivo se puede pensar como la unión disjunta de un $\K$ espacio vectorial de la misma dimensión y un espacio proyectivo de una dimensión menos:
 $$
-\P^n = \K^n \sqcup P^{n-1}
+\P^n = \K^n \sqcup \P^{n-1}
 $$
 \columnbreak
 
@@ -306,7 +305,7 @@ Si $\Rcal=\{p_1, p_2;U\}$, algunas propiedades:
  \item $(q_1, q_2, q_3, q_4) = 0 \iff q_1 = q_3$ ó $q_2 = q_4$
  \item $(q_1, q_2, q_3, q_4) = \infty \iff q_2 = q_3$ ó $q_1 = q_4$
  \item $(q_1, q_2, q_3, q_4) = 1 \iff q_1 = q_2$ ó $q_3 = q_4$
- \item $(p_1, p_2, q_3, q_4)=\frac{\theta(q_3)}{\theta(q_4)}$  
+ \item $(p_1, p_2, q_3, q_4)=\frac{\theta(q_4)}{\theta(q_3)}$  
  \item $(p_1, p_2, U, q_4)=\theta(q_4)$
 \end{itemize}
 
@@ -414,13 +413,51 @@ Propiedades de las referencias:
 	\item La proyectividad queda determinada por la imagen de la base.
 \end{itemize}
 
-\subsection{Implicaciones}
-Colineación $\centernot\implies$ Proyectividad \\
-En $\P^1$  $f$ proyectividad  $\iff f$ conserva la razón doble. \\
-$f:\P \to \P'$ biyectiva  $\dim\P \ge 1$. $f$ proyectividad  $\iff$  $\begin{cases}
+\subsection{Caracterización geométrica de las proyectividades}
+Si $\dim\P\ge 1$ tenemos la caracterización:
+\[
+  f \text{ proyectividad } \iff \begin{cases}
+  f \text{ biyectiva} \\
   f \text{ colineación} \\
   f \text{ conserva razón doble}
-\end{cases}$
+\end{cases}
+\]
+Para $\dim \P = 1$ lo mismo sin colineación.
+
+\subsection{Tipos de proyectividades}
+\subsubsection{Perspectividad}
+\begin{minipage}{0.7\textwidth}
+Dadas  $V_1, V_2$ vlp disjuntas de dimensión $d$.  $W$ la vlp complementaria a ambas con dimensión  $n-d-1$.\\
+La pespectividad de centro $W$ sobre  $V_1, V_2$ es:
+\begin{align*}
+  f: V_1 & \to V_2  \\
+  p & \to f(p))(W\lor p)\cap V_2
+\end{align*}
+\end{minipage}  
+\begin{minipage}{0.3\textwidth}
+  \incfig{Perspectividad}
+\end{minipage}
+Por el \textbf{Teorema de Poncelet} la proyectividad $f: V_1\to V_2$ es composición de perspectividades.
+
+\subsubsection{Homologías}
+\begin{minipage}{0.7\textwidth}
+Una \textbf{Homologías} de eje $H$ hiperplano es una homografía  $f$ que deja fijo  $H$ y tiene un único punto fijo $p_H$. Además toda recta por $p_H$ es invariante.
+	 \begin{itemize}
+	  \item $p_H\notin H \implies$ homología general. $m_\varphi(t) = (t-a)(t-b)$
+	  \item $p_H\in H \implies$ homología especial. $m_\varphi (t) = (t-a)^2$
+	\end{itemize}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+  \incfig{HomologiaGeneral} 
+\end{minipage}
+
+\subsubsection{Involución}
+$f$ homografía tal que  $f^2 = I$ con  $f\neq  I$\\
+\\
+Tenemos que $m_\varphi(t) = t^2-\lambda$: \\
+\underline{Caso $\lambda>0$} $\implies A = \begin{pmatrix} \sqrt{\lambda} & & \\ &  \ddots & \\ & & -\sqrt{\lambda}  \end{pmatrix} $  \\
+\underline{Caso $\lambda<0$} $\implies \varphi $ no diagonaliza  
+
 
 \subsection{Matriz de una Proyectividad}
 Tenemos que $M_{\mathcal{R}, \mathcal{R}'} = [M_{u, v}(\varphi )]$ donde $[M] = [\lambda M]\ \forall \lambda\ \neq 0$ \\
@@ -428,8 +465,9 @@ Tenemos que $M_{\mathcal{R}, \mathcal{R}'} = [M_{u, v}(\varphi )]$ donde $[M] = 
 Propiedades
 \begin{itemize}
   \item $M_{\mathcal{R}, \mathcal{R}''}(g\circ f)=M_{\mathcal{R}', \mathcal{R}''}(g)M_{\mathcal{R}, \mathcal{R}'}(f)$
-  \item $M_{\mathcal{R}', \mathcal{R}}(f^{-1}) = m_{\mathcal{R}, \mathcal{R}'}(f)^{-1}$ 
+  \item $M_{\mathcal{R}', \mathcal{R}}(f^{-1}) = M_{\mathcal{R}, \mathcal{R}'}(f)^{-1}$ 
   \item $M_{\mathcal{S}, \mathcal{S}'}(f) = M_{\mathcal{R}', \mathcal{S}'}M_{\mathcal{R}, \mathcal{R}'}(f) M_{\mathcal{S}, \mathcal{R}}$
+  \item $M_{\mathcal{R}^*}(f^*) = M_{\mathcal{R}}(f)^{T}$ 
 \end{itemize}
 
 \subsection{Clasificación de proyectividades}
@@ -438,22 +476,120 @@ el edificio de Jordan es el mismo. \\
 \\
 Se demuestra que si $L = [F]$ es $f$-invariante $\implies$ $[\rho^{-1}(F^\perp)]$ es invariante.\\
 \\
-\begin{itemize}
-  \item \textbf{Homologías} de eje $H$ hiperplano es una homografía  $f$ que deja fijo  $H$ y tiene un único punto fijo $p_H$. Además toda recta por $p_H$ es invariante.
-	 \begin{itemize}
-	  \item $p_H\notin H \implies$ homología general. $m_\varphi(t) = (t-a)(t-b)$
-	  \item $p_H\in H \implies$ homología especial. $m_\varphi (t) = (t-a)^2$
-	\end{itemize}
-\end{itemize}
 
 Toda homografía es composición de homologías.
+
+\subsubsection{Puntos fijos y variedades invariantes}
+$p$ es un \textbf{punto fijo} de  $f$ $\iff f(p)=p$\\
+Los puntos fijos son la clase de los VEPs de $\varphi $, y las variedades fijas la clase espacio generado por los VEPs de mismo VAP de $\varphi $ \\
+\\
+$V$ es una \textbf{variedad invariante} por  $f \iff f(V) = V$\\
+Las variedades invariantes son la clase de los subespacios invariantes de $\varphi $ \\
+\\
+Propiedades:
+\begin{itemize}
+  \item $V_1, V_2$ invariantes $\implies$ $V_1\lor V_2, V_1\cap V_2$ invariantes
+  \item $p_1, p_2$ puntos fijos $\implies p_1\lor p_2$ recta invariante 
+  \item $V$ $f-$invariante  $\implies$ $V^* f^*-$invariante
+\end{itemize}
+
+\subsubsection{Homografías en la recta $\mathbb{P}^1$}
+El tipo representa las afinidades de las que viene tomando $p_\infty$ como el punto del infinito.
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|}
+	\hline
+    Tipo & Forma de Jordan $\varphi $ & Forma de Jordan $f$ & Puntos Fijos & Vlp invariantes \\
+	\hline
+	Identidad  & $\begin{pmatrix} a & 0 \\ 0 & a \end{pmatrix} $ & $\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} $ & Todos & Todas \\
+	\hline
+	Homología general & $\begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix} $ & $\begin{pmatrix} 1 & 0 \\ 0 & \beta \end{pmatrix} $ & $p_0, p_1$ & (por determinar) \\
+	\hline
+	Homología especial & $\begin{pmatrix} \lambda & 0 \\ 1 & \lambda \end{pmatrix} $ & $\begin{pmatrix} 1 & 0 \\ 1 & 1 \end{pmatrix} $ & $p_1$ & \\
+	\hline
+	Nada & $\varphi$ no descomponible & $\varphi $ no descomponible & $\emptyset$ & (por determinar) \\
+	\hline
+  \end{tabular}
+\end{center}
+
+\subsubsection{Homografías en el plano $\mathbb{P}^2$}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Tipo & Forma de Jordan $\varphi $ & Forma de Jordan $f$ & Puntos Fijos & Vlp invariantes \\
+\hline
+Identidad & $\begin{pmatrix} 1 & & \\ & 1 & \\ & & 1 \end{pmatrix}$ & $\begin{pmatrix} 1 & & \\ & 1 & \\ & & 1 \end{pmatrix} $ & Todos & Todas \\
+	 \hline
+Homología general	 & $\begin{pmatrix} a & & \\ & b & \\  & & b \end{pmatrix} $ & $\begin{pmatrix} a & & \\ & 1 & \\  & & 1 \end{pmatrix} $ & $p_0, L = p_1\lor p_2$ & $p_0^*$ \\
+	 \hline
+Homología especial	 & $\begin{pmatrix} a & & \\ 1 & a & \\  & & a \end{pmatrix} $ & $\begin{pmatrix} 1 & & \\ 1 & 1 & \\  & & 1 \end{pmatrix} $ & $L = p_1\lor p_2$ & \\
+\hline
+					 & $\begin{pmatrix} a & & \\ 1 & a& \\  & & b \end{pmatrix} $ & $\begin{pmatrix} 1 & & \\ 1 & 1 & \\  & & a \end{pmatrix} $ & $p_1, p_2$ & $p_1\lor p_2, p_0\lor p_1$   \\
+\hline
+					 &  $\begin{pmatrix} a & & \\  & b & \\  & & c \end{pmatrix} $ & $\begin{pmatrix} 1 & & \\  & a & \\  & & b \end{pmatrix} $ & $p_0, p_1, p_2$ & $p_0\lor p_1, p_1\lor p_2, p_2\lor p_0$ \\
+   \hline
+					 & $\begin{pmatrix} a & & \\ 1 & a & \\  & 1 & a \end{pmatrix} $ & $\begin{pmatrix} 1 & & \\ 1 & 1 & \\  & 1 & 1 \end{pmatrix} $ & $p_2$ & $p_1\lor p_2$ \\
+\hline
+					 & $\begin{pmatrix} a & & \\  & b & c\\  & d & e \end{pmatrix} $ & $\begin{pmatrix} 1 & & \\  & a & b\\  & c & d \end{pmatrix} $  & $p_0$ & $p_1\lor p_2$  \\
+					 \hline
+\end{tabular}
+\end{center}
+
 
 
 
 
 \section{Cuádricas}
+\subsection{Definiciones y propiedades básicas}
+Una \textbf{Cuádrica} es el conjunto de puntos $p$ tal que la forma cuadrática $Q(p)=0 \iff x^TAx = 0$\\
+\\
+$p$ es un  \textbf{Punto singular} de Q $\iff u\in rad(\varphi ) = \ker(A)$.\\
+\\
+El conjunto de puntos singulares es $sing(Q)$. Si $sing(Q)\neq 0 \iff$ la cuádrica es degenerada.
 
+\subsection{Tangencia y polaridad}
+\begin{itemize}
+  \item $L$ es generatriz de  $Q \iff L\subset Q$
+  \item $L$ es tangente a  $Q \iff \varphi(v_1, v_1)\cdot \varphi(v_2,v_2)-\varphi (v_1, v_2)^2=0 $
+  \item $L$ es secante a  $Q \iff \varphi(v_1, v_1)\cdot \varphi(v_2,v_2)-\varphi (v_1, v_2)^2\neq 0 $
+  \item $p_1\sim_Q p_2$ conjugados o polares $\iff \varphi (v_1, v_2)=0$
+  \item Hiperplano tangente $T_p(Q) = \{(a_0:\ldots:a_n)A\begin{pmatrix} x_0\\ \vdots\\ x_n \end{pmatrix} \}$
+  \item Hiperplano polar $H_p(Q)=\{q : q\sim_Q p\}$
+\end{itemize}
+Propiedades si $p_1\sim p_2$:
+\begin{itemize}
+  \item $p_1, p_2 \in Q \iff L=p_1\lor p_2 \subset Q$
+  \item $p_1\in Q, p_2\not\in Q \iff L=p_1 \lor p_2$ tangente a $Q$ en $p_1$
+  \item Si $p\in Q \implies H_p(Q) = T_p(Q)$
+\end{itemize}
 
+\subsection{Ejemplos en $\P^2$}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+Tipo & Matriz & Ecuación & Ecuación afín \\
+\hline
+Elipse & $\begin{pmatrix} -1 & & \\ & 1 & \\ & & 1 \end{pmatrix}$ & $-x_0^2 + x_1^2 + x_2^2=0$ & $x_1^2+x_2^2=1$\\
+\hline
+Hipérbola & $\begin{pmatrix} -1 & & \\ & 1 & \\ & & -1 \end{pmatrix}$ & $-x_0^2 + x_1^2 - x_2^2=0$ & $x_1^2-x_2^2=1$\\
+\hline
+Parábola & $\begin{pmatrix} 0 & & -\frac{1}{2}  \\  & 1 & \\ -\frac{1}{2} & & 0 \end{pmatrix}$ & $-x_0x_2 + x_1^2 =0$ & $x_2=x_1^2$\\
+\hline
+
+\end{tabular}
+\end{center}
+\subsection{Teoremas}
+\subsubsection{Steiner}
+\subsubsection{Pascal}
+Sea $A_1A_2A_3A_4A_5A_6$ un hexágono inscrito en una cónica $Q$
+ \[
+   A_1A_2\cap A_4A_5, \quad A_2A_3\cap A_5A_6, \quad A_3A_4\cap A_6A_1 \quad \text{Están alineados}
+\] 
+\subsubsection{Brianchon (Dual de Pascal)}
+Sea $A_1A_2A_3A_4A_5A_6$ un hexágono circunscrito en una cónica $Q$
+\[
+  A_1A_4, \quad A_2A_5, \quad A_3A_6 \quad \text{concurrentes}
+\] 
 
 
 
