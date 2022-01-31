@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.1.24)  25 JAN 2022 22:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.1.24)  31 JAN 2022 16:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -685,24 +685,24 @@ File: l3backend-pdftex.def 2021-12-14 L3 backend support: PDF output (pdfTeX)
 ) (./Algoritmia.aux)
 \openout1 = `Algoritmia.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -753,7 +753,7 @@ LaTeX Font Info:    ... okay on input line 49.
 \makeMPintoPDFobject=\count339
 \everyMPtoPDFconversion=\toks51
 )
-Package hyperref Info: Link coloring OFF on input line 49.
+Package hyperref Info: Link coloring OFF on input line 51.
  (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/share/texmf-dist/tex/latex/refcount/refcount.sty
@@ -763,9 +763,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count340
 )
-LaTeX Info: Redefining \ref on input line 49.
-LaTeX Info: Redefining \pageref on input line 49.
-LaTeX Info: Redefining \nameref on input line 49.
+LaTeX Info: Redefining \ref on input line 51.
+LaTeX Info: Redefining \pageref on input line 51.
+LaTeX Info: Redefining \nameref on input line 51.
  (./Algoritmia.out) (./Algoritmia.out)
 \@outlinefile=\write5
 \openout5 = `Algoritmia.out'.
@@ -777,11 +777,11 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 51.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 53.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 51.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 53.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (./Algoritmia.toc)
@@ -791,22 +791,22 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 93--107
+Underfull \hbox (badness 10000) in paragraph at lines 95--109
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--107
+Underfull \hbox (badness 10000) in paragraph at lines 95--109
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--107
+Underfull \hbox (badness 10000) in paragraph at lines 95--109
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--107
+Underfull \hbox (badness 10000) in paragraph at lines 95--109
 
  []
 
@@ -817,7 +817,17 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 ) (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 ) (./codes/template_dinamica.cpp) [3]
-Underfull \hbox (badness 10000) in paragraph at lines 192--195
+Underfull \hbox (badness 10000) in paragraph at lines 194--197
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--205
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--205
 
  []
 
@@ -908,124 +918,349 @@ File: ./figures//HeapInsertion.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./figures//HeapInsertion.pdf , page17 used on input line 107.
 (pdftex.def)             Requested size: 407.66833pt x 100.7813pt.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 199--202
+
+./Algoritmia.tex:207: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.207 V
+       emos como hacer el borrado del m√°ximo elemento:\\
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--209
 
  []
 
-(./figures/LLRotation.pdf_tex
-<./figures//LLRotation.pdf, id=229, page=1, 549.73949pt x 146.77174pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--209
+
+ []
+
+(./figures/HeapDelete.pdf_tex
+<./figures//HeapDelete.pdf, id=229, page=1, 559.63756pt x 108.87877pt>
+File: ./figures//HeapDelete.pdf Graphic file (type pdf)
+<use ./figures//HeapDelete.pdf, page 1>
+Package pdftex.def Info: ./figures//HeapDelete.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 407.66833pt x 79.31303pt.
+<./figures//HeapDelete.pdf, id=230, page=2, 559.63756pt x 108.87877pt>
+File: ./figures//HeapDelete.pdf Graphic file (type pdf)
+<use ./figures//HeapDelete.pdf, page 2>
+Package pdftex.def Info: ./figures//HeapDelete.pdf , page2 used on input line 60.
+(pdftex.def)             Requested size: 407.66833pt x 79.31303pt.
+<./figures//HeapDelete.pdf, id=231, page=3, 559.63756pt x 108.87877pt>
+File: ./figures//HeapDelete.pdf Graphic file (type pdf)
+<use ./figures//HeapDelete.pdf, page 3>
+Package pdftex.def Info: ./figures//HeapDelete.pdf , page3 used on input line 62.
+(pdftex.def)             Requested size: 407.66833pt x 79.31303pt.
+<./figures//HeapDelete.pdf, id=232, page=4, 559.63756pt x 108.87877pt>
+File: ./figures//HeapDelete.pdf Graphic file (type pdf)
+<use ./figures//HeapDelete.pdf, page 4>
+Package pdftex.def Info: ./figures//HeapDelete.pdf , page4 used on input line 67.
+(pdftex.def)             Requested size: 407.66833pt x 79.31303pt.
+<./figures//HeapDelete.pdf, id=233, page=5, 559.63756pt x 108.87877pt>
+File: ./figures//HeapDelete.pdf Graphic file (type pdf)
+<use ./figures//HeapDelete.pdf, page 5>
+Package pdftex.def Info: ./figures//HeapDelete.pdf , page5 used on input line 71.
+(pdftex.def)             Requested size: 407.66833pt x 79.31303pt.
+<./figures//HeapDelete.pdf, id=234, page=6, 559.63756pt x 108.87877pt>
+File: ./figures//HeapDelete.pdf Graphic file (type pdf)
+<use ./figures//HeapDelete.pdf, page 6>
+Package pdftex.def Info: ./figures//HeapDelete.pdf , page6 used on input line 73.
+(pdftex.def)             Requested size: 407.66833pt x 79.31303pt.
+<./figures//HeapDelete.pdf, id=235, page=7, 559.63756pt x 108.87877pt>
+File: ./figures//HeapDelete.pdf Graphic file (type pdf)
+<use ./figures//HeapDelete.pdf, page 7>
+Package pdftex.def Info: ./figures//HeapDelete.pdf , page7 used on input line 77.
+(pdftex.def)             Requested size: 407.66833pt x 79.31303pt.
+<./figures//HeapDelete.pdf, id=236, page=8, 559.63756pt x 108.87877pt>
+File: ./figures//HeapDelete.pdf Graphic file (type pdf)
+<use ./figures//HeapDelete.pdf, page 8>
+Package pdftex.def Info: ./figures//HeapDelete.pdf , page8 used on input line 81.
+(pdftex.def)             Requested size: 407.66833pt x 79.31303pt.
+<./figures//HeapDelete.pdf, id=237, page=9, 559.63756pt x 108.87877pt>
+File: ./figures//HeapDelete.pdf Graphic file (type pdf)
+<use ./figures//HeapDelete.pdf, page 9>
+Package pdftex.def Info: ./figures//HeapDelete.pdf , page9 used on input line 83.
+(pdftex.def)             Requested size: 407.66833pt x 79.31303pt.
+<./figures//HeapDelete.pdf, id=238, page=10, 559.63756pt x 108.87877pt>
+File: ./figures//HeapDelete.pdf Graphic file (type pdf)
+<use ./figures//HeapDelete.pdf, page 10>
+Package pdftex.def Info: ./figures//HeapDelete.pdf , page10 used on input line 87.
+(pdftex.def)             Requested size: 407.66833pt x 79.31303pt.
+<./figures//HeapDelete.pdf, id=239, page=11, 559.63756pt x 108.87877pt>
+File: ./figures//HeapDelete.pdf Graphic file (type pdf)
+<use ./figures//HeapDelete.pdf, page 11>
+Package pdftex.def Info: ./figures//HeapDelete.pdf , page11 used on input line 89.
+(pdftex.def)             Requested size: 407.66833pt x 79.31303pt.
+<./figures//HeapDelete.pdf, id=240, page=12, 559.63756pt x 108.87877pt>
+File: ./figures//HeapDelete.pdf Graphic file (type pdf)
+<use ./figures//HeapDelete.pdf, page 12>
+Package pdftex.def Info: ./figures//HeapDelete.pdf , page12 used on input line 91.
+(pdftex.def)             Requested size: 407.66833pt x 79.31303pt.
+<./figures//HeapDelete.pdf, id=241, page=13, 559.63756pt x 108.87877pt>
+File: ./figures//HeapDelete.pdf Graphic file (type pdf)
+<use ./figures//HeapDelete.pdf, page 13>
+Package pdftex.def Info: ./figures//HeapDelete.pdf , page13 used on input line 95.
+(pdftex.def)             Requested size: 407.66833pt x 79.31303pt.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 212--214
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 212--214
+
+ []
+
+[4 <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapDelete.pdf> <./figures//HeapDelete.pdf> <./figures//HeapDelete.pdf> <./figures//HeapDelete.pdf> <./figures//HeapDelete.pdf> <./figures//HeapDelete.pdf> <./figures//HeapDelete.pdf> <./figures//HeapDelete.pdf> <./figures//HeapDelete.pdf> <./figures//HeapDelete.pdf> <./figures//HeapDelete.pdf> <./figures//HeapDelete.pdf> <./figures//HeapDelete.pdf>] (./figures/LLRotation.pdf_tex
+<./figures//LLRotation.pdf, id=249, page=1, 549.73949pt x 146.77174pt>
 File: ./figures//LLRotation.pdf Graphic file (type pdf)
 <use ./figures//LLRotation.pdf, page 1>
 Package pdftex.def Info: ./figures//LLRotation.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 407.66833pt x 108.84451pt.
-<./figures//LLRotation.pdf, id=230, page=2, 549.73949pt x 146.77174pt>
+<./figures//LLRotation.pdf, id=250, page=2, 549.73949pt x 146.77174pt>
 File: ./figures//LLRotation.pdf Graphic file (type pdf)
 <use ./figures//LLRotation.pdf, page 2>
 Package pdftex.def Info: ./figures//LLRotation.pdf , page2 used on input line 65.
 (pdftex.def)             Requested size: 407.66833pt x 108.84451pt.
-<./figures//LLRotation.pdf, id=231, page=3, 549.73949pt x 146.77174pt>
+<./figures//LLRotation.pdf, id=251, page=3, 549.73949pt x 146.77174pt>
 File: ./figures//LLRotation.pdf Graphic file (type pdf)
 <use ./figures//LLRotation.pdf, page 3>
 Package pdftex.def Info: ./figures//LLRotation.pdf , page3 used on input line 70.
 (pdftex.def)             Requested size: 407.66833pt x 108.84451pt.
-<./figures//LLRotation.pdf, id=232, page=4, 549.73949pt x 146.77174pt>
+<./figures//LLRotation.pdf, id=252, page=4, 549.73949pt x 146.77174pt>
 File: ./figures//LLRotation.pdf Graphic file (type pdf)
 <use ./figures//LLRotation.pdf, page 4>
 Package pdftex.def Info: ./figures//LLRotation.pdf , page4 used on input line 84.
 (pdftex.def)             Requested size: 407.66833pt x 108.84451pt.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 204--209
 
- []
+./Algoritmia.tex:216: LaTeX Error: There's no line here to end.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 204--209
-
- []
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.216 \begin
+            {multicols}{2}[\columnsep2em]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
 (./figures/Rotation.pdf_tex
-<./figures//Rotation.pdf, id=233, page=1, 270.50334pt x 132.41252pt>
+<./figures//Rotation.pdf, id=253, page=1, 270.50334pt x 132.41252pt>
 File: ./figures//Rotation.pdf Graphic file (type pdf)
 <use ./figures//Rotation.pdf, page 1>
 Package pdftex.def Info: ./figures//Rotation.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 194.83643pt x 95.37329pt.
-<./figures//Rotation.pdf, id=234, page=2, 270.50334pt x 132.41252pt>
+<./figures//Rotation.pdf, id=254, page=2, 270.50334pt x 132.41252pt>
 File: ./figures//Rotation.pdf Graphic file (type pdf)
 <use ./figures//Rotation.pdf, page 2>
 Package pdftex.def Info: ./figures//Rotation.pdf , page2 used on input line 68.
 (pdftex.def)             Requested size: 194.83643pt x 95.37329pt.
-<./figures//Rotation.pdf, id=235, page=3, 270.50334pt x 132.41252pt>
+<./figures//Rotation.pdf, id=255, page=3, 270.50334pt x 132.41252pt>
 File: ./figures//Rotation.pdf Graphic file (type pdf)
 <use ./figures//Rotation.pdf, page 3>
 Package pdftex.def Info: ./figures//Rotation.pdf , page3 used on input line 73.
 (pdftex.def)             Requested size: 194.83643pt x 95.37329pt.
+) (./figures/Hash.pdf_tex
+<./figures//Hash.pdf, id=256, page=1, 255.91365pt x 212.9093pt>
+File: ./figures//Hash.pdf Graphic file (type pdf)
+<use ./figures//Hash.pdf, page 1>
+Package pdftex.def Info: ./figures//Hash.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 194.83643pt x 162.09862pt.
+<./figures//Hash.pdf, id=257, page=2, 255.91365pt x 212.9093pt>
+File: ./figures//Hash.pdf Graphic file (type pdf)
+<use ./figures//Hash.pdf, page 2>
+Package pdftex.def Info: ./figures//Hash.pdf , page2 used on input line 64.
+(pdftex.def)             Requested size: 194.83643pt x 162.09862pt.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 209--213
-\T1/cmr/m/n/10 eral cuando $\OML/cmm/m/it/10 A; B; C$ \T1/cmr/m/n/10 es-t·n des-bal-ancea-dos
- []
 
-[4 <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//HeapInsertion.pdf> <./figures//LLRotation.pdf> <./figures//LLRotation.pdf> <./figures//LLRotation.pdf> <./figures//LLRotation.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 250--255
+./Algoritmia.tex:227: LaTeX Error: There's no line here to end.
 
- []
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.227 L
+       as tablas de hash sirven para almacenar claves del primer set en una ...
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 250--255
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 257--260
-
- []
-
-[5 <./figures//Rotation.pdf> <./figures//Rotation.pdf> <./figures//Rotation.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 269--272
+Underfull \hbox (badness 10000) in paragraph at lines 227--230
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 288--292
+Underfull \hbox (badness 10000) in paragraph at lines 227--230
+
+ []
+
+
+./Algoritmia.tex:232: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.232 \noindent
+               
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[5 <./figures//LLRotation.pdf> <./figures//LLRotation.pdf> <./figures//LLRotation.pdf> <./figures//LLRotation.pdf> <./figures//Rotation.pdf> <./figures//Rotation.pdf> <./figures//Rotation.pdf> <./figures//Hash.pdf> <./figures//Hash.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 268--273
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--273
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--278
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 287--290
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 316--319
+Underfull \hbox (badness 10000) in paragraph at lines 306--310
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 316--319
+Underfull \hbox (badness 10000) in paragraph at lines 334--337
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 331--335
+Underfull \hbox (badness 10000) in paragraph at lines 334--337
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 354--357
+Underfull \hbox (badness 10000) in paragraph at lines 349--353
+
+ []
+
+[7] (./figures/2-SAT.pdf_tex
+<./figures//2-SAT.pdf, id=275, page=1, 338.1563pt x 149.72574pt>
+File: ./figures//2-SAT.pdf Graphic file (type pdf)
+<use ./figures//2-SAT.pdf, page 1>
+Package pdftex.def Info: ./figures//2-SAT.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 194.83643pt x 86.26982pt.
+<./figures//2-SAT.pdf, id=276, page=2, 338.1563pt x 149.72574pt>
+File: ./figures//2-SAT.pdf Graphic file (type pdf)
+<use ./figures//2-SAT.pdf, page 2>
+Package pdftex.def Info: ./figures//2-SAT.pdf , page2 used on input line 65.
+(pdftex.def)             Requested size: 194.83643pt x 86.26982pt.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 377--380
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 354--357
+Underfull \hbox (badness 10000) in paragraph at lines 377--380
 
  []
 
-[7]
-<images/PNP.png, id=258, 1027.84pt x 726.715pt>
+<images/PNP.png, id=277, 1027.84pt x 726.715pt>
 File: images/PNP.png Graphic file (type png)
 <use images/PNP.png>
-Package pdftex.def Info: images/PNP.png  used on input line 378.
+Package pdftex.def Info: images/PNP.png  used on input line 401.
 (pdftex.def)             Requested size: 194.83643pt x 137.7557pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 400--404
+[8 <./figures//2-SAT.pdf> <./figures//2-SAT.pdf> <./images/PNP.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 423--436
 
  []
 
-(./codes/AlgoritmosGrafos.cpp [8 <./images/PNP.png>] [9]
+
+Underfull \hbox (badness 10000) in paragraph at lines 423--436
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 423--436
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 423--436
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 423--436
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 423--436
+
+ []
+
+(./figures/Nim.pdf_tex
+<./figures//Nim.pdf, id=286, page=1, 754.51741pt x 124.09251pt>
+File: ./figures//Nim.pdf Graphic file (type pdf)
+<use ./figures//Nim.pdf, page 1>
+Package pdftex.def Info: ./figures//Nim.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 407.66833pt x 67.0487pt.
+<./figures//Nim.pdf, id=287, page=2, 754.51741pt x 124.09251pt>
+File: ./figures//Nim.pdf Graphic file (type pdf)
+<use ./figures//Nim.pdf, page 2>
+Package pdftex.def Info: ./figures//Nim.pdf , page2 used on input line 58.
+(pdftex.def)             Requested size: 407.66833pt x 67.0487pt.
+)
+
+./Algoritmia.tex:438: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.438 \\
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./Algoritmia.tex:439: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.439 R
+       oura tiene una estrategia ganadora. Vamos a verlo calculando los nimb...
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 439--442
+
+ []
+
+
+Overfull \hbox (1.3318pt too wide) detected at line 449
+[]  \OT1/cmr/m/n/10 =[]\OMS/cmsy/m/n/10 )  \OML/cmm/m/it/10 nim\OT1/cmr/m/n/10 (4 \OMS/cmsy/m/n/10 ^ \OT1/cmr/m/n/10 6 \OMS/cmsy/m/n/10 ^ \OT1/cmr/m/n/10 5) = \OML/cmm/m/it/10 nim\OT1/cmr/m/n/10 (100[] \OMS/cmsy/m/n/10 ^ \OT1/cmr/m/n/10 110[] \OMS/cmsy/m/n/10 ^ \OT1/cmr/m/n/10 101[]) = 111 \OMS/cmsy/m/n/10 6\OT1/cmr/m/n/10 = 0  =[]\OMS/cmsy/m/n/10 )  []
+ []
+
+[9 <./figures//Nim.pdf> <./figures//Nim.pdf>] (./codes/AlgoritmosGrafos.cpp [10]
 
 ./codes/AlgoritmosGrafos.cpp:87: LaTeX Error: Invalid UTF-8 byte sequence (√\expandafter).
 
@@ -1116,6 +1351,7 @@ or specify an encoding such as \usepackage [latin1]{inputenc}
 in the document preamble.
 Alternatively, save the file in UTF-8 using your editor or another tool
 
+[11]
 
 ./codes/AlgoritmosGrafos.cpp:113: LaTeX Error: Invalid UTF-8 byte sequence (√\lst@FillFixed@).
 
@@ -1146,7 +1382,6 @@ or specify an encoding such as \usepackage [latin1]{inputenc}
 in the document preamble.
 Alternatively, save the file in UTF-8 using your editor or another tool
 
-[10]
 
 ./codes/AlgoritmosGrafos.cpp:133: LaTeX Error: Invalid UTF-8 byte sequence (√\expandafter).
 
@@ -1237,23 +1472,23 @@ or specify an encoding such as \usepackage [latin1]{inputenc}
 in the document preamble.
 Alternatively, save the file in UTF-8 using your editor or another tool
 
-) [11] (./Algoritmia.aux)
+) [12] (./Algoritmia.aux)
 Package rerunfilecheck Info: File `Algoritmia.out' has not changed.
 (rerunfilecheck)             Checksum: ED388D319778ABB05C3E90B00F1A4F6C;4518.
  ) 
 Here is how much of TeX's memory you used:
- 25487 strings out of 478353
- 459704 string characters out of 5854635
- 959485 words of memory out of 5000000
- 42892 multiletter control sequences out of 15000+600000
+ 25582 strings out of 478353
+ 462885 string characters out of 5854635
+ 959504 words of memory out of 5000000
+ 42974 multiletter control sequences out of 15000+600000
  421418 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,14n,76p,407b,1880s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,18n,76p,407b,1880s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on Algoritmia.pdf (11 pages, 347056 bytes).
+Output written on Algoritmia.pdf (12 pages, 369700 bytes).
 PDF statistics:
- 569 PDF objects out of 1000 (max. 8388607)
- 490 compressed objects within 5 object streams
- 224 named destinations out of 1000 (max. 500000)
- 386 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 598 PDF objects out of 1000 (max. 8388607)
+ 499 compressed objects within 5 object streams
+ 225 named destinations out of 1000 (max. 500000)
+ 481 words of extra memory for PDF output out of 10000 (max. 10000000)
 

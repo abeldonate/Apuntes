@@ -27,8 +27,10 @@
 \usepackage{transparent}
 
 \newcommand{\incfig}[1]{%
+  \begin{center}
   \def\svgwidth{0.9\columnwidth}
   \import{./figures/}{#1.pdf_tex}
+  \end{center}
 }
 
 \newcommand{\incimg}[1]{%
@@ -123,7 +125,7 @@ Y resolver la exponenciación de matrices con una exponenciación rápida.
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
- & \textbf{Coste Peor} & \textbf{Coste Mejor} & \textbf{Coste Medio} & \textbf{In-Situ} & \textbf{Estable} \\
+ & \textbf{Coste Peor} & \textbf{Coste Mejor} & \textbf{Coste Medio} & \textbf{In Situ} & \textbf{Estable} \\
  \hline
   \textbf{Selection} & $\theta(n^2)$ & $\theta(n^2)$ & $\theta(n^2)$ & SI & NO \\
  \hline
@@ -193,26 +195,42 @@ Una un maxheap es una estructura de datos similar a un vector con un orden parci
 \\
 Las operaciones básicas son:
 \begin{itemize}
-  \item \textbf{Inesrción:} Insertamos el elemento en la primera hoja disponible y hacemos un Heapyfy
-  \item \textbf{Borrado:} Cambiamos el primer elemento (la raíz) por el último y hacemos un Heapyfy.
+  \item \textbf{Inserción $O(\log n)$:} Insertamos el elemento en la primera hoja disponible y hacemos un Heapyfy
+  \item \textbf{Borrado $O(\log n)$:} Cambiamos el primer elemento (la raíz) por el último y hacemos un Heapyfy.
+  \item \textbf{Heap-Sort $O(n\log n)$:} En cada paso borra la raíz y la guarda en un vector. El resultado es un vector ordenado.
+  \item \textbf{Heapify $O(n)$:} Desde un árbol binario creamos un Maxheap. El procedimiento es crear Maxheaps recursivamente de abajo hacia arriba
 \end{itemize}
 Vemos como hacer la inserción del número $60$:\\
 \\
 \incfig{HeapInsertion}
+\\
+Vemos como hacer el borrado del máximo elemento:\\
+\\
+\incfig{HeapDelete}
 
 \subsection{Árboles AVL}
-Un AVL es un árbol binario balanceado (la diferencia de alturas entre cualesquiera dos hijos es $\le 1$). Podemos balancear cualquier árbol binario para convertirlo en un AVL con las siguientes operaciones llamadas rotaciones. Distinguimos tres tipos: \\
+Un AVL es un árbol binario ordenado (los hijos de la derecha son $\ge $ al padre y los de la izquierda $\le $ al padre) y balanceado (la diferencia de alturas entre cualesquiera dos hijos es $\le 1$). Podemos balancear cualquier árbol binario para convertirlo en un AVL con las siguientes operaciones llamadas rotaciones. Distinguimos tres tipos: \\
 \\
 \incfig{LLRotation}
 \\
 \begin{multicols}{2}[\columnsep2em]
 \noindent
-Vemos ahora como aplicarlo a un árbol general cuando $A, B, C$ están desbalanceados y hay que hacer una rotación sobre ellos
+Vemos ahora como aplicarlo a un árbol general cuando $A, B, C$ están desbalanceados y hay que hacer una rotación sobre ellos.
 \columnbreak
 \incfig{Rotation}
 \end{multicols}
 
 \subsection{Tablas de Hash}
+\begin{multicols}{2}[\columnsep2em]
+\incfig{Hash} 
+\columnbreak \\
+Las tablas de hash sirven para almacenar claves del primer set en una tabla de menor longitud fijada $m$. Esta operación se realiza para que la búsqueda de elementos sea más eficiente, ya que haremos menos operaciones para encontrar un elemento. \\
+\\
+La función de hash  $h(x)$ mapea cada elemento del primer conjunto en un hueco del segundo (es decir, otorga a cada numero otro número del $0$ al  $m-1$). Si queremos buscar si un número está en el conjunto original, solo debemos calcular su hash y mirar si está en el hueco de la tabla correspondiente. \\
+\end{multicols}
+\\
+\noindent
+Una función de hash $h(x)$ se dice que es  \textbf{universal} si la probabilidad de que una clave caiga en un hueco es la misma para todos los huecos. En la práctica buscaremos estas funciones, porque nos aseguran el menor número de colisiones en la tabla.
 
 \section{Grafos}
 \subsection{Algunas definiciones previas}
@@ -338,7 +356,7 @@ Todo grafo dirigido es un DAG de sus SCC \\
   \item Sobre I, miramos el elemento de la stack \code{S} y hacemos un DFS. Los nodos que recorra serán miembros de la misma componente conexa. Realizamos este proceso hasta que se vacíe \code{S}
 \end{itemize}
 \ex{2-SAT problem }\\
-Pongamos que queremos ver si se pueden elegir bools $a, b, c$ tal que:
+Pongamos que queremos ver si se pueden elegir bools $a, b, c, d$ tal que:
 $$
 (a\vee b)\land(\bar{a}\vee c)\land(\bar{a}\vee b)\land(\bar{b}\vee \bar{d}) = true \implies \begin{cases}
   \overline{a} \implies b, \quad \overline{b} \implies a \\
@@ -347,8 +365,13 @@ $$
   b \implies \overline{d}, \quad d \implies \overline{b}
 \end{cases}
 $$
+\begin{multicols}{2}[\columnsep2em]
+\noindent 
 Podemos hacer un grafo dirigido con $2n$ nodos (los bools y sus complementarios)\\
-Si este grafo tiene una componente fuertemente conexa $\implies$ no se puede asignar.
+Si este grafo tiene una componente fuertemente conexa, entonces no se pueden asignar los booleanos.
+\columnbreak
+\incfig{2-SAT}
+\end{multicols}
 
 \subsection{Flujo máximo}
 Suponemos que tenemos ciertas ciudades (nodos) y carretaras (aristas dirigidas) con una cierta capacidad. Consideramos ir de una ciudad origen (fuente) a una final (pozo), cumpliendo, a demás las restricciones en las capacidades de las carreteras. La solución a la capacidad máxima es el \textit{flujo máximo}. \\
@@ -394,13 +417,36 @@ La pregunta es si $P=NP$ o  $P\neq NP$. En función de la respuesta tenemos los 
 \subsection{Teorema de Gödel}
 Problema de la parada
 \subsection{Jocs imparcials}
-Definimos los \textbf{nimbers} como la función:
+Definimos los \textbf{nimbers} como la función recursiva:
 \[
 nim(x) = \min \ n\not\in \{nim(X') : X\to X'\}
 \]
+Donde $X$ es el conjunto de las posiciones posibles del juego.\\
+\\
+Se cumple que una posición $x$ es perdedora si y solo si $nim(x)=0$. Esto lo podemos ver por la definición de la función $nim$: si una posición es perdedora, no se podrá llegar desde ella a ninguna posición ganadora y viceversa.\\
+\\
 Se cumple $nim(x\oplus y) = nim(x) \wedge nim(y)$ donde $\wedge$ es la operación exclusive or.\\
 \\
-$p(x)$
+El juego por excelencia donde se aplica es el \textbf{Joc del Nim} y sus diversas variantes. La mas sencilla de ellas es la siguiente: \\
+\\
+\textit{Joc del Nim}\\
+Tenemos $m$ pilas con un número de fichas cada una y dos jugadores que se enfrentan. En cada turno al jugador que le toca puede quitar las fichas que quiera de una sola pila. Gana quien quite la última ficha en su turno.\\
+\\
+Se adjunta a continuación un posible juego entre Roura y Amalia (en rojo y azul las fichas que quitan respectivamente):\\
+\incfig{Nim}
+\\
+\\
+Roura tiene una estrategia ganadora. Vamos a verlo calculando los nimbers de cada pila por separado. \\
+\\
+El caso base $nim(0)=0$.$nim(1)=1$ por la fórmula recursiva  \ldots \ por inducción $nim(k)=k$. Por tanto tenemos:
+ \[
+\begin{cases}
+  nim(4)=4=100_2 \\
+  nim(6)=6 = 110_2\\
+  nim(5)=5 = 101_2
+\end{cases}
+\implies nim(4\wedge 6 \wedge 5) =  nim(100_2\wedge 110_2 \wedge 101_2) = 111 \neq 0 \implies \boxed{\text{posición ganadora}}
+\] 
 
 \section{Apéndice de los códigos en C++}
 
