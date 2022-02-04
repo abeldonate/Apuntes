@@ -1,0 +1,65 @@
+\documentclass{myclass}
+\usepackage{verbatim}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{fancyvrb}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{amssymb}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,epsfig,epstopdf,titling,url,array}
+\usepackage{hyperref}
+\usepackage{eso-pic}
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+
+\newcommand{\incfig}[1]{%
+  \center
+    \def\svgwidth{0.9\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
+
+
+\newcommand{\incimg}[1]{%
+\includegraphics[width=0.9\columnwidth]{images/#1}
+}
+
+
+\pdfsuppresswarningpagegroup=1
+
+\title{a}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{section1}
+a
+
+\incfig{test8}
+
+\begin{multicols}{2}[\columnsep2em]
+\incfig{test6} \\
+\columnbreak
+abel
+\incfig{test9}
+\end{multicols}
+
+\incfig{test12}
+
+\end{document}

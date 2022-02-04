@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1643644371 "Algoritmia.tex" "Algoritmia.pdf" "Algoritmia" 1643644371
+["pdflatex"] 1643903934 "Algoritmia.tex" "Algoritmia.pdf" "Algoritmia" 1643903934
   "/home/abeldm3108/texmf/tex/latex/myclass.cls" 1638476637 285 799278343d07b6732daec6fe85486260 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1640600964 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1640600964 2900 1537cc8184ad1792082cd229ecc269f4 ""
@@ -211,10 +211,10 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1640600964 39911 2da6c67557ec033436fe5418a70a8a61 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1643029862 4243317 6cd4c1d3b72728bfa7db8ef2e14c0430 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1643029838 2920108 43a3143d20c802571b695412a5ee3f4e ""
-  "Algoritmia.aux" 1643644358 4804 d87db15be38a50108ee638e2c17b3be1 "pdflatex"
-  "Algoritmia.out" 1643644358 4518 ed388d319778abb05c3e90b00f1a4f6c "pdflatex"
-  "Algoritmia.tex" 1643644369 20695 0c8e6f22e7ffab860bdd8e286a584589 ""
-  "Algoritmia.toc" 1643644358 2560 bd99a7951ff0f080ce852ef68453996d "pdflatex"
+  "Algoritmia.aux" 1643903930 4804 d87db15be38a50108ee638e2c17b3be1 "pdflatex"
+  "Algoritmia.out" 1643903930 4518 ed388d319778abb05c3e90b00f1a4f6c "pdflatex"
+  "Algoritmia.tex" 1643903928 20695 0c8e6f22e7ffab860bdd8e286a584589 ""
+  "Algoritmia.toc" 1643903930 2560 bd99a7951ff0f080ce852ef68453996d "pdflatex"
   "codes/AlgoritmosGrafos.cpp" 1643027969 3158 0748e8e7901186e0eee3f7204f404f62 ""
   "codes/template_dinamica.cpp" 1638474712 255 b33a4df324b5909fc5c418367bd12fc5 ""
   "figures//2-SAT.pdf" 1643644310 3123 62ce40ba2f60e241f0ceaec79d61204e ""
