@@ -88,46 +88,52 @@ $$
 Experimentalmente se observa que para los gases ideales se cumple $\boxed{Pv=RT}$ ($v$ molar específica). \\
 \\
 No obstante no se ajusta a los gases reales. 
-\begin{wrapfigure}{r}{0.45\textwidth}
-    \begin{center}
-    \includegraphics[width=0.4\textwidth]{images/van-der-waals.png}
-  \end{center}
-\end{wrapfigure}
-\textbf{Van del Waals} \\
+%\begin{wrapfigure}{r}{0.45\textwidth}
+%    \begin{center}
+%    \includegraphics[width=0.4\textwidth]{images/van-der-waals.png}
+%  \end{center}
+%\end{wrapfigure}
+\begin{multicols}{2}[\columnsep2em]
+\noindent
+\textbf{Van del Waals} $ \ \
+\boxed{(P+\frac{a}{v^2})(v-b) = RT}$ \\
+$
 \\
-$
-\boxed{(P+\frac{a}{v^2})(v-b) = RT} \implies $ \\
-$
-Pv^3 - (Pb + RT)v^2 + av - ab = 0
+\implies Pv^3 - (Pb + RT)v^2 + av - ab = 0
 $\\
 Para $a, b$ constantes dependientes de los gases. \\
 Para calcular el punto crítico observamos \\ $\left(\frac{\partial P}{\partial v}\right)_T = 0, \quad \left(\frac{\partial^2 P}{\partial v^2}\right)_T = 0$ \\
 Calculando tenemos \\
-$P_c = \frac{a}{27b^2}, \quad v_c = 3b, \quad T_c = \frac{8a}{27Rb}$
-\\
-\\
-\textbf{Dieterici}
-$$
+$P_c = \frac{a}{27b^2}, \quad v_c = 3b, \quad T_c = \frac{8a}{27Rb} \ \ \ \ \ \ \ \ \ \ \ \ \ $ 
+\columnbreak
+    \includegraphics[scale=0.4]{images/van-der-waals.png}
+\end{multicols}
+\noindent
+\textbf{Dieterici} \ \
+$
 \boxed{P = \frac{1}{v-b}RTe^{-\frac{a}{RTv}}}
-$$
+$\\
+\\
 La temperatura de Boyle es $T_{Boyle} = \frac{a}{bR}$ \\
 \\
-\textbf{Coeficientes de Virial} \\
-Se realiza una correccion con un desarrollo en serie de potencias:
-$$
-Pv = RT(1+ \frac{B(T)}{v} + \frac{C(T)}{v^2} + \ldots)
-$$
+\textbf{Coeficientes de Virial} \ \
+$
+\boxed{Pv = RT(1+ \frac{B(T)}{v} + \frac{C(T)}{v^2} + \ldots)}
+$
+\\ \\
+Se realiza una correccion con un desarrollo en serie de potencias. \\
 La temperatura de Boyle es la que cumple $B(T_{Boyle})=0$
 \subsection{Diagrama de fase}
-\begin{multicols}{3}
-Si representamos el diagrama Pv tenemos una campana en cuyo interior coexisten líquido y vapor. La isoterma dentr de la campana se realiza a $P$ constante. 
+Si representamos el diagrama Pv tenemos una campana en cuyo interior coexisten líquido y vapor. La isoterma dentro de la campana se realiza a $P$ constante. 
 \newline
-Existe un Punto triple donde coexisten los tres estados y un punto crítico por encima del cual no hay transición de fase.
-\columnbreak
+
+\begin{multicols}{2}[\columnsep2em]
 \includegraphics[scale=0.5]{images/Pv_fases.png}
 \columnbreak
 \includegraphics[scale=0.12]{images/PT-fase.png}
 \end{multicols}
+\noindent
+Existe un Punto triple donde coexisten los tres estados y un punto crítico por encima del cual no hay transición de fase.
 
 \subsection{Tipos de procesos}
 \begin{itemize}
@@ -146,8 +152,8 @@ Definiremos tres términos:
     \item \textbf{Humedad Absoluta} $H_a = \frac{m_v}{V}$
     \item \textbf{Humedad Relativa} $H_r=\frac{m_v}{m_s} = \frac{P_v}{P_s}$
     \item \textbf{Punto de rocío} $P_v=P_s$
-    \item Tener en cuenta que $P_a + P_v = P_t$ y que el aire cumple $P_aV_a = P'_aV'_a$
 \end{itemize}
+Al hacer problemas debemos tener en cuenta que $P_a + P_v = P_t$ y que el aire cumple $P_aV_a = P'_aV'_a$
 
 \section{Primer principio de la termodinámica}
 \subsection{Trabajo}
@@ -167,8 +173,8 @@ A continuación el trabajo en diferentes sistemas
 Definiciones
 \begin{itemize}
     \item \textbf{Capacidad calorífica} $C=\frac{d'Q}{dT} \implies \begin{cases}
-    C_p= \\
-    C_V=
+    C_p \text{ a presión constante} \\
+    C_V \text{ a volumen constante}
     \end{cases}$
     \item \textbf{Calor específica} $c=\frac{C}{m}$
     \item \textbf{Calor latente} $L$ calor necesario para cambiar de estado.
@@ -271,7 +277,6 @@ Dos enunciados equivalentes del segundo principio:
     \text{máquina frigorífica}
     \end{cases}$ con $\mathcal{E}= \infty$
 \end{itemize}
-\newpage
 \subsection{Ciclo de Carnot}
 \begin{multicols}{2}[\columnsep2em]
     \incimg{CicloCarnot.png}
@@ -356,9 +361,6 @@ Cada incremento de potencial tiene un significado físico:
   \item $\Delta F = -W_{reversible}$ 
   \item $\Delta G = -W^*_{reversible}$
 \end{itemize}
-
-\subsection{Equilibrio}
-jaja, ni puta idea
 
 \subsection{Ecuaciones $TdS$}
 

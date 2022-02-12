@@ -6,3 +6,5 @@
 *.out
 *.synctex.gz
 *.fls
+*.db
+*.lock
