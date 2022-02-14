@@ -1,0 +1,94 @@
+\documentclass{myclass}
+\usepackage{verbatim}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{fancyvrb}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{amssymb}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,epsfig,epstopdf,titling,url,array}
+\usepackage{hyperref}
+\usepackage{eso-pic}
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+
+%formatting
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+%\renewcommand{\baselinestretch}{2.0}
+
+\newtheorem*{definition}{Definition}
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\incfig}[1]{%
+  \center
+    \def\svgwidth{0.9\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
+
+
+\newcommand{\incimg}[1]{%
+\center
+\includegraphics[width=0.9\columnwidth]{images/#1}
+}
+
+
+\pdfsuppresswarningpagegroup=1
+
+\title{a}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{First section}
+This is the first paragraph, contains some text to test the paragraph
+interlining, paragraph indentation and some other features. Also, is 
+easy to see how new paragraphs are defined by simply entering a double 
+blank space.
+
+Third phrase
+
+\begin{minipage}[t]{0.7\textwidth}
+lañkjdflñkdsjfñlkajf alkdjfladf lañdkjf aldkjf aldfj adlfkjladf ladfj dk adka akdj ad adf ladfj ladf   ldfj j aldj.
+
+Hola
+
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+\incfig{test1}
+\end{minipage}
+
+\begin{minipage}[t]{0.3\textwidth}
+\incfig{test1}
+\end{minipage}
+\begin{minipage}[t]{0.3\textwidth}
+Hola
+\end{minipage}
+
+
+\begin{definition}
+first definition
+\end{definition}
+
+\begin{proof}
+$0 
+\end{proof}
+
+\end{document}

@@ -84,7 +84,7 @@ void Dijkstra(int ini) {
 }
 
 //=========================================
-// Distancia mínima entre dos vertices
+// Distancia minima entre dos vertices
 // O(n^3)
 VVI FloydWarshall() {
   for (int k = 0; k < n; ++k)
@@ -96,7 +96,7 @@ VVI FloydWarshall() {
 }
 
 //==========================================
-// Longitud del camino más largo en DAG (Dinámica)
+// Longitud del camino mas largo en DAG (Dinamica)
 // O(n+m)
 VI R(n, -1);
 int f(int x) {
@@ -110,7 +110,7 @@ int f(int x) {
 }
 
 //=========================================
-//Árbol generador
+//Arbol generador
 VI pare(n);
 int repre(int x) {
   if (pare[x] == -1)
@@ -130,7 +130,7 @@ void arbre_generador() {
     int ry = repre(y);
     if (rx != ry) {
       pare[ry] = rx;
-      // pare[y] = x; error típico
+      // pare[y] = x; error tipico
       cout << x << ' ' << y << endl;
       if (--compo == 1)
         return;
@@ -140,7 +140,7 @@ void arbre_generador() {
 }
 
 //=========================================
-// Ordenación topológica
+// Ordenacion topologica
 // O(n+m)
 void TopoSort() {
   VI deg(n, 0); // grados de cada nodo (rellenar al leer)

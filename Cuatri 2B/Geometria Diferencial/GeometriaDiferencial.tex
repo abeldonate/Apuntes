@@ -1,0 +1,108 @@
+\documentclass{myclass}
+\usepackage{verbatim}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{fancyvrb}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{amssymb}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,epsfig,epstopdf,titling,url,array}
+\usepackage{hyperref}
+\usepackage{eso-pic}
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\newtheorem*{definition}{Definition}
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\incfig}[1]{%
+\center
+\def\svgwidth{0.9\columnwidth}
+\import{./figures/}{#1.pdf_tex}
+}
+
+
+\newcommand{\incimg}[1]{%
+\center
+\includegraphics[width=0.9\columnwidth]{images/#1}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+\title{Geometría Diferencial}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Curvas}
+Podemos describir una variedad de tres maneras diferentes:
+\begin{itemize}
+  \item \textit{Explícita:} $z = f(x, y)$
+  \item \textit{Implícita:} $f(x, y)=0$
+  \item \textit{Paramétrica:} $(x(t), y(t), z(t))$
+\end{itemize}
+La que más usaremos en este curso es la paramétrica por su comodidad.
+
+\begin{definition}
+Una curva parametrizada en $\mathbb{R}^n$ es una función $\mathcal{C}^1$ 
+\[
+\beta : I \to \mathbb{R}^n
+\] 
+Se llama regular si $\|\beta'(t)\|>0 \ \forall t$
+\end{definition}
+
+Podemos calcular la longitud de un tramo de la curva de $t_0$ a $t_1$ con la integral
+\[
+\int_{t_0}^{t_1}\|\beta'(t)\|dt
+\] 
+
+\begin{definition}
+Un cambio de parámetro es una función biyectiva y $\mathcal{C}¹$
+\begin{align*}
+  \varphi : J & \to I \\
+  u & \to \varphi (u) = t
+\end{align*}
+tal que $\varphi '(u)\neq 0 \ \forall u$
+
+\end{definition}
+
+\begin{definition}
+El parámetro arco se define como
+\[
+s(t) = \int_{t_0}^{t}\|\beta '(u)\|du
+\]
+Es el parámetro con el que podemos recorrer la curva con el sentido físico de su longitud
+\end{definition}
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

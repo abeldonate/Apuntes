@@ -15,7 +15,7 @@
 \usepackage{amsmath,amsfonts,amssymb,amsthm,epsfig,epstopdf,titling,url,array}
 \usepackage{hyperref}
 \usepackage{eso-pic}
-\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{pgf}
 \usepackage{tikz}
 \usepackage{graphicx}
 
@@ -181,14 +181,9 @@ Tabla comparativa de estas dos
         \\
         \textbf{Queue} & Puedes acceder al primer elemento guardado.  & .size(), .push(), .pop(), .front(), empty() \\
         \\
-        \textbf{P.Queue} & Puedes acceder al primer elemento guardado.  & .size(), .push(), .pop(), .top(), empty() \\
+        \textbf{P.Queue} & Puedes acceder al mayor elemento.  & .size(), .push(), .pop(), .top(), empty() \\
     \end{tabular}
 \end{table}
-\\
-Para revertir el orden de la priority\_queue podemos definirla así: 
-%\begin{minted}{cpp}
-%priority_queue<int, vector<int>, greater<int>> Q;
-%\end{minted}
 
 \subsection{Maxheap}
 Una un maxheap es una estructura de datos similar a un vector con un orden parcial. Si lo visualizamos como un árbol binario se cumple que los hijos siempre son $\ge $ que los padres.\\
@@ -230,8 +225,37 @@ La función de hash  $h(x)$ mapea cada elemento del primer conjunto en un hueco 
 \end{multicols}
 \\
 \noindent
-Una función de hash $h(x)$ se dice que es  \textbf{universal} si la probabilidad de que una clave caiga en un hueco es la misma para todos los huecos. En la práctica buscaremos estas funciones, porque nos aseguran el menor número de colisiones en la tabla.
-
+Una función de hash $h(x)$ se dice que es  \textbf{universal} si la probabilidad de que una clave caiga en un hueco es la misma para todos los huecos. En la práctica buscaremos estas funciones, porque nos aseguran el menor número de colisiones en la tabla.\\
+\\
+\textbf{Rolling Hash}\\
+Se trata de un algoritmo para búsqueda de texto en un documento de texto. Suponemos que queremos buscar la cadena $abc$ dentro de una cadena de texto $s$. El algoritmo naive sería colocarse en el índice $i$ del texto y mirar si $s[i]=a$. Si lo es, mirar si $s[i+1]=b$, y si lo sigue siendo, si $s[i+2]=c$. Si se cumplen las tres, hay un match. Hacemos esto para $i = 0, \ldots , n-3$. Este algoritmo se realiza en $\mathcal{O}(nm)$.\\
+\\
+Un algoritmo mucho más eficiente es el rolling hash:\\
+Nos ayudamos de una función de hash $h$ que mapea cada cadena de texto a un natural. Hacemos $h(abc)=H$. Escogemos una función de hash de la forma
+\[
+h(s[i+1,\ldots, i+m]) = s[i+1]p^k + s[i+2]p^{k-1} + \ldots + s[i+m]p^0
+\] 
+donde $p$ es primo. Una propiedad importante de este hash es que 
+\[
+h(s[i+1, \ldots, i+m]) = p(h(s[i, \ldots, i+m-1])-s[i]p^{m-1}) + s[i+m]
+\]
+Aprovechando esta propiedad, sabiendo el hash de $s[i, \ldots, i+m-1]$ podemos calcular el de  $s[i+1, \ldots, i+m$ en $\mathcal{O}(1)$. Una vez que tenemos el hash lo comparamos con $H$, y si es igual y el hash está bien distribuido, no habrá muchas colisiones y el algoritmo es  $\mathcal{O}(n)$ (observamos que no depende de la longitud $m$ de la cadena que queremos buscar). \\
+\\
+\underline{Ejemplo:}\\
+Queremos buscar $abc$ en el texto  $dabc$. Tomamos  $p = 3$ y  $s \begin{cases}
+  a \to 0\\
+  b \to 1\\
+  c \to 2\\
+  d \to 3
+\end{cases}$\\
+Calculamos $H = h(abc) = 0\times 3^2 + 1 \times 3^1 + 2\times 3^0 = 5 $.\\
+ \begin{center}
+\begin{tabular}{ccc}
+  $\underline{dab}c$  & & $d\underline{abc}$ \\
+  $h(dab) = 3\times 9 + 0\times 3 + 1 = 28$  & $\implies$ &  $h(abc) = 3\times (h(dab)-3\times 9) + 2 = 5$ \\
+  $h(dab)\neq  H$ no match & & $h(abc) = H$ match
+\end{tabular}
+\end{center}
 \section{Grafos}
 \subsection{Algunas definiciones previas}
 \begin{itemize}
@@ -374,13 +398,19 @@ Si este grafo tiene una componente fuertemente conexa, entonces no se pueden asi
 \end{multicols}
 
 \subsection{Flujo máximo}
-Suponemos que tenemos ciertas ciudades (nodos) y carretaras (aristas dirigidas) con una cierta capacidad. Consideramos ir de una ciudad origen (fuente) a una final (pozo), cumpliendo, a demás las restricciones en las capacidades de las carreteras. La solución a la capacidad máxima es el \textit{flujo máximo}. \\
+Suponemos que tenemos ciertas ciudades (nodos) y carretaras (aristas dirigidas) con una cierta capacidad. Consideramos ir de una ciudad origen (fuente) a una final (pozo), cumpliendo, además las restricciones en las capacidades de las carreteras. La solución a la capacidad máxima es el \textit{flujo máximo}. \\
 \\
 \algo{Flujo máximo}{}\\
+Empezamos construyendo un grafo $F$ con la misma estructura pero inicializando a $0$ los pesos de las aristas.\\
+Para cada iteración Hacemos:
 \begin{itemize}
-  \item 
-  
+  \item Buscamos un camino $s\to t$ y hacemos pasar el máximo flujo posible (habrá una arista que haga de cuello de botella).
+  \item Sumamos ese flujo en el camino en $F$. Restamos en $G$ ese flujo y además lo ponemos en sentido contrario.
+  \item Repetimos el proceso mientras exista un camino donde pasar flujo $s\to t$.
 \end{itemize}
+\noindent
+Se adjunta un ejemplo sencillo. La primera columna corresponde al grafo $G$ y la segunda al  $F$ conforme se van actualizando.
+\incfig{maxflow}
 \ex{Matching máximo}\\
 Buscamos en un grafo bipartido $V = E + D$ el máximo número de aparejamientos.\\
 Podemos replantear el problema añadiendo los nodos $s$ y $t$ tal y las aristas $s \to E, D\to t$. Realizando el maxflow del nuevo grafo de $s$ a $t$, la solución será el número de parejas.
@@ -414,8 +444,28 @@ La pregunta es si $P=NP$ o  $P\neq NP$. En función de la respuesta tenemos los 
   \item \textbf{Vertex covering} Buscar el covering (subconjunto de vértices tal que toda arista tiene al menos un vértice en el) mínimo en un grafo
   \item \textbf{Graph coloring} Mínimo numero de colores con el que se puede colorear un grafo
 \end{itemize}
-\subsection{Teorema de Gödel}
-Problema de la parada
+\subsection{Problema de la parada}
+Este teorema nos dice que es imposible diseñar un algoritmo que nos diga si un cierto código dado como input parará en un tiempo finito.\\
+\\
+Supongamos que si que tenemos tal algoritmo. Definimos el algoritmo como
+\[
+halt(x) = \begin{cases}
+  1 \text{ si el código } x \text{ se para}\\
+  0 \text{ si el código } x \text{ no se para}
+\end{cases}
+\] 
+Entonces podemos implementar la función $g()$ de la siguiente manera:
+\begin{lstlisting}
+void g(){
+  if(halt(g)){
+	loop_forever();
+  }
+}
+\end{lstlisting}
+Observamos que si $halt(g)=1$, eso significaría que la función g llama a loop_forever() $\implies$ contradicción.\\
+Por otro lado, si $halt(g)=0$, eso significaría que la función se para $\implies$ contradicción.\\
+\\
+Por tanto no existe tal algoritmo.
 \subsection{Jocs imparcials}
 Definimos los \textbf{nimbers} como la función recursiva:
 \[
@@ -425,7 +475,9 @@ Donde $X$ es el conjunto de las posiciones posibles del juego.\\
 \\
 Se cumple que una posición $x$ es perdedora si y solo si $nim(x)=0$. Esto lo podemos ver por la definición de la función $nim$: si una posición es perdedora, no se podrá llegar desde ella a ninguna posición ganadora y viceversa.\\
 \\
-Se cumple $nim(x\oplus y) = nim(x) \wedge nim(y)$ donde $\wedge$ es la operación exclusive or.\\
+Podemos hacer el "producto" de dos juegos imparciales representado por la operación $\bigoplus$. Si tenemos los juegos $J_i$ y tenemos una posición de cada juego $x_i\in J_i$, entonces la posición del producto de juegos es $x_1\oplus\ldots\oplus x_n\in J_1\bigoplus\ldots\bigoplus J_n$.\\
+\\
+Un resultado interesante es que $nim(x\oplus y) = nim(x) \wedge nim(y)$ donde $\wedge$ es la operación exclusive or.\\
 \\
 El juego por excelencia donde se aplica es el \textbf{Joc del Nim} y sus diversas variantes. La mas sencilla de ellas es la siguiente: \\
 \\
