@@ -1,0 +1,122 @@
+\documentclass{myclass}
+\usepackage{verbatim}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{fancyvrb}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{amssymb}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,epsfig,epstopdf,titling,url,array}
+\usepackage{hyperref}
+\usepackage{eso-pic}
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\newtheorem*{definition}{Definition}
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{proposition}{Proposition}
+
+\newcommand{\incfig}[1]{%
+\center
+\def\svgwidth{0.9\columnwidth}
+\import{./figures/}{#1.pdf_tex}
+}
+
+
+\newcommand{\incimg}[1]{%
+\center
+\includegraphics[width=0.9\columnwidth]{images/#1}
+}
+
+
+\pdfsuppresswarningpagegroup=1
+
+\title{Funciones de Varible Compleja}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Funciones Holomorfas}
+\begin{definition}
+$f$ es holomorfa ($f\in \mathcal{H}$) si
+\[
+\exists f'(z_0) = \lim_{z\to z_0} \frac{f(z)-f(z_0)}{z-z_0}
+\] 
+\end{definition}
+
+De la definición se deduce que si $f$ es holomorfa  $\implies \exists \ f_x, f_y$ 
+
+\begin{theorem}
+Ecuaciones de Cauchy-Riemann (CR en adelante) (condiciones necesarias para que $f$ sea holomorfa)
+\[
+f_y(z_0) = if_x(z_0) 
+\iff 
+\begin{cases}
+u_x = v_y \\
+u_y = -v_x
+\end{cases}
+\iff
+\begin{cases}
+f_z = f'\\
+f_{\overline{z}} = 0
+\end{cases}
+\] 
+\end{theorem}
+
+\begin{theorem}
+Condiciones suficientes para que $f$ sea holomorfa
+\[
+\begin{cases}
+  u, v\in \mathcal{C}(\Omega) \\
+  CR
+\end{cases}
+\implies
+f\in \mathcal{H}(\Omega)
+\] 
+\end{theorem}
+Si las funciones $f, g$ son holomorfas, entonces son holomorfas
+ \begin{itemize}
+  \item $\lambda f + \mu g$ 
+  \item $fg$
+  \item  $\displaystyle\frac{f}{g}$ si $g\neq 0$
+  \item $f\circ g$
+\end{itemize}
+y sus derivadas coinciden con las derivadas en el caso $z\in \mathbb{R}$
+
+\begin{definition}
+Una función $L$ es lineal $\iff L(z) = \mu z = re^{i\varphi }z$ 
+\[
+  L(z) = L(x + iy) = \begin{pmatrix} a & -c \\ c & a \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} 
+\] 
+Observamos que se trata de una rotación + homotecia
+\end{definition}
+
+\begin{proposition}
+$L$ preserva ángulos y orientación $\implies L $ es $\mathbb{C}-$lineal
+\end{proposition}
+
+
+
+
+
+\end{document}

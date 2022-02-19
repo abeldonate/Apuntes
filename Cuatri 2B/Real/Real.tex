@@ -1,0 +1,93 @@
+\documentclass{myclass}
+\usepackage{verbatim}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{fancyvrb}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{amssymb}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,epsfig,epstopdf,titling,url,array}
+\usepackage{hyperref}
+\usepackage{eso-pic}
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\newtheorem*{definition}{Definition}
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{proposition}{Proposition}
+
+\newcommand{\fn}{\{f_n\}_n}
+
+\newcommand{\incfig}[1]{%
+\center
+\def\svgwidth{0.9\columnwidth}
+\import{./figures/}{#1.pdf_tex}
+}
+
+
+\newcommand{\incimg}[1]{%
+\center
+\includegraphics[width=0.9\columnwidth]{images/#1}
+}
+
+
+\pdfsuppresswarningpagegroup=1
+
+\title{a}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Sucesiones de funciones}
+\begin{definition}
+  Decimos que $\fn \to f$ converge puntualmente si
+  \[
+	\lim_{n \to \infty} f_n(x) = f(x) \ \forall x \in E 
+  \]
+\end{definition}
+Observamos que esta definición de convergencia es bastante débil, ya que
+\begin{itemize}
+  \item $f_k$ continuas  $\not\implies f$ continua \\
+  \item $\displaystyle\frac{d}{dx} f \neq  \lim \frac{d}{dx} f_n$ 
+  \item $\displaystyle\int_a^b f \neq  \lim \int_a^b f_n dx$
+\end{itemize}
+
+\begin{definition}
+  Decimos que $\fn \to f$ converge uniformemente si
+\[
+\ \forall \varepsilon > 0 \ \exists n_0(\varepsilon) : \text{ si } n\ge n_0 \implies \sup  | f_n(x)-f(x)|<\varepsilon
+\] 
+\end{definition}
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

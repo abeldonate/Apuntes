@@ -1,0 +1,138 @@
+\documentclass{myclass}
+\usepackage{verbatim}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{fancyvrb}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{amssymb}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,epsfig,epstopdf,titling,url,array}
+\usepackage{hyperref}
+\usepackage{eso-pic}
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\newtheorem*{definition}{Definition}
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{proposition}{Proposition}
+
+\newcommand{\incfig}[1]{%
+\center
+\def\svgwidth{0.9\columnwidth}
+\import{./figures/}{#1.pdf_tex}
+}
+
+
+\newcommand{\incimg}[1]{%
+\center
+\includegraphics[width=0.9\columnwidth]{images/#1}
+}
+
+
+\pdfsuppresswarningpagegroup=1
+
+\title{a}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\section{Electrostática}
+\subsection{Triángulo eléctrico}
+Podemos relacionar las variables eléctricas $ E, V, \rho$ con las siguientes fórmulas
+\[
+  \begin{cases}
+\displaystyle\nabla\cdot E = \frac{\rho}{\varepsilon_0} \\ \displaystyle E = -\nabla V \\ \displaystyle \nabla ^2 V = -\frac{\rho}{\varepsilon_0}
+  \end{cases}
+  \implies
+  \begin{cases}
+    \displaystyle E = \frac{1}{4\pi \varepsilon_0} \int \frac{\hat{r}}{r^2}\rho d\tau \\
+	\displaystyle V = -\int E dr \\
+	\displaystyle V = \frac{1}{4\pi \varepsilon_0 } \int \frac{\rho}{r}d\tau 
+  \end{cases}
+\] 
+
+\subsection{Dipolos}
+\subsubsection{Puntual}
+Un dipolo puntual consta de dos cargas iguales y opuestas. Por simplicidad las ponemos en el eje $z$ a una distancia de $\pm \frac{d}{2}$ del origen. Definimos $\boxed{\overline{p} = q\overline{d}}$ como el momento dipolar. Calculando el potencial y el campo en el punto $\overline{r}$
+\[
+V = \frac{q}{4\pi \varepsilon_0}(\frac{1}{r_+} - \frac{1}{r_-}) \approx \frac{\overline{p}\cdot \overline{r}}{4\pi \varepsilon _0}  \implies \overline{E} = \frac{3\overline{p}\cdot \overline{r}}{4\pi \varepsilon _0} \frac{\overline{r}}{r^5} - \frac{\overline{p}}{4\pi \varepsilon _0r^3}
+\] 
+donde la aproximación es válida para $r\gg d$
+\subsubsection{Lineal}
+Un dipolo lineal consta de dos barras con carga uniforme y opuesta. Por simplicidad ponemos las barras a distancia $\frac{d}{2}$ del origen paralelas al eje $z$. Definimos $\boxed{\overline{\mathcal{P}} = \lambda \overline{d}}$. Calculamos el potencial y el campo en el punto $\overline{r}$
+\[
+V = \frac{\lambda}{2\pi \varepsilon _0} \ln(\frac{s_-}{s_+}) \approx \frac{\overline{\mathcal{P}}\cdot \overline{s}}{2\pi\varepsilon _0s^2} \implies \overline{E} = \frac{1}{2\pi\varepsilon _0}\left( \frac{2\overline{\mathcal{P}}\cdot \overline{s}}{s^4}\overline{s} - \frac{\overline{\mathcal{P}}}{s^2} \right) 
+\] 
+
+\subsection{Conductores}
+\begin{theorem}
+Propiedad electrostática de los conductores. Dentro de un conductor se cumple $\boxed{\overline{E}=0}$ 
+\end{theorem}
+
+\begin{theorem}
+Teorema de unicidad. Si se conoce $V$ el una superficie que encierra una región y la distribución de cargas, entonces la ecuación de Laplace $\nabla ^2V=0$ dentro de la región tiene una única solución
+\end{theorem}
+
+\section{Magnetostática}
+
+\section{Campos variables}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
