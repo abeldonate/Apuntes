@@ -3,6 +3,7 @@
 \usepackage{array}
 \usepackage{listings}
 \usepackage{fancyvrb}
+\usepackage{enumitem}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -49,12 +50,91 @@
 
 \pdfsuppresswarningpagegroup=1
 
-\title{a}
+\title{Topología}
 
 \begin{document}
 \maketitle
 \tableofcontents
 \newpage
+
+\section{Espacios métricos}
+\begin{definition}
+Una métrica / distancia es una aplicación $d:E\times E\to \mathbb{R}$ que cumple
+\begin{enumerate}[topsep=0pt, itemsep=0pt]
+  \item $d(x, y)\ge 0$ y $d(x, y)=0 \iff x=y$
+  \item $d(x, y)=d(y, x)$
+  \item $d(x, z) \le d(x, y) + d(y, z)$
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+Una norma es una aplicación $\|\cdot \|: E\to \mathbb{R}$ que cumple
+\begin{enumerate}[topsep=0pt, itemsep=0pt]
+  \item $\|v\|\ge 0$ y $\|v\|=0 \iff v=0$
+  \item $\|\lambda v\| =  |\lambda |\|v\|$
+  \item  $\|u+v\|\le  \|u\|+\|v\|$
+\end{enumerate}
+Observamos que toda norma induce una distancia $d(u, v)=\|u-v\|$
+\end{definition}
+
+Algunos ejemplos de distancias y normas son
+\begin{itemize}[topsep=0pt, itemsep=0pt]
+  \item \textbf{p-norma} (vectores) $\displaystyle\|x\|_p = \left(\sum |x_i|^p\right)^{\frac{1}{p}} \ \forall p\ge 1$ y (funciones) $\displaystyle\|f\|_p = \left(\int_a^b |f|^p\right)^{\frac{1}{p}} \ \forall p\ge 1$
+  \item \textbf{Métrica trivial} $d(x, y) = \begin{cases}
+    1 \text{ si } \neq  y\\
+    0 \text{ si } = y
+  \end{cases}$   
+  \item \textbf{Hamming} $d(a, b)=|\{i:a_i\neq b_i\}|$, es decir, la cantidad de componentes diferentes
+  \item \textbf{P-ádica} Definimos $u_p(n) = \max\{t\ge 0:p^t|n\}\implies d_p(a, b) = p^{-u_p(a-b)}$ es una distacia
+\end{itemize}
+
+\section{Espacios topológicos}
+\begin{definition}
+Una topología en un conjunto X es un subconjunto $\mathcal{T} \subset \mathcal{P}(X)$ que satisface los axiomas
+\begin{enumerate}[topsep=0pt, itemsep=0pt]
+  \item $\emptyset, X \in \mathcal{T} $
+  \item Cerrado por reuniones arbitrarias
+  \item Cerrado por intersecciones finitas
+\end{enumerate}
+\end{definition}
+Decimos que un subconjunto $C$ es abierto si $C\in\mathcal{T}$, y es cerrado si $C\not\in \mathcal{T}$
+
+Ejemplos de topologías
+\begin{itemize}[topsep=0pt, itemsep=0pt]
+  \item \textbf{Discreta} $\mathcal{T} = \mathcal{P}(X)$,  \textbf{Gorda} $\mathcal{T}=\{\emptyset, X, X\}$
+  \item (COMPLETAR)
+\end{itemize}
+
+\begin{definition}
+$N\subset X$ es un entorno de $x\in X$ si existe $U\in \mathcal{T}$ tal que $x\in U \subset  N$
+
+Si el entorno es abierto se le suele denotar $U_x$
+\end{definition}
+
+En este curso nos centraremos en los Espacios de Hausdorff $T_3$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

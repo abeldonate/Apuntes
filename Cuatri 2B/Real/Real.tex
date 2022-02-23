@@ -3,6 +3,7 @@
 \usepackage{array}
 \usepackage{listings}
 \usepackage{fancyvrb}
+\usepackage{enumitem}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -26,6 +27,7 @@
 \usepackage{pdfpages}
 \usepackage{transparent}
 \usepackage{xcolor}
+\usepackage{enumitem}
 
 \setlength{\parindent}{0em}
 \setlength{\parskip}{1em}
@@ -66,7 +68,7 @@
   \]
 \end{definition}
 Observamos que esta definición de convergencia es bastante débil, ya que
-\begin{itemize}
+\begin{itemize}[topsep=0pt, itemsep=0pt]
   \item $f_k$ continuas  $\not\implies f$ continua \\
   \item $\displaystyle\frac{d}{dx} f \neq  \lim \frac{d}{dx} f_n$ 
   \item $\displaystyle\int_a^b f \neq  \lim \int_a^b f_n dx$
@@ -79,8 +81,60 @@ Observamos que esta definición de convergencia es bastante débil, ya que
 \] 
 \end{definition}
 
+\begin{definition}
+$f_n$ cumple el criterio de Cauchy si
+ \[
+\forall \varepsilon >0 \ \exists N : \forall n, m>N \ |f_n-f_m | <\varepsilon 
+\] 
+\end{definition}
+
+Si $f_n$ es de Cauchy y converge a  $f$ puntualmente  $\implies$ $f_n \to f$ uniformemente
+
+Al contrario que con la convergencia puntual, la monótona nos asegura:
+\begin{itemize}[topsep=0pt, itemsep=0pt]
+  \item $f_n$ continua  $\implies f$ continua
+  \item $\displaystyle\int_a^b f =  \lim \int_a^b f_n dx$
+\end{itemize}
 
 
+\begin{theorem}
+Teorema de Dini. $f_n \to f$ puntualmente sobre un compacto  $A$, con $f, f_n$ continuas. $f_n$ puntualmente monótona  $\implies$ $f_n\to f $ uniformemente en $A$.
+\end{theorem}
+
+\subsection{Criterios de convergencia}
+\begin{proposition}
+ Criterio de Weierstrass. Sea $f_n$ tal que  $\forall n \ \exists M_n : |f_n|\le M_n$
+
+ Si $\sum M_n$ es convergente  $\implies \sum f_n$ converge uniformemente
+\end{proposition}
+
+\begin{proposition}
+Fórmula de sumación de Abel. Sean $a_n, b_n, s_n := \sum_{i=0}^n a_i$. Podemos expresar las sumas como:
+\begin{enumerate}[topsep=0pt, itemsep=0pt]
+  \item $\displaystyle\sum a_kb_k = s_nb_{n+1} - \sum s_k(b_{k+1}-b_k)$ 
+  \item $\displaystyle\sum a_kb_k = s_nb_1 + \sum (s_n-s_k)(b_{k+1}-b_k)$ 
+\end{enumerate}
+\end{proposition}
+
+\begin{proposition}
+Test de Abel. Sean las funciones $f, g$ cumpliendo
+ \begin{enumerate}[topsep=0pt, itemsep=0pt]
+  \item $\sum f_n\to f$ uniformemente
+  \item  $\ \forall n \ |g_n| <M$
+  \item $g_n$ monótona decreciente
+\end{enumerate}
+Entonces $\sum f_ng_n$ converge uniformemente
+\end{proposition}
+
+\subsection{Series de potencias}
+Una serie de potencias es una suma definida como $\displaystyle \sum_0^\infty a_nx^n$. Analizaremos la convergencia en función de la sucesión $a_n$
+\begin{proposition}
+Caracterización de la convergencia.
+\begin{enumerate}[topsep=0pt, itemsep=0pt]
+  \item Si $\sum a_n$ converge en $x_0\neq 0 \implies $ converge absolutamente en $(-x_0, x_0)$ y uniformemente en $[a, b]$ con  $a>-x_0, b<x_0$
+  \item Si  $\sum a_n$ diverge en $x_0 \implies$ diverge en $\mathbb{R}-[-x_0, x_0]$
+\end{enumerate}
+\end{proposition}
 
 
 
