@@ -3,6 +3,7 @@
 \usepackage{array}
 \usepackage{listings}
 \usepackage{fancyvrb}
+\usepackage{enumitem}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -95,7 +96,7 @@ f\in \mathcal{H}(\Omega)
 \] 
 \end{theorem}
 Si las funciones $f, g$ son holomorfas, entonces son holomorfas
- \begin{itemize}
+\begin{itemize}[topsep=0pt, itemsep=0pt]
   \item $\lambda f + \mu g$ 
   \item $fg$
   \item  $\displaystyle\frac{f}{g}$ si $g\neq 0$
@@ -114,6 +115,77 @@ Observamos que se trata de una rotación + homotecia
 \begin{proposition}
 $L$ preserva ángulos y orientación $\implies L $ es $\mathbb{C}-$lineal
 \end{proposition}
+
+\begin{definition}
+Una función $u$ es armónica si $\Delta u = u_{x x} + u_{yy} = 0$ 
+
+Si $f = u + iv$ holomorfa  $\implies u, v$ armónicas
+\end{definition}
+
+\subsection{Series de potencias}
+\begin{definition}
+Sea $a_n$ una sucesión, definimos la serie de potencias centrada en $a$
+\[
+\sum_{n\ge 0} a_n(z-a)^n
+\] 
+y su radio de convergencia como
+\[
+R = \frac{1}{\limsup_{n\to \infty} \sqrt[n]{|a_n|} }
+\] 
+\end{definition}
+
+\begin{theorem}
+Cauchy-Hadamard. Sea $R$ el radio de convergencia de  $S = \sum_{n\ge 0} a_n (z-a)^n$.
+\begin{enumerate}[topsep=0pt, itemsep=0pt]
+  \item $S$ es absolutamente convergente en  $|z-a|<R$ 
+  \item $S$ es divergente en  $|z-a|>R$ 
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+Criterio M de Weierstrass. Sea $f_n$ una sucesión de funciones en $S$ tal que existe una sucesión de reales  $M_n$ tal que  $|f_n(z)|<M_m \ \forall z\in S$  y $\sum_{n\ge 0} M_n<\infty$, entonces
+\[
+\sum_{n\ge 0} f_n(z) \text{ es absolutamente y uniformemente convergente en } S
+\] 
+\end{theorem}
+
+Observamos que no podemos saber nada de la convergencia en el borde del disco $|z-a|=R$ con Cauchy-Hadamard
+
+\begin{theorem}
+Picard. 
+\[
+\text{si } \begin{cases}
+  c_j\ge 0, c_j\in \mathbb{R} \\
+  c_j\ge c_{j+1} \\
+  \lim c_j = 0
+\end{cases}
+\implies \sum_{n\ge 0} c_nz^n \text{ es convergente } \ \forall |z|=1 \text{ excepto quizá para } z=1
+\] 
+\end{theorem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

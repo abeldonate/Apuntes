@@ -136,6 +136,97 @@ Caracterización de la convergencia.
 \end{enumerate}
 \end{proposition}
 
+\begin{definition}
+Definimos el radio de convergencia como
+\[
+R = \frac{1}{\limsup \sqrt[n]{a_n} }
+\] 
+\end{definition}
+
+\begin{theorem}
+Teorema de Abel. Sea $R$ el radio de convergencia de la serie  $\sum_{n\ge 0} a_nx^n$
+\begin{enumerate}[topsep=0pt, itemsep=0pt]
+  \item Si $\sum_{n\ge 0} a_nR^n$ converge $\implies$ $\sum_{n\ge 0} a_nx^n$ converge uniformemente en $[0, R]$
+  \item Si  $\sum_{n\ge 0} a_nR^n=A \implies \lim_{x\to R^-} \sum_{n\ge 0} a_nx^n = A$  
+\end{enumerate}
+\end{theorem}
+
+Propiedades de las series de potencias. Sea $f(x) = \sum_{n\ge 0} a_nx^n$ con radio de convergencia $R$
+ \begin{itemize}[topsep=0pt, itemsep=0pt]
+  \item $f$ derivable en  $(-R, R)$ y $f'$ tiene el mismo radio de convergencia
+  \item $f$ integrable en  $(-R, R)$ y $f'$ tiene el mismo radio de convergencia
+  \item Unicidad. Si $f=g$ en un abierto que contiene el origen $ \implies a_n = b_n$
+\end{itemize}
+
+\subsection{Series de Taylor}
+\begin{theorem}
+Teorema de Taylor. Si $\sum_{n\ge 0} a_nx^n$ converge en $(-R, R)$ y  $c\in (-R, R)$.
+\[
+f(x) = \sum_{n\ge 0} \frac{f^{(n)}(c)}{n!}(x-c)^n
+\] 
+\end{theorem}
+
+\begin{proposition}
+Condición suficiente para que una función tenga serie de Taylor.
+
+Si podemos acotar sus derivadas por $|f^{(n)}(x)|<\gamma M^n \implies$ podemos definir la serie de Taylor 
+\end{proposition}
+
+\section{Espacios de funciones continuas}
+En todo el tema $K$ compacto. $\mathcal{F} = \{f_n\}\subset C(A, \mathbb{R})$
+\begin{definition}
+Espacio de funciones continuas.
+\[
+\mathcal{C(A, \mathbb{R}} ) = \{f:A\to R, f \text{ continua en }A\}
+\] 
+\end{definition}
+
+\begin{theorem}
+  $\mathcal{C}(K, \mathbb{R}) $ con la norma del supremo es un espacio de Banach (normado y completo)
+\end{theorem}
+
+\subsection{Equicontinuidad}
+
+\begin{definition}
+$\mathcal{F}$ es \textbf{puntualmente acotado} si $\mathcal{F}_x = \{f(x): f\in \mathcal{F}\}$ es acotado $\ \forall x$
+
+$\mathcal{F}$ es \textbf{uniformemente acotado} si $\ \exists \alpha : \|f\|<\alpha \ \forall f\in \mathcal{F}$
+\end{definition}
+
+\begin{theorem}
+$\mathcal{F}$ es \textbf{equicontinua} si 
+\[
+\ \forall \varepsilon >0 \ \exists \delta >0 : |x-y| \implies |f(x)-f(y)| < \varepsilon \ \forall f\in \mathcal{F}
+\] 
+\end{theorem}
+
+\begin{proposition}
+Si $f_n$ converge uniformemente en $\mathcal{C}(K, \mathbb{R})$ $\implies \mathcal{F} = \{f_n\}$ es uniformemente acotada y equicontinua
+\end{proposition}
+
+\begin{theorem}
+Arzela-Ascoli. Son equivalentes:
+\begin{enumerate}[topsep=0pt, itemsep=0pt]
+  \item La familia $\mathcal{F}$ es puntualmente acotada y equicontinua en $K$
+  \item De cada sucesión de elementos de $\mathcal{F}$ se puede extraer una parcial uniformemente convergente
+\end{enumerate}
+\end{theorem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
