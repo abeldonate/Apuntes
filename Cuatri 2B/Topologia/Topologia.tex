@@ -60,7 +60,7 @@
 \section{Espacios métricos}
 \begin{definition}
 Una métrica / distancia es una aplicación $d:E\times E\to \mathbb{R}$ que cumple
-\begin{enumerate}[topsep=0pt, itemsep=0pt]
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
   \item $d(x, y)\ge 0$ y $d(x, y)=0 \iff x=y$
   \item $d(x, y)=d(y, x)$
   \item $d(x, z) \le d(x, y) + d(y, z)$
@@ -69,7 +69,7 @@ Una métrica / distancia es una aplicación $d:E\times E\to \mathbb{R}$ que cump
 
 \begin{definition}
 Una norma es una aplicación $\|\cdot \|: E\to \mathbb{R}$ que cumple
-\begin{enumerate}[topsep=0pt, itemsep=0pt]
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
   \item $\|v\|\ge 0$ y $\|v\|=0 \iff v=0$
   \item $\|\lambda v\| =  |\lambda |\|v\|$
   \item  $\|u+v\|\le  \|u\|+\|v\|$
@@ -78,7 +78,7 @@ Observamos que toda norma induce una distancia $d(u, v)=\|u-v\|$
 \end{definition}
 
 Algunos ejemplos de distancias y normas son
-\begin{itemize}[topsep=0pt, itemsep=0pt]
+\begin{itemize}[topsep=-6pt, itemsep=0pt]
   \item \textbf{p-norma} (vectores) $\displaystyle\|x\|_p = \left(\sum |x_i|^p\right)^{\frac{1}{p}} \ \forall p\ge 1$ y (funciones) $\displaystyle\|f\|_p = \left(\int_a^b |f|^p\right)^{\frac{1}{p}} \ \forall p\ge 1$
   \item \textbf{Métrica trivial} $d(x, y) = \begin{cases}
     1 \text{ si } \neq  y\\
@@ -91,7 +91,7 @@ Algunos ejemplos de distancias y normas son
 \section{Espacios topológicos}
 \begin{definition}
 Una topología en un conjunto X es un subconjunto $\mathcal{T} \subset \mathcal{P}(X)$ que satisface los axiomas
-\begin{enumerate}[topsep=0pt, itemsep=0pt]
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
   \item $\emptyset, X \in \mathcal{T} $
   \item Cerrado por reuniones arbitrarias
   \item Cerrado por intersecciones finitas
@@ -100,7 +100,7 @@ Una topología en un conjunto X es un subconjunto $\mathcal{T} \subset \mathcal{
 Decimos que un subconjunto $C$ es abierto si $C\in\mathcal{T}$, y es cerrado si $C\not\in \mathcal{T}$
 
 Ejemplos de topologías
-\begin{itemize}[topsep=0pt, itemsep=0pt]
+\begin{itemize}[topsep=-6pt, itemsep=0pt]
   \item \textbf{Discreta} $\mathcal{T} = \mathcal{P}(X)$,  \textbf{Gruesa} $\mathcal{T}=\{\emptyset, X, X\}$
   \item \textbf{Complementarios finitos} $\mathcal{T}_{cd} = \{\emptyset\}\cup \{U \subset X : |U^c|<\infty\}$
   \item \textbf{Orden} $\mathcal{T}_{\le } = \{U\subset X: \ \forall  x \in U \ \exists \alpha , \beta \in X^{\pm \infty} : x\in (\alpha , \beta)\subset U\}$
@@ -124,13 +124,150 @@ Podemos comprobar que un subconjunto $\mathcal{B}\subset \mathcal{T}$ es base de
  \[
 \ \forall x \in X \text{ y cualquier entorno } U_x \ \exists \text{ un abierto básico} B\in \mathcal{B}\subset U_x
 \] 
+Para ver si $\mathcal{B}\subset \mathcal{P}(X)$ es base de alguna topología, tenemos que lo es si y solo si
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item $X=\bigcup B: \ \forall x \in X \ \exists B \in \mathcal{B}$ con $x \in B$ 
+  \item si $B_1, B_2 \in \mathcal{B}, \ \forall x \in B_1 \cap B_2 \implies \ \exists B\in \mathcal{B}: x\in B\subset B_1\cap B_2$
+\end{enumerate}
+
+\begin{definition}
+Una subbase de la topología $\mathcal{T}$ es un conjunto $\mathcal{S}\subset X$ que genera la $\mathcal{T}$ más fina que contiene $\mathcal{S}$. Lo denotaremos $\mathcal{T} = \langle \mathcal{S} \rangle $.
+\[
+\langle \mathcal{S} \rangle  = \{U=\bigcup B_i: B_i  = S_{i, 1}\cap \ldots \cap S_{i, n}, S_{i, j}\in  \mathcal{S}\}
+\] 
+\end{definition}
+
+\subsection{Aplicaciones continuas}
+\begin{definition}
+Una aplicación $f : X\mapsto Y$ es continua en un punto $x\in X$ si todo entorno de $f(x)$ contiene la imagen de algún entorno de  $x$
+
+La aplicación es continua y lo es para todos los puntos de  $X$
+\end{definition}
+
+Para probar que $f$ es continua solo basta con probar alguna de estas
+ \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item La antiimagen de un abierto es abierto
+  \item La antiimagen de un cerrado es cerrado
+  \item La antiimagen de todo abierto subbasico es abierto
+\end{enumerate}
+
+\begin{definition}
+Un \textbf{Homeomorfismo} es una aplicación $f: X \to Y$ tal que
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item $f$ continua
+  \item  $f$ biyectiva
+  \item  $f^{-1}$ biyectiva
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+Una aplicación $f$ es \textbf{Abierta} si la imagen de todo abierto es abierto, y \textbf{Cerrada} si la imagen de todo cerrado es cerrado.
+\end{definition}
+
+Observamos que si $f$ es continua y biyectiva, nos vale con que sea abierta o cerrada para decir que es un homeomorfismo.
+
+\begin{theorem}
+\textbf{Criterio Compacto-Hausdorff}. Toda aplicación $f:K\to H$ de compacto a Hausdorff es cerrada
+\end{theorem}
 
 
+\section{Construcción de nuevos espacios topológicos}
 
+\section{Subespacios topológicos}
+\begin{definition}
+Un subespacio topológico de $(X, \mathcal{T})$es un subespacio $S\subset X$ con la topología $\mathcal{T}|_S\subset \mathcal{P}(S)$ obtenida como
+\[
+\mathcal{T}|_S = \{U\cap S: U\in \mathcal{T}\}
+\] 
+\end{definition}
 
+Tenemos las siguientes afirmaciones con bases y subbases
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item Si $\mathcal{B} $ es base de $X \implies \mathcal{B}|_S:=\{B\cap S:B\in \mathcal{B}\}$ es base de $S$ 
+  \item Si $\mathcal{S} $ es subbase de $X \implies \mathcal{S}|_S:=\{U\cap S:U\in \mathcal{S}\}$ es subbase de $S$ 
+\end{enumerate}
 
+\begin{proposition}
+Sea $S\subset X$ un subespacio topológico e $Y$ otro espacio topológico
+ \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item La aplicación de inclusión $\iota: S \xhookrightarrow{} X$ es continua
+  \item  $\mathcal{T}|_S$ es la menos fina que hace continua $\iota$
+  \item $f:Y\to  S$ es continua $\iff$ $\iota\circ f$ es continua
+\end{enumerate}
+\end{proposition}
 
+\begin{theorem}
+\textbf{Lema del enganchamiento}. Sea $X=\bigcup_{i\in I} X_i$ un recubrimiento del espacio topológico $X$ que satisfacen una de las dos:
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item $X_i$ abierto  $\ \forall i\in I$
+  \item $X_i$ cerrado  $\ \forall i\in I$, $I$ finito 
+\end{enumerate}
+\end{theorem}
 
+\begin{definition}
+Una \textbf{Inmersión} es una aplicación $f: X \xhookrightarrow{} Y$ continua e inyectiva que da un homeomorfismo entre $X \cong f(X)\subset Y$
+\end{definition}
+
+\subsection{Espacios producto}
+\begin{definition}
+Sean $(X, \mathcal{T}_X), (Y, \mathcal{T}_Y)$. El \textbf{Espacio Producto} es el conjunto cartesiano $X\times Y$ con la topología que tiene por base el producto de abiertos:
+\[
+\mathcal{B}=\{U\times V: U\in \mathcal{T}_X, V\in \mathcal{T}_Y\}
+\] 
+\end{definition}
+Algunos ejemplos y contraejemplos de estos productos son los siguientes
+\begin{itemize}[topsep=-6pt, itemsep=0pt]
+  \item $X_{dis}\times Y_{dis} = (X\times Y)_{dis}$ 
+  \item $X_{gro}\times Y_{gro}=(X\times Y)_{gro}$
+  \item $\mathbb{R}^n_{euc}\times \mathbb{R}^m_{euc} = \mathbb{R}^{n+m}_{euc}$ 
+  \item $\mathbb{R}_{cf}\times \mathbb{R}_{cf} \neq \mathbb{R}^2_{cf}$ 
+  \item $\mathbb{R}_{dis}\times \mathbb{R}_{euc} = \mathbb{R}^2_{lex}$ 
+  \item $[0,1]_{dis}\times [0, 1]_{euc} \neq  [0, 1]^2_{lex}$
+\end{itemize}
+
+\begin{proposition}
+Sea $X = \Pi X_i$ un producto de espacios e $Y$ otro espacio
+ \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item Las proyecciones $\pi_j: X \to X_i$ son continuas
+  \item La topología producto en $X$ es la menos fina con la que todas las $\pi_j$ son continuas
+  \item  $f:Y\to X$ continua $\iff$ todas las $\pi_i\circ f$ continuas
+\end{enumerate}
+\end{proposition}
+
+\section{Espacio cociente}
+\begin{definition}
+Sea $\sim $ una relación de equivalencia sobre $X$ y $\pi:X \twoheadrightarrow  X / \sim  $ la proyección sobre el cociente. El espacio cociente ($Q, \mathcal{T}_Q$) tiene la topología
+\[
+\mathcal{T}_{Q}:= \{V\subset Q:\pi^{-1}(V)\in \mathcal{T}\}
+\] 
+\end{definition}
+
+En un espacio cociente se cumple
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item La proyección $\pi$ es continua
+  \item $\mathcal{T}_{Q}$ es la mas fina tal que $\pi$ es continua
+  \item La aplicación es continua $\iff$ $f\circ \pi$ es continua
+\end{enumerate}
+
+\begin{definition}
+Una \textbf{Identificación} (o aplicación cociente) es una $f:X \twoheadrightarrow $ continua y exhaustiva tal que el $Y$ tiene la topología cociente correspondiente
+\[
+V\in \mathcal{T}_Y \iff f^{-1}(V) \in \mathcal{T}_X
+\] 
+\end{definition}
+
+\begin{theorem}
+\textbf{Teorema de isomorfismo}. Sea $\sim $ tal que $x\sim y \iff f(x)=f(y)$
+
+Si $f:X \twoheadrightarrow Y$ es una identificación $\implies$ $f_\sim :X / \sim \to  F(X)$ es homeomorfismo
+\end{theorem}
+
+Podemos deducir que si $f$ continua y exhaustiva, entoces
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item $f$ abierta $\implies f$ identificación
+  \item $f$ cerrada $\implies f$ identificación
+  \item $f$ identificación  $\not\Rightarrow$ $f$ abierta ni cerrada
+\end{enumerate}
 
 
 

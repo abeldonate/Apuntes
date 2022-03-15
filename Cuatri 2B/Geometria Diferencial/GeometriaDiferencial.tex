@@ -144,7 +144,7 @@ La idea es codificar la superficie $S$ en una métrica sobre  $U$ para trabajar 
 
 Para cada punto sobre la superficie cogemos  $(\sigma_u, \sigma_v)$ como base para el plano tangente. Definimos la siguiente matriz
 \[
-  \begin{pmatrix} E & F \\ F & G \end{pmatrix} = \begin{pmatrix} \langle \sigma_u , \sigma_u \rangle & \langle \sigma_u , \sigma_v \rangle \\ \langle \sigma_u , \sigma_v \rangle & \langle \sigma_v , \sigma_v \rangle   \end{pmatrix} 
+P =   \begin{pmatrix} E & F \\ F & G \end{pmatrix} = \begin{pmatrix} \langle \sigma_u , \sigma_u \rangle & \langle \sigma_u , \sigma_v \rangle \\ \langle \sigma_u , \sigma_v \rangle & \langle \sigma_v , \sigma_v \rangle   \end{pmatrix} 
 \] 
 
 
@@ -175,12 +175,16 @@ Aplicación de Weingarten.
 Esta aplicación es autoadjunta (simétrica), por lo que puede definir una forma cuadrática.
 
 \begin{definition}
-\textbf{Segunda Forma Fundamental}
+\textbf{Segunda Forma Fundamental}. Dada la matriz
 \[
-  S = \begin{pmatrix} e & f \\ f & g \end{pmatrix} = 
+  S = \begin{pmatrix} e & f \\ f & g \end{pmatrix} = \begin{pmatrix} -\langle \sigma _u , N_u \rangle & -\langle \sigma _u , N_v \rangle \\ -\langle \sigma _v , N_u \rangle & -\langle \sigma _v , N_v \rangle   \end{pmatrix} =   \begin{pmatrix} \langle \sigma _{uu} , N \rangle & \langle \sigma _{uv} , N \rangle \\ \langle \sigma _{uv} , N \rangle & \langle \sigma _{vv} , N \rangle   \end{pmatrix} =  -PA = -A^TP 
 \] 
+Tenemos la forma cuadrática asociada
+\[
+II: T_q\to \mathbb{R}, \qquad II(w) = -\langle w , DNw \rangle = w^TSw
+\] 
+en la base $\sigma _u, \sigma _v$
 \end{definition}
-
 
 
 

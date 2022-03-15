@@ -119,7 +119,7 @@ En un medio polarizado con $\overline{P}$ se tienen dos densidades de carga que 
 \begin{minipage}{0.4\textwidth}
 \[
 \begin{cases}
-  \rho _b 0 = -\nabla\cdot P\\
+  \rho _b = -\nabla\cdot P\\
   \sigma _b = P\cdot \hat{n}
 \end{cases}
 \implies
@@ -161,48 +161,41 @@ En un dieléctrico lineal tenemos
 
 \section{Magnetostática}
 Podemos establecer la siguiente analogía con el campo eléctrico
-\begin{center}
-\begin{tabular}{|c|c|}
-  \hline
-  \textbf{Campo Eléctrico} & \textbf{Campo Magnético}\\
-\hline
-$\overline{F_e} = q\overline{E}$ & $\overline{F}_m = q_m\overline{B}$ \\
-
-$\overline{p} = q \overline{d}$ & $\overline{m} = q_m \overline{d}$ \\
-
-$\overline{\Gamma} = \overline{p}\times \overline{E}$ & $\overline{\Gamma} = \overline{m} \times \overline{B}$ \\
-
-$U = -\overline{p}\cdot \overline{E}$ & $U = -\overline{m}\cdot \overline{B}$ \\
-
-$\overline{P} = \frac{\sum \overline{p}}{d\tau  }$ & $\overline{M}=\frac{\sum \overline{m}}{d\tau}$ \\
-
-$\rho _b = -\nabla\cdot \overline{P}, \sigma _b = \overline{P}\cdot \hat{n}$ & $\rho _m = -\nabla\cdot \overline{M}, \sigma _m = \overline{M}\cdot \hat{n}$ \\
-
-$V(r)=\frac{1}{4\pi\varepsilon _0}\int_V \frac{\rho _b}{ |r'-r|}d\tau + \frac{1}{4\pi\varepsilon _0}\int_S \frac{\sigma _b}{|r'-r|}da$ & $\Xi(r)=\frac{1}{4\pi}\int_V \frac{\rho _m}{ |r'-r|}d\tau + \frac{1}{4\pi}\int_S \frac{\sigma _m}{|r'-r|}da$ \\
-\hline
-\end{tabular}
-\end{center}
 
 \begin{minipage}{0.5\textwidth}
-\[
-  
-\] 
+  \centering 
+  \textbf{Campo eléctrico}
+\begin{align*}
+  \overline{F_e} &= q\overline{E} \\
+  \overline{p} &= q \overline{d}\\
+  \overline{\Gamma} &= \overline{p}\times \overline{E} \\
+  U &= -\overline{p}\cdot \overline{E}\\
+  \overline{P} &= \frac{\sum \overline{p}}{d\tau  }\\
+  \rho _b = -\nabla\cdot \overline{P},& \ \  \sigma _b = \overline{P}\cdot \hat{n}\\
+  V(r)=\frac{1}{4\pi\varepsilon _0}\int_V \frac{\rho _b}{ |r'-r|}d\tau &+ \frac{1}{4\pi\varepsilon _0}\int_S \frac{\sigma _b}{|r'-r|}da \\
+  \overline{E} &= -\nabla V\\
+  \overline{D} &= \varepsilon _0\overline{E} + \overline{P}\\
+  \overline{E}_{dep} &= -\gamma \frac{\overline{P}}{\varepsilon _0}
+\end{align*}
 \end{minipage}
 \begin{minipage}{0.5\textwidth}
+  \centering
+  \textbf{Campo magnético}
+\begin{align*}
+  \overline{F_m} &= q_m\overline{B} \\
+  \overline{m} &= q_m \overline{d}\\
+  \overline{\Gamma} &= \overline{m}\times \overline{B} \\
+  U &= -\overline{m}\cdot \overline{B}\\
+  \overline{M} &= \frac{\sum \overline{m}}{d\tau  }\\
+  \rho _m = -\nabla\cdot \overline{M},& \ \  \sigma _m = \overline{M}\cdot \hat{n}\\
+  \Xi(r)=\frac{1}{4\pi}\int_V \frac{\rho _m}{ |r'-r|}d\tau &+ \frac{1}{4\pi}\int_S \frac{\sigma _m}{|r'-r|}da\\
+  \overline{H}&=-\nabla \Xi\\
+  \overline{H} &= \frac{\overline{B}}{\mu_0} - \overline{M}\\
+  \overline{H}_{dep} &= -\gamma \overline{M}
+\end{align*}
 
 \end{minipage}
 
-De la misma manera que definimos $\overline{P}$ podemos definir el dipolo magnético $\boxed{\overline{M} =\frac{\sum \overline{m}}{d\tau }}$
-
-En un medio polarizado magnéticamente se tienen dos densidades de carga que generan el scalar potential 
-\[
-\begin{cases}
-  \rho _m 0 = -\nabla\cdot \overline{M}\\
-  \sigma _m = \overline{M}\cdot \hat{n}
-\end{cases}
-\implies
-\Xi(r)=\frac{1}{4\pi}\int_V \frac{\rho _m}{ |r'-r|}d\tau + \frac{1}{4\pi}\int_S \frac{\sigma _m}{|r'-r|}da
-\] 
 
 \section{Campos variables}
 

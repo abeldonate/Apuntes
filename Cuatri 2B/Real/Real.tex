@@ -205,12 +205,51 @@ Si $f_n$ converge uniformemente en $\mathcal{C}(K, \mathbb{R})$ $\implies \mathc
 \end{proposition}
 
 \begin{theorem}
-Arzela-Ascoli. Son equivalentes:
+\textbf{Arzela-Ascoli}. Son equivalentes:
 \begin{enumerate}[topsep=0pt, itemsep=0pt]
   \item La familia $\mathcal{F}$ es puntualmente acotada y equicontinua en $K$
   \item De cada sucesión de elementos de $\mathcal{F}$ se puede extraer una parcial uniformemente convergente
 \end{enumerate}
 \end{theorem}
+Podemos generalizar ahora el teorema de Heine-Borel, que nos dice que en $\mathbb{R}^n$ un conjunto cerrado y acotado $\iff$ compacto
+\begin{theorem}
+Sea $K\subset \mathbb{R}$ compacto y $\mathcal{F}\subset C(K, \mathbb{R})$. Entonces
+\[
+  \mathcal{F} \text{ compacto } \iff \mathcal{F} \begin{cases} 
+	\text{cerrada}\\
+	\text{equicontinua}\\
+	\text{puntualmente acotada}
+  \end{cases}
+\] 
+\end{theorem}
+
+\begin{theorem}
+\textbf{Aproximación de Weierstrass}. Dada $f\in \mathcal{C}(K, \mathbb{R})$ y un $\varepsilon >0$
+\[
+\ \exists  p(x) \in \mathbb{R}[x] \text{ tal que } \|f-g\|=\sup_{x\in [a, b]}|f(x)-g(x)|<\varepsilon 
+\] 
+\end{theorem}
+
+Definimos $\begin{cases}
+  (f\vee g) = \max\{f(x), g(x)\} \\
+  (f\wedge g) = \min\{f(x), g(x)\} 
+\end{cases}  \implies \begin{cases}
+  f\vee g = \frac{f+g}{2}+\frac{|f-g|}{2} \\ 
+  f\wedge g= \frac{f+g}{2}-\frac{|f-g|}{2}
+\end{cases}$ 
+
+\begin{definition}
+$\mathcal{B}\subset \mathcal{C}([a, b], \mathbb{R})$ es un \textbf{retículo} si es cerrado por las operaciones $\vee, \wedge$
+\end{definition}
+
+\begin{theorem}
+\textbf{Aproximación de Stone}. Sea $\mathcal{B}$ un retículo:
+\[
+\ \forall x\neq y \in [a,b] \ \forall \alpha , \beta \in \mathbb{R} \implies \ \exists f\in \mathcal{B} : f(x) = \alpha , f(y)=\beta 
+\] 
+\end{theorem}
+
+
 
 
 
