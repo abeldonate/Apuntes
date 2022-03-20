@@ -138,6 +138,18 @@ Una subbase de la topología $\mathcal{T}$ es un conjunto $\mathcal{S}\subset X$
 \end{definition}
 
 \subsection{Aplicaciones continuas}
+En una aplicación $f:X\to Y$ se cumple
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item $A\subseteq A^{ec} \iff A\subseteq f^{-1}(f(A))$ (igualdad si $f$ inyectiva)
+  \item $A^{ce}\subseteq A \iff f(f^{-1}(A))\subseteq A$ (igualdad si $f$ exhaustiva)
+\end{enumerate}
+y cumple las siguientes propiedades
+\begin{itemize}[topsep=-6pt, itemsep=0pt]
+  \item $f^{-1}(\bigcup A_i)=\bigcup f^{-1}(A_i)$ 
+  \item $f^{-1}(\bigcap A_i) = \bigcap f^{-1}(A_i)$
+  \item $f(\bigcup A_i)=\bigcup f(A_i)$ 
+  \item $f(\bigcap A_i) \subseteq \bigcap f(A_i)$
+\end{itemize}
 \begin{definition}
 Una aplicación $f : X\mapsto Y$ es continua en un punto $x\in X$ si todo entorno de $f(x)$ contiene la imagen de algún entorno de  $x$
 
@@ -259,7 +271,7 @@ V\in \mathcal{T}_Y \iff f^{-1}(V) \in \mathcal{T}_X
 \begin{theorem}
 \textbf{Teorema de isomorfismo}. Sea $\sim $ tal que $x\sim y \iff f(x)=f(y)$
 
-Si $f:X \twoheadrightarrow Y$ es una identificación $\implies$ $f_\sim :X / \sim \to  F(X)$ es homeomorfismo
+Si $f:X \twoheadrightarrow Y$ es una identificación $\implies$ $f_\sim :X / \sim \to  f(X)$ es homeomorfismo
 \end{theorem}
 
 Podemos deducir que si $f$ continua y exhaustiva, entoces
@@ -269,8 +281,128 @@ Podemos deducir que si $f$ continua y exhaustiva, entoces
   \item $f$ identificación  $\not\Rightarrow$ $f$ abierta ni cerrada
 \end{enumerate}
 
+\section{Compacidad}
+\begin{definition}
+Un \textbf{Recubrimiento} de $S\subset X$ es una familia $(A_i)_{i\in I}$ con $A_i \subset X$ abiertos tal que $S\subset \bigcup_{i\in I} A_i$ 
+
+Un \textbf{Subrecubrimiento} es una subfamilia $(A_j)_{j\in J}, J\subset I$ tal que $S\subset \bigcup_{j\in J} A_j$ 
+\end{definition}
+
+\begin{definition}
+El espacio $(X, \mathcal{T})$ es \textbf{Compacto} si todo recubrimiento por abiertos tiene un subrecubrimiento finito (srf a partir de ahora)
+\end{definition}
+
+\begin{minipage}{0.5\textwidth}
+Ejemplos de compactos
+\begin{itemize}[topsep=-6pt, itemsep=0pt]
+  \item Cualquier espacio con $\mathcal{T}_{gr}$
+  \item Cualquier espacio con $\mathcal{T}_{cf}$ 
+  \item El subespacio $\{0\}\cup \{\frac{1}{n}:n\ge 1\}\subset R$
+  \item Un intervalo abierto $[a, b]$
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+Ejemplos de no compactos
+\begin{itemize}[topsep=-6pt, itemsep=0pt]
+  \item Espacio discreto finito
+  \item $\mathbb{R}, \mathbb{R}^n$
+  \item un intervalo abierto $(a, b)$
+  \item Una bola abierta  $B_{r}(x)\subseteq \mathbb{R}^n$
+\end{itemize}
+\end{minipage}
+
+\begin{theorem}
+Sea $f:X\to Y$ continua. Si $X$ es compacto  $\implies$ $Y$ es compacto
+\end{theorem}
+
+Tenemos como resultado que todo espacio cociente de un compacto es compacto
+
+\begin{theorem}
+$K$ compacto, $A\subseteq K$ cerrado $\implies A$ compacto
+\end{theorem}
+
+\begin{theorem}
+$K\subseteq X$ compacto de un Hausdorff $\begin{cases}
+  \Rightarrow \\
+  \not\Leftarrow
+\end{cases}$ 
+$X$ cerrado
+\end{theorem}
+
+\subsection{Producto de espacios}
+Veremos que el producto se comporta bien respecto a la compacidad
+
+\begin{proposition}
+\textbf{Lema del tubo}. $X\times Y$ con $Y$ compacto. Todo abierto de $X\times Y$ que contenga la fibra $\{x\}\times Y = \pi_X^{-1}(x)$ sobre $x\in X$ contiene algún tubo $U_x\times Y$
+\end{proposition}
+
+\begin{theorem}
+\textbf{Subbase de Alexander}. Sea $\mathcal{S}$ una subbase de $(X, \mathcal{T})$. \\
+$X$ es compacto $\iff$ todo recubrimiento por abiertos de $\mathcal{S}$ tiene srf
+\end{theorem}
+
+\begin{theorem} \textbf{Tychonoff}. 
+Sea $X=\Pi X_i$ un producto de espacios topológicos arbitrarios. Entonces
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item Si $X_i \neq \emptyset \ \forall i, X$ compacto $\implies X_i$ compactos
+  \item Si $X_i$ compacto $\ \forall i$ $\implies X$ compacto
+\end{enumerate}
+\end{theorem}
+
+\subsection{Espacios métricos}
+\begin{theorem}
+\textbf{Heine-Borel}. $A\subseteq \mathbb{R}^n$ compacto $\iff$ cerrado y acotado
+\end{theorem}
+Observamos que en un espacio métrico se cumple compacto $\begin{cases}
+  \Rightarrow \\ \not\Leftarrow 
+\end{cases}$ cerrado y acotado
+
+\begin{theorem}
+\textbf{Weierstrass}. $f:X \to \mathbb{R}$ continua con $X$ compacto tiene máximo y mínimo
+\end{theorem}
+
+\begin{theorem}
+  En un espacio métrico son equivalentes:
+  \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+    \item \textit{Compacidad por recubrimientos}: todo recubrimiento tiene un srf 
+	\item \textit{Bolzano-Weierstrass}: todo subconjunto infinito tiene algún punto de acumulación
+	\item \textit{Compacidad secuencial}: toda sucesión tiene alguna parcial convergente
+  \end{enumerate}
+\end{theorem}
 
 
+
+
+
+\section{Clasificación de aplicaciones continuas}
+Sea $f:X\to Y$ una aplicación continua
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Nombre}  & \textbf{$f$ cumple} & \textbf{Propiedades} \\
+\hline
+Abierta & imagen de todo abierto es abierto & \\
+\hline
+Cerrada & imagen de todo cerrado es cerrado & \\
+\hline
+Homeomorfismo & $f$ biyectiva,  $f^{-1}$ continua & \\
+\hline
+Inmersión & $f$ inyectiva, $X\cong f(X)$  &   \\
+\hline
+Identificación & $f$ exhaustiva, $ f^{-1}(V)$ abierto $\implies V$ abierto & $f_\sim : X / \sim \to  f(X)$ homeo \\
+\hline
+
+\end{tabular}
+\end{center}
+\subsection{Implicaciones útiles}
+Sea $f:X\to Y$ una aplicación continua
+\begin{itemize}[topsep=-6pt, itemsep=0pt]
+  \item $f$ biyectiva + abierta/cerrada $\begin{cases}
+    \Rightarrow \\ \not\Leftarrow
+  \end{cases}$ $f$ homeomorfismo
+  \item $f$ exhaustiva + abierta/cerrada  $\begin{cases} \Rightarrow \\ \not\Leftarrow \end{cases}$ $f$ identificación
+  \item 
+\end{itemize}
 
 
 
