@@ -1,0 +1,170 @@
+\documentclass{myclass}
+\usepackage{verbatim}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{multicol}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{amssymb}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,epsfig,epstopdf,titling,url,array}
+\usepackage{hyperref}
+\usepackage{eso-pic}
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\newtheorem*{definition}{Definition}
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{proposition}{Proposition}
+
+\newcommand{\incfig}[1]{%
+\center
+\def\svgwidth{0.9\columnwidth}
+\import{./figures/}{#1.pdf_tex}
+}
+
+
+\newcommand{\incimg}[1]{%
+\center
+\includegraphics[width=0.9\columnwidth]{images/#1}
+}
+\pdfsuppresswarningpagegroup=1
+
+
+\begin{document}
+
+\begin{multicols}{2}[\columnsep2em]
+
+Parámetro arco 
+\[
+s(t) = \int_{t_0}^t \beta '(u)du
+\]
+Triedro de Frenet (bon)
+ \[
+   T(t) = \frac{\beta'(t)}{\|\beta'(t)\|} \quad N(t) =
+\frac{T'(t)}{\|T'(t)\|} \quad
+B = T\times N
+\] 
+Curvatura y torsión
+ \[
+k(s) = \|T'(s)\|= \langle T'(s) , N(s) \rangle
+\]
+\[
+  \tau(s) = \langle N'(s) , B(s) \rangle 
+\]
+Para parámetro arbitrario
+\[
+k = \frac{\|\gamma' \times \gamma''\|}{\|\gamma'\|^3}, \quad \tau = \frac{\det\left( \gamma', \gamma'', \gamma^{3)} \right) }{\|\gamma'\times \gamma''\|^2}
+\]
+Si la curva es bidimensional
+\[
+k = \frac{\det(\gamma',\gamma'')}{\|\gamma'\|^3}
+\] 
+
+Fórmulas de Frenet
+\begin{align*}
+  T' &= kN \\
+  N' &= -kT + \tau B \\
+  B' &= -\tau N 
+\end{align*}
+
+Superficie parametrizada
+\[
+\sigma(u, v) = \begin{pmatrix} x(u, v) \\ y(u, v) \\ z(u, v) \end{pmatrix}, \quad D\sigma = \begin{pmatrix} x_u & x_v \\ y_u & y_v \\ z_u & z_v \end{pmatrix}
+\]
+Primera forma fundamental
+\[
+P =   \begin{pmatrix} E & F \\ F & G \end{pmatrix} = \begin{pmatrix} \langle \sigma_u , \sigma_u \rangle & \langle \sigma_u , \sigma_v \rangle \\ \langle \sigma_u , \sigma_v \rangle & \langle \sigma_v , \sigma_v \rangle   \end{pmatrix} 
+\]
+Cálculo de longitudes:
+(completar)
+
+Cálculo de áreas
+\[
+A = \iint_X\|\sigma _u\times \sigma _v\|dudv=  \iint_X \sqrt{EG-F^2}dudv
+\]
+Cálculo de ángulos
+(completar)
+
+Aplicación de Gauss
+\[
+N: S\to \mathbb{S}^2 \quad N(q) = \frac{\sigma _u\times \sigma _v}{\|\sigma _u\times \sigma _v\|}
+\]
+Aplicación de Weingarten.
+\[
+  DN \text{ matriz } A = \begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix} \text{ en base }\sigma _u, \sigma _v 
+\]
+Segunda forma fundamental
+\[
+  S = \begin{pmatrix} e & f \\ f & g \end{pmatrix} = \begin{pmatrix} -\langle \sigma _u , N_u \rangle & -\langle \sigma _u , N_v \rangle \\ -\langle \sigma _v , N_u \rangle & -\langle \sigma _v , N_v \rangle   \end{pmatrix}= \]
+  \[=   \begin{pmatrix} \langle \sigma _{uu} , N \rangle & \langle \sigma _{uv} , N \rangle \\ \langle \sigma _{uv} , N \rangle & \langle \sigma _{vv} , N \rangle   \end{pmatrix} =  -PA = -A^TP 
+\]
+\columnbreak
+\[
+II(w) = -\langle w, DN w \rangle  = w^TSw \text{ (base } \sigma_u, \sigma _v)
+\] 
+\[
+k_1=-\lambda_1 \quad k_2 = -\lambda_2 \text{  (VAPs de A)}
+\] 
+Curvatura de Gauss
+\[
+\det(DN) = \det(A) = \frac{\det(S)}{\det(P)} = k_1k_2
+\]
+$K>0$ elíptico,  $K<0$ hiperbólico \\
+$K=0, k_1\neq 0$ parabólico,  $K=0, k_i=0$ plano
+
+(fórmulas de aij)
+
+
+\end{multicols}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
