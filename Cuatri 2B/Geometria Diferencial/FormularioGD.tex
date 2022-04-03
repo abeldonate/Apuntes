@@ -56,7 +56,7 @@
 
 Parámetro arco 
 \[
-s(t) = \int_{t_0}^t \beta '(u)du
+s(t) = \int_{t_0}^t \|\beta' (u)\| du
 \]
 Triedro de Frenet (bon)
  \[
@@ -125,6 +125,9 @@ II(w) = -\langle w, DN w \rangle  = w^TSw \text{ (base } \sigma_u, \sigma _v)
 \[
 k_1=-\lambda_1 \quad k_2 = -\lambda_2 \text{  (VAPs de A)}
 \] 
+\[
+  k_i^2 -2Hk_i+K = 0
+\] 
 Curvatura de Gauss
 \[
 \det(DN) = \det(A) = \frac{\det(S)}{\det(P)} = k_1k_2
@@ -132,7 +135,22 @@ Curvatura de Gauss
 $K>0$ elíptico,  $K<0$ hiperbólico \\
 $K=0, k_1\neq 0$ parabólico,  $K=0, k_i=0$ plano
 
+Curvatura Media
+\[
+H = \frac{k_1+k_2}{2} = \frac{-a_{11}-a_{22}}{2}= \frac{eG-2Ff+Eg}{2(EG-F^2)}
+\] 
 (fórmulas de aij)
+\[
+a_{11} = \frac{Ff-eG}{EG-F^2}, \quad a_{12} = \frac{gF-Fg}{EG-F^2}
+\] 
+\[
+  a_{21}=\frac{eF-Ef}{EG-F^2}, \quad a_{22} = \frac{fF-Eg}{EG-F^2}
+\] 
+
+Curvatura normal ($T$ vector tangente)
+\[
+k_n = T^TST
+\] 
 
 
 \end{multicols}

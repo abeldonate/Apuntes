@@ -117,6 +117,12 @@ $L$ preserva ángulos y orientación $\implies L $ es $\mathbb{C}-$lineal
 \end{proposition}
 
 \begin{definition}
+$f$ es conforme en $\Omega \iff f$ preserva ángulos y orientación
+\end{definition}
+
+Se cumple $f$ conforme  $\iff f$ lineal
+
+\begin{definition}
 Una función $u$ es armónica si $\Delta u = u_{x x} + u_{yy} = 0$ 
 
 Si $f = u + iv$ holomorfa  $\implies u, v$ armónicas
@@ -163,7 +169,53 @@ Picard.
 \] 
 \end{theorem}
 
+\begin{theorem}
+Sea $f(z) = \sum a_n(z-a)^n$ con radio de convergencia $R$S. Se cumple
+ \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item $f\in H(D(a;R))$
+  \item $f\in \mathcal{C}^\infty(D(a;R))$ 
+  \item $f^{(k)}$ tiene radio de convergencia $R$
+\end{enumerate}
+\end{theorem}
 
+\section{Teoría local de Cauchy}
+\begin{definition}
+La integral de $f$ sobre un camino $\Gamma$ con parametrización $\gamma(t):[a, b]\to \mathbb{C}$ se define como
+\[
+\int_\Gamma f(z)dz = \int_a^b f(\gamma(t))\gamma'(t)dt
+\] 
+\end{definition}
+
+Si integramos una función derivada, tenemos un campo potencial $\int_\Gamma f'(z)dz = f(\gamma(b))-f(\gamma(a)) $
+
+\begin{theorem}
+Teorema de Green
+\[
+  \iint_R \frac{\partial F}{\partial \overline{z}}dxdy = \frac{1}{2i}\int_\gamma f(z)dz
+\] 
+\end{theorem}
+
+\begin{theorem}
+Fórmula de Cauchy
+\[
+f\in H(D)\cap \mathcal{C}(\overline{D}) \implies f(w) = \frac{1}{2\pi i}\int \frac{f(z)}{z-w}dz
+\] 
+\end{theorem}
+
+\begin{theorem}
+Representación en serie de potencias
+\[
+f(z) = \sum c_n(z-a)^n \implies c_n = \frac{f^{(n)}(a)}{n!} = \frac{1}{2\pi i} \int_{\partial D(a, r)+} \frac{f(z)}{(z-a)^{n+1}}dz
+\] 
+\end{theorem}
+
+\begin{theorem}
+Extensión analítica. $f\in H(\Omega)$. Si $\ \exists U$ abierto $: f|_U=0 \implies f=0$ en todo $\Omega$
+\end{theorem}
+
+\begin{theorem}
+Si $f\in H(\Omega) \implies f$ el conjunto de los ceros de $f$ es numerable
+\end{theorem}
 
 
 

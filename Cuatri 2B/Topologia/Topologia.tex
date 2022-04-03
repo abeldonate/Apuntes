@@ -57,6 +57,39 @@
 \tableofcontents
 \newpage
 
+\section{Propiedades conjuntos y funciones}
+
+De un conjunto $A$ se deducen los siguientes:
+
+\begin{tabular}{|l|l|l|}
+  \hline
+  \textbf{Interior} & $x \in  A^\circ \iff \ \exists U_x : x \in  U_x \subseteq A $ & $A^\circ \subseteq A$ \\
+  \hline
+  \textbf{Adherencia} & $x\in \overline{A} \iff \ \forall U_x \ U_x\cap A \neq \emptyset $ & $A \subseteq \overline{A}$ \\
+  \hline
+  \textbf{Frontera} & $x\in \partial A \iff \ \forall U_x \ U_x \cap A \neq \emptyset , U_x\cap A^c\neq \emptyset$ & $\partial A \subseteq \overline{A}$ \\
+  \hline
+  \textbf{Acumulación} & $x \in  A' \iff \ \forall U_x \ U_X\cap A \neq \emptyset, \{x\}$ & $A'\subseteq \overline{A}$ \\
+  \hline
+  \textbf{Aislado} & $x\in A^a \iff \ \exists U_x : U_x \cap A = \{x\}$ & $A^a \subseteq  A$ \\
+  \hline
+\end{tabular}
+
+$\overline{A} = A^\circ \sqcup \partial A = A' \sqcup A^a $
+
+En una aplicación $f:X\to Y$ se cumple (cec)
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item $A\subseteq A^{ec} \iff A\subseteq f^{-1}(f(A))$ (igualdad si $f$ inyectiva)
+  \item $A^{ce}\subseteq A \iff f(f^{-1}(A))\subseteq A$ (igualdad si $f$ exhaustiva)
+\end{enumerate}
+y cumple las siguientes propiedades
+\begin{itemize}[topsep=-6pt, itemsep=0pt]
+  \item $f^{-1}(\bigcup A_i)=\bigcup f^{-1}(A_i)$ 
+  \item $f^{-1}(\bigcap A_i) = \bigcap f^{-1}(A_i)$
+  \item $f(\bigcup A_i)=\bigcup f(A_i)$ 
+  \item $f(\bigcap A_i) \subseteq \bigcap f(A_i)$
+\end{itemize}
+
 \section{Espacios métricos}
 \begin{definition}
 Una métrica / distancia es una aplicación $d:E\times E\to \mathbb{R}$ que cumple
@@ -106,6 +139,7 @@ Ejemplos de topologías
   \item \textbf{Orden} $\mathcal{T}_{\le } = \{U\subset X: \ \forall  x \in U \ \exists \alpha , \beta \in X^{\pm \infty} : x\in (\alpha , \beta)\subset U\}$
   \item \textbf{Límite inferior} $\mathcal{T}_l = \{U\subset X : \ \forall  x\in U \ \exists \beta \in X^\infty  : [x, \beta )\subset  U\}$
   \item \textbf{Intervalos semi-infinitos} $\mathcal{T}_{-\infty}= \{U\subset X : \ \forall  x\in U \ \exists \beta \in X^\infty  : (-\infty, \beta )\subset  U\}$
+  \item \textbf{Zariski:} $\mathcal{T}_{zar} = \{x = (x_1, \ldots, x_n)\in K^n : f(x)=0, \ \forall f\in I\subseteq K[X_1, \ldots, X_2]\}$ (ceros de polinomios)
 \end{itemize}
 
 \begin{definition}
@@ -122,7 +156,7 @@ Una base de la topología $\mathcal{T}$ es un subconjunto $\mathcal{B}\subset \m
 \end{definition}
 Podemos comprobar que un subconjunto $\mathcal{B}\subset \mathcal{T}$ es base de $\mathcal{T}$ si y solo si
  \[
-\ \forall x \in X \text{ y cualquier entorno } U_x \ \exists \text{ un abierto básico} B\in \mathcal{B}\subset U_x
+\ \forall x \in X \text{ y cualquier entorno } U_x \ \exists \text{ un abierto básico } B\in \mathcal{B}: B\subseteq U_x
 \] 
 Para ver si $\mathcal{B}\subset \mathcal{P}(X)$ es base de alguna topología, tenemos que lo es si y solo si
 \begin{enumerate}[topsep=-6pt, itemsep=0pt]
@@ -138,18 +172,6 @@ Una subbase de la topología $\mathcal{T}$ es un conjunto $\mathcal{S}\subset X$
 \end{definition}
 
 \subsection{Aplicaciones continuas}
-En una aplicación $f:X\to Y$ se cumple
-\begin{enumerate}[topsep=-6pt, itemsep=0pt]
-  \item $A\subseteq A^{ec} \iff A\subseteq f^{-1}(f(A))$ (igualdad si $f$ inyectiva)
-  \item $A^{ce}\subseteq A \iff f(f^{-1}(A))\subseteq A$ (igualdad si $f$ exhaustiva)
-\end{enumerate}
-y cumple las siguientes propiedades
-\begin{itemize}[topsep=-6pt, itemsep=0pt]
-  \item $f^{-1}(\bigcup A_i)=\bigcup f^{-1}(A_i)$ 
-  \item $f^{-1}(\bigcap A_i) = \bigcap f^{-1}(A_i)$
-  \item $f(\bigcup A_i)=\bigcup f(A_i)$ 
-  \item $f(\bigcap A_i) \subseteq \bigcap f(A_i)$
-\end{itemize}
 \begin{definition}
 Una aplicación $f : X\mapsto Y$ es continua en un punto $x\in X$ si todo entorno de $f(x)$ contiene la imagen de algún entorno de  $x$
 
@@ -312,10 +334,9 @@ Ejemplos de no compactos
 \end{minipage}
 
 \begin{theorem}
-Sea $f:X\to Y$ continua. Si $X$ es compacto  $\implies$ $Y$ es compacto
+Sea $f:X\to Y$ continua. Si $X$ es compacto  $\implies$ $f(X)$ es compacto
 \end{theorem}
-
-Tenemos como resultado que todo espacio cociente de un compacto es compacto
+Tenemos como resultado que todo espacio cociente de un compacto es compacto.
 
 \begin{theorem}
 $K$ compacto, $A\subseteq K$ cerrado $\implies A$ compacto
@@ -348,6 +369,7 @@ Sea $X=\Pi X_i$ un producto de espacios topológicos arbitrarios. Entonces
   \item Si $X_i$ compacto $\ \forall i$ $\implies X$ compacto
 \end{enumerate}
 \end{theorem}
+
 
 \subsection{Espacios métricos}
 \begin{theorem}
