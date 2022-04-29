@@ -52,6 +52,8 @@
 
 \title{Topología}
 
+\setcounter{section}{-1}
+
 \begin{document}
 \maketitle
 \tableofcontents
@@ -130,11 +132,11 @@ Una topología en un conjunto X es un subconjunto $\mathcal{T} \subset \mathcal{
   \item Cerrado por intersecciones finitas
 \end{enumerate}
 \end{definition}
-Decimos que un subconjunto $C$ es abierto si $C\in\mathcal{T}$, y es cerrado si $C\not\in \mathcal{T}$
+Decimos que un subconjunto $C$ es abierto si $C\in\mathcal{T}$, y es cerrado si $C^c \in  \mathcal{T}$
 
 Ejemplos de topologías
 \begin{itemize}[topsep=-6pt, itemsep=0pt]
-  \item \textbf{Discreta} $\mathcal{T} = \mathcal{P}(X)$,  \textbf{Gruesa} $\mathcal{T}=\{\emptyset, X, X\}$
+  \item \textbf{Discreta} $\mathcal{T} = \mathcal{P}(X)$,  \textbf{Gruesa} $\mathcal{T}=\{\emptyset, X\}$
   \item \textbf{Complementarios finitos} $\mathcal{T}_{cd} = \{\emptyset\}\cup \{U \subset X : |U^c|<\infty\}$
   \item \textbf{Orden} $\mathcal{T}_{\le } = \{U\subset X: \ \forall  x \in U \ \exists \alpha , \beta \in X^{\pm \infty} : x\in (\alpha , \beta)\subset U\}$
   \item \textbf{Límite inferior} $\mathcal{T}_l = \{U\subset X : \ \forall  x\in U \ \exists \beta \in X^\infty  : [x, \beta )\subset  U\}$
@@ -143,12 +145,18 @@ Ejemplos de topologías
 \end{itemize}
 
 \begin{definition}
-$N\subset X$ es un entorno de $x\in X$ si existe $U\in \mathcal{T}$ tal que $x\in U \subset  N$
+$N\subseteq X$ es un entorno de $x\in X$ si existe $U\in \mathcal{T}$ tal que $x\in U \subseteq  N$
 
 Si el entorno es abierto se le suele denotar $U_x$
 \end{definition}
 
-En este curso nos centraremos en los Espacios de Hausdorff $T_3$
+\begin{definition}
+$X$ es de \textbf{Hausdorff} si $\ \forall x\neq y \in X \ \exists U_x, U_y : U_x\cap U_y =\emptyset$
+\end{definition}
+
+\begin{definition}
+Comparación de topologías. Si $\mathcal{T}_1\subseteq \mathcal{T}_2$ se dice que $\mathcal{T}_2$ es más fina que $\mathcal{T}_1$
+\end{definition}
 
 \subsection{Bases y subbases}
 \begin{definition}
@@ -190,7 +198,7 @@ Un \textbf{Homeomorfismo} es una aplicación $f: X \to Y$ tal que
 \begin{enumerate}[topsep=-6pt, itemsep=0pt]
   \item $f$ continua
   \item  $f$ biyectiva
-  \item  $f^{-1}$ biyectiva
+  \item  $f^{-1}$ continua
 \end{enumerate}
 \end{definition}
 
@@ -284,7 +292,7 @@ En un espacio cociente se cumple
 \end{enumerate}
 
 \begin{definition}
-Una \textbf{Identificación} (o aplicación cociente) es una $f:X \twoheadrightarrow $ continua y exhaustiva tal que el $Y$ tiene la topología cociente correspondiente
+Una \textbf{Identificación} (o aplicación cociente) es una $f:X \twoheadrightarrow Y$ continua y exhaustiva tal que el $Y$ tiene la topología cociente correspondiente
 \[
 V\in \mathcal{T}_Y \iff f^{-1}(V) \in \mathcal{T}_X
 \] 
@@ -347,7 +355,7 @@ $K\subseteq X$ compacto de un Hausdorff $\begin{cases}
   \Rightarrow \\
   \not\Leftarrow
 \end{cases}$ 
-$X$ cerrado
+$K$ cerrado
 \end{theorem}
 
 \subsection{Producto de espacios}
@@ -394,6 +402,135 @@ Observamos que en un espacio métrico se cumple compacto $\begin{cases}
 
 
 
+\section{Conexión}
+\subsection{Espacios conexos}
+\begin{definition}[Espacio conexo] El espacio $(X, \mathcal{T})$ es conexo si $X = U \sqcup V$ con  $U, V$ abiertos distintos de  $\emptyset, X$
+
+  El subespacio $S\subseteq X$ es no conexo si existe una separación, es decir
+  \[
+	\ \exists 
+  \begin{cases}
+   U\subseteq X \\
+   V \subseteq X
+  \end{cases}
+  :
+  \begin{cases}
+    U \cap V \cap S = \emptyset \\
+	U \cap S \neq \emptyset \\
+	V \cap S \neq \emptyset
+  \end{cases}
+  \implies S\subseteq U \cup V
+  \] 
+  Si no existe tal separación decimos que $S$ es conexo
+\end{definition}
+
+Propidedes de los conexos
+  \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+    \item Si $A$ conexo,  $A\subseteq B\subseteq \overline{A} \implies B$ conexo
+	\item $A_i$ conexos,  $A_i\cap A_j \neq \emptyset \implies A = \bigcup A_i$ conexo  
+	\item $f$ continua, $A$ conexo  $\implies f(A)$ conexo
+  \end{enumerate}
+
+\begin{theorem}[Valor intermedio] Sea $f:X \to \mathbb{R}$ continua con $X$ conexo.
+  \[
+  \ \forall x, y \in X : f(x)\le \alpha \le f(y) \implies \ \exists z \in X : f(z) = \alpha 
+  \] 
+\end{theorem}
+
+\begin{theorem}[Conexión de producto] Sea $X = \Pi X_i$ producto de espacios topológicos:
+   \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+    \item Si $X_i\neq \emptyset \ \forall i$ y $X$ es conexo  $\implies X_i$ es conexo
+	\item Si $X_i$ es conexo  $\ \forall i \implies X$ es conexo
+  \end{enumerate}
+\end{theorem}
+
+\subsection{Espacios arco-conexos}
+\begin{definition}[Camino] Un camino es una aplicación $\sigma :\mathbb{I} \to X$ continua
+\end{definition}
+
+\begin{definition}[Espacio arco-conexo] El espacio $(X, \mathcal{T})$ es arco-conexo si para cada par de puntos $a, b \in X$ existe un camino $\sigma : \sigma (0)=a, \sigma (1)=b$
+\end{definition}
+
+En general tenemos arco-conexo $\implies$ conexo, pero conexo $\not\implies$ arco-conexo (la pinta y la puça)
+
+\begin{proposition}
+Sea $f$ es una aplicación continua. $X$ arco-conexo  $\implies f(X)$ arco-conexo
+\end{proposition}
+
+
+
+\section{Homotopía}
+
+\subsection{Homotopía}
+\begin{definition}[Homotopía de aplicaciones]
+  Sean $f, g: X \to Y$ continuas. Una homotopía es una aplicación continua 
+  \[
+  F:X\times [0, 1] \to  Y : \begin{cases}
+    F(x, 0) = f(x) \\
+	F(x, 1) = g(x)
+  \end{cases} \ \forall x \in X
+  \] 
+\end{definition}
+
+Esta homotopía crea una clase de equivalencia homotópica ($\simeq$). El conjunto de las clases homotópicas de las aplicaciones continuas de  $X$ en  $Y$ se denomina  $\mathcal{C}[X, Y]$.
+
+\begin{definition}[Espacios homotópicos]
+  Dos espacios $X, Y$ son homotópicos ($X\simeq Y$) si:
+   \[
+  \ \exists \begin{cases}
+    f: X \to Y\\
+    g: Y \to  X
+  \end{cases}
+  :
+  \begin{cases}
+    g\circ f \simeq Id_X \\
+	f\circ g \simeq Id_Y
+  \end{cases}
+  \] 
+\end{definition}
+
+De la misma forma esta relación homotópica define una relación de equivalencia.
+
+\begin{definition}
+Un espacio es \textbf{contráctil} si tiene el mismo tipo de homotopía que un punto 
+\end{definition}
+
+\begin{definition}[Retracción]
+  Una retracción es una aplicación $r:X \to S \subseteq X$ tal que $r|_S = Id_S$
+
+  Un \textbf{retracto} se da si existe una retracción $r\simeq Id_X$
+\end{definition}
+
+\subsection{Revestimientos}
+\begin{definition}[Abierto elemental] Sea $f:X \to  Y$, un abierto elemental de $Y$ es un abierto $V$ de  $Y$ tal que
+  \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+    \item $f^{-1}(V) = \sqcup U_i$, $U_i$ abierto de  $X$
+	\item  $f|_{U_i}: U_i \to V$ es homeomorfismo ($U_i \simeq V$)
+  \end{enumerate}
+\end{definition}
+
+
+
+\begin{definition}[Revestimiento] Aplicación $p:\tilde{X} \twoheadrightarrow X$ exhaustiva tal que $X$ tiene un recubrimiento formado por abiertos elementales
+\end{definition}
+
+\subsection{Levantamientos}
+\begin{definition}[Levantamiento] Sea $p: \tilde{X} \twoheadrightarrow  X$ revestimiento, $f: Y \to X$, entonces un levantamiento (aixecament) de $f$ en el espacio  $\tilde{X}$ es
+  \[
+  \tilde{f}: Y \to \tilde{X} \quad \text{tal que } \quad p\circ \tilde{f} = f
+  \] 
+\end{definition}
+
+Si ademas $Y$ es conexo, cualquier levantamiento de una aplicación continua $f: Y \to X$ queda determinado por la imagen de un solo punto
+
+\begin{definition}[Levantamiento de caminos] Sea $p:\tilde{X} \twoheadrightarrow X$ revestimiento con $p(\tilde{x}=x$ y el camino $\sigma : \mathbb{I} \to X$ tal que $\sigma (0) = x$. Entonces $\sigma $ tiene un único levantamiento $\tilde{\sigma }: \mathbb{I} \to  X$ tal que  $\tilde{\sigma}(0) = \tilde{x}$
+\end{definition}
+
+\begin{definition}[Levantamiento de homotopías] Sea $p:\tilde{X} \twoheadrightarrow X$ revesimiento con $p(\tilde{x})=x$. Toda aplicación continua $F:\mathbb{I}^2 \to X$ con $F(0, 0) = x$ tiene un único levantamiento  $\tilde{F}: \mathbb{I}^2 \to  X$ con $\tilde{F}(0, 0) = \tilde{x}$
+\end{definition}
+
+\subsection{Grado de homotopías $\mathbb{S}^1 \to \mathbb{S}^1$}
+
 
 
 \section{Clasificación de aplicaciones continuas}
@@ -425,11 +562,6 @@ Sea $f:X\to Y$ una aplicación continua
   \item $f$ exhaustiva + abierta/cerrada  $\begin{cases} \Rightarrow \\ \not\Leftarrow \end{cases}$ $f$ identificación
   \item 
 \end{itemize}
-
-
-
-
-
 
 
 

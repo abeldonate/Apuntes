@@ -249,6 +249,166 @@ $\mathcal{B}\subset \mathcal{C}([a, b], \mathbb{R})$ es un \textbf{retículo} si
 \] 
 \end{theorem}
 
+\begin{theorem}
+Stone-Weierstrass. Si $B\subseteq \mathcal{C}([a,b], \mathbb{R})$ es una subálgebra que contiene constantes y separa puntos, entonces $\overline{B} = \mathcal{C}([a,b], \mathbb{R})$ ($B$ es denso en las funciones continuas).
+\end{theorem}
+
+
+\section{Series de Fourier}
+Al igual que en un espacio vectorial finito, en un espacio de funciones también podemos construir una base ortonormal. En este capítulo se tratarán las bases llamadas de Fourier.
+
+\begin{proposition}
+Observamos que el espacio $\mathcal{C}([a, b], \mathbb{R})$ con la norma $\|\cdot\|_{2}$ \textbf{no es completo}.
+
+Como consecuencia, las normas $\|\cdot \|_2$ y $\|\cdot\|_\infty$ no son equivalentes
+\end{proposition}
+
+\begin{proposition}
+Si $(f_n)$ es una sucesión de funciones integrables riemman que tienden a $f$ con la norma del supremo, entonces también tienden a $f$ en la norma cuadrática. El recíproco es falso.
+\end{proposition}
+
+\begin{definition}
+Un \textbf{Espacio de Hilbert} es un espacio vectorial dotado de un producto escalar que induce una norma $\langle \cdot , \cdot  \rangle $.
+\end{definition}
+
+\begin{definition}
+Forman una base ortonormal (completar)
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item $\displaystyle\varphi_0 = \frac{1}{\sqrt{\pi} }, \varphi_n = \frac{\cos(nx)}{\sqrt{\pi} }, \psi _n  \frac{\sin(nx)}{\sqrt{\pi} }$ en $\mathcal{C}(-\pi, \pi)$
+  \item $\displaystyle\varphi_0 = \frac{1}{\sqrt{\pi} }, \varphi_n = \frac{\cos(n\frac{2\pi}{L}x)}{\sqrt{\pi} }, \psi _n  \frac{\sin(n\frac{2\pi}{L}x)}{\sqrt{\pi} }$ en $\mathcal{C}(-\frac{L}{2}, \frac{L}{2})$
+  \item $\displaystyle\varphi _n = \sqrt{\frac{2}{\pi}}\sin(nx) $ en $\mathcal{C}$
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}
+Sea  $\{\varphi _n\}$ un sistema ortonormal, $f \in  E, a_n = \langle f, \varphi _n \rangle $. Definimos 
+\[
+f_n = \sum_{k\ge 1} a_k\varphi_k, \quad \sum_{k\ge 1} b_k\varphi _k, \quad b_i \in \mathbb{R}
+\] 
+Entonces $\|f_n-f\|_2\le \|g_n-f\|_2$ con igualdad si y solo si $b_i=a_i \ \forall i$ 
+\end{proposition}
+
+\begin{theorem}
+Sea $\mathcal{S} = (\varphi_n)$ y $f_n=\sum_{k= 1}^{n} a_k\varphi _n$ con $a_k = \langle f, \varphi_k  \rangle $. Entonces
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item \textbf{Desigualdad de Bessel} $\sum_{k\ge 1} $ converge y satisface $\sum_{k\ge 1} a_k^2\le \|f\|_{2}^2 $
+  \item \textbf{Identidad de Parseval} Si además $\lim_{n}\|f-f_n\|_2=0 \implies  \sum_{k\ge 1} a_k^2 = \|f\|_2^2  $
+\end{enumerate}
+\end{theorem}
+
+\begin{definition} Consideramos las familias de funciones:
+\begin{itemize}[topsep=-6pt, itemsep=0pt]
+  \item \textbf{Funciones continuas a trozos} $\mathcal{PC}[a, b]$ funciones continuas excepto en un número finito de puntos
+  \item \textbf{Funciones suaves} $\mathcal{PS}[a, b]$ funciones tal que $f, f' \in \mathcal{PC}[a, b]$
+\end{itemize}
+\end{definition}
+
+\begin{definition}
+La \textbf{Serie de Fourier trigonométrica} de $f\in \mathcal{PS}[-\pi, \pi]$ es
+\[
+S_f(x) = \lim S_f^n = \frac{a_0}{2} +  \sum_{k = 1}^n \left( a_n \cos(nx) + b_n\sin(nx)  \right)  
+\] 
+donde 
+\[
+a_0 = \frac{1}{\pi} \int_{-\pi}^\pi f(x) dx, \quad a_n = \frac{1}{\pi}\int_{-\pi}^\pi f(x)\cos(nx)dx, \quad b_n = \frac{1}{\pi}\int_{-\pi}^\pi f(x)\sin(nx)dx
+\] 
+\end{definition}
+
+\begin{definition}
+La \textbf{Serie de Fourier compleja} de $f\in \mathcal{PS}[-\pi, \pi]$ es
+\[
+SC_f(x) = \lim SC_f^n (x) = \sum_{k \in \mathbb{Z}} c_{k}e^{ikx} 
+\] 
+donde 
+\[
+c_k = \frac{1}{2\pi} \int_{-\pi}^\pi f(x)e^{-ikx}dx
+\] 
+\end{definition}
+
+\begin{theorem}[Teorema de Dirichlet]
+Sea $f\in \mathcal{PS}[-\pi, \pi]$ y consideramos su extensión periódica a $\mathbb{R}$. Entonces
+\[
+\lim SC_{f}(x) = \frac{1}{2}\left( f(x^+) + f(x^-) \right) 
+\] 
+\end{theorem}
+
+\begin{definition}
+El \textbf{Núcleo de Dirichlet} es la función
+ \[
+D_N (x) = \frac{1}{2\pi}\sum_{n\in \mathbb{Z}}e^{inx}
+\] 
+\end{definition}
+
+Esta función tiende a la delta de Dirac en el límite.
+
+\begin{theorem}[Convergencia uniforme de serie de Fourier]
+  Si $f\in \mathcal{PS}[-\pi, \pi]$ tal que la extensión periódica es continua, entonces $(SC_f^N)$ converge uniformemente a $f$.
+\end{theorem}
+
+\begin{theorem}[Identidad de Parseval] Si $f\in \mathcal{PS}[-\pi, \pi]$:
+  \[
+  \|f\|_2^2 = \int_{-\pi}^\pi |f(x)|^2dx = 2\pi \sum_{k\in Z} |c_k|^2 = \pi \left( \frac{a_0}{2} + \sum_{n\ge 1} a_n^2 + b_n^2 \right) 
+  \] 
+\end{theorem}
+
+
+
+
+\section{Teoría de la medida}
+\begin{definition}[$\sigma -$álgebra]. Sea $X$ un conjunto. Una  $\sigma -$álgebra sobre $X$ es una  $\mathcal{X} \subseteq \mathcal{P}(X)$ que cumple los axiomas:
+  \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+    \item $\emptyset, X \in \mathcal{X}$
+	\item Si $A\in \mathcal{X} \implies \overline{A}\in \mathcal{X}$ 
+	\item Si $A_i \in \mathcal{X} \implies \bigcup_{i\ge 0}A_i \in \mathcal{X}$
+  \end{enumerate}
+\end{definition}
+
+Llamaremos a $(X, \mathcal{X})$ un \textbf{espacio mesurable}
+
+\begin{definition}[Álgebra de Borel] Es la $\sigma -$álgebra $\mathcal{B}$ generada por los intervalos abiertos $(a,b)$.
+\end{definition}
+
+Se demuestra que el álgebra de Borel tambien contiene los intervalos de la forma $(a, b], [a, b), [a, b]$
+
+\begin{definition}[Función mesurable] Sea $f:X \to \mathbb{R}$. $f$ es mesurable si
+   \[
+ f^{-1}(B)\in \mathcal{X} \quad \ \forall B \in \mathcal{B}
+  \] 
+\end{definition}
+
+Las siguientes son equivalentes a que una función $f$ sea mesurable
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item $A_{\alpha} = \{x \in X : f(x)>\alpha \}\in \mathcal{X} \ \forall \alpha \in \mathbb{R}$
+  \item $A_{\alpha} = \{x \in X : f(x)<\alpha \}\in \mathcal{X} \ \forall \alpha \in \mathbb{R}$
+  \item $A_{\alpha} = \{x \in X : f(x) \ge \alpha \}\in \mathcal{X} \ \forall \alpha \in \mathbb{R}$
+  \item $A_{\alpha} = \{x \in X : f(x)\le \alpha \}\in \mathcal{X} \ \forall \alpha \in \mathbb{R}$
+\end{enumerate}
+
+Si $f, g$ son mesurables, entonces son mesurables $cf, f^2, f+g, fg, |f|$
+
+\begin{definition}
+  Sea $(f_n)$ una sucesión con  $f_i\in \mathcal{M}(X, \mathcal{X})$ definimos
+  \begin{itemize}[topsep=-6pt, itemsep=0pt]
+    \item $f(x) =  \inf f_n(x)$
+    \item $F(x) =  \sup f_n(x)$
+    \item $f^*(x) =  \lim \inf f_n(x)$
+    \item $F^*(x) =  \lim \inf f_n(x)$
+  \end{itemize}
+  Entonces $f, F, f^*, F^* \in \mathcal{M}(X, \mathcal{X})$
+\end{definition}
+
+\begin{definition}[Mesura] Una mesura es una función $\mu : \mathcal{X}\to \mathbb{R}^*$ tal que
+  \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+    \item $\mu(\emptyset) = 0$
+	\item  $\mu(E)\ge 0 \ \forall E \in \mathcal{X}$ 
+	\item Si $E_i \cap E_j = \emptyset$ con $i\neq j \implies \displaystyle \mu\left( \bigcup_{i\ge 1} E_i \right) = \sum_{i\ge 1}\mu(E_{i})  $
+  \end{enumerate}
+\end{definition}
+
+\begin{definition}[Espacio de mesura] Es un triplete $(X, \mathcal{X}, \mu)$
+\end{definition}
+
+
 
 
 
