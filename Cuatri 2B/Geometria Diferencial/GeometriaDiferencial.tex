@@ -3,7 +3,6 @@
 \usepackage{array}
 \usepackage{listings}
 \usepackage{fancyvrb}
-
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
@@ -18,6 +17,7 @@
 \usepackage{pgf}
 \usepackage{tikz}
 \usepackage{graphicx}
+\usepackage{enumitem}
 
 % figure support
 \usepackage{import}
@@ -195,6 +195,56 @@ La \textbf{Curvatura de Gauss} es
 Llamaremos a un punto elíptico si $K>0$ e hiperbólico si $K<0$
 
 
+\section{El teorema Egregium}
+\begin{definition}[Simbolos de Cristoffel]
+  definimos los símbolos de Cristoffel como los $\Gamma_{ij}^k$ tal que
+  \[
+  \begin{cases}
+    \sigma _{uu} = \Gamma_{11}^1\sigma _u + \Gamma_{11}^2 \sigma _v + eN \\
+    \sigma _{uv} = \Gamma_{12}^1\sigma _u + \Gamma_{12}^2 \sigma _v + fN \\
+    \sigma _{vv} = \Gamma_{22}^1\sigma _u + \Gamma_{22}^2 \sigma _v + gN
+  \end{cases}
+  \] 
+\end{definition}
+
+Podemos calcular los símbolos de Cristoffel con los siguientes sistemas
+\[
+  \begin{pmatrix} \frac{1}{2}E_u \\ F_u-\frac{1}{2}E_v \end{pmatrix}  = P\begin{pmatrix} \Gamma_{11}^1 \\ \Gamma_{11}^2 \end{pmatrix}  \qquad
+  \begin{pmatrix} \frac{1}{2}E_v \\ \frac{1}{2}G_u \end{pmatrix}  = P\begin{pmatrix} \Gamma_{12}^1 \\ \Gamma_{12}^2 \end{pmatrix} \qquad 
+  \begin{pmatrix} F_v-\frac{1}{2}G_u \\ \frac{1}{2}G_v \end{pmatrix}  = P\begin{pmatrix} \Gamma_{22}^1 \\ \Gamma_{22}^2 \end{pmatrix} 
+\] 
+O lo que viene a ser lo mismo
+\[
+  \begin{pmatrix} \Gamma_{11}^1 & \Gamma_{12}^1 & \Gamma_{22}^1 \\ \Gamma_{11}^2 & \Gamma_{12}^2 & \Gamma_{22}^2 &  \end{pmatrix}  = P^{-1} \begin{pmatrix} \frac{1}{2}E_u & \frac{1}{2}E_v & F_v - \frac{1}{2}G_u \\ F_u - \frac{1}{2}E_v & \frac{1}{2}G_u & \frac{1}{2}G_v \end{pmatrix} 
+\] 
+
+\begin{definition}[Fórmulas de Gauss] Las formulas de Gauss son:
+  \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+    \item $EK = (\Gamma_{11}^2)_v - (\Gamma_{12}^2)_u + \Gamma_{11}^1\Gamma_{12}^2 + \Gamma_{11}^2\Gamma_{22}^2 - \Gamma_{12}^1\Gamma_{11}^2 - \Gamma_{12}^2\Gamma_{12}^2$
+    \item $FK = (\Gamma_{12}^1)_u - (\Gamma_{11}^1)_v + \Gamma_{12}^1\Gamma_{12}^2 - \Gamma_{12}^2\Gamma_{11}^2$
+    \item $GK = (\Gamma_{22}^1)_u - (\Gamma_{12}^1)_v + \Gamma_{11}^1\Gamma_{22}^1 + \Gamma_{12}^1\Gamma_{22}^2 - \Gamma_{12}^1\Gamma_{12}^1 - \Gamma_{12}^2\Gamma_{22}^1$
+  \end{enumerate}
+\end{definition}
+
+\begin{theorem}[Egregium] La curvatura de Gauss $K$ es intrínseca
+\end{theorem}
+
+\begin{definition}[Ecuaciones de Codazzi-Mainardi] Se cumple:
+  \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+    \item $e_v-f_u = e\Gamma_{12}^1 + f(\Gamma_{12}^2 - \Gamma _{11}^1) - g\Gamma_{11}^2$
+	\item $f_v-g_u = e\Gamma_{22}^1 + f(\Gamma_{22}^2-\Gamma_{12}^1)-g\Gamma_{12}^2$
+  \end{enumerate}
+\end{definition}
+
+\begin{theorem}[Estructura para superficies] Sean $E, F, G, e, f, g$ funciones diferenciables tal que
+   \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+    \item $E>0, G>0, EG-F^2>0$
+	\item Satisfacen las ecuaciones de Gauss y Codazzi-Mainardi
+  \end{enumerate}
+Entonces para cada punto $p$ existe una aplicación $\sigma $ que es la parametrización de una superficie regular con $E, F, G, e, f, g$ como coeficientes de las formas fundamentales
+\end{theorem}
+
+
 
 \section{Ejemplos de variedades}
 \begin{center}
@@ -206,12 +256,6 @@ Revolución & $\begin{pmatrix} \varphi (u)\cos v \\ \varphi (u) \sin v \\ \psi (
 \hline
 \end{tabular}
 \end{center}
-
-
-
-
-
-
 
 
 

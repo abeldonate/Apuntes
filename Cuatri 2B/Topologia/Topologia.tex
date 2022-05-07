@@ -86,7 +86,7 @@ En una aplicación $f:X\to Y$ se cumple (cec)
 \end{enumerate}
 y cumple las siguientes propiedades
 \begin{itemize}[topsep=-6pt, itemsep=0pt]
-  \item $f^{-1}(\bigcup A_i)=\bigcup f^{-1}(A_i)$ 
+  \item $f^{-1}(\bigcup A_i)=\bigcup f^{-1}(A_i)$, $f^{-1}(\bigsqcup A_i)=\bigsqcup f^{-1}(A_i)$
   \item $f^{-1}(\bigcap A_i) = \bigcap f^{-1}(A_i)$
   \item $f(\bigcup A_i)=\bigcup f(A_i)$ 
   \item $f(\bigcap A_i) \subseteq \bigcap f(A_i)$
@@ -530,7 +530,59 @@ Si ademas $Y$ es conexo, cualquier levantamiento de una aplicación continua $f:
 \end{definition}
 
 \subsection{Grado de homotopías $\mathbb{S}^1 \to \mathbb{S}^1$}
+En toda la seccioón la función $\exp(x) = e^{2\pi i x}$.
 
+\begin{proposition}
+Sea $\sigma : \mathbb{I} \to \mathbb{S}^1$ un camino. Dos levantamientos $\tilde{\sigma }_1, \tilde{\sigma }_2: \mathbb{I} \to  \mathbb{R}$ de $\sigma $ difieren en un entero. Es decir $\tilde{\sigma }_1(s) = \tilde{\sigma }_2(s) + k$.
+\end{proposition}
+
+\begin{definition}[Grado de la aplicación] Sea $f:\mathbb{S}^1 \to  \mathbb{S}^1$ definimos
+  \[
+  \deg f:= \tilde{\sigma }_f(1) - \tilde{\sigma }_f(0) \in \mathbb{Z}
+  \] 
+  con $\tilde{\sigma }_f:\mathbb{I} \to  \mathbb{R}$ un levantamiento del camino $\sigma _f = f \circ \pi : \mathbb{I} \to  \mathbb{S}^1$
+\end{definition}
+
+\begin{proposition}
+La aplicación $f:  \mathbb{S}^1 \to  \mathbb{S}^1 $ tiene grado $0$ si y solo si tiene un levantamiento de la forma $\tilde{f}: \mathbb{S}^1 \to  \mathbb{R}$ con $f=\exp \circ \tilde{f}$
+\end{proposition}
+
+Vemos además que la aplicación $[f] \mapsto \deg f$ es un isomorfismo de grupos $[\mathbb{S}^1, \mathbb{S}^1] \cong \mathbb{Z}$ con la multiplicación en las funciones y suma en los enteros.
+
+\subsection{Topología del plano}
+\begin{theorem}[Fundamental del Álgebra] Todo polinomio con coeficientes complejos no constante tiene alguna raíz
+\end{theorem}
+
+\begin{proposition}
+No existe una retracción $r:\mathbb{D}^2 \to \mathbb{S}^1$
+\end{proposition}
+
+\begin{theorem}[Punto fijo de Brouwer]
+Toda aplicación continua $\mathbb{D}^2 \to \mathbb{D}^2$ tiene algún punto fijo.
+\end{theorem}
+
+\begin{theorem}[Borsuk-Ulam]
+$f: \mathbb{S}^2 \to \mathbb{R}^2 $. Entonces existe $x \in \mathbb{S}^2$ tal que $f(x) = f(-x)$
+\end{theorem}
+
+\begin{theorem}[Invariancia de dimensión]
+Un abierto $U\subseteq \mathbb{R}^2$ no puede ser homeomorfo a uno de $\mathbb{R}^n$ con $n\neq 3$
+\end{theorem}
+
+
+
+\section{Grupo Fundamental}
+\begin{definition}[Homotopía de caminos]
+  Sean $\sigma , \tau : \mathbb{I} \to X$ caminos. Una homotopía de caminos es una aplicación continua 
+  \[
+  F:\mathbb{I}\times [0, 1] \to  X : \begin{cases}
+    F(s, 0) = \sigma (s) \\
+	F(s, 1) = \tau (s) \\
+    F(0, t) = \sigma(0) = \tau (0)
+    F(1, t) = \sigma(1) = \tau (1)
+  \end{cases} \ \forall s \in \mathbb{I}, t \in [0,1]
+  \] 
+\end{definition}
 
 
 \section{Clasificación de aplicaciones continuas}

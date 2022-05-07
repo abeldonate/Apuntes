@@ -223,6 +223,13 @@ Extensión analítica. $f\in H(\Omega)$. Si $\ \exists U$ abierto $: f|_U=0 \imp
 Si $f\in H(\Omega) \implies f$ el conjunto de los ceros de $f$ es numerable
 \end{theorem}
 
+\begin{theorem} Sea $f\in H(\Omega), f\neq 0$. Sea $E = \{z\in \Omega : f(z) = 0\}$ el conjunto de ceros. Entonces
+  \[
+  \ \forall a\in \Omega \ \exists ! \ m\ge 1 : f(z) = (z-a)g(z) \quad \text{con} \quad g\in H(\Omega)
+  \] 
+
+\end{theorem}
+
 \begin{theorem}[Desigualdad de Cauchy]
 Sea $f\in H(D(a;R))$, definimos $M(r) = \sup_{z\in \partial D(a, r)} \{|f(z)|\}$. Entonces
 \[
@@ -263,9 +270,66 @@ Sea $f\in H(\Omega)$. Si $|f|$ alcanza el supremo en $\Omega^{\circ} \implies f(
 Sea $f\in H(\Omega)$, $f(z)\neq 0 \ \forall z\in \Omega$. Si $|f|$ alcanza el ínfimo en  $\Omega^\circ \implies f(z) = c$
 \end{theorem}
 
+\begin{theorem}[Teorema de la función inversa] Sea $f\in H(\Omega), f'(a)\neq 0$, entonces $f$ tiene una inversa local holomorfa tal que  $f^{-1}(f(a))=a$. Es decir, $\ \exists r>0$ tal que
+  \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+    \item $D(a;r) \subseteq  \Omega, f(D(a;r))$ abierto
+	\item $f: D(a;r) \to f(D(a;r)$ biyectiva
+	\item $(f^{-1})'(f(w))=\frac{1}{f'(w)}$
+  \end{enumerate}
+\end{theorem}
 
+\begin{theorem} Sea $f\in H(\Omega), f\neq c$. Sea $m\ge 1$ el orden del cero de $f(z)-f(a)$ en  $z = a$. Entonces  $\ \exists U\subseteq \Omega$ entorno de $a$, $\varphi \in H(U)$ y $r>0$ tal que
+   \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+    \item $f(z) = f(a) + (\varphi (z))^m \ \forall z\in U$
+	\item $\varphi '(z) \neq 0 \ \forall z\in U$ y $\varphi : U \to D(0;r)$ es biyectiva
+  \end{enumerate}
+\end{theorem}
 
+\begin{theorem}[Teorema de la función abierta]
+Sea $f\in H(\Omega), f\neq c$,  $f$ es abierta (envía abiertos a abiertos)
+\end{theorem}
 
+\begin{theorem}[Weierstrass]
+Sea $f_i \in H(\Omega) \in i\ge 1$. $\ \forall K\subseteq \Omega$ compacto $f_n|_K \to f|_K$ es uniformemente convergente a la función $f:\Omega \to \mathbb{C}$. Entonces $f\in H(\Omega)$
+\end{theorem}
+
+\section{Teoría global de Cauchy}
+\begin{definition}[Indice respecto a un punto] sea $\Gamma$ un camino cerrado y orientado en $\mathbb{C}$, definimos el indice de $\Gamma$ respecto al punto $a$ como
+  \[
+  n(\Gamma, a) := \frac{1}{2\pi i} \int_{\Gamma} \frac{dz}{z-a}
+  \] 
+\end{definition}
+
+\begin{theorem}
+Sea $\Gamma$ un camino cerrado y orientado fijado. Entonces
+\[
+n(\Gamma, \cdot): \mathbb{C}-\Gamma \to \mathbb{Z} \quad \text{donde}  \quad a \mapsto n(\Gamma, a)
+\] 
+es constante en cada una de sus componentes conexas
+\end{theorem}
+
+\begin{definition}[Cadena, ciclo]
+Una cadena es una suma formal de caminos de la forma $\Gamma = m_1\Gamma_1 + \ldots + m_n\Gamma_n$. Si $\Gamma_i$ es cerrada $\ \forall i$, entonces $\Gamma$ es un ciclo
+\end{definition}
+
+\begin{definition}[Ciclos homólogas]
+$\Gamma$ es homólogo a $0$ en $\Omega (\Gamma \sim 0) \iff \ \forall a \not\in \Omega n(\Gamma, a) = 0$ 
+
+Dos ciclos son homólogos en $\Omega (\Gamma_1 \sim \Gamma_2) \iff \Gamma_1-\Gamma_2 \sim 0$ 
+\end{definition}
+
+\begin{definition}[Homotopía de caminos]
+Dos caminos son homótopos $(\Gamma_1 \simeq \Gamma_2)$ si se pueden deformar de forma continua en $\Omega$. Es decir
+\[
+\ \exists F: [0, 1]\times [0, 1] \to \Omega, F\in \mathcal{C}^0 : \begin{cases}
+  F(0, t) = \gamma_1(t) \\
+  F(1, t) = \gamma_2(t) \\
+  F(s, 1) = F(s, 0)
+\end{cases}
+\] 
+\end{definition}
+
+Observamos que $\Gamma_1 \simeq \Gamma_2 \implies \Gamma_1 \sim \Gamma_2$ pero $\Gamma_1 \sim \Gamma_2 \not\implies \Gamma_1 \simeq \Gamma_2$
 
 
 

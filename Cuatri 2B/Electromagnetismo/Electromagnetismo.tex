@@ -197,10 +197,30 @@ Podemos establecer la siguiente analogía con el campo eléctrico
 \end{minipage}
 
 
-\section{Campos variables}
+\section{Corriente}
+We begin with the definitions of Current density $\overline{J}$, average or drift velocity $\langle v \rangle = \overline{v}_{drift} $
+\[
+\overline{J} = -e\frac{\sum\overline{v_1}}{d\tau} = -en\overline{v}_{drift} \qquad v_{drift} = \frac{\sum \overline{v}_i }{\delta N} \qquad  \text{con } n = \frac{dN}{d\tau }  
+\] 
+
+\begin{theorem}[Continuity equation] $\displaystyle \nabla\cdot JJ+ \frac{\partial \rho }{\partial t} = 0$
+\end{theorem}
+
+\subsection{Currents of free and bound charges}
+$J = J_f + J_b$ with  $\nabla\cdot J_i + \partial_t \rho _f = 0$
+
+Note that in steady conditions $J_b = 0 \implies \nabla\cdot J_f = 0 \implies J_{f, 1}\cdot \hat{n} = J_{f, 2}\cdot \hat{n}$
+
+We found for the bound charge $\boxed{J_b = \frac{\partial P}{\partial t}}$
+
+ \subsection{Ohm's law}
+ $J_f = gE \implies \Delta V = IR$ con $G = R^{-1} = \frac{gA}{l}$
 
 
+\subsection{Laws for magnetism and current}
+\textbf{Biot-Savart Law} $\displaystyle \boxed{B(r) = \frac{\mu_0}{4\pi}\int Id\overline{l}\times \frac{\overline{r}-\overline{r'}}{|\overline{r}-\overline{r'}|^3}}$
 
+\textbf{Ampere's Law} $\displaystyle \boxed{\nabla\times \overline{B} = \mu_0 \overline{J} \iff \oint \overline{B}\cdot d\overline{l} = \mu_0 I}$
 
 
 
