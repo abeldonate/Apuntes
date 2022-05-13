@@ -18,6 +18,7 @@
 \usepackage{eso-pic}
 \usepackage{pgf}
 \usepackage{tikz}
+\usepackage{tikz-cd}
 \usepackage{graphicx}
 
 % figure support
@@ -530,7 +531,7 @@ Si ademas $Y$ es conexo, cualquier levantamiento de una aplicación continua $f:
 \end{definition}
 
 \subsection{Grado de homotopías $\mathbb{S}^1 \to \mathbb{S}^1$}
-En toda la seccioón la función $\exp(x) = e^{2\pi i x}$.
+En toda la seccioón la función $\exp(x) = e^{2\pi i x}$. Nótese $\exp^{-1}(\exp(\alpha )) = \alpha + \mathbb{Z}$.
 
 \begin{proposition}
 Sea $\sigma : \mathbb{I} \to \mathbb{S}^1$ un camino. Dos levantamientos $\tilde{\sigma }_1, \tilde{\sigma }_2: \mathbb{I} \to  \mathbb{R}$ de $\sigma $ difieren en un entero. Es decir $\tilde{\sigma }_1(s) = \tilde{\sigma }_2(s) + k$.
@@ -584,6 +585,26 @@ Un abierto $U\subseteq \mathbb{R}^2$ no puede ser homeomorfo a uno de $\mathbb{R
   \] 
 \end{definition}
 
+\begin{definition}[Composición de caminos] Sean $\sigma , \tau : \mathbb{I} \to X $ tal que $\sigma (1) = \tau (0)$. Se define su composición como $\mu = \sigma \star \tau $:
+  \[
+  \mu: \mathbb{I} \to X, \qquad \mu(s) = \begin{cases}
+	\sigma (2s) & 0\le s\le \frac{1}{2} \\
+	\tau (2s-1) & \frac{1}{2} \le s\le 1
+  \end{cases}
+  \] 
+
+\end{definition}
+
+\begin{definition}[Grupo Fundamental]
+  El grupo Fundamental de $X$ en el punto $x$ es el conjunto de clases de homotopía
+  \[
+  \pi_1(X, x) = \{[\sigma ] : \sigma \text{ lazo en } X \text{ con extremos } \sigma (0) = \sigma (1)=x\}
+  \] 
+  con la operación $[\sigma ]\cdot [\tau ] := [\sigma \star \tau ]$
+\end{definition}
+
+
+
 
 \section{Clasificación de aplicaciones continuas}
 Sea $f:X\to Y$ una aplicación continua
@@ -615,6 +636,42 @@ Sea $f:X\to Y$ una aplicación continua
   \item 
 \end{itemize}
 
+\subsection{Diagramas conmutativos}
+\begin{minipage}{0.7\textwidth}
+\textbf{Propiedad universal proyecciones}
+\[
+\begin{cases}
+  \pi^y_i\circ f & \text{ continua} \\
+  \pi^y_i & \text{ continua}
+\end{cases}
+\implies f \text{ continua}
+\] 
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+\[\begin{tikzcd}
+	{\Pi X_i} & {\Pi Y_i} \\
+	& Y
+	\arrow["f", from=1-1, to=1-2]
+	\arrow["{\pi^y_i}", from=1-2, to=2-2]
+	\arrow["{\pi^y_i\circ f}"', from=1-1, to=2-2]
+\end{tikzcd}\]
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+\textbf{Propiedad universal cociente}
+\[
+\tilde{f} \text{ continua}  \iff f \text{ continua}
+\] 
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+  \begin{tikzcd}
+	X & {X/\sim} \\
+	& Y
+	\arrow["f"', from=1-1, to=2-2]
+	\arrow["\pi", two heads, from=1-1, to=1-2]
+	\arrow["{\tilde{f}}", from=1-2, to=2-2]
+\end{tikzcd}
+\end{minipage}
 
 
 

@@ -332,7 +332,42 @@ Dos caminos son homótopos $(\Gamma_1 \simeq \Gamma_2)$ si se pueden deformar de
 Observamos que $\Gamma_1 \simeq \Gamma_2 \implies \Gamma_1 \sim \Gamma_2$ pero $\Gamma_1 \sim \Gamma_2 \not\implies \Gamma_1 \simeq \Gamma_2$
 
 
+\begin{theorem}[Teorema de Cauchy Global]
+Sea $f\in H(\Omega)$ y $\Gamma$ ciclo tal que $\Gamma \sim 0$ en $\Omega$
+\[
+\int_\Gamma f(z)dz = 0, \qquad n(\Gamma, a)f^{(k)}(a) = \frac{k!}{2\pi i}\int_\Gamma \frac{f(z)}{(z-a)^{k+1}}dz  \quad \ \forall a\in \Omega-\Gamma
+\] 
+\end{theorem}
 
+\begin{definition}[Singularidades] .
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item \textbf{Evitable} si $\ \exists \lim_{z\to a}f(z)=L\in \mathbb{C}$ $\implies$ prolongación holomorfa con $f(a) = L$ 
+  \item \textbf{Polo} si $\ \exists \lim_{z\to a}|f(z)|=\infty$ $\implies f(z) = (z-a)^{-m}h(z)$ con $h$ holomorfa
+  \item \textbf{Esencial} si $\not \exists \lim_{z\to a}f(z)$ $\implies f(D(a;\varepsilon )-\{a\})$ es denso en $\mathbb{C}$ (Casorati-Weierstrass)
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Series de Laurent]
+Sea $f\in H(A(R_1, R_2))$, entonces f admite un desarrollo
+\[
+f(z) = \sum_{n\in \mathbb{Z}} a_n(z-a)^n, \qquad a_n = \frac{1}{2\pi i} \int_{\partial D(a;r)^+} \frac{f(z)}{(z-a)^{n+1}}dz, \qquad R_1<r<R_2
+\] 
+\end{theorem}
+
+\begin{definition}[Residuo]
+Sea $f\in H(\Omega)$ y $a$ una singularidad aislada de $f$ 
+\[
+Res(f, a) = \frac{1}{2\pi i}\int_{\partial D(a; \varepsilon } f(z)dz \qquad \varepsilon >0 : D(a;\varepsilon )-\{a\} \subseteq \Omega
+\] 
+\end{definition}
+Observamos que si $f(z) = \sum_{n\in \mathbb{Z}} a_n(z-a)^n  \implies Res(f, a) = a_{-1}$ 
+
+\begin{theorem}[Residuos]
+Sea $f\in H(\Omega-\{a_j\}$ con $\{a_j\}$ conjunto de singularidades aisladas y $\Gamma \sim 0$ un ciclo  $a_j\not\in \Gamma$.
+\[
+\int_\Gamma f(z)dz = 2\pi i \sum_j n(\Gamma, a_j)Res(f, a_j)
+\] 
+\end{theorem}
 
 
 
