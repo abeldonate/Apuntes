@@ -386,6 +386,8 @@ Las siguientes son equivalentes a que una función $f$ sea mesurable
 
 Si $f, g$ son mesurables, entonces son mesurables $cf, f^2, f+g, fg, |f|$
 
+$f$ es mesurable  $\iff f^+, f^-$ son mesurables
+
 \begin{definition}
   Sea $(f_n)$ una sucesión con  $f_i\in \mathcal{M}(X, \mathcal{X})$ definimos
   \begin{itemize}[topsep=-6pt, itemsep=0pt]
@@ -397,6 +399,7 @@ Si $f, g$ son mesurables, entonces son mesurables $cf, f^2, f+g, fg, |f|$
   Entonces $f, F, f^*, F^* \in \mathcal{M}(X, \mathcal{X})$
 \end{definition}
 
+\subsection{Medida}
 \begin{definition}[Mesura] Una mesura es una función $\mu : \mathcal{X}\to \mathbb{R}^*$ tal que
   \begin{enumerate}[topsep=-6pt, itemsep=0pt]
     \item $\mu(\emptyset) = 0$
@@ -405,8 +408,122 @@ Si $f, g$ son mesurables, entonces son mesurables $cf, f^2, f+g, fg, |f|$
   \end{enumerate}
 \end{definition}
 
-\begin{definition}[Espacio de mesura] Es un triplete $(X, \mathcal{X}, \mu)$
+\begin{definition}[Espacio de mesura] Es un triplete $(X, \mathcal{X}, \mu)$ donde $(X, \mathcal{X})$ es un espacio mesurable y $\mu$ es una mesura sobre $\mathcal{X}$
 \end{definition}
+
+\subsection{Medida exterior}
+\begin{definition}[Álgebra de conjuntos]
+La familia $\mathcal{A}$ de subconjuntos de $X$ es un álgebra si
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item $\emptyset \in \mathcal{A}$ 
+  \item Si $E\in \mathcal{A}\implies \overline{E} \in \mathcal{A}$ 
+  \item Si $E_i \in \mathcal{A}, i\le n\implies \bigcup E_i \in A$
+\end{enumerate}
+\end{definition}
+La diferencia con una $\sigma $-algebra es que el algebra es cerrada bajo uniones finitas y la $\sigma$-algebra bajo contables.
+
+\begin{definition}[Mesura] Una mesura sobre el álgebra $\mathcal{A}$ es una función $\mu : \mathcal{X}\to \mathbb{R}^*$ tal que
+  \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+    \item $\mu(\emptyset) = 0$
+	\item  $\mu(E)\ge 0 \ \forall E \in \mathcal{A}$ 
+	\item Si $E_i \cap E_j = \emptyset$ con $i\neq j$ y $\bigcup_{n=1}^\infty E_n\in \mathcal{A} \implies \displaystyle \mu\left( \bigcup_{i\ge 1} E_i \right) = \sum_{i\ge 1}\mu(E_{i})  $
+  \end{enumerate}
+\end{definition}
+
+\begin{definition}[Mesura exterior]
+Definimos $\displaystyle \mu^*(B) = \inf \sum\mu(E_j)$ sobre las colecciones $B\subseteq \bigcup E_j$. Entonces 
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item $\mu^*(\emptyset) = 0$
+  \item $\mu^*(B)\ge 0 \ \forall B\in \mathcal{P}(X)$
+  \item $A\subseteq B \implies \mu^*(A) \le \mu^* (B)$
+  \item $B\in A \implies \mu^*(B) = \mu(B)$
+  \item $(B_n)\subseteq \mathcal{P}(X) \implies \displaystyle \mu^* \left( \bigcup_{n=1}^\infty B_n \right) \le \sum_{n=1}^\infty \mu^*(B_n) $
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[Condición de Caratheodory] Decimos que un conjunto $E$ es $\mu^*-$mesurable si satisface
+\[
+\mu^*(A) = \mu^*(A \cap E) + \mu^*(A-E) \ \forall A\subseteq X
+\] 
+La colección de conjuntos $\mu^*$-mesurables es $\mathcal{A}^*$
+\end{definition}
+
+\begin{theorem}[Teorema de extensión de Caratheodory]
+$A^*$ es una $\sigma-$álgebra que contiene $A$, y por tanto  $(X, \mathcal{A}^*)$ es un espacio mesurable. Si $E_n$ es disjunta de  $\mathcal{A}^*$:
+\[
+\mu^*\left( \bigcup_{n=1}^\infty E_n \right) = \sum_{n=1}^\infty \mu^*(E_n)
+\] 
+
+\end{theorem}
+
+\subsection{Mesura de Lebesgue}
+Queremos fabricar una mesura $l$ en $\mathbb{R}$ que coincida con las longitudes de los intervalos
+\begin{proposition}
+La colección $\mathcal{F}$ de uniones finitas de los conjuntos $\emptyset, (a, b], (-\infty, b], (a, +\infty), (-\infty, +\infty)$ es un álgebra de conjuntos de $\mathbb{R}$ con mesura $l$
+\end{proposition}
+
+Se cumple $\mathcal{F}\subset \mathcal{B} \subset \mathcal{F}^* \subset \mathcal{P}(\mathbb{R})$
+
+\subsection{Integral de Lebesgue}
+\begin{definition}[Función simple]
+Es una función $\varphi : X \to \mathbb{R}$ con imagen finita $\varphi = \sum_{j=1}^n a_j \mathbb{I}_{E_j}$
+\end{definition}
+
+\begin{proposition}
+Monotonicidad de la integral de Lebesgue 
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item $f\le g \implies \int f \le \int g$
+  \item $E\subseteq F \implies \int_E f\le \int_F f$
+\end{enumerate}
+\end{proposition}
+
+\begin{theorem}[Teorema de la Convergencia monótona (TCM)]
+Sea $(f_n) \in M^+(X, \mathcal{X})$ una sucesión monótona creciente que converge a $f$ puntualmente. Entonces:
+\[
+\int f= \lim \int f_n
+\] 
+Es generalizable a funciones convergentes puntualmente $\mu$-g.a.
+\end{theorem}
+
+\begin{theorem}[Lema de Fatou]
+Sea $(f_n) \in M^+(X, \mathcal{X})$ sucesión, entonces:
+\[
+\int \lim \inf f_n \le \lim \inf \int f_n
+\] 
+\end{theorem}
+
+\begin{proposition} Sea $(g_n) \in M^+(X, \mathcal{X})$. Entoces
+  \[
+ \int \left( \sum_{n=1}^\infty \right)  =\sum_{n=1}^\infty \int g_n
+  \] 
+\end{proposition}
+
+\begin{theorem} Una función mesurable $f$ es de $L \iff  |f|\in L$. Entonces
+  \[
+|\int f|\le \int |f|  
+  \] 
+\end{theorem}
+
+\begin{theorem}[Convergencia Dominada (TCD)]
+Sea $(f_n)$ mesurables que convergen $\mu$-g.a. a $f$. Si existe una función integlable $g: |f_n|\le g \ \forall n \implies f$ integrable y
+\[
+\int f = \lim \int f_n
+\] 
+\end{theorem}
+
+\begin{theorem} Si $f$ es integrable Riemann en $[a, b] \implies f\in L(\mathbb{R}, \mathcal{B}, \lambda )$ y las integrales coinciden
+\end{theorem}
+
+\subsection{Espacios $L^p$}
+\begin{theorem}
+ El espacio $(L_p, \|\cdot \|_{p}), p\ge 1$ es normado y completo $\implies$ es un espacio de Banach.
+\end{theorem}
+
+
+
+
+
+
 
 
 

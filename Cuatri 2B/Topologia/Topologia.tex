@@ -516,16 +516,39 @@ Un espacio es \textbf{contráctil} si tiene el mismo tipo de homotopía que un p
 \end{definition}
 
 \subsection{Levantamientos}
+
+  \begin{minipage}{0.8\textwidth}
 \begin{definition}[Levantamiento] Sea $p: \tilde{X} \twoheadrightarrow  X$ revestimiento, $f: Y \to X$, entonces un levantamiento (aixecament) de $f$ en el espacio  $\tilde{X}$ es
   \[
   \tilde{f}: Y \to \tilde{X} \quad \text{tal que } \quad p\circ \tilde{f} = f
   \] 
 \end{definition}
+  \end{minipage}
+  \begin{minipage}{0.2\textwidth}
+ \begin{tikzcd}
+	Y & {\tilde{X}} \\
+	& X
+	\arrow["{\tilde{f}}", from=1-1, to=1-2]
+	\arrow["p", two heads, from=1-2, to=2-2]
+	\arrow["f"', from=1-1, to=2-2]
+\end{tikzcd} 
+  \end{minipage}
 
 Si ademas $Y$ es conexo, cualquier levantamiento de una aplicación continua $f: Y \to X$ queda determinado por la imagen de un solo punto
 
-\begin{definition}[Levantamiento de caminos] Sea $p:\tilde{X} \twoheadrightarrow X$ revestimiento con $p(\tilde{x}=x$ y el camino $\sigma : \mathbb{I} \to X$ tal que $\sigma (0) = x$. Entonces $\sigma $ tiene un único levantamiento $\tilde{\sigma }: \mathbb{I} \to  X$ tal que  $\tilde{\sigma}(0) = \tilde{x}$
+\begin{minipage}{0.8\textwidth}
+\begin{definition}[Levantamiento de caminos] Sea $p:\tilde{X} \twoheadrightarrow X$ revestimiento con $p(\tilde{x})=x$ y el camino $\sigma : \mathbb{I} \to X$ tal que $\sigma (0) = x$. Entonces $\sigma $ tiene un único levantamiento $\tilde{\sigma }: \mathbb{I} \to  X$ tal que  $\tilde{\sigma}(0) = \tilde{x}$
 \end{definition}
+\end{minipage}
+\begin{minipage}{0.2\textwidth}
+\begin{tikzcd}
+	{\mathbb{I}} & {\tilde{X}} \\
+	& X
+	\arrow["{\tilde{\sigma}}", from=1-1, to=1-2]
+	\arrow["p", two heads, from=1-2, to=2-2]
+	\arrow["\sigma"', from=1-1, to=2-2]
+\end{tikzcd}
+\end{minipage}
 
 \begin{definition}[Levantamiento de homotopías] Sea $p:\tilde{X} \twoheadrightarrow X$ revesimiento con $p(\tilde{x})=x$. Toda aplicación continua $F:\mathbb{I}^2 \to X$ con $F(0, 0) = x$ tiene un único levantamiento  $\tilde{F}: \mathbb{I}^2 \to  X$ con $\tilde{F}(0, 0) = \tilde{x}$
 \end{definition}
@@ -537,12 +560,25 @@ En toda la seccioón la función $\exp(x) = e^{2\pi i x}$. Nótese $\exp^{-1}(\e
 Sea $\sigma : \mathbb{I} \to \mathbb{S}^1$ un camino. Dos levantamientos $\tilde{\sigma }_1, \tilde{\sigma }_2: \mathbb{I} \to  \mathbb{R}$ de $\sigma $ difieren en un entero. Es decir $\tilde{\sigma }_1(s) = \tilde{\sigma }_2(s) + k$.
 \end{proposition}
 
+\begin{minipage}{0.8\textwidth}
 \begin{definition}[Grado de la aplicación] Sea $f:\mathbb{S}^1 \to  \mathbb{S}^1$ definimos
   \[
   \deg f:= \tilde{\sigma }_f(1) - \tilde{\sigma }_f(0) \in \mathbb{Z}
   \] 
   con $\tilde{\sigma }_f:\mathbb{I} \to  \mathbb{R}$ un levantamiento del camino $\sigma _f = f \circ \pi : \mathbb{I} \to  \mathbb{S}^1$
 \end{definition}
+\end{minipage}
+\begin{minipage}{0.2\textwidth}
+\begin{tikzcd}
+	{\mathbb{I}} & {\mathbb{R}} \\
+	{\mathbb{S}^1} & {\mathbb{S}^1}
+	\arrow["{\tilde{\sigma_f}}", from=1-1, to=1-2]
+	\arrow["{p = exp}", two heads, from=1-2, to=2-2]
+	\arrow["\sigma_f"', from=1-1, to=2-2]
+	\arrow["exp"', from=1-1, to=2-1]
+	\arrow["f"', from=2-1, to=2-2]
+\end{tikzcd}
+\end{minipage}
 
 \begin{proposition}
 La aplicación $f:  \mathbb{S}^1 \to  \mathbb{S}^1 $ tiene grado $0$ si y solo si tiene un levantamiento de la forma $\tilde{f}: \mathbb{S}^1 \to  \mathbb{R}$ con $f=\exp \circ \tilde{f}$
@@ -673,7 +709,28 @@ Sea $f:X\to Y$ una aplicación continua
 \end{tikzcd}
 \end{minipage}
 
-
+\section{Ejemplos}
+\subsection{Aixecament de camins}
+\begin{minipage}{0.8\textwidth}
+Encontraremos el grado de la función $f: \mathbb{S}^1 \to \mathbb{S}^1 , f(z)= z^n$. Para ello primero creamos el camino $\sigma_f = f\circ \exp$. Vemos en el diagrama conmutativo que
+ \[
+f\circ \exp (s) = p \circ \tilde{\sigma _f}(s)  \implies e^{2\pi i s n} = e^{2\pi i \tilde{\sigma _f}(s)} \implies \tilde{\sigma }_f(s) = ns + k 
+\] 
+\[
+\deg(f) = \tilde{\sigma}_f(1)-\tilde{\sigma }_f(0) = n+k-k = n
+\] 
+\end{minipage}
+\begin{minipage}{0.2\textwidth}
+\begin{tikzcd}
+	{\mathbb{I}} & {\mathbb{R}} \\
+	{\mathbb{S}^1} & {\mathbb{S}^1}
+	\arrow["{\tilde{\sigma_f}}", from=1-1, to=1-2]
+	\arrow["{p = exp}", two heads, from=1-2, to=2-2]
+	\arrow["\sigma_f"', from=1-1, to=2-2]
+	\arrow["exp"', from=1-1, to=2-1]
+	\arrow["f"', from=2-1, to=2-2]
+\end{tikzcd}
+\end{minipage}
 
 
 

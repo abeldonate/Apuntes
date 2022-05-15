@@ -360,18 +360,35 @@ Sea $f\in H(\Omega)$ y $a$ una singularidad aislada de $f$
 Res(f, a) = \frac{1}{2\pi i}\int_{\partial D(a; \varepsilon } f(z)dz \qquad \varepsilon >0 : D(a;\varepsilon )-\{a\} \subseteq \Omega
 \] 
 \end{definition}
-Observamos que si $f(z) = \sum_{n\in \mathbb{Z}} a_n(z-a)^n  \implies Res(f, a) = a_{-1}$ 
+Observamos que si $\displaystyle  f(z) = \sum_{n\in \mathbb{Z}} a_n(z-a)^n  \implies Res(f, a) = a_{-1} =  \frac{1}{(m-1)!} \lim_{z\to a} \frac{d^{m-1}}{dz^{m-1}}\left((z-a)^mf(z)\right)$ 
 
 \begin{theorem}[Residuos]
-Sea $f\in H(\Omega-\{a_j\}$ con $\{a_j\}$ conjunto de singularidades aisladas y $\Gamma \sim 0$ un ciclo  $a_j\not\in \Gamma$.
+Sea $f\in H(\Omega-\{a_j\}$ con $\{a_j\}$ conjunto de singularidades aisladas finitas o numerables y $\Gamma \sim 0$ un ciclo  $a_j\not\in \Gamma$.
 \[
 \int_\Gamma f(z)dz = 2\pi i \sum_j n(\Gamma, a_j)Res(f, a_j)
 \] 
 \end{theorem}
 
+\begin{definition}[Función meromorfa]
+Sea $f\in H(\Omega)$ con $\{a_j\}$ conjunto de singularidades aisladas finitas o numerables.  $f$ es meromorfa si todas las $a_j$ son polos.
+\end{definition}
 
+\begin{theorem}[Principio del argumento]
+Sea $f$ meromorfa en $\Omega$ con ceros $\{a_j\}$ y polos  $\{b_j\}$. Sea $\Gamma \sim 0$ un ciclo tal que $a_j, b_j \not \in \Gamma $ :
+\[
+n(f(\Gamma ), 0) = \frac{1}{2\pi i} \int_\Gamma \frac{f'(z)}{f(z)}dz = \sum_j n(\Gamma , a_j) - \sum_k n(\Gamma , b_k)
+\]
+\end{theorem}
 
-
+\begin{proposition} Son equivalentes:
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item $\Omega $ simplemente conexo
+  \item Para todo ciclo $\Gamma \subseteq \Omega $ se cumple $\Gamma \sim 0$ 
+  \item Sea $f\in H(\Omega )$ existe $F\in H(\Omega )$ primitiva holomorfa tal que $F' = f$
+  \item $f\in H(\Omega ), \Gamma \subseteq \Omega$ se tiene $\int_\Gamma f(z)dz = 0$ 
+  \item Sea  $f \in H(\Omega ), f(z)\neq 0 \ \forall z\in \Omega $. Existe $g \in H(\Omega ): f = e^g$ ($g=\log f$ determinación holomorfa del logaritmo)
+\end{enumerate}
+\end{proposition}
 
 
 

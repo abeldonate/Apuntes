@@ -32,6 +32,7 @@
 
 \newtheorem*{definition}{Definition}
 \newtheorem*{theorem}{Theorem}
+\newtheorem*{proposition}{Proposition}
 
 \newcommand{\incfig}[1]{%
 \center
@@ -77,7 +78,7 @@ Podemos calcular la longitud de un tramo de la curva de $t_0$ a $t_1$ con la int
 \] 
 
 \begin{definition}
-Un cambio de parámetro es una función biyectiva y $\mathcal{C}¹$
+Un cambio de parámetro es una función biyectiva y $\mathcal{C}^1$
 \begin{align*}
   \varphi : J & \to I \\
   u & \to \varphi (u) = t
@@ -258,9 +259,63 @@ Revolución & $\begin{pmatrix} \varphi (u)\cos v \\ \varphi (u) \sin v \\ \psi (
 \end{center}
 
 
+\section{Geodésicas}
+\subsection{Isometrías}
+\begin{definition}[Isometría local]
+La aplicación $\varphi :S \to  S'$ es una isometría local en $p$ si $\ \forall p\in S, w_1, w_2\in T_pS$ tenemos 
+\[
+\langle w_1, w_2 \rangle = \langle D\varphi (w_1), D\varphi (w_2) \rangle 
+\] 
+\end{definition}
 
+\begin{proposition}
+Sean $\sigma , \tau :U\to \mathbb{R}^3$ dos parametrizaciones. $P_\sigma  = P_\tau$ (misma primera forma fundamental) $\iff \tau \circ \sigma ^{-1}$ es isometría local
+\end{proposition}
 
+\subsection{Campos vectoriales y derivada covariante}
+\begin{definition}[Campo tangente]
+ \[
+X(u, v)= a(u, v)\sigma _u + b (u, v)\sigma_v
+\] 
+Si ahora parametrizamos por la curva  $\gamma: u(t), v(t)$ 
+\[
+X(u(t), v(t)) = a(u(t), v(t))\sigma _u + b(u(t), v(t))\sigma _v
+\] 
+\end{definition}
 
+\begin{definition}[Derivada covariante]
+La derivada covariante de $X$ en la dirección $w$ es la componente tangencial de $D_w X$ 
+\[
+  \nabla _wX = \left[ a' + \begin{pmatrix} a & b \end{pmatrix} \begin{pmatrix} \Gamma_{11}^1 & \Gamma _{12}^1 \\ \Gamma _{12}^1 & \Gamma_{22}^1 \end{pmatrix} \begin{pmatrix} u' \\ v' \end{pmatrix}   \right] \sigma _u + \left[ b' + \begin{pmatrix} a & b \end{pmatrix} \begin{pmatrix} \Gamma _{11}^2 & \Gamma _{12}^2 \\ \Gamma _{12}^2 & \Gamma _{22}^2 \end{pmatrix} \begin{pmatrix} u' \\ v' \end{pmatrix}   \right] \sigma _v
+\] 
+\end{definition}
+
+\begin{definition}[Campo paralelo]
+Un campo vectorial $X(t)$ definido sobre $\alpha (t)$ es paralelo si $\nabla _{\alpha'}X=0$ 
+\end{definition}
+
+\begin{definition}[Geodésicas]
+Un curva $\alpha $ si llama geodésica si cumple $\nabla _{\alpha '}\alpha ' = 0$:
+\[
+  \begin{cases}
+   u'' + \begin{pmatrix} u' & v' \end{pmatrix} \begin{pmatrix} \Gamma_{11}^1 & \Gamma _{12}^1 \\ \Gamma _{12}^1 & \Gamma_{22}^1 \end{pmatrix} \begin{pmatrix} u' \\ v' \end{pmatrix} =0  \\
+  v'' + \begin{pmatrix} u' & v' \end{pmatrix} \begin{pmatrix} \Gamma _{11}^2 & \Gamma _{12}^2 \\ \Gamma _{12}^2 & \Gamma _{22}^2 \end{pmatrix} \begin{pmatrix} u' \\ v' \end{pmatrix} = 0
+  \end{cases}
+\] 
+\end{definition}
+
+\begin{theorem}[Relación de Clairut]
+En una superficie de revolución
+\[
+\begin{cases}
+  x = \varphi (u)\cos v\\
+  y = \varphi (u)\sin v \\
+  z = \psi (u)
+\end{cases}
+\text{ con } \varphi '^2 + \psi '^2 = 1
+\] 
+Entonces una geodésica $(u(t), v(t))$ satisface $\varphi (u)\cos \theta = \text{const}$
+\end{theorem}
 
 
 

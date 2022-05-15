@@ -152,8 +152,64 @@ Curvatura normal ($T$ vector tangente)
 k_n = T^TST
 \] 
 
+Símbolos de Cristoffel
+  \[
+  \begin{cases}
+    \sigma _{uu} = \Gamma_{11}^1\sigma _u + \Gamma_{11}^2 \sigma _v + eN \\
+    \sigma _{uv} = \Gamma_{12}^1\sigma _u + \Gamma_{12}^2 \sigma _v + fN \\
+    \sigma _{vv} = \Gamma_{22}^1\sigma _u + \Gamma_{22}^2 \sigma _v + gN
+  \end{cases}
+  \]
+Los calculamos como
+\[
+  \begin{pmatrix} \Gamma_{11}^1 & \Gamma_{12}^1 & \Gamma_{22}^1 \\ \Gamma_{11}^2 & \Gamma_{12}^2 & \Gamma_{22}^2 &  \end{pmatrix}  = P^{-1} \begin{pmatrix} \frac{1}{2}E_u & \frac{1}{2}E_v & F_v - \frac{1}{2}G_u \\ F_u - \frac{1}{2}E_v & \frac{1}{2}G_u & \frac{1}{2}G_v \end{pmatrix} 
+\]
+
+Fórmulas de Gauss
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
+    \item $EK = (\Gamma_{11}^2)_v - (\Gamma_{12}^2)_u + \Gamma_{11}^1\Gamma_{12}^2 + \Gamma_{11}^2\Gamma_{22}^2 - \Gamma_{12}^1\Gamma_{11}^2 - \Gamma_{12}^2\Gamma_{12}^2$
+    \item $FK = (\Gamma_{12}^1)_u - (\Gamma_{11}^1)_v + \Gamma_{12}^1\Gamma_{12}^2 - \Gamma_{12}^2\Gamma_{11}^2$
+    \item $GK = (\Gamma_{22}^1)_u - (\Gamma_{12}^1)_v + \Gamma_{11}^1\Gamma_{22}^1 + \Gamma_{12}^1\Gamma_{22}^2 - \Gamma_{12}^1\Gamma_{12}^1 - \Gamma_{12}^2\Gamma_{22}^1$
+  \end{enumerate}
+
+  Codazzi-Mainardi
+  \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+    \item $e_v-f_u = e\Gamma_{12}^1 + f(\Gamma_{12}^2 - \Gamma _{11}^1) - g\Gamma_{11}^2$
+	\item $f_v-g_u = e\Gamma_{22}^1 + f(\Gamma_{22}^2-\Gamma_{12}^1)-g\Gamma_{12}^2$
+  \end{enumerate}
+
 
 \end{multicols}
+\newpage
+
+Campo tangente
+\[
+X(u(t), v(t)) = a(u(t), v(t))\sigma _u + b(u(t), v(t))\sigma _v
+\]
+
+Derivada Covariante
+\[
+  \nabla _wX = \left[ a' + \begin{pmatrix} a & b \end{pmatrix} \begin{pmatrix} \Gamma_{11}^1 & \Gamma _{12}^1 \\ \Gamma _{12}^1 & \Gamma_{22}^1 \end{pmatrix} \begin{pmatrix} u' \\ v' \end{pmatrix}   \right] \sigma _u + \left[ b' + \begin{pmatrix} a & b \end{pmatrix} \begin{pmatrix} \Gamma _{11}^2 & \Gamma _{12}^2 \\ \Gamma _{12}^2 & \Gamma _{22}^2 \end{pmatrix} \begin{pmatrix} u' \\ v' \end{pmatrix}   \right] \sigma _v
+\]
+
+Geodésicas
+\[
+  \begin{cases}
+   u'' + \begin{pmatrix} u' & v' \end{pmatrix} \begin{pmatrix} \Gamma_{11}^1 & \Gamma _{12}^1 \\ \Gamma _{12}^1 & \Gamma_{22}^1 \end{pmatrix} \begin{pmatrix} u' \\ v' \end{pmatrix} =0  \\
+  v'' + \begin{pmatrix} u' & v' \end{pmatrix} \begin{pmatrix} \Gamma _{11}^2 & \Gamma _{12}^2 \\ \Gamma _{12}^2 & \Gamma _{22}^2 \end{pmatrix} \begin{pmatrix} u' \\ v' \end{pmatrix} = 0
+  \end{cases}
+\]
+
+Relación de Clairut. En una superficie de revolución
+\[
+\begin{cases}
+  x = \varphi (u)\cos v\\
+  y = \varphi (u)\sin v \\
+  z = \psi (u)
+\end{cases}
+\text{ con } \varphi '^2 + \psi '^2 = 1
+\] 
+Entonces una geodésica $(u(t), v(t))$ satisface $\varphi (u)\cos \theta = \text{const}$
 
 
 
