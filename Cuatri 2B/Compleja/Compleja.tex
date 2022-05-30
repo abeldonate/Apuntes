@@ -1,5 +1,4 @@
-\documentclass{myclass}
-\usepackage{verbatim}
+\documentclass{myclass} \usepackage{verbatim}
 \usepackage{array}
 \usepackage{listings}
 \usepackage{fancyvrb}
@@ -102,12 +101,9 @@ f\in \mathcal{H}(\Omega)
 \] 
 \end{theorem}
 Si las funciones $f, g$ son holomorfas, entonces son holomorfas
-\begin{itemize}[topsep=0pt, itemsep=0pt]
-  \item $\lambda f + \mu g$ 
-  \item $fg$
-  \item  $\displaystyle\frac{f}{g}$ si $g\neq 0$
-  \item $f\circ g$
-\end{itemize}
+\[
+\lambda f+\mu g , \quad fg, \quad \frac{f}{g}, \quad f\circ g
+\] 
 y sus derivadas coinciden con las derivadas en el caso $z\in \mathbb{R}$
 
 \begin{definition}
@@ -134,7 +130,6 @@ Una función $u$ es armónica si $\Delta u = u_{x x} + u_{yy} = 0$
 Si $f = u + iv$ holomorfa  $\implies u, v$ armónicas
 \end{definition}
 
-\subsection{Series de potencias}
 \begin{definition}
 Sea $a_n$ una sucesión, definimos la serie de potencias centrada en $a$
 \[
@@ -151,6 +146,7 @@ Cauchy-Hadamard. Sea $R$ el radio de convergencia de  $S = \sum_{n\ge 0} a_n (z-
 \begin{enumerate}[topsep=0pt, itemsep=0pt]
   \item $S$ es absolutamente convergente en  $|z-a|<R$ 
   \item $S$ es divergente en  $|z-a|>R$ 
+  \item $S$ es uniformemente convergente en $|z-a|\le r$ con $r<R$
 \end{enumerate}
 \end{theorem}
 
@@ -201,15 +197,21 @@ Teorema de Green
 \] 
 \end{theorem}
 
-\begin{theorem}
-Fórmula de Cauchy
+\begin{theorem}[Cauchy-Goursat]
+$f\in C(\Omega )\cap H(\Omega -\{w\} \implies \displaystyle \int_{\partial R^+} f(z)dz=0$
+\end{theorem}
+
+\begin{theorem}[Existencia de primitivas]
+$f\in C(D)\cap H(D-\{w\}) \implies \ \exists F\in H(D): F'(z) = f(z)$
+\end{theorem}
+
+\begin{theorem}[Cauchy]
 \[
 f\in H(D)\cap \mathcal{C}(\overline{D}) \implies f(w) = \frac{1}{2\pi i}\int \frac{f(z)}{z-w}dz
 \] 
 \end{theorem}
 
-\begin{theorem}
-Representación en serie de potencias
+\begin{theorem}[Representación en serie de potencias] $f\in H(\Omega )$
 \[
 f(z) = \sum c_n(z-a)^n \implies c_n = \frac{f^{(n)}(a)}{n!} = \frac{1}{2\pi i} \int_{\partial D(a, r)+} \frac{f(z)}{(z-a)^{n+1}}dz
 \] 
@@ -225,7 +227,7 @@ Si $f\in H(\Omega) \implies f$ el conjunto de los ceros de $f$ es numerable
 
 \begin{theorem} Sea $f\in H(\Omega), f\neq 0$. Sea $E = \{z\in \Omega : f(z) = 0\}$ el conjunto de ceros. Entonces
   \[
-  \ \forall a\in \Omega \ \exists ! \ m\ge 1 : f(z) = (z-a)g(z) \quad \text{con} \quad g\in H(\Omega)
+  \ \forall a\in \Omega \ \exists ! \ m\ge 1 : f(z) = (z-a)^mg(z) \quad \text{con} \quad g\in H(\Omega),\ g(a)\neq 0
   \] 
 
 \end{theorem}
@@ -285,7 +287,7 @@ Sea $f\in H(\Omega)$, $f(z)\neq 0 \ \forall z\in \Omega$. Si $|f|$ alcanza el í
   \end{enumerate}
 \end{theorem}
 
-\begin{theorem}[Teorema de la función abierta]
+\begin{theorem}[Teorema de la aplicación abierta]
 Sea $f\in H(\Omega), f\neq c$,  $f$ es abierta (envía abiertos a abiertos)
 \end{theorem}
 
@@ -301,19 +303,12 @@ Sea $f_i \in H(\Omega) \in i\ge 1$. $\ \forall K\subseteq \Omega$ compacto $f_n|
 \end{definition}
 
 \begin{theorem}
-Sea $\Gamma$ un camino cerrado y orientado fijado. Entonces
-\[
-n(\Gamma, \cdot): \mathbb{C}-\Gamma \to \mathbb{Z} \quad \text{donde}  \quad a \mapsto n(\Gamma, a)
-\] 
-es constante en cada una de sus componentes conexas
+Sea $\Gamma$ un camino cerrado y orientado fijado. Entonces $n(\Gamma, \cdot): \mathbb{C}-\Gamma \to \mathbb{Z}$
+es constante en cada una de sus componentes conexas y $0$ en la no fitada
 \end{theorem}
 
-\begin{definition}[Cadena, ciclo]
-Una cadena es una suma formal de caminos de la forma $\Gamma = m_1\Gamma_1 + \ldots + m_n\Gamma_n$. Si $\Gamma_i$ es cerrada $\ \forall i$, entonces $\Gamma$ es un ciclo
-\end{definition}
-
-\begin{definition}[Ciclos homólogas]
-$\Gamma$ es homólogo a $0$ en $\Omega (\Gamma \sim 0) \iff \ \forall a \not\in \Omega n(\Gamma, a) = 0$ 
+\begin{definition}[Ciclos homólogos]
+$\Gamma$ es homólogo a $0$ en $\Omega (\Gamma \sim 0) \iff \ \forall a \not\in \Omega \ n(\Gamma, a) = 0$ 
 
 Dos ciclos son homólogos en $\Omega (\Gamma_1 \sim \Gamma_2) \iff \Gamma_1-\Gamma_2 \sim 0$ 
 \end{definition}
@@ -357,7 +352,7 @@ f(z) = \sum_{n\in \mathbb{Z}} a_n(z-a)^n, \qquad a_n = \frac{1}{2\pi i} \int_{\p
 \begin{definition}[Residuo]
 Sea $f\in H(\Omega)$ y $a$ una singularidad aislada de $f$ 
 \[
-Res(f, a) = \frac{1}{2\pi i}\int_{\partial D(a; \varepsilon } f(z)dz \qquad \varepsilon >0 : D(a;\varepsilon )-\{a\} \subseteq \Omega
+Res(f, a) = \frac{1}{2\pi i}\int_{\partial D(a; \varepsilon) } f(z)dz \qquad \varepsilon >0 : D(a;\varepsilon )-\{a\} \subseteq \Omega
 \] 
 \end{definition}
 Observamos que si $\displaystyle  f(z) = \sum_{n\in \mathbb{Z}} a_n(z-a)^n  \implies Res(f, a) = a_{-1} =  \frac{1}{(m-1)!} \lim_{z\to a} \frac{d^{m-1}}{dz^{m-1}}\left((z-a)^mf(z)\right)$ 
@@ -380,6 +375,11 @@ n(f(\Gamma ), 0) = \frac{1}{2\pi i} \int_\Gamma \frac{f'(z)}{f(z)}dz = \sum_j n(
 \]
 \end{theorem}
 
+\begin{theorem}[Rouche]
+Sea $f\sim 0: \ \forall z\in \Omega -\Gamma , \ n(\Gamma , z)= 0 \text{ ó } 1, \quad f, g \in H(\Omega ), \quad |f(z)-g(z)|< |f(z)| \ \forall z\in \Gamma  \implies \#z_{f, \Gamma } = \#z_{g, \Gamma }$
+
+\end{theorem}
+
 \begin{proposition} Son equivalentes:
 \begin{enumerate}[topsep=-6pt, itemsep=0pt]
   \item $\Omega $ simplemente conexo
@@ -390,7 +390,9 @@ n(f(\Gamma ), 0) = \frac{1}{2\pi i} \int_\Gamma \frac{f'(z)}{f(z)}dz = \sum_j n(
 \end{enumerate}
 \end{proposition}
 
-
+\begin{theorem}[Gauss-Lucas]
+Sea $p(z)$ un polinomio. Las raíces de $p'(z)$ están en la envoltura convexa de las raíces de  $p(z)$
+\end{theorem}
 
 
 

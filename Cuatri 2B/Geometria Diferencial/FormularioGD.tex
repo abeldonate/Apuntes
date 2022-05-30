@@ -96,14 +96,18 @@ Primera forma fundamental
 P =   \begin{pmatrix} E & F \\ F & G \end{pmatrix} = \begin{pmatrix} \langle \sigma_u , \sigma_u \rangle & \langle \sigma_u , \sigma_v \rangle \\ \langle \sigma_u , \sigma_v \rangle & \langle \sigma_v , \sigma_v \rangle   \end{pmatrix} 
 \]
 Cálculo de longitudes:
-(completar)
+\[
+\begin{pmatrix} u(t)  \\ v(t) \end{pmatrix} \implies   L = \int_a^b \sqrt{Eu'^2 + 2Fu'v' + Gv'^2}dt
+\] 
 
 Cálculo de áreas
 \[
 A = \iint_X\|\sigma _u\times \sigma _v\|dudv=  \iint_X \sqrt{EG-F^2}dudv
 \]
 Cálculo de ángulos
-(completar)
+\[
+\cos \alpha  = \frac{\langle u, v \rangle }{\|u\|\|v\|} = \frac{u^TPv}{\sqrt{u^TPu}\sqrt{v^TPv}  }
+\] 
 
 Aplicación de Gauss
 \[
@@ -118,7 +122,6 @@ Segunda forma fundamental
   S = \begin{pmatrix} e & f \\ f & g \end{pmatrix} = \begin{pmatrix} -\langle \sigma _u , N_u \rangle & -\langle \sigma _u , N_v \rangle \\ -\langle \sigma _v , N_u \rangle & -\langle \sigma _v , N_v \rangle   \end{pmatrix}= \]
   \[=   \begin{pmatrix} \langle \sigma _{uu} , N \rangle & \langle \sigma _{uv} , N \rangle \\ \langle \sigma _{uv} , N \rangle & \langle \sigma _{vv} , N \rangle   \end{pmatrix} =  -PA = -A^TP 
 \]
-\columnbreak
 \[
 II(w) = -\langle w, DN w \rangle  = w^TSw \text{ (base } \sigma_u, \sigma _v)
 \] 
@@ -168,7 +171,7 @@ Los calculamos como
 Fórmulas de Gauss
 \begin{enumerate}[topsep=-6pt, itemsep=0pt]
     \item $EK = (\Gamma_{11}^2)_v - (\Gamma_{12}^2)_u + \Gamma_{11}^1\Gamma_{12}^2 + \Gamma_{11}^2\Gamma_{22}^2 - \Gamma_{12}^1\Gamma_{11}^2 - \Gamma_{12}^2\Gamma_{12}^2$
-    \item $FK = (\Gamma_{12}^1)_u - (\Gamma_{11}^1)_v + \Gamma_{12}^1\Gamma_{12}^2 - \Gamma_{12}^2\Gamma_{11}^2$
+    \item $FK = (\Gamma_{12}^1)_u - (\Gamma_{11}^1)_v + \Gamma_{12}^1\Gamma_{12}^2 - \Gamma_{11}^2\Gamma_{22}^1$
     \item $GK = (\Gamma_{22}^1)_u - (\Gamma_{12}^1)_v + \Gamma_{11}^1\Gamma_{22}^1 + \Gamma_{12}^1\Gamma_{22}^2 - \Gamma_{12}^1\Gamma_{12}^1 - \Gamma_{12}^2\Gamma_{22}^1$
   \end{enumerate}
 
