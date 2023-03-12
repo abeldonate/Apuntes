@@ -1,0 +1,208 @@
+\documentclass[leqno]{article}
+\usepackage{verbatim}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{multicol} \usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{amssymb}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,epsfig,epstopdf,titling,url,array}
+\usepackage{hyperref}
+\usepackage{eso-pic}
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{graphicx}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+
+% geometry
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+% paragraph length
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{proposition}{Proposition}
+\newtheorem*{definition}{Definition}
+\newtheorem*{observation}{Observation}
+
+\newcommand{\incfig}[1]{%
+\center
+\def\svgwidth{0.9\columnwidth}
+\import{./figures/}{#1.pdf_tex}
+}
+\newcommand{\incimg}[1]{%
+\center
+\includegraphics[width=0.9\columnwidth]{images/#1}
+}
+\pdfsuppresswarningpagegroup=1
+
+\title{Teoría de Control}
+\author{Abel Doñate Muñoz}
+\date{}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\begin{definition}[Tipos de variables] \
+\begin{itemize}[topsep=-6pt, itemsep=0pt]
+  \item $x \in \mathbb{R}^n$ es el estado del sistema 
+  \item $u \in \mathbb{R}^p$ es la variable de control
+  \item $y\in \mathbb{R}^q$ es la salida
+\end{itemize}
+\end{definition}
+
+\begin{theorem}[Ecuaciones en espacio de estado]
+Siempre podemos expresar nuestra ecuación diferencial de la siguiente manera
+\[
+  \begin{cases}
+\dot{x} = f(x, t, u) \\ y = h(x, t, u)
+  \end{cases}
+\] 
+\end{theorem}
+
+Si las funciones no dependen de $t$, entonces se le llama sistema \textbf{autónomo}.
+
+
+El objetivo de la asignatura será intentar modelar la variable de control $u$ con tal de conseguir la respuesta deseada en la variable de salida $y$
+
+
+\section{Sistemas lineales}
+\begin{definition}[Sistema lineal]
+\[
+\begin{cases}
+  \dot{x}=A(t)x + B(t)u \\ y = C(t)x + D(t)u
+\end{cases} \Rightarrow \text{si es LTI} \Rightarrow
+\begin{cases}
+  \dot{x}=Ax + Bu \\ y = Cx + Du
+\end{cases}
+\] 
+\end{definition}
+
+\begin{definition}[Función de transferencia SISO LTI]  $Y(s)=G(s)U(s) \Rightarrow G(s) = C(sI-A)^{-1}B + D $
+\end{definition}
+
+\begin{definition}[Sistema SISO LTI]
+  \begin{align*}
+    a_0y^{(n)} + \cdots + a_ny = b_1 u^{(n-1)} + \cdots + b_n u \quad \Rightarrow \quad G(s)= \frac{b_1s ^{n-1} + \cdots+ b_n}{a_0s^n + \cdots + a_n}
+  \end{align*}
+
+\end{definition}
+
+\section{Estabilidad}
+
+\begin{definition}[Punto de equilibrio hiperbólico] Sea  $x=0$ un punto de equilibrio de $\dot{x}=f(x)$. Este punto es hiperbólico si $Df(0)$ no tiene VAPs con parte real cero.
+
+\end{definition}
+
+\begin{definition}[Estabilidad de diagrama de fases] $\begin{pmatrix} \dot{x_1} \\ \dot{x_2}  \end{pmatrix} = A \begin{pmatrix} x_1\\x_2 \end{pmatrix}, \lambda_1, \lambda_2  $ VAPs
+\begin{itemize}[topsep=-6pt, itemsep=0pt]
+  \item $Im(\lambda_i)=0$
+	\begin{itemize}[topsep=-6pt, itemsep=0pt]
+	  \item \textbf{Nodo estable} $\lambda_1, \lambda_2<0$
+	  \item  \textbf{Nodo inestable} $\lambda_1, \lambda_2>0$
+	  \item  \textbf{Silla} $\lambda_1<0<\lambda_2$
+	\end{itemize}
+  \item $Im(\lambda_i) \neq 0$
+	\begin{itemize}[topsep=-6pt, itemsep=0pt]
+	  \item   \textbf{Foco estable} $Re(\lambda_i)<0$
+	  \item   \textbf{Foco inestable} $Re(\lambda_i)>0$ 
+	  \item \textbf{Punto central} $Re(\lambda_i)=0$
+	\end{itemize}
+  \item $det(A)=0$ equilibrio en una recta
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Equilibrio hiperbólico] Un punto de equilibrio es hiperbólico si el jacobiano en el punto no tiene VAPs $\lambda_i$ con $Re(\lambda_i) = 0$
+\end{definition}
+
+\begin{definition}[Estabilidad en sentido Lyapunov] $x_0$ es estable si $\ \forall R>0 \ \exists r>0:$
+  \[
+  \|x(0)-x_0\|<r \Rightarrow \|x(t)-x_0\|<R \ \forall t>0
+  \] 
+\end{definition}
+
+\begin{definition}[Tipos de estabilidad]\
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item \textbf{Asintótica} (AS) $\|x(0)-x_0\|<r_0 \Rightarrow \lim x(t)=x_0$ 
+  \item \textbf{Exponencial} (ES) $\|x(0)-x_0\|<r_0 \Rightarrow \|x(t)-x_0\|<\alpha \|x(0)-x_0\|e^{-\lambda t}$ 
+  \item \textbf{Marginal} (MS) estable pero no asintótica
+\end{enumerate}
+\end{definition}
+
+ \begin{definition}[Estabilidad BIBO LTI SISO] El sistema es BIBO si $\ \forall u(t)$ acotado, la respuesta $y(t)$ es acotada. Esto pasa si todos los polos de la función de transferencia tienen parte real negativa.
+
+\end{definition}
+
+\begin{theorem}[Criterio de Routh] (que puto palo)
+
+\end{theorem}
+
+\begin{definition}[Función de Lyapunov] $V$ es una función de Lyapunov si
+  \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+    \item $V(0)=0$
+	\item  $V(x)>0 \ \forall x\in B-\{0\}$
+	\item $\dot{V}(x)=\frac{d V}{d x}f(x) \le 0$
+  \end{enumerate}
+\end{definition}
+
+\begin{theorem}[Estabilidad local] Sea $\dot{x} = f(x)$ con $f$ localmente Lipschitz  $f(0)=0$
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item Si existe función de Lyapunov $\Rightarrow $ origen S
+  \item Si existe función de Lyapunov estricta  $\Rightarrow$ origen AS
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Estabilidad global] Si existe $V(x)$ tal que  
+  \begin{itemize}[topsep=-6pt, itemsep=0pt]
+    \item $V$ globalmente definida positiva
+	\item  $\dot{V}$ globalmente definida negativa
+	\item $V(x) \to \infty$ cuando $\|x(t)\|\to \infty$
+  \end{itemize}
+  Entonces el origen es GAS
+\end{theorem}
+
+\begin{proposition}
+ $\dot{W}(t)\le -\alpha W(t) \Rightarrow W(t)\le W(0)e^{-\alpha t}$ 
+\end{proposition}
+
+\begin{theorem}[Estabilidad exponencial]Si se cumple en $\Omega $
+  \begin{itemize}[topsep=-6pt, itemsep=0pt]
+    \item $\alpha \|x\|^\delta\le V(x)\le \beta \|x\|^\delta$ 
+	\item $\dot{V}(x)\le -\gamma V(x)$
+  \end{itemize}
+  Entonces el origen es ES
+\end{theorem}
+
+\begin{definition}[Ecuación de Lyapunov] Sea $A$ y  $Q = Q^T>0$ y una  $P=P^T$ desconocida. Definimos la ecuación de Lyapunov asociada a  $A$ como $A^TP+PA = -Q$
+\end{definition}
+
+\begin{theorem}[] $A$ is Hurwitz $\iff \ \forall Q \ \exists P$ que satisface la ecuación de Lyapunov
+\end{theorem}
+
+\begin{definition}[Conjunto invariante] $M\subseteq \mathbb{R}^n$ tal que $x(0)\in M \Rightarrow x(t)\in M \ \forall t>0$
+
+\end{definition}
+
+
+
+
+\end{document}

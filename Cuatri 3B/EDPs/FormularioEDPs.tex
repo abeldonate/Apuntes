@@ -1,0 +1,117 @@
+\documentclass[leqno]{article}
+\usepackage{verbatim}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{multicol} \usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{amssymb}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,epsfig,epstopdf,titling,url,array}
+\usepackage{hyperref}
+\usepackage{eso-pic}
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{graphicx}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+
+% geometry
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+% paragraph length
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{proposition}{Proposition}
+\newtheorem*{definition}{Definition}
+\newtheorem*{observation}{Observation}
+
+\newcommand{\incfig}[1]{%
+\center
+\def\svgwidth{0.9\columnwidth}
+\import{./figures/}{#1.pdf_tex}
+}
+\newcommand{\incimg}[1]{%
+\center
+\includegraphics[width=0.9\columnwidth]{images/#1}
+}
+\pdfsuppresswarningpagegroup=1
+
+\title{Formulario EDPs}
+\author{Abel Doñate Muñoz}
+\date{}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Ecuación del transporte}
+
+\begin{definition}[Ecuación del transporte]
+Para $c$ constante
+\[
+\begin{cases}
+  u_t+cu_x = 0\\ 
+  u(x, 0)=g(x)
+\end{cases} \Rightarrow u(x,t) = g(x-ct)
+\] 
+Para $c$ variable no homogéneo
+\[
+\begin{cases}
+  u_t+(cu)_x = f(x,t)\\ 
+  u(x, 0)=g(x)
+\end{cases} 
+\]
+\end{definition}
+
+\begin{theorem}[Curvas características]
+  \begin{align*}
+a(x,t)u_t + b(x,t)u_x + d(x, t)u + f(x,t)=0 \quad \Rightarrow \quad \begin{pmatrix} x'(s)\\ t'(s) \end{pmatrix} = \begin{pmatrix} b(x(s),t(s))\\ a(x(s), t(s)) \end{pmatrix}  \\
+v(s) := u(x(s), t(s)), \quad v'(s) = bu_x+au_t = -f(x(s),t(s)) - d(x(s),t(s))v(s)
+  \end{align*}
+\end{theorem}
+
+\begin{theorem}[Fórmula de Duhamel] $T$ semigrupo de la homogénea, $F(u)=f(x,t)$ 
+  \[
+  u(x,t) = (T_tg)(x) + \int_0^t (T_{t-s}f(\cdot , s))(x)ds
+  \] 
+\end{theorem}
+
+\section{Espacios de Banach, Operadores y Semigrupos}
+Ejemplos espacios de Banach
+\begin{itemize}[topsep=-6pt, itemsep=0pt]
+  \item $K\subseteq \mathbb{R}^n$ compacto, $E=\mathcal{C}^0(K)$ con la norma $\|u\|_{\infty}=sup_{x\in K}|u(x)|$ es Banach
+  \item $E=L^2([a,b])$ con la norma  $\|u\|_{2}$ es Banach
+\end{itemize}
+
+\begin{theorem}[Punto fijo de Banach] $E$ Banach
+ \[
+T:\overline{B_M}(u) \to   \overline{B_M}(u) \text{ contracción } \|Tu-Tv\|\le \lambda \|u-v\|, \lambda<1 \quad \Rightarrow \quad T  \text{ tiene un único punto fijo}
+\] 
+\end{theorem}
+
+\begin{proposition} $E, F$ Banach,  $A:E\to F$ operador lineal. Son equivalentes:
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item $A$ continuo
+  \item  $A$ acotado, es decir  $\|Au\|_{F}\le C\|u\|_E \ \forall u\in E$ 
+\end{enumerate} 
+\end{proposition}
+
+\end{document}

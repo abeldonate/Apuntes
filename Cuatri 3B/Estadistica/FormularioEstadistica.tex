@@ -1,0 +1,240 @@
+\documentclass[leqno]{article}
+\usepackage{verbatim}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{multicol} \usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{amssymb}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,epsfig,epstopdf,titling,url,array}
+\usepackage{hyperref}
+\usepackage{eso-pic}
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{graphicx}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+
+% geometry
+\usepackage{geometry}
+\geometry{a4paper, margin=0.5in}
+
+% paragraph length
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{proposition}{Proposition}
+\newtheorem*{definition}{Definition}
+\newtheorem*{observation}{Observation}
+
+\newcommand{\incfig}[1]{%
+\center
+\def\svgwidth{0.9\columnwidth}
+\import{./figures/}{#1.pdf_tex}
+}
+\newcommand{\incimg}[1]{%
+\center
+\includegraphics[width=0.9\columnwidth]{images/#1}
+}
+\pdfsuppresswarningpagegroup=1
+
+\title{Formulario Estadística}
+\author{Abel Doñate Muñoz}
+\date{}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\begin{multicols}{2}[\columnsep2em]
+
+\section{Intro}
+\begin{definition}[Varianza y covarianza]
+  \begin{align*}
+&s_x^2 = \frac{1}{N}\sum (x_i-\overline{x}_N)^2\\
+&s_{xy}=\frac{1}{N}\sum(x_i-\overline{x}_N)(y_i-\overline{y}_N) \\
+&r_{xy} = \frac{s_{xy}}{s_xs_y}
+  \end{align*}
+\end{definition}
+
+\begin{definition}[Parámetros a estimar]
+\[
+X \sim F \Rightarrow \theta = \Phi(F)
+\] 
+\end{definition}
+
+\begin{definition}[Estimador] $X_1, \ldots, X_n$
+\[
+\hat{\theta } = T(X_1, \ldots, X_n)
+\] 
+\end{definition}
+
+\begin{definition}[Función de distribución empírica]
+  \[
+	F_n(x) = \frac{1}{n}\sum I_{(\infty, x]}(x_i)
+  \] 
+\end{definition}
+
+\begin{theorem}[]$X_1, \ldots, X_n, x \in \mathbb{R}$
+  \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+	\item $E(F_n(x))=F(x), \quad Var(F_n(x))= \frac{1}{n}F(x)(1-F(x))$
+	\item $F_n(x) \to  F(x)$ casi seguro
+	\item $\frac{\sqrt{n} (F_n(x)-F(x))}{\sqrt{F(x)(1-F(x))} } \to  N(0,1)$ en distribución
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Glivenko-Cantelli] $\{X_n\}$ vaiid 
+  \[
+	\sup_{x\in \mathbb{R}} |F_n(x)-F(x)| \to 0
+  \] 
+\end{theorem}
+
+\begin{theorem}[]
+Sean $x_1, \ldots, x_n$,  $S^2 =\frac{1}{n-1}\sum (x_i-\overline{x}) ^2$ la varianza muestral
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item $\min_a \sum (x_i-a)^2 = \sum (x_i-\overline{x})$ 
+  \item $(n-1)S^2 = \sum (x_i-\overline{x})^2 = \sum x_i^2-n\overline{x}^2$
+\end{enumerate}
+\end{theorem}
+
+\begin{definition}[Media muestral]
+$\overline{X} = \frac{1}{n}\sum X_i$
+\end{definition}
+
+\begin{definition}[Varianza muestral]
+$S^2 = \frac{1}{n-1}\sum (X_i-\overline{X})^2$
+\end{definition}
+
+\begin{theorem}[] $X$ con media  $\mu$ y varianza $\sigma ^2$  
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item $E(\overline{X}) = \mu$
+  \item $V(\overline{X}) = \frac{\sigma ^2}{n}$ 
+  \item $E(S^2)=\sigma ^2$
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[]
+\[
+  \psi _{\overline{X}}(t) = (\psi_X \left( \frac{t}{n}) \right) )^n
+\] 
+\end{theorem}
+
+\begin{definition}[Distribución $\chi_k^2$] Sea $X_i \sim N(0,1)$
+\[
+\chi_k^2 = \sum X_i^2 = \gamma\left(\frac{n}{2}, \frac{1}{2}\right)
+\] 
+\end{definition}
+
+\begin{proposition} Sea $\overline{X} \sim N_p(\overline{\mu}, \Sigma)$ 
+  \[
+  \overline{Y} = A\overline{X} \sim N_p(A\overline{\mu}, A\Sigma A^t)
+  \] 
+\end{proposition}
+
+\begin{proposition}Sea $\overline{X}\sim N_p(\overline{\mu}, \Sigma)$ 
+  \[
+	(\overline{X}-\overline{\mu})^t\Sigma^{-1}(\overline{X}-\overline{\mu})\sim \chi^2_{p}
+  \] 
+\end{proposition}
+
+\begin{theorem}[Fisher] $X_i \sim  N(\mu, \sigma ^2)$ vaiid entonces
+\[
+\overline{X} \sim N\left(\mu,\frac{\sigma ^2}{n}\right), \quad \frac{(n-1)}{\sigma ^2}S^2 \sim \chi _{n-1}^2 \quad \text{ indep}
+\] 
+\end{theorem}
+
+\begin{definition}[t de Student] Sean $X \sim N(0,1), Y\sim \chi _r^2$ indep
+\[
+T = \frac{X}{\sqrt{\frac{Y}{r}}} \sim t(r), \quad f_T(t) = \frac{\Gamma (\frac{r+1}{2})}{\sqrt{\pi r}\Gamma \left( \frac{r}{2} \right)  } \left( 1+ \frac{t^2}{r} \right)^{-\frac{r+1}{2}}
+\] 
+Si  $r>1 \Rightarrow E(T)=0$, si $r>2  \Rightarrow Var(T) = \frac{r}{r-1}$
+\end{definition}
+
+\begin{proposition}Sean $X_i \sim N(\mu, \sigma )$ vaiid
+  \[
+  \frac{\sqrt{n} (\overline{X}-\mu}{S} \sim t(n-1)
+  \] 
+\end{proposition}
+
+Cosas de la F (puto palo)
+
+\begin{definition}[Localización y escala]
+\[
+  X = \mu + \sigma Z, \quad f(x|\mu, \sigma )= \frac{1}{\sigma }f\left( \frac{x-\mu}{\sigma } \right) 
+\]
+\begin{itemize}[topsep=-6pt, itemsep=0pt]
+  \item $Z \sim f(x) \iff X = \mu + \sigma Z \sim f(x|\mu, \sigma )$
+  \item $X\sim f(x|\mu, \sigma ) \iff \frac{X-\mu}{\sigma } \sim  f(x)$
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Estimador plug-in]
+ \[
+   F_n(x) = \frac{1}{n} \sum I_{(-\infty, x]}(X_i), \Rightarrow \hat{\theta }_n = \Phi (F_n)
+\] 
+\end{definition}
+
+\begin{definition}[Método de los momentos]
+Sea $\mu_k = E(X^k)$ y que existe una biyección
+\[
+\mu_i = g_i(\theta_1, \ldots, \theta _k) \iff \theta _i = h_i(\mu_1, \ldots, \mu _k)
+\] 
+entonces $\hat{\theta }_i = h_i(m_1,\ldots, m_k)$ con $m_j = \frac{1}{n}\sum X^j$
+\end{definition}
+
+\begin{definition}[Función de verosimilitud]
+Sea $X \sim F(x,\theta)$
+\[
+L(\theta; x_1, \ldots, x_n) = \prod_{i=1}^{n} f(x_i;\theta)
+\] 
+Para calcular el EMV $\hat{\theta }=\arg \max_{\theta } L(\theta ; x_1,\ldots,x_n)$
+\end{definition}
+
+\begin{definition}[Killback-Leiber] (puto palo)
+
+\end{definition}
+
+\begin{theorem}[Bayes]
+  \[
+  f_{X|Y=y}(x)= \frac{P(Y=y|X=x)f_X(x)}{P(Y=y)}
+  \] 
+
+\end{theorem}
+
+\section{Tema 3}
+\begin{definition} $T_n(X_1,\ldots, X_n)$ estadístico. Llamamos \textbf{distribución de muestreo} a la distribución de $T_n$ y  \textbf{error estándar} a la desviación estándar de $T_n$.
+\end{definition}
+\begin{definition}[Sesgo]
+$Sesgo(\hat{\theta })=E(\hat{\theta })-\theta$
+\end{definition}
+
+\begin{definition}[ECM] $ECM(\hat{\theta })=E((\hat{\theta }-\theta )^2) = (Sesgo(\hat{\theta }))^2+ Var(\hat{\theta})$
+\end{definition}
+
+\begin{theorem}[Cramer-Rao] Sea $W(X)$ un estimador insesgado para $\tau (\theta )$
+  \[
+	Var(W(\overline{X}))\ge \frac{\left(\frac{d \tau (\theta )}{d \theta } \right)^2}{E\left[ \left( \frac{\partial}{\partial\theta } \log f(X|\theta ) \right)^2 \right]}
+  \] 
+
+\end{theorem}
+
+\end{multicols}
+
+
+\end{document}
