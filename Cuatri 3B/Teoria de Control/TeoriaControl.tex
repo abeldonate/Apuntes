@@ -202,7 +202,70 @@ El objetivo de la asignatura será intentar modelar la variable de control $u$ c
 
 \end{definition}
 
+\section{Respuesta temporal y frecuencial de sistemas lineales}
+Considerando el sistema SISO $\displaystyle \begin{cases}
+  \dot{x} = Ax + Bu \\
+  y = Cx+Du
+\end{cases}$
 
+\begin{theorem}[Solución única] Sea $\dot{x} = Ax + Bu$ 
+  \[
+ x(t) = e^{At}x(0) + \int_0^t e^{A(t-\tau )}Bu(\tau )d\tau \quad  \Rightarrow \quad
+ y(t) = Ce^{At}x(0) + \int_0^t Ce^{A(t-\tau )}Bu(\tau )d\tau + Du(t)
+  \] 
+\end{theorem}
+
+\begin{definition}[Impulse response] $y_\delta(t) = Ce^{At}B$
+
+\end{definition}
+
+\begin{definition}[Características del sistema]
+  \begin{itemize}[topsep=-6pt, itemsep=0pt]
+	\item $T_r = \sup \{\delta | y(t)\le \frac{t}{\delta}\}$ 
+	\item $T_s=\inf_{\delta} \{\delta| |y(t)-1|\le \epsilon \}$ 
+	\item $y_{os}= \sup_t\{y(t)-1\}$
+  \end{itemize}
+\end{definition}
+
+(poner gráfico fancy)
+
+\begin{proposition}
+Sistema de segundo orden. $\zeta$ amortiguamiento, $\omega _0$ la frecuencia natural
+\[
+G(s)=\frac{k\omega _0^2}{s^2+2\zeta \omega _0 s + \omega _{0}^2}
+\] 
+Con valores propios $\lambda= -\zeta \omega _0 \pm \omega _0\sqrt{\zeta^2-1} $
+\end{proposition}
+
+\begin{definition}[Sistema lineal]
+\[
+\Sigma  \begin{cases}
+  \dot{x}=Ax + Bu \\ 
+  y = Cx + Du\\
+  u = -Kx+k_rr
+\end{cases}
+\quad \Rightarrow z=Tx \quad 
+\tilde{\Sigma }  \begin{cases}
+  \dot{z} = \tilde{A}z + \tilde{B}u \\
+  y = \tilde{C} z + \tilde{D}u
+\end{cases}
+\quad \begin{cases}
+ P_a(\lambda) = \lambda^n a_1 \lambda^{n-1} + \cdots + a_n = |A-\lambda I|\\
+ P_{p}(\lambda) = \lambda^n + p_1\lambda^{n-1} + \cdots +  p_n = |A-BK-\lambda I|
+\end{cases}
+\] 
+con 
+\[
+  \tilde{A} = \begin{pmatrix} -a_1 & \cdots & -a_{n-1} & -a_n \\ 1 & 0 & 0 & 0 \\ 0 & \ddots & \vdots & \vdots \\ 0 & \cdots & 1 & 0  \end{pmatrix}, \quad \tilde{B} = \begin{pmatrix} 1\\ 0 \\ \vdots \\0 \end{pmatrix}, \quad \tilde{C} = \begin{pmatrix} b_1 & \ldots b_n \end{pmatrix}, \quad
+  \quad  \begin{pmatrix} \tilde{A} & \tilde{B} \\ \tilde{C} & \tilde{D} \end{pmatrix}  = \begin{pmatrix} TAT^{-1} & TB \\ CT^{-1} & D \end{pmatrix} 
+\] 
+la matriz de controlabilidad
+\[
+  \tilde{W_C} = \begin{pmatrix} \tilde{B} & \tilde{A}\tilde{B} & \ldots \tilde{A}^{n-1}\tilde{B} \end{pmatrix} = TW_c, 
+\] 
+\end{definition}
+
+(falta la $\tilde{C}$)
 
 
 \end{document}

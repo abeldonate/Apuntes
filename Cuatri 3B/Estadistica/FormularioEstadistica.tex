@@ -1,23 +1,23 @@
 \documentclass[leqno]{article}
 \usepackage{verbatim}
-\usepackage{array}
-\usepackage{listings}
+\usepackage{array} \usepackage{listings}
 \usepackage{fancyvrb}
 \usepackage{enumitem}
-
+\usepackage{multicol}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
-\usepackage{multicol} \usepackage{mathtools}
+\usepackage{multicol}
+\usepackage{mathtools}
 \usepackage{amsmath}
 \usepackage{wrapfig}
 \usepackage{amssymb}
 \usepackage{amsmath,amsfonts,amssymb,amsthm,epsfig,epstopdf,titling,url,array}
+\usepackage{makecell}
 \usepackage{hyperref}
 \usepackage{eso-pic}
 \usepackage{pgf}
 \usepackage{tikz}
-\usepackage{tikz-cd}
 \usepackage{graphicx}
 
 % figure support
@@ -62,9 +62,73 @@
 \tableofcontents
 \newpage
 
+\textbf{Tabla de distribuciones discretas}
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|}
+	\hline
+	$Modelo$ &  $p(X=k)$ &  $E[X]$ &  $Var[X]$ &  $G_X(z)$ \\
+	\hline
+	\makecell{\textbf{Bernoulli}\\ $\sim Be(p)$ }  & $\begin{cases}  p(X=1)=p \\  p(X=0) = 1-p \end{cases}$ & $p$ &  $p(1-p)$ &  $(1-p) + pz$ \\
+	\hline
+	\makecell{\textbf{Binomial}\\ $\sim Bin(N, p)$} & $\displaystyle\binom{N}{k}p^i(1-p)^{N-k}$ & $Np$ &  $Np(1-p)$ &  $((1-p)+pz)^N$ \\
+	\hline
+	\makecell{\textbf{Uniforme} \\ $\sim U(1, N)$} &  $\displaystyle\frac{1}{N}$ & $\displaystyle\frac{N+1}{2}$ & $\displaystyle\frac{N^2-1}{12}$ & $\displaystyle\frac{1}{N} \frac{z(z^N-1)}{z-1}$ \\
+	\hline
+	\makecell{\textbf{Poisson} \\ $\sim Po(\lambda)$} & $\displaystyle\frac{\lambda^k}{k!}e^{-\lambda}$ & $\lambda$ & $\lambda$ & $\displaystyle e^{\lambda(z-1)}$ \\
+	\hline
+	\makecell{\textbf{Geométrica} \\ $\sim Geom(p)$} & $\displaystyle p(1-p)^{k-1}$ &  $\displaystyle\frac{1}{p}$ &  $\displaystyle\frac{1-p}{p^2}$ &  $\displaystyle \frac{pz}{1-(1-p)z}$ \\
+	\hline
+	\makecell{\textbf{Binomial negativa} \\ $\sim BinN(r, p)$} & $\begin{cases} 0 & \text{ si } k<r \\ \binom{k-1}{r-1}p^r(1-p)^{k-r} & \text{ si } k\ge r \end{cases}$ & $\displaystyle\frac{r}{p}$ & $\displaystyle r \frac{1-p}{p^2}$ & $\displaystyle \left( \frac{pz}{1-(1-p)z} \right)^r $ \\
+	\hline
+  \end{tabular}
+\end{center}
+
+
+\textbf{Tabla de distribuciones continuas}
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|}
+	\hline
+	$Modelo$ &  $f_X(x)$ &  $E[X]$ &  $Var[X]$ &  $G_X(z)$ \\
+	\hline
+	\makecell{\textbf{Uniforme}\\ $\sim U(a,b)$ }  & $\displaystyle\frac{1}{b-a}\mathbb{I}_{[a,b]}$ & $\displaystyle \frac{b+a}{2}$ &  $\displaystyle \frac{(b-a)^2}{12}$ &  $1 $ en $\displaystyle t=0, \frac{e^{ibt}-e^{iat}}{it(b-a)}$ \\
+	\hline
+	\makecell{\textbf{Exponencial}\\ $\sim Exp(\lambda)$} & $\displaystyle\lambda e^{-\lambda x}, x\ge 0, \lambda>0$ & $\displaystyle \frac{1}{\lambda}$ & $\displaystyle \frac{1}{\lambda^2}$ & $\displaystyle \frac{\lambda}{\lambda-it}$ \\
+	\hline
+	\makecell{\textbf{Normal} \\ $\sim N(\mu, \sigma^2)$} & $\displaystyle \frac{1}{\sqrt{2\pi \sigma ^2}}e^{- \frac{(x-\mu)^2}{2\sigma^2}}$ & $\mu$ & $\sigma^2$ & $\displaystyle e^{i\mu t- \frac{\sigma ^2 t^2}{2}}$ \\
+	\hline
+	\makecell{ \textbf{Gamma} \\ $\sim Gamma(\lambda, \tau )$} & $\displaystyle \frac{\lambda^\tau }{\Gamma (\tau )}x^{\tau -1}e^{-\lambda x}, x>0, \lambda, \tau >0$ & $\displaystyle\frac{\tau}{\lambda}$ & $\displaystyle\frac{\tau}{\lambda^2}$ & $\displaystyle \left( 1-\frac{it}{\lambda} \right)^{-\tau } $\\
+	\hline
+	\makecell{\textbf{Beta}\\ $\sim Beta(\alpha , \beta )$} & $\displaystyle \frac{\Gamma (\alpha +\beta)}{\Gamma (\alpha ) \Gamma (\beta )} x^{\alpha -1}(1-x)^{\beta -1}, x\in [0, 1]$ & $\displaystyle \frac{\alpha}{\alpha +\beta }$ & $\displaystyle \frac{\alpha \beta }{(\alpha + \beta )^2(\alpha +\beta +1)}$ & Sin forma sencilla\\
+	\hline
+	\makecell{\textbf{Weibull}\\ $\sim Weibull(\alpha , \beta )$} & $\displaystyle \frac{\alpha}{\beta } \left(\frac{x}{\beta }\right)^{\alpha -1}e^{-(x /\beta )^\alpha }, x, \alpha , \beta >0$ & $\displaystyle\beta \Gamma \left(1+\frac{1}{\alpha }\right)$ & $\displaystyle \beta ^2\left[\Gamma (1+\frac{2}{\alpha })-\Gamma^2(1+\frac{1}{\alpha })\right]$ & $\displaystyle \sum_{k\ge 0} \frac{(it)^k\beta^k}{k!}\Gamma (1+\frac{k}{\alpha })$ \\
+	\hline
+	\makecell{\textbf{Cauchy} \\ $\sim Cauchy(\theta , \gamma)$} & $\displaystyle \frac{1}{\pi \gamma} \frac{1}{1+(\frac{x-\theta }{\gamma})^2}, \gamma >0$ & No definida & No definida & $\displaystyle e^{\theta it-\gamma |t|}$ \\
+	\hline
+	$\chi^2_p$ & $\displaystyle \frac{1}{\Gamma (p /2) 2^{p /2}}x^{\frac{p}{2}-1} e^{-\frac{x}{2}}, x>0, p\in\mathbb{N}$ & $p$ & $2p$ & $\displaystyle (1-2it)^{-\frac{p}{2}}$\\
+	\hline
+	\makecell{\textbf{Doble expon} \\ $\sim DobExp(\mu, \gamma )$} & $\displaystyle \frac{1}{2\gamma }e^{-\frac{|x-\mu|}{\gamma }}, \gamma >0$ & $\mu$ & $2\gamma ^2$ & $\displaystyle \frac{e^{\mu it}}{1+\gamma^2t^2}$\\
+	\hline
+	\makecell{\textbf{Lognormal} \\ $\sim LogN(\mu, \sigma ^2)$} & $\displaystyle \frac{1}{\sigma \sqrt{2\pi} }\frac{1}{x} e^{- \frac{(\ln x -\mu)^2}{2\sigma ^2}}, x, \sigma >0$ & $\displaystyle e^{\mu+ \frac{\sigma ^2}{2}}$ & $\displaystyle e^{2(\mu+\sigma ^2)} - e^{2\mu+ \sigma ^2}$ & Sin forma sencilla\\
+	\hline
+  \end{tabular}
+\end{center}
+
+
+\newpage
+
 \begin{multicols}{2}[\columnsep2em]
 
 \section{Intro}
+
+ \begin{proposition}
+Sea $\overline{X}$ absolutamente continua con $f_{\overline{X}}(x_1,\ldots,x_n)$. Sea $g:\mathbb{R}^n\to \mathbb{R}^n \in \mathcal{C}^1$ biyectiva. Si  $g(\overline{X})=\overline{Y}$ encontramos $f_{\overline{Y}}$ de la siguiente forma:
+
+Sea $h:=g^{-1}$:
+\[
+f_{\overline{Y}}(y_1, \ldots, y_n) = f_{\overline{X}}(h(y_1,\ldots,y_n))|J_h(y_1,\ldots,y_n)|
+\] 
+\end{proposition}
+
 \begin{definition}[Varianza y covarianza]
   \begin{align*}
 &s_x^2 = \frac{1}{N}\sum (x_i-\overline{x}_N)^2\\
@@ -221,17 +285,31 @@ Para calcular el EMV $\hat{\theta }=\arg \max_{\theta } L(\theta ; x_1,\ldots,x_
 \begin{definition} $T_n(X_1,\ldots, X_n)$ estadístico. Llamamos \textbf{distribución de muestreo} a la distribución de $T_n$ y  \textbf{error estándar} a la desviación estándar de $T_n$.
 \end{definition}
 \begin{definition}[Sesgo]
-$Sesgo(\hat{\theta })=E(\hat{\theta })-\theta$
+$B(\hat{\theta })=E(\hat{\theta })-\theta$
 \end{definition}
 
-\begin{definition}[ECM] $ECM(\hat{\theta })=E((\hat{\theta }-\theta )^2) = (Sesgo(\hat{\theta }))^2+ Var(\hat{\theta})$
+\begin{definition}[ECM] $ECM(\hat{\theta })=E((\hat{\theta }-\theta )^2) = (B(\hat{\theta }))^2+ Var(\hat{\theta})$
 \end{definition}
 
 \begin{theorem}[Cramer-Rao] Sea $W(X)$ un estimador insesgado para $\tau (\theta )$
   \[
 	Var(W(\overline{X}))\ge \frac{\left(\frac{d \tau (\theta )}{d \theta } \right)^2}{E\left[ \left( \frac{\partial}{\partial\theta } \log f(X|\theta ) \right)^2 \right]}
   \] 
+\end{theorem}
 
+\begin{definition}[Información de Fisher]
+  \begin{align*}
+  I_{\overline{x}}(\theta ) = E\left[ \left(  \frac{\partial}{\partial \theta } \ln f_{\overline{x}} \right) ^2 \right]  = Var\left(\frac{\partial}{\partial \theta }\ln f_{\overline{x}}\right) =  -E\left[  \frac{\partial^2}{\partial \theta ^2} \ln f_{\overline{x}} \right]
+  \end{align*}
+\end{definition}
+
+\begin{proposition} $I_{\overline{x}}(\theta ) = nI_{x_i}(\theta )$
+\end{proposition}
+
+\begin{theorem}[Alcanzar CR] $W(\overline{X})$ estimador de $\tau (\theta )$ alcanza CR  $\iff$
+\[
+\frac{\partial}{\partial \theta } \ln f_{\overline{x}} = a(\theta )(W(\overline{X})-\tau (\theta ))
+\] 
 \end{theorem}
 
 \end{multicols}
