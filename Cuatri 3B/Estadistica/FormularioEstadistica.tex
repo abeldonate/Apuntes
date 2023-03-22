@@ -118,6 +118,15 @@
 
 \begin{multicols}{2}[\columnsep2em]
 
+\section{Cosas útiles}
+\begin{align*}
+  &\sum_{0}^\infty nx^{n-1} = \frac{1}{(1-x)^2} \\
+  &\Gamma (n) = (n-1)!, \quad B(a, b) = \int_0^1 t^{a-1}(1-t)^{b-1}dt = \frac{\Gamma (a)\Gamma (b)}{\Gamma (a+b)}\\
+  &\Gamma (a, \tau ) +  \Gamma (b, \tau ) \sim \Gamma (a+b, \tau ) , \quad c\Gamma(a, \tau ) \sim  \Gamma (a, c\tau )\\
+  &aN(\mu, \sigma ^2) + b \sim N(a\mu+b, (a\sigma )^2) \\
+  &aN(\mu_1, \sigma_1^2) + bN(\mu_2, \sigma _2^2) = N(a\mu_1+b\mu_2, (a\sigma_1)^2+(b\sigma _2)^2)
+\end{align*}
+
 \section{Intro}
 
  \begin{proposition}
@@ -160,6 +169,7 @@ X \sim F \Rightarrow \theta = \Phi(F)
 	\item $E(F_n(x))=F(x), \quad Var(F_n(x))= \frac{1}{n}F(x)(1-F(x))$
 	\item $F_n(x) \to  F(x)$ casi seguro
 	\item $\frac{\sqrt{n} (F_n(x)-F(x))}{\sqrt{F(x)(1-F(x))} } \to  N(0,1)$ en distribución
+	\item $\frac{\sum (x_i -\mu)}{\sigma \sqrt{n}} \to N(0,1)$, \ TCL
   \end{enumerate}
 \end{theorem}
 
@@ -193,15 +203,21 @@ $S^2 = \frac{1}{n-1}\sum (X_i-\overline{X})^2$
 \end{enumerate}
 \end{theorem}
 
+\begin{proposition}
+\[
+N(\mu_1, \sigma_1^2) + N(\mu_2, \sigma _2^2) = N(\mu_1+\mu_2, \sigma_1^2+\sigma _2^2)
+\]  
+\end{proposition}
+
 \begin{theorem}[]
 \[
-  \psi _{\overline{X}}(t) = (\psi_X \left( \frac{t}{n}) \right) )^n
+  \psi _{\overline{X}}(t) = (\psi_X \left( \frac{t}{n} \right) )^n
 \] 
 \end{theorem}
 
 \begin{definition}[Distribución $\chi_k^2$] Sea $X_i \sim N(0,1)$
 \[
-\chi_k^2 = \sum X_i^2 = \gamma\left(\frac{n}{2}, \frac{1}{2}\right)
+\chi_k^2 = \sum X_i^2 = \Gamma\left(\frac{n}{2}, \frac{1}{2}\right)
 \] 
 \end{definition}
 
@@ -262,16 +278,17 @@ Sea $\mu_k = E(X^k)$ y que existe una biyección
 entonces $\hat{\theta }_i = h_i(m_1,\ldots, m_k)$ con $m_j = \frac{1}{n}\sum X^j$
 \end{definition}
 
-\begin{definition}[Función de verosimilitud]
-Sea $X \sim F(x,\theta)$
+\begin{definition}[Estimador máximo verosímil]
 \[
-L(\theta; x_1, \ldots, x_n) = \prod_{i=1}^{n} f(x_i;\theta)
+l(\theta , \overline{x})= \ln L(\theta , \overline{x}) = \ln f_{\overline{x}}(\theta ) \Rightarrow \hat{\theta } = \arg \max_{\theta } l(\theta , \overline{x})
 \] 
-Para calcular el EMV $\hat{\theta }=\arg \max_{\theta } L(\theta ; x_1,\ldots,x_n)$
 \end{definition}
 
-\begin{definition}[Killback-Leiber] (puto palo)
-
+\begin{definition}[Kullback-Leiber]
+  \begin{align*}
+  &D_{K, L}(f \| g) = \int_S \ln\left( \frac{f(x)}{g(x)}\right)f(x)dx \ge 0\\
+  &E_f(\ln(f(X)))\ge E_f(\ln(g(X)))
+  \end{align*}
 \end{definition}
 
 \begin{theorem}[Bayes]
@@ -291,6 +308,7 @@ $B(\hat{\theta })=E(\hat{\theta })-\theta$
 \begin{definition}[ECM] $ECM(\hat{\theta })=E((\hat{\theta }-\theta )^2) = (B(\hat{\theta }))^2+ Var(\hat{\theta})$
 \end{definition}
 
+
 \begin{theorem}[Cramer-Rao] Sea $W(X)$ un estimador insesgado para $\tau (\theta )$
   \[
 	Var(W(\overline{X}))\ge \frac{\left(\frac{d \tau (\theta )}{d \theta } \right)^2}{E\left[ \left( \frac{\partial}{\partial\theta } \log f(X|\theta ) \right)^2 \right]}
@@ -309,6 +327,15 @@ $B(\hat{\theta })=E(\hat{\theta })-\theta$
 \begin{theorem}[Alcanzar CR] $W(\overline{X})$ estimador de $\tau (\theta )$ alcanza CR  $\iff$
 \[
 \frac{\partial}{\partial \theta } \ln f_{\overline{x}} = a(\theta )(W(\overline{X})-\tau (\theta ))
+\] 
+\end{theorem}
+
+\begin{definition}[Estadístico suficiente] $\frac{f(\overline{x}|\theta )}{q(T(\overline{x})|\theta )}$ no dep. de $\theta $
+\end{definition}
+
+\begin{theorem}[Factorización] $T(\overline{X})$ suficiente $\iff$ 
+\[
+f(\overline{x}; \theta ) = g(T(\overline{x});\theta )h(\overline{x})
 \] 
 \end{theorem}
 

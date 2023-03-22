@@ -237,7 +237,9 @@ G(s)=\frac{k\omega _0^2}{s^2+2\zeta \omega _0 s + \omega _{0}^2}
 Con valores propios $\lambda= -\zeta \omega _0 \pm \omega _0\sqrt{\zeta^2-1} $
 \end{proposition}
 
-\begin{definition}[Sistema lineal]
+\section{Realimentación}
+
+\begin{definition}[Sistema lineal] Forma canónica Controlable
 \[
 \Sigma  \begin{cases}
   \dot{x}=Ax + Bu \\ 
@@ -247,25 +249,31 @@ Con valores propios $\lambda= -\zeta \omega _0 \pm \omega _0\sqrt{\zeta^2-1} $
 \quad \Rightarrow z=Tx \quad 
 \tilde{\Sigma }  \begin{cases}
   \dot{z} = \tilde{A}z + \tilde{B}u \\
-  y = \tilde{C} z + \tilde{D}u
+  y = \tilde{C} z + \tilde{D}u\\
+  u = -\tilde{K}z + k_rr
 \end{cases}
 \quad \begin{cases}
  P_a(\lambda) = \lambda^n a_1 \lambda^{n-1} + \cdots + a_n = |A-\lambda I|\\
- P_{p}(\lambda) = \lambda^n + p_1\lambda^{n-1} + \cdots +  p_n = |A-BK-\lambda I|
+ P_{p}(\lambda) = \lambda^n + p_1\lambda^{n-1} + \cdots +  p_n = |A-BK-\lambda I|\\
+ G(s) = \frac{b_1s ^{n-1}+ \ldots + b_n}{ s^n + \ldots+ a_n} + D,
 \end{cases}
 \] 
 con 
 \[
-  \tilde{A} = \begin{pmatrix} -a_1 & \cdots & -a_{n-1} & -a_n \\ 1 & 0 & 0 & 0 \\ 0 & \ddots & \vdots & \vdots \\ 0 & \cdots & 1 & 0  \end{pmatrix}, \quad \tilde{B} = \begin{pmatrix} 1\\ 0 \\ \vdots \\0 \end{pmatrix}, \quad \tilde{C} = \begin{pmatrix} b_1 & \ldots b_n \end{pmatrix}, \quad
-  \quad  \begin{pmatrix} \tilde{A} & \tilde{B} \\ \tilde{C} & \tilde{D} \end{pmatrix}  = \begin{pmatrix} TAT^{-1} & TB \\ CT^{-1} & D \end{pmatrix} 
+  \tilde{A} = \begin{pmatrix} -a_1 & \cdots & -a_{n-1} & -a_n \\ 1 & 0 & 0 & 0 \\ 0 & \ddots & \vdots & \vdots \\ 0 & \cdots & 1 & 0  \end{pmatrix}, \quad \tilde{B} = \begin{pmatrix} 1\\ 0 \\ \vdots \\0 \end{pmatrix}, \quad \tilde{C} = \begin{pmatrix} b_1 & \ldots & b_n \end{pmatrix}, \quad \begin{pmatrix} \tilde{A} & \tilde{B} \\ \tilde{C} & \tilde{D} \end{pmatrix}  = \begin{pmatrix} TAT^{-1} & TB \\ CT^{-1} & D \end{pmatrix}, \quad \tilde{k_i} = p_i-a_i
 \] 
 la matriz de controlabilidad
 \[
-  \tilde{W_C} = \begin{pmatrix} \tilde{B} & \tilde{A}\tilde{B} & \ldots \tilde{A}^{n-1}\tilde{B} \end{pmatrix} = TW_c, 
+  \tilde{W_C} = \begin{pmatrix} \tilde{B} & \tilde{A}\tilde{B} & \ldots \tilde{A}^{n-1}\tilde{B} \end{pmatrix} = TW_c,  \qquad k_r = \frac{p_n}{b_n}
 \] 
 \end{definition}
 
-(falta la $\tilde{C}$)
+(falta la matriz de controlabilidad explicita)
+
+\begin{theorem}[Controlabilidad] Un sistema LTI SISO es controlable si la matriz de controlabilidad $W_C$ tiene rango completo
+\end{theorem}
+
+
 
 
 \end{document}
