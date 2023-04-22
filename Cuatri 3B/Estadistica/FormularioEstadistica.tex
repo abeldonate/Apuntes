@@ -168,7 +168,7 @@ X \sim F \Rightarrow \theta = \Phi(F)
   \begin{enumerate}[topsep=-6pt, itemsep=0pt]
 	\item $E(F_n(x))=F(x), \quad Var(F_n(x))= \frac{1}{n}F(x)(1-F(x))$
 	\item $F_n(x) \to  F(x)$ casi seguro
-	\item $\frac{\sqrt{n} (F_n(x)-F(x))}{\sqrt{F(x)(1-F(x))} } \to  N(0,1)$ en distribución
+	\item $\frac{\sqrt{n} (F_n(x)-F(x))}{\sqrt{F(x)(1-F(x))} } = \frac{\sqrt{n} (\bar{X}_n-\mu) }{\sigma } \to  N(0,1)$ en distribución
 	\item $\frac{\sum (x_i -\mu)}{\sigma \sqrt{n}} \to N(0,1)$, \ TCL
   \end{enumerate}
 \end{theorem}
@@ -339,7 +339,93 @@ f(\overline{x}; \theta ) = g(T(\overline{x});\theta )h(\overline{x})
 \] 
 \end{theorem}
 
+
+\section{Estimación por intervalos}
+
+\begin{definition}[Estimador por intervalos] $[L(\overline{X}), U(\overline{X})]$
+\end{definition}
+
+\begin{definition}[Probabilidad de cobertura]
+$P(\theta \in [L(X), U(X)])$
+\end{definition}
+
+\begin{definition}[Coeficiente de cobertura (confianza)] 
+$\inf_{\theta }P(\theta \in [L(X), U(X)])$
+\end{definition}
+
+\begin{definition}[Intervalo de confianza] $IC_{1-\alpha }(\theta)$
+\end{definition}
+
+\begin{proposition} 
+  $IC_{1-\alpha }$ de $\theta$ es $[L(X), U(X)] \Rightarrow IC_{1-\alpha}$ de $\tau (\theta )$ es $[\tau (L(X), U(X)]$ si es creciente (al revés si decreciente)
+\end{proposition}
+
+\begin{definition}[Cantidad pivotal] $Q(\overline{X}, \theta )$ es cantidad pivotal si $f_Q$ no depende de  $\theta $.
+\end{definition}
+
+\begin{proposition}
+  Sea $A_\alpha : P(Q(\overline{X}, \theta )\in A_\alpha) = 1-\alpha$ entonces $C_\alpha (\overline{x}) = \{\alpha : Q(x,\theta )\in A_\alpha \}$ es conjunto de confianza
+\end{proposition}
+
+\begin{proposition}$N(\mu, \sigma )$ con $\sigma $ conocida\\
+  $IC_{1-\alpha } = [\overline{x}_n - z_{\alpha /2} \frac{\sigma }{\sqrt{n} }, \overline{x}_n + z_{\alpha /2} \frac{\sigma }{\sqrt{n} }]$ \\
+  $IC_{1-\alpha } = [\overline{x}_n - t_{n-1,\alpha /2} \frac{S_n }{\sqrt{n} }, \overline{x}_n + t_{n-1,\alpha /2} \frac{S_n }{\sqrt{n} }]$
+\end{proposition}
+
+\begin{definition}[Cant. pivotal asintótica] $Q_n(\overline{X}_n, \theta ) \to_D Q$ 
+  \[
+  Q_n = \frac{T(\overline{X}_n) - E_{\theta }^A (T(\overline{X}_n))}{\sqrt{V_\theta ^A(T(\overline{X}_n))} } \to _D N(0,1)
+  \] 
+\end{definition}
+
+\begin{proposition}$[\hat{\theta }_n \mp z_{\alpha /2}\hat{se}(\hat{\theta }_n)]$ intervalo de confianza $(1-\alpha )$ asintótico para $\mu$
+\end{proposition}
+
+\begin{definition}[Intervalo EMV] $\left[\hat{\theta }_n \mp z_{\alpha /2} \sqrt{(\hat{I}_n(\theta ))^{-1}} \right]$
+  \[
+	Q_n^{EMV} = \frac{\hat{\theta }_n-\theta }{\sqrt{(I_n(\theta ))^{-1}} } \to _D Z \sim N(0,1)
+  \] 
+\end{definition}
+
+\begin{definition}[Función score] $S_n = \frac{\partial}{\partial \theta } \log L$
+  \[
+	Q_n^{S} = \frac{S_n}{\sqrt{(I_n(\theta ))} } \to _D Z \sim N(0,1)
+  \] 
+\end{definition}
+
+\begin{definition}[Precisión] $\Delta $ es la mitad del intervalo
+\end{definition}
+
+
+\section{Modelo lineal normal}
+
+\begin{definition}[Modelo teórico] $y_i|x_i \sim N(\beta _0+ \beta_1x_{1i}+ \cdots + \beta_{p-1i}, \sigma ^2)$, $e_i = y_i-\hat{y}_i$
+\end{definition}
+
+Formulación matricial $Y = X\beta + \epsilon$:
+\[
+Y = \begin{pmatrix} y_1 \\ \vdots \\ y_n \end{pmatrix} , \epsilon = \begin{pmatrix} \epsilon_1\\ \vdots \\ \epsilon_n \end{pmatrix} 
+X = \begin{pmatrix} 1 & x_{11} & \cdots & x_{p-11} \\ \vdots & & & \vdots \\ 1 & x_{1i} & \cdots & x_{p-1i} \end{pmatrix} 
+\] 
+\begin{theorem}[Minimos cuadrados] $ b = (X^TX)^{-1}X^TY$
+\end{theorem}
+
+\begin{proposition} Una variable
+\[
+b_1 = \frac{\sum (x_i-\overline{x})(y_i-\overline{y})}{\sum (x_i-\overline{x})^2}, \quad b_0 = \overline{y} - b_1 \overline{x}
+\]  
+\end{proposition}
+
+\begin{proposition} Con diferente varianza y $V$ matriz diagonal de varianza:
+\[
+b = (X^TV^{-1}X)^{-1}X^TV^{-1}Y
+\] 
+\end{proposition}
+
+
+
+
+
+
 \end{multicols}
-
-
 \end{document}

@@ -27,7 +27,6 @@
 \usepackage{pdfpages}
 \usepackage{transparent}
 \usepackage{xcolor}
-
 % geometry
 \usepackage{geometry}
 \geometry{a4paper, margin=1in}
@@ -61,6 +60,8 @@
 \maketitle
 \tableofcontents
 \newpage
+
+\section{Introducción}
 
 \begin{definition}[Tipos de variables] \
 \begin{itemize}[topsep=-6pt, itemsep=0pt]
@@ -108,10 +109,6 @@ El objetivo de la asignatura será intentar modelar la variable de control $u$ c
 \end{definition}
 
 \section{Estabilidad}
-
-\begin{definition}[Punto de equilibrio hiperbólico] Sea  $x=0$ un punto de equilibrio de $\dot{x}=f(x)$. Este punto es hiperbólico si $Df(0)$ no tiene VAPs con parte real cero.
-
-\end{definition}
 
 \begin{definition}[Estabilidad de diagrama de fases] $\begin{pmatrix} \dot{x_1} \\ \dot{x_2}  \end{pmatrix} = A \begin{pmatrix} x_1\\x_2 \end{pmatrix}, \lambda_1, \lambda_2  $ VAPs
 \begin{itemize}[topsep=-6pt, itemsep=0pt]
@@ -193,16 +190,23 @@ El objetivo de la asignatura será intentar modelar la variable de control $u$ c
 \end{theorem}
 
 \begin{definition}[Ecuación de Lyapunov] Sea $A$ y  $Q = Q^T>0$ y una  $P=P^T$ desconocida. Definimos la ecuación de Lyapunov asociada a  $A$ como $A^TP+PA = -Q$
+$\quad \Rightarrow  \quad V(x)= x^TPx$ función de Lyapunov
 \end{definition}
 
-\begin{theorem}[] $A$ is Hurwitz $\iff \ \forall Q \ \exists P$ que satisface la ecuación de Lyapunov
+\begin{theorem}[] $A$ is Hurwitz $(Re(\lambda_1)<0)$ $\iff \ \forall Q \ \exists P$ que satisface la ecuación de Lyapunov
 \end{theorem}
 
 \begin{definition}[Conjunto invariante] $M\subseteq \mathbb{R}^n$ tal que $x(0)\in M \Rightarrow x(t)\in M \ \forall t>0$
 
 \end{definition}
 
+\begin{theorem}[LaSalle principle]  $R$ conjunto tal que  $\dot{V}(x)=0$ no contiene trayectorias diferentes a la trivial. $V$ no acotado. Entonces  el origen es  GAS
+
+\end{theorem}
+
 \section{Respuesta temporal y frecuencial de sistemas lineales}
+
+
 Considerando el sistema SISO $\displaystyle \begin{cases}
   \dot{x} = Ax + Bu \\
   y = Cx+Du
@@ -219,9 +223,9 @@ Considerando el sistema SISO $\displaystyle \begin{cases}
 
 \end{definition}
 
-\begin{definition}[Características del sistema]
+\begin{definition}[Características del sistema] . 
   \begin{itemize}[topsep=-6pt, itemsep=0pt]
-	\item $T_r = \sup \{\delta | y(t)\le \frac{t}{\delta}\}$ 
+	\item $T_r = \sup_{\delta} \{\delta | y(t)\le \frac{t}{\delta}\}$ 
 	\item $T_s=\inf_{\delta} \{\delta| |y(t)-1|\le \epsilon \}$ 
 	\item $y_{os}= \sup_t\{y(t)-1\}$
   \end{itemize}
@@ -232,10 +236,15 @@ Considerando el sistema SISO $\displaystyle \begin{cases}
 \begin{proposition}
 Sistema de segundo orden. $\zeta$ amortiguamiento, $\omega _0$ la frecuencia natural
 \[
-G(s)=\frac{k\omega _0^2}{s^2+2\zeta \omega _0 s + \omega _{0}^2}
+G(s)=\frac{k\omega _0^2}{s^2+2\zeta \omega _0 s + \omega _{0}^2} \quad \Rightarrow \quad\begin{cases}
+  T_r = \frac{\pi - \arctan \frac{\zeta}{\sqrt{1-\zeta^2} }}{\omega _d}\\
+  M_p = e^{\frac{-\pi \zeta}{\sqrt{1-\zeta^2} }}\\
+  T_s = \frac{4}{\zeta\omega _0}
+\end{cases}
 \] 
-Con valores propios $\lambda= -\zeta \omega _0 \pm \omega _0\sqrt{\zeta^2-1} $
+Con valores propios $\lambda= -\zeta \omega _0 \pm \omega _0\sqrt{\zeta^2-1}  = -\sigma \pm j\omega _d$
 \end{proposition}
+
 
 \section{Realimentación}
 
@@ -253,18 +262,61 @@ Con valores propios $\lambda= -\zeta \omega _0 \pm \omega _0\sqrt{\zeta^2-1} $
   u = -\tilde{K}z + k_rr
 \end{cases}
 \quad \begin{cases}
- P_a(\lambda) = \lambda^n a_1 \lambda^{n-1} + \cdots + a_n = |A-\lambda I|\\
+ P_a(\lambda) = \lambda^n +  a_1 \lambda^{n-1} + \cdots + a_n = |A-\lambda I|\\
  P_{p}(\lambda) = \lambda^n + p_1\lambda^{n-1} + \cdots +  p_n = |A-BK-\lambda I|\\
  G(s) = \frac{b_1s ^{n-1}+ \ldots + b_n}{ s^n + \ldots+ a_n} + D,
 \end{cases}
 \] 
 con 
 \[
-  \tilde{A} = \begin{pmatrix} -a_1 & \cdots & -a_{n-1} & -a_n \\ 1 & 0 & 0 & 0 \\ 0 & \ddots & \vdots & \vdots \\ 0 & \cdots & 1 & 0  \end{pmatrix}, \quad \tilde{B} = \begin{pmatrix} 1\\ 0 \\ \vdots \\0 \end{pmatrix}, \quad \tilde{C} = \begin{pmatrix} b_1 & \ldots & b_n \end{pmatrix}, \quad \begin{pmatrix} \tilde{A} & \tilde{B} \\ \tilde{C} & \tilde{D} \end{pmatrix}  = \begin{pmatrix} TAT^{-1} & TB \\ CT^{-1} & D \end{pmatrix}, \quad \tilde{k_i} = p_i-a_i
+  \tilde{A} = \begin{pmatrix} -a_1 & \cdots & -a_{n-1} & -a_n \\ 1 & 0 & 0 & 0 \\ 0 & \ddots & \vdots & \vdots \\ 0 & \cdots & 1 & 0  \end{pmatrix}, \quad \tilde{B} = \begin{pmatrix} 1\\ 0 \\ \vdots \\0 \end{pmatrix}, \quad \tilde{C} = \begin{pmatrix} b_1 & \ldots & b_n \end{pmatrix}, \quad \begin{pmatrix} \tilde{A} & \tilde{B} \\ \tilde{C} & \tilde{D} \end{pmatrix}  = \begin{pmatrix} TAT^{-1} & TB \\ CT^{-1} & D \end{pmatrix}, \begin{cases}
+\tilde{k_i} = p_i-a_i \\ k_r = \frac{p_n}{b_n} \end{cases}
 \] 
 la matriz de controlabilidad
 \[
-  \tilde{W_C} = \begin{pmatrix} \tilde{B} & \tilde{A}\tilde{B} & \ldots \tilde{A}^{n-1}\tilde{B} \end{pmatrix} = TW_c,  \qquad k_r = \frac{p_n}{b_n}
+  \tilde{W_C} = \begin{pmatrix} \tilde{B} & \tilde{A}\tilde{B} & \ldots \tilde{A}^{n-1}\tilde{B} \end{pmatrix} = TW_c, \quad  K = \tilde{K} \tilde{W}_cW_c^{-1}
+\] 
+\end{definition}
+
+(falta la matriz de controlabilidad explicita)
+
+\begin{theorem}[Controlabilidad] Un sistema LTI SISO es controlable si la matriz de controlabilidad $W_C$ tiene rango completo
+\end{theorem}
+
+\begin{theorem}[Formula de Ackermann]
+  $K = \begin{pmatrix}  0 & \ldots & 0 & 1 \end{pmatrix} W_C^{-1}P_d(A) $, $k_r = -(C(A-BK)^{-1})^{-1}$
+\end{theorem}
+
+\section{Observabilidad}
+
+\begin{definition}[Sistema lineal] Forma canónica Observable
+\[
+\Sigma  \begin{cases}
+  \dot{x}=Ax + Bu \\ 
+  y = Cx + Du\\
+\end{cases}
+\quad \Rightarrow z=Tx \quad 
+\tilde{\Sigma }  \begin{cases}
+  \dot{z} = \tilde{A}z + \tilde{B}u \\
+  y = \tilde{C} z + \tilde{D}u\\
+\end{cases}
+\quad \begin{cases}
+ P_a(\lambda) = \lambda^n +  a_1 \lambda^{n-1} + \cdots + a_n = |A-\lambda I|\\
+ P_{p}(\lambda) = \lambda^n + p_1\lambda^{n-1} + \cdots +  p_n = |A-LC-\lambda I|\\
+ G(s) = \frac{b_1s ^{n-1}+ \ldots + b_n}{ s^n + \ldots+ a_n} + D,
+\end{cases}
+\] 
+con 
+\[
+  \tilde{A} = \begin{pmatrix} -a_1 & 1 & \cdots & 0 \\ -a_2 & 0 & \cdots & 0 \\ \vdots & \ddots & \vdots & \vdots \\ -a_n & \cdots & 0 & 0  \end{pmatrix}
+  , \quad \tilde{B} = \begin{pmatrix} b_1\\ b_2 \\ \vdots \\b_n \end{pmatrix},
+  \quad \tilde{C} = \begin{pmatrix} 1 & 0 & \cdots & 0 \end{pmatrix},
+  \quad \begin{pmatrix} \tilde{A} & \tilde{B} \\ \tilde{C} & \tilde{D} \end{pmatrix}  = \begin{pmatrix} TAT^{-1} & TB \\ CT^{-1} & D \end{pmatrix}, \begin{cases}
+\tilde{k_i} = p_i-a_i \\ k_r = \frac{p_n}{b_n} \end{cases}
+\] 
+la matriz de controlabilidad
+\[
+  \tilde{W_o} = \begin{pmatrix} \tilde{C} \\ \tilde{C}\tilde{A} \\ \ldots \\ \tilde{C}\tilde{A}^{n-1} \end{pmatrix} = TW_c ?, \quad  L = W_o^{-1}\tilde{W}_o \tilde{L}, \quad \hat{\dot{x}} = A\hat{x} + Bu + L (y-C \hat{x}) 
 \] 
 \end{definition}
 
@@ -274,6 +326,43 @@ la matriz de controlabilidad
 \end{theorem}
 
 
+
+\section{Output feedback}
+(difujar graficardo)
+La salida general de este sistema es 
+\[
+Y(s) = \frac{C(s)G(s)}{1+L(s)}R(s) + \frac{1}{1+L(s)}N(s) + \frac{G(s)}{1+L(s)}D(s), \quad \text{ donde } \quad L(s) = C(s)G(s)H(s)
+\] 
+Sin disturbances $D(s)$ ni ruido $N(s)$, la función de transferencia y el error quedan
+\[
+T = \frac{C(s)G(s)}{1+L(s)}, \quad E(s) = \frac{D_L(s)}{D_L(s)+N_L(s)} \frac{N_R(s)}{D_R(s)}
+\] 
+
+\begin{theorem}[Estabilidad] Tendremos $\lim_{t \to  \infty} e(t) =0$ si y solo si
+  \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+    \item Los polos de $E(s)$ están en el semiplano abierto izquierdo 
+	\item $D_R(s)$ es un factor de  $D_L(s)$
+  \end{enumerate}
+\end{theorem}
+
+La función controladora $C(s)$ puede tener múltiples formas, las más comunes son:
+ \begin{itemize}[topsep=-6pt, itemsep=0pt]
+  \item \textbf{Controlador proporcional (P)}. $C(s)=k_p$.
+  \item \textbf{Controlador derivador (D)}. $C(s)=k_ds$.
+  \item \textbf{Controlador integrador (I)}. $C(s)=k_i \frac{1}{s}$.
+  \item Cualquier combinación lineal de los PID
+\end{itemize}
+
+En el dominio del tiempo un PID se comporta como $u(t) = k_pe(t)+k_i\int_0^te(\tau )d\tau + k_d \frac{de(t)}{dt}$
+
+(falta PID pid tunning)
+
+\subsection{Lugar geométrico de las raíces}
+Consideramos un controlador P $\Rightarrow L(s) = KG(s)H(s)$, por lo que debemos localizar los ceros de 
+\[
+1+L(s) = 1+k \frac{N_L(s)}{D_L(s)} = 1 + k \frac{(s-z_1)\cdots (s-z_m)}{(s-p_1)\cdots(s-p_n)}
+\] 
+en función de $k$
 
 
 \end{document}
