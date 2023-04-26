@@ -168,8 +168,8 @@ X \sim F \Rightarrow \theta = \Phi(F)
   \begin{enumerate}[topsep=-6pt, itemsep=0pt]
 	\item $E(F_n(x))=F(x), \quad Var(F_n(x))= \frac{1}{n}F(x)(1-F(x))$
 	\item $F_n(x) \to  F(x)$ casi seguro
-	\item $\frac{\sqrt{n} (F_n(x)-F(x))}{\sqrt{F(x)(1-F(x))} } = \frac{\sqrt{n} (\bar{X}_n-\mu) }{\sigma } \to  N(0,1)$ en distribución
-	\item $\frac{\sum (x_i -\mu)}{\sigma \sqrt{n}} \to N(0,1)$, \ TCL
+	\item $\frac{\sqrt{n} (F_n(x)-F(x))}{\sqrt{F(x)(1-F(x))} } = \to  N(0,1)$ en distribución
+	\item $\frac{\sum (x_i -\mu)}{\sigma \sqrt{n}} = \frac{\sqrt{n} (\bar{X}_n-\mu) }{\sigma } \to N(0,1)$, \ TCL
   \end{enumerate}
 \end{theorem}
 
@@ -338,6 +338,63 @@ $B(\hat{\theta })=E(\hat{\theta })-\theta$
 f(\overline{x}; \theta ) = g(T(\overline{x});\theta )h(\overline{x})
 \] 
 \end{theorem}
+
+\subsection{Comportamiento asintótico}
+\begin{definition}[Consistencia] La sucesión $\hat{\theta}_n = T(\overline{X})$ es consistente si 
+\[
+\lim P(|\hat{\theta }_n-\theta |<\varepsilon ) = 1
+\] 
+\end{definition}
+
+\begin{theorem} Si $\hat{\theta }_n$ verifica
+  \begin{itemize}[topsep=-6pt, itemsep=0pt]
+    \item $\lim Var(\hat{\theta }_n) = 0 \ \forall \theta$
+	\item $\lim B(\hat{\theta }_n,;n) = 0 \ \forall \theta $
+  \end{itemize}
+entonces $\hat{\theta}_n$ es consistente en media cuadrática y en probabilidad
+\end{theorem}
+
+\begin{theorem} $\hat{\theta }_n$ consistente
+  \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+    \item $a_n \to  1, \ b_n \to  0 \Rightarrow (a_n \hat{\theta }_n + b_n$ consistente
+	\item $g$ continua $\Rightarrow g(\hat{\theta}_n)$ consistente para $g(\theta)$
+	\item $\hat{\delta}_n$ estimadores consistentes para $\delta$, $g(\theta , \delta)$ continua  $\Rightarrow g(\hat{\theta }_n, \hat{\delta}_n)$ consistente para $g(\theta , \delta)$
+  \end{enumerate}
+\end{theorem}
+
+\begin{definition}[Normalidad asintótica]  $\hat{\theta }_n$ la presenta si $\ \exists v_n(\theta ) \to  0$ no negativos tal que
+  \[
+	\frac{(\hat{\theta }_n-\theta )}{\sqrt{v_n(\theta )} } \to_D N(0,1) \Rightarrow \hat{\theta }_n \sim AN(\theta , v_n(\theta ))
+  \] 
+\end{definition}
+
+\begin{definition}[Eficiencia relativa asintótica] $T_n(\overline{X}), S_n(\overline{X})$ estimadores de $\theta$ asintoticamente normales varianza del orden $1 / n$
+  \begin{align*}
+	 &\sqrt{n}(T_n(\overline{X})-\theta )  \to _D N(0, \sigma_T^2(\theta)) \\
+	 &\sqrt{n}(S_n(\overline{X})-\theta )  \to _D N(0, \sigma_S^2(\theta)) \\
+	 &ARE(\theta, S_n, T_n) = \frac{\sigma ^2_T(\theta )}{\sigma ^2_S(\theta )}
+  \end{align*}
+
+\end{definition}
+
+\begin{theorem}[Slutzky] $X_n \to _D X, Y_n \to _P a$. Entonces
+  \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+	\item $X_n + Y_n \to _D X+a$ 
+	\item $X_nY_n \to _D aX$
+	\item $g(x,y)$ continua  $\Rightarrow g(X_n, Y_n) \to _D g(x,y)$
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Método delta] $a_n \to \infty$
+  \begin{align*}
+  &a_n(\hat{\theta }_n-\theta ) \to _D N(0, \sigma ^2(\theta )) \Rightarrow \\
+  & \Rightarrow a_n(g(\hat{\theta }_n)-g(\theta) ) \to _D N(0, (g'(\theta ))^2 \sigma ^2(\theta ))
+  \end{align*}
+  Donde $\sigma ^2(\theta) = Var(X)$ (estoy 0 seguro)
+\end{theorem}
+
+
+
 
 
 \section{Estimación por intervalos}

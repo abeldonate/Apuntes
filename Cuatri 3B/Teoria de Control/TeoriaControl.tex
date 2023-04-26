@@ -246,7 +246,7 @@ Con valores propios $\lambda= -\zeta \omega _0 \pm \omega _0\sqrt{\zeta^2-1}  = 
 \end{proposition}
 
 
-\section{Realimentación}
+\section{Controlabilidad}
 
 \begin{definition}[Sistema lineal] Forma canónica Controlable
 \[
@@ -284,8 +284,10 @@ la matriz de controlabilidad
 \end{theorem}
 
 \begin{theorem}[Formula de Ackermann]
-  $K = \begin{pmatrix}  0 & \ldots & 0 & 1 \end{pmatrix} W_C^{-1}P_d(A) $, $k_r = -(C(A-BK)^{-1})^{-1}$
+  $K = \begin{pmatrix}  0 & \ldots & 0 & 1 \end{pmatrix} W_C^{-1}P_d(A) $, $\quad k_r = -(C(A-BK)^{-1})^{-1}$
 \end{theorem}
+
+
 
 \section{Observabilidad}
 
@@ -312,7 +314,7 @@ con
   , \quad \tilde{B} = \begin{pmatrix} b_1\\ b_2 \\ \vdots \\b_n \end{pmatrix},
   \quad \tilde{C} = \begin{pmatrix} 1 & 0 & \cdots & 0 \end{pmatrix},
   \quad \begin{pmatrix} \tilde{A} & \tilde{B} \\ \tilde{C} & \tilde{D} \end{pmatrix}  = \begin{pmatrix} TAT^{-1} & TB \\ CT^{-1} & D \end{pmatrix}, \begin{cases}
-\tilde{k_i} = p_i-a_i \\ k_r = \frac{p_n}{b_n} \end{cases}
+\tilde{l_i} = p_i-a_i \\ l_r = \frac{p_n}{b_n} \end{cases}
 \] 
 la matriz de controlabilidad
 \[
@@ -322,7 +324,11 @@ la matriz de controlabilidad
 
 (falta la matriz de controlabilidad explicita)
 
-\begin{theorem}[Controlabilidad] Un sistema LTI SISO es controlable si la matriz de controlabilidad $W_C$ tiene rango completo
+\begin{theorem}[Observabilidad] Un sistema LTI SISO es observable si la matriz de observabilidad $W_C$ tiene rango completo
+\end{theorem}
+
+\begin{theorem}[Formula de Ackermann]
+  $L = P_d(A)W_O^{-1}\begin{pmatrix}  0 \\ \vdots \\ 0 \\ 1 \end{pmatrix}$ 
 \end{theorem}
 
 
@@ -337,6 +343,9 @@ Sin disturbances $D(s)$ ni ruido $N(s)$, la función de transferencia y el error
 \[
 T = \frac{C(s)G(s)}{1+L(s)}, \quad E(s) = \frac{D_L(s)}{D_L(s)+N_L(s)} \frac{N_R(s)}{D_R(s)}
 \] 
+
+\begin{theorem}[Valor Final] $\lim_{t \to \infty} f(t) = \lim_{s \to 0}sF(s)$
+\end{theorem}
 
 \begin{theorem}[Estabilidad] Tendremos $\lim_{t \to  \infty} e(t) =0$ si y solo si
   \begin{enumerate}[topsep=-6pt, itemsep=0pt]
@@ -363,6 +372,42 @@ Consideramos un controlador P $\Rightarrow L(s) = KG(s)H(s)$, por lo que debemos
 1+L(s) = 1+k \frac{N_L(s)}{D_L(s)} = 1 + k \frac{(s-z_1)\cdots (s-z_m)}{(s-p_1)\cdots(s-p_n)}
 \] 
 en función de $k$
+
+\begin{definition}[Root locus method] Grafica las raices de $L(s)+1=0$ para todos los valores de  $C(s)=k$ con las condiciones
+   \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+    \item $|L(s)|=1$ 
+	\item  $\angle L(s) = \pm \pi(2\lambda+1)$
+  \end{enumerate}
+\end{definition}
+
+Las reglas de RL son:
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item \textbf{Número de ramas.} $n$
+  \item  \textbf{Puntos de inicio.} $p_i$
+  \item  \textbf{Puntos finales.} $m$ ramas convergen a  $z_i$. Las otras  $n-m$ raices son asíntocas con
+	 \[
+	\angle a = \pm \frac{\pi}{n-m}(2\lambda+1), \quad c = \frac{1}{n-m} \left( \sum p_i - \sum z_i \right) 
+	\] 
+  \item Un segmento del eje real pertenece a RL si el numero total de polos reales y ceros de $L(s)$ a la derecha es impar.
+  \item (breakaway)
+  \item \textbf{Ángulos desde polos} $p_j$ con multiplicidad  $l_j$
+	 \[
+	\theta _j = \frac{1}{l_j} \left( \pm \pi + \sum \angle(p_i-z_i) - \sum_{i\neq j} \angle(p_j-p_i) \right) 
+	\] 
+  \item \textbf{Ángulos hacia ceros} $z_j$ con multiplicidad  $l_j$
+	 \[
+	\theta _j = \frac{1}{l_j} \left( \pm \pi - \sum_{i\neq j} \angle(z_j-z_i) + \sum \angle(z_j-p_i) \right) 
+	\] 
+\end{enumerate}
+Este diagrama siempre es simétrico con respecto al eje real.
+
+\begin{definition}[Zero-pole, pole-zero controllers] ZP-PZ Generalizan PID
+  \[
+  C(s) = \frac{(s+\omega _{z1})\cdots (s+\omega_{zm})}{(s+\omega _{p 1})\cdots(s+\omega _{pn})}
+  \] 
+\end{definition}
+
+
 
 
 \end{document}
