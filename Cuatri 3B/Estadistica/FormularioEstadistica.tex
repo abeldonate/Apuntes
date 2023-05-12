@@ -339,7 +339,6 @@ f(\overline{x}; \theta ) = g(T(\overline{x});\theta )h(\overline{x})
 \] 
 \end{theorem}
 
-\subsection{Comportamiento asintótico}
 \begin{definition}[Consistencia] La sucesión $\hat{\theta}_n = T(\overline{X})$ es consistente si 
 \[
 \lim P(|\hat{\theta }_n-\theta |<\varepsilon ) = 1
@@ -392,6 +391,37 @@ entonces $\hat{\theta}_n$ es consistente en media cuadrática y en probabilidad
   \end{align*}
   Donde $\sigma ^2(\theta) = Var(X)$ (estoy 0 seguro)
 \end{theorem}
+
+\begin{theorem}[] Si se verifican 
+  \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+    \item $\theta $ identificable
+	\item $\{x:f(x|\theta )>0\}$ es el mismo $\ \forall \theta $
+	\item $E_{\theta _0}( \log (\frac{f(X|\theta )}{f(X|\theta _0)}))$ existe $\ \forall \theta $ 
+	\item  $\Theta$ es un abierto
+	\item  $\frac{\partial f(x|\theta )}{\partial \theta }$ es continua
+  \end{enumerate}
+  entonces si 1, 2, y 3:
+  \[
+	E_{\theta _0}\left[ \log \left( \frac{L(\theta |X_n)}{L(\theta _{0}|X_n)} \right)  \right] <0, \lim P_{\theta _0}\{L(\theta _0|X_n)>L(\theta |X_n)\} = 1
+  \] 
+  Si además 4 y 5: $\quad \displaystyle \frac{\partial}{\partial\theta }\log L(\theta |X_n)=0$ 
+\end{theorem}
+
+\begin{theorem} Si además $\ \exists \frac{\partial^3}{\partial \theta ^3}$ acotada por $K(x)$ tal que  $E_\theta (K(X))\le k$ tenemos que si $\hat{\theta }_n \to _P \theta _0$ 
+  \[
+  \sqrt{n}(\hat{\theta }_n-\theta_0) \to _D N(0, \frac{1}{I_X(\theta _0)}), \quad X \sim  f(x;\theta _0)
+  \] 
+\end{theorem}
+
+\begin{theorem} Los estimadores
+  \[
+  O_n = -\frac{\partial^2 \log L(\theta | X_n)}{\partial\theta ^2}|_{\theta =\hat{\theta }_n}, \quad E_n = I_{X_n}(\hat{\theta }_n) 
+  \] 
+  divididos por $n$ son estimadores consistentes de  $I_X(\theta _0)$
+
+\end{theorem}
+
+
 
 
 
@@ -454,6 +484,58 @@ $\inf_{\theta }P(\theta \in [L(X), U(X)])$
 \end{definition}
 
 
+\section{Contrastes de hipótesis}
+\begin{definition} $H_0$ hipótesis nula, $H_1$ hipótesis alternativa
+\end{definition}
+
+\begin{definition}[Contraste de hipótesis] $\begin{cases}
+  H_0: F \in \mathcal{F}_0\\
+  H_1: F \in \mathcal{F}_1
+\end{cases}$ 
+es una función de decisión $D:\mathcal{X}^n \to \{0,1\}, \overline{x} \mapsto D(x)$
+\end{definition}
+
+\begin{definition} $R$ región crítica tal que  $D(R)=1$
+\begin{align*}
+  \alpha = P(X\in R|H_0 \text{ cierta}) \text{ (significación)}\\
+  \eta = P(X \not\in  R|H_0 \text{ falsa})
+\end{align*}
+\end{definition}
+
+\begin{definition}[Potencia del test] $\beta = 1-\eta$ probabilidad de decidir de forma acertada rechazar $H_0$
+\end{definition}
+
+\begin{definition}[p-valor] ínfimo de los $\alpha $ para los cuales se rechazaría la hipótesis nula.
+  Probabilidad de que, siendo $H_0$ cierta, se observe otra muestra que sea al menos tan poco favorable a la hipótesis nula como la que se ha observado.
+\end{definition}
+
+\begin{proposition}$p(\overline{x}) = \sup P(T(\overline{X})\ge T(\overline{x}))$ 
+\end{proposition}
+
+\begin{definition}[Función de potencia]
+\[
+\beta (\theta ) = P(X\in R) = \begin{cases}
+  P(\text{Error tipo I}) & \text{ si } \theta \in \Theta_1 \\
+  1-P(\text{Error tipo II}) & \text{ si } \theta \in \Theta_2 
+\end{cases}
+\] 
+\end{definition}
+
+\begin{definition}[Nivel] $\sup \beta (\theta )\le \alpha $
+\end{definition}
+
+\begin{theorem}[Neyman-Pearson]
+\begin{align*}
+  & R = \left\{ \overline{x} : \frac{L(\theta _1;\overline{x})}{L(\theta _0;\overline{x})}\ge A_\alpha  \right\}\\
+  & p-\text{valor} = P\left( \frac{L(\theta _1;\overline{X})}{L(\theta _0; \overline{X})}\ge \frac{L(\theta _1;\overline{x})}{L(\theta _0;\overline{x})} \right) 
+\end{align*}
+
+\end{theorem}
+
+
+
+
+
 \section{Modelo lineal normal}
 
 \begin{definition}[Modelo teórico] $y_i|x_i \sim N(\beta _0+ \beta_1x_{1i}+ \cdots + \beta_{p-1i}, \sigma ^2)$, $e_i = y_i-\hat{y}_i$
@@ -479,8 +561,46 @@ b = (X^TV^{-1}X)^{-1}X^TV^{-1}Y
 \] 
 \end{proposition}
 
+\begin{definition}[ANOVA decomposition] $SS_T = SS_R + SS_E$
+  \begin{align*}
+  & SS_T = \sum (y_i - \overline{y})^2, SS_R = \sum (y_i-\hat{y}_i)^2, SS_E = \sum (\hat{y}_i-\overline{y})^2 \\
+  & s_E^2 = \frac{SS_E}{p-1}, \quad s_R^2 = \frac{SS_R}{n-p}, \quad F = \frac{s_E^2}{s_R^2}
+  \end{align*}
+\end{definition}
 
+\begin{definition}[Coeficiente determinación]
+  \[
+  R^2 = 100 \frac{SS_E}{SS_T} = 100(1-\frac{SS_R}{SS_T}), R_{adj}^2 = 100(1- \frac{s_R^2}{s_R^2}) 
+  \] 
+\end{definition}
 
+\begin{proposition} $b|X \sim N(\beta , \sigma^2(X^TX)^{-1})$
+\end{proposition}
+
+\begin{proposition} Una variable $Cov(b_0, b_1|x) = \frac{-\sigma ^2 \overline{x}}{\sum (x_i- \overline{x})^2}$
+\begin{align*}
+  b_0|x \sim  N(\beta_0, \frac{\sigma ^2}{n} \frac{\sum x_i^2}{\sum (x_i- \overline{x})^2}), \quad
+  b_1|x \sim  N(\beta_1, \frac{\sigma ^2}{\sum (x_i- \overline{x})^2})
+\end{align*} 
+\end{proposition}
+
+\begin{proposition} $s_R^2 |X \sim \frac{\sigma^2 }{n-p}\chi ^2_{n-p}$ 
+\end{proposition}
+
+\begin{proposition} $Var(b_j|x) = s_{b_j}^2$ 
+  \begin{align*}
+	(b_j \mp t_{n-p}^{\alpha / 2} s_{b_j}) \simeq  (b_j \mp 2 s_{b_j})
+  \end{align*}
+\end{proposition}
+
+\begin{definition} $SS_{R0}$ suma sin las variables a retirar
+\[
+F = \frac{ (SS_{R0}-SS_R) / q}{ (SS_R) / (n-p)}, \quad \begin{cases}
+  + F \Rightarrow \text{no retirar} \\
+  -F \Rightarrow \text{retirar}
+\end{cases}
+\] 
+\end{definition}
 
 
 
