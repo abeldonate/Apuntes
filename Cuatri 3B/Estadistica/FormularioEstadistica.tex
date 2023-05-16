@@ -339,9 +339,78 @@ f(\overline{x}; \theta ) = g(T(\overline{x});\theta )h(\overline{x})
 \] 
 \end{theorem}
 
+\begin{definition}[Estadístico suficiente minimal] $T(X)$ suficiente es minimal  $\iff$ para cualquier otro $S(X)$ suficiente,  $T(X)$ es función de $S(X)$ 
+\end{definition}
+
+\begin{theorem} $f(\overline{x}|\theta )$ la verosimilitud. Si 
+  \[
+  \frac{f(\overline{x}|\theta  )}{f(\overline{y}|\theta)} \neq g(\theta ) \iff T(\overline{x}) = T(\overline{y})
+  \] 
+  Entonces $T(x)$ es suficiente minimal
+\end{theorem}
+
+\begin{definition}[Completitud] $f_r(t|\theta)$ densidad del estadístico $T$. Si
+   \[
+	 E_\theta [g(T)] = 0 \ \forall \theta \Rightarrow P(g(T)=0)=1 \ \forall \theta 
+  \] 
+  entonces decimos que $T$ es completo
+\end{definition}
+
+\begin{proposition}
+suficiente completo $\Rightarrow$ suficiente minimal (el recíproco no es cierto)
+\end{proposition}
+
+\begin{theorem}$X$ familia exponencial 
+\[
+f(x|\theta ) = h(x)c(\theta ) exp(\sum \theta _jt_j(x))
+\] 
+entonces el estadístico $T(\overline{X}) = (T_1(\overline{x}), \ldots, T_k(\overline{X}))$, donde $T_j(\overline{X}) = \sum t_j(X_i)$ es suficiente completo
+\end{theorem}
+
+\begin{theorem}[Rao-Blackwell] $T(\overline{X})$ suficiente $W(\overline{X})$ insesgado de $\tau (\theta )$. Definimos $W_T = E_\theta (W|T)$
+  \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+    \item $W_T$ función únicamente de  $T(X)$
+	\item  $E_\theta (W_T) = \tau (\theta )$
+	\item $Var_\theta (W_T) \le Var_\theta (W) \ \forall \Theta$
+  \end{enumerate}
+\end{theorem}
+
+\begin{proposition} Si $W$ es el mejor estimador insesgado de  $t(\theta)$ y su varianza es finita, entonces $W$ es único 
+\end{proposition}
+
+\begin{definition}[Ruido blanco] Estadístico $U$ tal que  $E_\theta (U)=0 \ \forall \theta $
+\end{definition}
+
+\begin{theorem} $W$ estimador insesgado de  $\tau (\theta )\ \forall \theta $. $W$ UMVUE  $\iff W$ incorrelado con todos los ruidos blancos. 
+\end{theorem}
+
+\begin{proposition}$W$ insesgado de  $\tau (\theta )$ UMVUE $\iff$ es función del estadístico minimal suficiente $T$ para $\theta$ y está incorrelado con los estimadore insesgados de $\theta $ que sean función del estadístico $T$ minimal suficiente para $\theta$
+\end{proposition}
+
+\begin{theorem}[Lehmann-Scheffé] $T(\overline{X})$ suficiente y completo para $\theta$ $W(\overline{X})$ estimador insesgado cualquiera de $\tau (\theta )$, entonces  
+  \[
+  W_T(\overline{X}) = E_\theta (W|T)
+  \] 
+  es UMVUE de $\tau (\theta )$. Si la variancia es finita $\ \forall \theta \Rightarrow W_T$ es único
+
+\end{theorem}
+
+\begin{proposition}$T(\overline{X})$ suficiente y completo
+  \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+    \item $W$ insesgado de  $\tau (\theta )$ y función de $T$, entonces  $W$ es UMVUE 
+	\item Cualquier función de  $T$ que tenga esperanza finita es el UMVUE de su esperanza.
+  \end{enumerate}
+\end{proposition}
+
+
+
+
+
+
+
 \begin{definition}[Consistencia] La sucesión $\hat{\theta}_n = T(\overline{X})$ es consistente si 
 \[
-\lim P(|\hat{\theta }_n-\theta |<\varepsilon ) = 1
+\lim P(|\hat{\theta }_n-\theta |<\varepsilon ) = 1 (\iff \lim \hat{\theta }_n = \theta )
 \] 
 \end{definition}
 
@@ -355,7 +424,7 @@ entonces $\hat{\theta}_n$ es consistente en media cuadrática y en probabilidad
 
 \begin{theorem} $\hat{\theta }_n$ consistente
   \begin{enumerate}[topsep=-6pt, itemsep=0pt]
-    \item $a_n \to  1, \ b_n \to  0 \Rightarrow (a_n \hat{\theta }_n + b_n$ consistente
+    \item $a_n \to  1, \ b_n \to  0 \Rightarrow (a_n \hat{\theta }_n + b_n)$ consistente
 	\item $g$ continua $\Rightarrow g(\hat{\theta}_n)$ consistente para $g(\theta)$
 	\item $\hat{\delta}_n$ estimadores consistentes para $\delta$, $g(\theta , \delta)$ continua  $\Rightarrow g(\hat{\theta }_n, \hat{\delta}_n)$ consistente para $g(\theta , \delta)$
   \end{enumerate}
@@ -531,6 +600,58 @@ es una función de decisión $D:\mathcal{X}^n \to \{0,1\}, \overline{x} \mapsto 
 \end{align*}
 
 \end{theorem}
+
+\begin{definition}[Uniformemente más potente]
+\[\beta (\theta )\ge \beta ^*(\theta) \ \forall \theta \in \Theta_1\]
+\end{definition}
+
+\begin{proposition}
+$X \sim N(\mu, \sigma ^2), \begin{cases}
+  H_0: \mu=\mu_0\\
+  H_1:\mu>\mu_0
+\end{cases}$ 
+\[
+  R = \{x: \overline{x}\ge B\}, \text{ con } B = \mu_0+z_\alpha \frac{\sigma}{\sqrt{n}}
+\] 
+\end{proposition}
+
+\begin{theorem} $f(x;\theta ) = c(\theta )h(x)e^{\eta(\theta )t(x)}$ con $\eta(\theta )$ creciente.
+El test con las desigualdades es uniformemente potente
+\end{theorem}
+
+\begin{definition}[Razón de verosimilitudes]
+\[
+  \lambda = \lambda(x) = \frac{\max_{\theta \in \Theta _0 }L(\theta ;x)}{\max_{\theta \in \Theta}L(\theta ;x)} \Rightarrow R = \{x:\lambda(x)\le A\}
+\] 
+\end{definition}
+
+\begin{theorem} $\begin{cases}
+  H_0: \theta \in \Theta_0\\
+  H_1:\theta \in \Theta_1
+\end{cases}$ 
+\[
+Q_n = -2\log (\lambda(X_n)) \to _n \chi ^2_d, \quad d=\dim (\Theta)-\dim(\Theta_0)
+\] 
+bajo la hipótesis nula
+\end{theorem}
+
+Dos tests para $\begin{cases}
+  H_0:\theta =\theta _0\\ H_1: \theta \neq \theta _0
+\end{cases}$
+
+\begin{definition}[Test del Score] $S_n(\theta ;x_n) = \frac{\partial \log L}{\partial \theta }$
+\[
+T_n^s(X_n) = \frac{S_n(\theta _0;X_n)^2}{I_n(\theta _0)}, \quad S_n(\theta _0;X_n) \approx N(0,I_n(\theta _0))
+\] 
+Rechaza $H_0$ si  $T_n^S(x_n)>\chi ^2_{1,\alpha} $
+\end{definition}
+
+\begin{definition}[Test de Wald] $\hat{\theta }_n \approx N(\theta _0, (I_n(\theta _0))^{-1})$
+\[
+W_n = (\hat{\theta }_n-\theta _0)^2I_n(\theta _0) \approx_{en \ H_0} \chi ^2_1
+\] 
+Rechaza $H_0$ si  $W_n^S(x_n)>\chi ^2_{1,\alpha} $
+\end{definition}
 
 
 
