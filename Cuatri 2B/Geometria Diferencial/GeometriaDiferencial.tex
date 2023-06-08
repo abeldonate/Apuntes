@@ -22,6 +22,7 @@
 % figure support
 \usepackage{import}
 \usepackage{xifthen}
+\newcount\pdfminorversion
 \pdfminorversion=7
 \usepackage{pdfpages}
 \usepackage{transparent}
@@ -46,6 +47,7 @@
 \includegraphics[width=0.9\columnwidth]{images/#1}
 }
 
+\newcount\pdfsuppresswarningpagegroup
 \pdfsuppresswarningpagegroup=1
 
 \title{Geometría Diferencial}
