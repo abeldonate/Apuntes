@@ -1,4 +1,4 @@
-\documentclass[leqno]{article}
+\documentclass{myclass}
 \usepackage{verbatim}
 \usepackage{array}
 \usepackage{listings}
@@ -24,7 +24,6 @@
 % figure support
 \usepackage{import}
 \usepackage{xifthen}
-\newcount\pdfminorversion
 \pdfminorversion=7
 \usepackage{pdfpages}
 \usepackage{transparent}
@@ -48,7 +47,6 @@
 \center
 \includegraphics[width=0.9\columnwidth]{images/#1}
 }
-\newcount\pdfsuppresswarningpagegroup
 \pdfsuppresswarningpagegroup=1
 
 
