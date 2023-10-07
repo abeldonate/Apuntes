@@ -89,6 +89,37 @@ Now let $h, k \in \Hom_{rings}(\mathbb{Z}, A)$ such that  $h\circ i = k\circ i$.
 Suppose $i$ is an isomorphism. Thus, it must exists  $g:\mathbb{Q}\to \mathbb{Z}$ such that $i\circ g = Id_\mathbb{Q}$ and $g\circ i = Id_\mathbb{Z}$. Let $a\in \mathbb{Z}$ such that $g(\frac{1}{2})=a$. Then $i\circ g (\frac{1}{2}) = i(a)=a \neq \frac{1}{2}$, so $i\circ g \neq Id_{\mathbb{Q}}$, concluding $f$ is not an isomorphism.
 
 
+
+\prob{4}{
+\textit{Pullbacks in the category of abelian groups:} Let $A$ and  $B$ be abelian groups together with homomorphisms $f:A\to S$ and $g:B\to S$. Prove that 
+\[
+  A \times_SB = \{(a,b)\in A\times B | f(a)=g(b)\} 
+\] 
+}
+
+Let $U=\{(a,b)\in A\times B|f(a)=g(b)\}$. We will show that the pullback $A\times _SB$ is, in fact, $U$. We construct the following diagram:
+
+(insert diagram)
+
+We first construct the morphisms $\pi_A$ and $\pi_B$ that make the square commute. Those are
+\[
+  \begin{cases}
+    \pi_A((a,b))=a\\
+    \pi_B((a,b))=b
+  \end{cases} \Rightarrow f\circ \pi_A ((a,b)) = f(a) = g(b) = g\circ \pi_B((a,b)) \ \forall (a,b)\in U
+\]
+thus, the square commutes.
+
+Now we construct $h$ from  $h_A$ and  $h_B$. Note that, for the two triangular diagrams to commute, the $h$ must fulfill:
+\[
+\begin{cases}
+  \pi_A(h(c))=h_A(c)\\
+  \pi_B(h(c))=h_B(c)
+\end{cases} \ \forall c\in C \quad \Rightarrow \quad h = (h_A, h_B)
+\]
+and the $h$ is unique, concluding the proof.
+
+
 \prob{5}{
 \textit{Pushouts in the category of abelian groups:} Let $A$ and  $B$ be abelian groups together with homomorphisms $f:S\to A$ and $g:S\to B$. Prove that 
 \[
@@ -101,7 +132,28 @@ Let $U=\frac{A\oplus B}{W}$. We will show that the pushout $A\sqcup_S B $ is, in
 
 (insert diagram)
 
-in 
+We first construct the morphisms $i, j$ such that the  square diagram commutes. We propose 
+ \[
+  i(a)=[(a,0)] \qquad  j(b)=[(0,b)]
+\] 
+and we check for commutativity for all $s\in S$
+\[
+  \begin{cases}
+  i\circ f (s) = [(f(s),0)]\\
+  j\circ g (s) = [(0,g(s))]
+  \end{cases} \text{ but } 
+  [(0,g(s))]=[(0,g(s))+(f(s),-g(s))]=[(f(s),0)] \Rightarrow i\circ f = j\circ g \ \forall s\in S
+\] 
+so we have proved the square commutes.
 
+Now we construct the morphism $h$ through  $h_A$ and  $h_B$. We construct it in the following way:
+\[
+  \begin{cases}
+	h([(a,0)])=h_A(a)\\
+	h([(0,b)])=h_B(b)
+  \end{cases} \Rightarrow h([(a,b)])=h([(a,0)]+[(0,b)])=h([(a,0)])+h([(0,b)]) = h_A(a)+h_B(b)
+\] 
+and clearly this is well defined and unique as morphism in the category of abelian groups, so the other triangular diagrams commute as well and we conclude with the proof.
 
 \end{document}
+
