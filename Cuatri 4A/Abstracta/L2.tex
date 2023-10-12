@@ -1,0 +1,97 @@
+\documentclass[leqno]{article}
+\usepackage{verbatim}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{multicol} \usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{amssymb}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,epsfig,epstopdf,titling,url,array}
+\usepackage{hyperref}
+\usepackage{eso-pic}
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{graphicx}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+
+% geometry
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+% paragraph length
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{proposition}{Proposition}
+\newtheorem*{definition}{Definition}
+\newtheorem*{observation}{Observation}
+\DeclareMathOperator{\im}{Im}
+
+\DeclareMathOperator{\Hom}{Hom}
+\newcommand{\prob}[2]{\fbox{\parbox{\textwidth}{\textbf{#1} #2}}}
+\newcommand{\incfig}[1]{%
+\center
+\def\svgwidth{0.9\columnwidth}
+\import{./figures/}{#1.pdf_tex}
+}
+\newcommand{\incimg}[1]{%
+\center
+\includegraphics[width=0.9\columnwidth]{images/#1}
+}
+\pdfsuppresswarningpagegroup=1
+
+\title{Problems Abstract Algebra \\ \Large{Second List}}
+\author{Abel Doñate Muñoz}
+\date{}
+
+\begin{document}
+\maketitle
+\prob{1}{\textit{Nakayama's lemma}. Let $M$ be a finitely generated  $A-$module and  $I$ an ideal of $A$ contained in the  Jacobson  radical. Prove:
+\[
+IM=M \Rightarrow M=0
+\] 
+}
+
+We suppose $M\neq 0$. Let  $x_1, x_2,\ldots,x_n$ be a minimal set of generators of the module  $M$. Because  $M=IM$ we can express the element  $x_1= a_1x_1 + a_2x_2 + \cdots + a_nx_n$, where $a_i \in I$. Then
+\[
+  (a_1-1)x_1 + a_2x_2+\cdots + a_nx_n = 0 \Rightarrow \begin{cases}
+    a_1-1=0\\
+	\vdots\\
+	a_n = 0
+  \end{cases}
+\] 
+But if $a_1=1 \in I$, that means $I = (1)=A$, which cannot be contained in the Jacobson radical.
+
+\prob{4}{Let (diagram) be a short exact sequence of $A-modules$. Prove that if  $M'$ and  $M''$ are finitely generated, then  $M$ is finitely generated.}
+
+We start by fixing the set of generators of $M'$ as  $x_1, \ldots, x_n$ and of $M''$ as  $z_1, \ldots, z_m$.
+
+Since $g$ is surjective, we can find elements  $y_1, \ldots, y_m$ such that $g(y_i)=z_i$. Now we select an arbitrary element $y\in M$. Then we have
+\[
+g(y)=b_1z_1+\cdots +b_mz_m = g(b_1y_1)+ \cdots + g(b_my_m) \Rightarrow g(y-\sum b_iy_i) =0 \Rightarrow y-\sum  b_iy_i \in \ker(g)
+\]
+for some $b_i\in A$. By exactness of the sequence we have $y-\sum b_iy_i\in \im (f)$, so
+ \[
+y-\sum b_iy_i = f(\sum a_ix_i) = \sum a_if(x_i) \Rightarrow y = \sum a_if(x_i) + \sum b_iy_i
+\] 
+for some $a_i\in A$. Thus, a set of generators of $M$ is  $f(x_1), \ldots, f(x_n), y_1, \ldots, y_m$
+
+
+
+\end{document}
