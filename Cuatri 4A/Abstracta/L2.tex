@@ -78,6 +78,18 @@ We suppose $M\neq 0$. Let  $x_1, x_2,\ldots,x_n$ be a minimal set of generators 
 \] 
 But if $a_1=1 \in I$, that means $I = (1)=A$, which cannot be contained in the Jacobson radical.
 
+(rehacer)
+
+
+\prob{2}{Under the previous hypothesis, prove:
+  \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+    \item $A / I \otimes_A M =0 \Rightarrow M=0$
+	\item If  $N\subseteq M$ is a submodule, $M=IM+N \Rightarrow M=N$
+	\item If $f:N\to M$ is a homomorphism, $\overline{f}:N / IN \to M / IM$ surjective $\Rightarrow f $ surjective
+  \end{enumerate}
+  \vspace{1em}
+}
+
 \prob{4}{Let (diagram) be a short exact sequence of $A-modules$. Prove that if  $M'$ and  $M''$ are finitely generated, then  $M$ is finitely generated.}
 
 We start by fixing the set of generators of $M'$ as  $x_1, \ldots, x_n$ and of $M''$ as  $z_1, \ldots, z_m$.
@@ -92,6 +104,15 @@ y-\sum b_iy_i = f(\sum a_ix_i) = \sum a_if(x_i) \Rightarrow y = \sum a_if(x_i) +
 \] 
 for some $a_i\in A$. Thus, a set of generators of $M$ is  $f(x_1), \ldots, f(x_n), y_1, \ldots, y_m$
 
+\prob{5}{Prove that $\mathbb{Z}[\sqrt{d}]$ is a Noetherian ring
+}
+
+This is equivalent to prove that $M=\mathbb{Z}[\sqrt{d} ]$ is a Noetherian module. Since every submodule of  $M$ is finitely generated (by $1$ and $\sqrt{d} $), then the module is Noetherian.
+
+
+\prob{6}{Prove that the ring $\mathbb{Z}[2T, 2T^2, 2T^3, \ldots] \subseteq \mathbb{Z}[T]$ is not Noetherian}
+
+We search for an ascending chain of ideals $I_1\subseteq I_2\subseteq \ldots$ in which for every $I_i$ we have  $x_i\in I_i$ but $x_i \notin I_{i-1}$. This chain can be $I_i = (2T, 2T^2, \ldots, 2T^{i-1}, 2T^i+2T^{i+1}+\ldots)$. Notice that the containments are obvious and $x_i = 2T^{i-1}\in I_i$, but not in $I_{i-1}$.
 
 
 \end{document}

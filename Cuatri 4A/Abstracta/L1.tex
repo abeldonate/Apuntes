@@ -43,6 +43,9 @@
 \newtheorem*{observation}{Observation}
 
 \DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\coker}{Coker}
+\DeclareMathOperator{\coim}{Coim}
 \newcommand{\prob}[2]{\fbox{\parbox{\textwidth}{\textbf{#1} #2}}}
 \newcommand{\incfig}[1]{%
 \center
@@ -88,6 +91,20 @@ Now let $h, k \in \Hom_{rings}(\mathbb{Z}, A)$ such that  $h\circ i = k\circ i$.
 
 Suppose $i$ is an isomorphism. Thus, it must exists  $g:\mathbb{Q}\to \mathbb{Z}$ such that $i\circ g = Id_\mathbb{Q}$ and $g\circ i = Id_\mathbb{Z}$. Let $a\in \mathbb{Z}$ such that $g(\frac{1}{2})=a$. Then $i\circ g (\frac{1}{2}) = i(a)=a \neq \frac{1}{2}$, so $i\circ g \neq Id_{\mathbb{Q}}$, concluding $f$ is not an isomorphism.
 
+
+\prob{2}{Show that in the category of finite dimensional vector spaces over a field $\mathbb{K}$ we have a natural equivalente of functors between the identity $Id$ and the bidual  $(-)^{**}$}
+
+We start by noticing if we have a finite dimensional vector space we can think as morphisms as matrices. Let $X^*=Hom(X,\mathbb{R})$ and $Y^*=Hom(Y, \mathbb{R})$. Let $F$ be the contravariant functor that dualizes. We have the following diagrams:
+
+(diagram)
+
+Let  $x, y$ be the dimensions of  $X$ and  $Y$ respectively. We can express  $f$ as an  $y\times x$ matrix. For the contravariance of the functor we have that the morphism $Y^* \to X^*$ must be $A^T$. If we repeat this process we are given that $F(F(A))=(A^T)^T=A \ \forall A$.
+
+(terminar)
+
+
+\prob{3}{Show that two categories $\mathcal{B}$ and $\mathcal{C}$
+}
 
 
 \prob{4}{
@@ -204,6 +221,68 @@ Let $U=\{(a_i)\in \prod A_i | f_{ji}(a_j)=a_i \ i\le j\}$. We will prove that th
 We can easily check the commutativity of the right part of the diagram because $f_{ji}\circ \lambda_j((a_k))=f_{ji}(a_j)=a_i = \lambda_i((a_k))$.
 
 We now prove that the morphism $h$ is unique.  $h$ must be of the form  $h(c)=(h_k(c))$, but, since the upper and lower part of the diagram must commute, we have $\lambda_i\circ h(c)=f_i(c)\Rightarrow h_i=f_i$, so the morphism we are looking form is $h=(h_k)$, and is unique.
+
+
+\prob{7}{ \textit{Direct limits in the category of sets / groups / abelian groups / modules / rings with unit}: Let $(\{A_i\}, \{f_ij\})$ be a direct system over a directed set  $I$. Prove that
+   \[
+   \varinjlim A_i = \bigsqcup A_i / \sim    
+  \] 
+  where $a_i\sim a_j \iff f_{il}(a_i)=f_{jl}(a_j)$ for $i,j\le l$
+}
+
+Let $U = \bigsqcup A_i / \sim $. We will prove that this is, in fact, the direct limit we are looking for through the following diagram:
+
+(diagram)
+
+We have to check first that the right triangle of the diagram commutes. Since $\lambda_i:a_i \mapsto  [a_i]$, we have that
+\[
+  \lambda_j\circ  f_{ij}(a_i) = \lambda_j(a_j)=[a_j] = [a_i] = \lambda_i(a_i) \Rightarrow \lambda_j\circ f_{ij}=\lambda_i
+\] 
+where we have set $l=j$, so $f_{ij}(a_i)=a_j = f_{jj}(a_j) \Rightarrow a_i\sim a_j \Rightarrow [a_j]=[a_i]$.
+
+Now we check the commutativity of the $h: [a_i] \mapsto f_i(a_i)$. First we have to ensure that it is well defined. That is, if $a_i\sim  a_j \Rightarrow f_i(a_i)=f_j(a_j)$. We suppose by symmetry that  $j>i$, then  by definition $a_i\sim a_j \iff f_{il}(a_i)=f_{jl}(a_j)$ for $i, j\le l$. Setting $l = j$ we get  $f_{ij}(a_i)=f_{jj}(a_j)=a_j$. Now, for the big diagram $f_j(f_{ij}(a_i))=f_i(a_i) \Rightarrow f_j(a_j)= f_i(a_i)$ as desired. 
+
+Note that $h([a_i])=f_i(a_i)$ is the only possible choice we could have done in order to assure the commutativity of the upper diagram.
+
+
+
+
+prob{8}{Show that in an abelian category we have:
+  \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+	\item[(a)] $f$ is a monomorphism  $\iff \ker(f)=0$ 
+	\item[(b)] $f$ is an epimorphism $\iff \coker(f)=0$ 
+	\item[(c)] A monomorphism is the kernel of its cokernel
+	\item[(d)] An epimorphism is the cokernel of its kernel
+	\item[(e)] Every morphism can be expressed as the composition of an epimorphism and a monomorphism
+	\item[(f)] $f$ is an isomorphism  $\iff f$ is an epimorphism and a monomorphism
+  \end{enumerate}
+  \vspace{1em}
+}
+We draw our commutative diagram. For being abelian the morphism $\overline{g}$ must be unique for all $g$ and the morphism $\overline{h}$ must be unique for all $h$. Furthermore $\overline{f}$ must be an isomorphism for all  $f$.
+
+% https://q.uiver.app/#q=WzAsOCxbMSwwLCJBIl0sWzIsMCwiQiJdLFszLDAsIlxcdGV4dHtDb2tlcn0iXSxbMiwxLCJcXHRleHR7SW19Il0sWzEsMSwiXFx0ZXh0e0NvaW19Il0sWzAsMCwiXFx0ZXh0e2tlcn0iXSxbMCwxLCJDIl0sWzMsMSwiRCJdLFs1LDAsImkiXSxbMCwxLCJmIl0sWzEsMiwiXFxwaSJdLFszLDEsImoiXSxbMCw0LCJcXHRhdSJdLFs0LDMsIlxcYmFye2Z9Il0sWzYsMCwiZyJdLFs2LDUsIlxcYmFye2d9Il0sWzEsNywiaCJdLFsyLDcsIlxcYmFye2h9Il1d
+\[\begin{tikzcd}
+	{\text{ker}} & A & B & {\text{Coker}} \\
+	C & {\text{Coim}} & {\text{Im}} & D
+	\arrow["i", from=1-1, to=1-2]
+	\arrow["f", from=1-2, to=1-3]
+	\arrow["\pi", from=1-3, to=1-4]
+	\arrow["j", from=2-3, to=1-3]
+	\arrow["\tau", from=1-2, to=2-2]
+	\arrow["{\bar{f}}", from=2-2, to=2-3]
+	\arrow["g", from=2-1, to=1-2]
+	\arrow["{\bar{g}}", from=2-1, to=1-1]
+	\arrow["h", from=1-3, to=2-4]
+	\arrow["{\bar{h}}", from=1-4, to=2-4]
+\end{tikzcd}\]
+
+\textbf{(a)}
+
+\fbox{$\Rightarrow$} If $f$ is mono, that means  $f\circ k =f\circ l \Rightarrow k=l$. Let $k = i, l = 0$, then $0=f\circ i=f\circ 0\Rightarrow i=0$. Since there exists a unique morphism $\overline{g}:C\to \ker f$, then $\ker f$ is the unique terminal element of the abelian category $0$.
+
+\textbf{(b)}
+
+\fbox{$\Rightarrow$} If $f$ is mono, that means  $k\circ f =l\circ f \Rightarrow k=l$. Let $k = \pi, l = 0$, then $0=\pi\circ f=0\circ f\Rightarrow \pi=0$. Since there exists a unique morphism $\overline{h}:\coker f\to D$, then $\coker f$ is the unique initial element of the abelian category $0$.
 
 \end{document}
 
