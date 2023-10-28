@@ -232,7 +232,18 @@ We now prove that the morphism $h$ is unique.  $h$ must be of the form  $h(c)=(h
 
 Let $U = \bigsqcup A_i / \sim $. We will prove that this is, in fact, the direct limit we are looking for through the following diagram:
 
-(diagram)
+% https://q.uiver.app/#q=WzAsNCxbMCwxLCJCIl0sWzEsMSwiVSJdLFsyLDAsIkFfaSJdLFsyLDIsIkFfaiJdLFsxLDAsImgiLDJdLFsyLDEsIlxcbGFtYmRhX2kiXSxbMywxLCJcXGxhbWJkYV9qIiwyXSxbMywyLCJmX3tqaX0iLDJdLFsyLDAsImZfaSIsMl0sWzMsMCwiZl9qIl1d
+\[\begin{tikzcd}
+	&& {A_i} \\
+	B & U \\
+	&& {A_j}
+	\arrow["h"', from=2-2, to=2-1]
+	\arrow["{\lambda_i}", from=1-3, to=2-2]
+	\arrow["{\lambda_j}"', from=3-3, to=2-2]
+	\arrow["{f_{ji}}"', from=3-3, to=1-3]
+	\arrow["{f_i}"', bend right, from=1-3, to=2-1]
+	\arrow["{f_j}", bend left, from=3-3, to=2-1]
+\end{tikzcd}\]
 
 We have to check first that the right triangle of the diagram commutes. Since $\lambda_i:a_i \mapsto  [a_i]$, we have that
 \[

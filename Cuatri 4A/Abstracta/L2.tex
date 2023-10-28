@@ -68,15 +68,16 @@ IM=M \Rightarrow M=0
 \] 
 }
 
-We suppose $M\neq 0$. Let  $x_1, x_2,\ldots,x_n$ be a minimal set of generators of the module  $M$. Because  $M=IM$ we can express the element  $x_1= a_1x_1 + a_2x_2 + \cdots + a_nx_n$, where $a_i \in I$. Then
+First we prove a characterization of the elements of $J$, the Jacobson radical:  $x\in J \iff 1-xy$ is a unity for all  $y\in A$. 
+
+(prove it)
+
+We suppose $M\neq 0$. Let  $x_1, x_2,\ldots,x_n$ be a minimal set of generators of the module  $M$. Because  $M=IM$ we can express the element  $x_1= a_1x_1 + a_2x_2 + \cdots + a_nx_n$, where $a_i \in I$. Then let $b$ the inverse of $1-a_1$ (that we have previously seen that exists).
 \[
-  (a_1-1)x_1 + a_2x_2+\cdots + a_nx_n = 0 \Rightarrow \begin{cases}
-    a_1-1=0\\
-	\vdots\\
-	a_n = 0
-  \end{cases}
-\] 
-But if $a_1=1 \in I$, that means $I = (1)=A$, which cannot be contained in the Jacobson radical.
+  (1-a_1)x_1 = a_2x_2+\cdots + a_nx_n = 0 \Rightarrow b(a_1-1)x_1= x_1 = ba_2x_2 + \cdots ba_nx_n 
+\]
+entering in contradiction with $\{x_i\}$ being a minimal set unless  $x_i=0$, thus  $M=0$
+
 
 (rehacer)
 
@@ -88,6 +89,9 @@ But if $a_1=1 \in I$, that means $I = (1)=A$, which cannot be contained in the J
 	\item If $f:N\to M$ is a homomorphism, $\overline{f}:N / IN \to M / IM$ surjective $\Rightarrow f $ surjective
   \end{enumerate}
   \vspace{1em}
+}
+
+\prob{3}{Let $A$ be a non-local ring. Prove that the  $A-$module  $A$ has two minimal system of generators with a different number of generators.
 }
 
 \prob{4}{Let (diagram) be a short exact sequence of $A-modules$. Prove that if  $M'$ and  $M''$ are finitely generated, then  $M$ is finitely generated.}
@@ -113,6 +117,43 @@ This is equivalent to prove that $M=\mathbb{Z}[\sqrt{d} ]$ is a Noetherian modul
 \prob{6}{Prove that the ring $\mathbb{Z}[2T, 2T^2, 2T^3, \ldots] \subseteq \mathbb{Z}[T]$ is not Noetherian}
 
 We search for an ascending chain of ideals $I_1\subseteq I_2\subseteq \ldots$ in which for every $I_i$ we have  $x_i\in I_i$ but $x_i \notin I_{i-1}$. This chain can be $I_i = (2T, 2T^2, \ldots, 2T^{i-1}, 2T^i+2T^{i+1}+\ldots)$. Notice that the containments are obvious and $x_i = 2T^{i-1}\in I_i$, but not in $I_{i-1}$.
+
+\prob{7}{ Let $M$ be an  $A-$module and let  $N_1, N_2$ be submodules of $M$. Prove that if  $M / N_1$ and  $M/ N_2$ are Noetherian (Artinian), then $M / (N_1 \cap N_2)$ is Noetherian (Artinian) as well.
+}
+
+\prob{8}{Let $M$ be an  $A-$module, $f:M\to N$ an $A-$endomorphism. Prove:
+  \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+    \item If $M$ is Noetherian and  $f$ surjective  $\Rightarrow$ $f$ isomorphism
+    \item If $M$ is Artinian and  $f$ injective $\Rightarrow$ $f$ isomorphism
+  \end{enumerate}
+\vspace{1em}
+}
+
+\prob{9}{Compute:
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item $\Hom_{\mathbb{Z}}(\mathbb{Q}, \mathbb{Z})$ 
+\item $\Hom_{\mathbb{Z}}(\mathbb{Q}, \mathbb{Q})$
+\item $\Hom_{\mathbb{Z}}(\mathbb{Z} / (m), \mathbb{Q})$
+\end{enumerate}
+\vspace{1em}
+}
+\textbf{(1)} We look for an element in $\Hom_{\mathbb{Z}}(\mathbb{Q}, \mathbb{Z})$. Let $f(\frac{1}{n})=x_n$ for $n$ a nonzero integer and $f(1)=C \in \mathbb{Z}$. Then we have
+\[
+C=f(1) = f\left(\frac{n}{n}\right) = nf\left(\frac{1}{n}\right) = nx_n.  \quad \Rightarrow \quad
+x_n = 0\ \forall |n|>C
+\]
+But if we take into account $C = nx_n$ holds for all nonzero $n$, then $C = 0$, meaning all the  $x_n$ are zero. We end up with $f\left(\frac{a}{b}\right)=af\left( \frac{1}{b} \right)=a\times 0 = 0$. So $\Hom_{\mathbb{Z}}(\mathbb{Q}, \mathbb{Z})=0$
+
+\textbf{(2)} We look for an element in $\Hom_{\mathbb{Z}}(\mathbb{Q}, \mathbb{Q})$. Let $f(\frac{1}{n})=\frac{x_n}{y_n}$ for $n$ a nonzero integer and $f(1)=C\in \mathbb{Q}$. Then we have 
+\[
+C=f(1) = f\left(\frac{n}{n}\right) = nf\left(\frac{1}{n}\right) = n \frac{x_n}{y_n}.  \quad \Rightarrow \quad
+\frac{x_n}{y_n} = \frac{C}{n}
+\]
+That means our morphism $f_C$ is uniquely determined by the choice of  $C\in \mathbb{Q}$, and is the morphism that sends $1\to C$ and $\frac{1}{n}\to \frac{c}{n}$ and extends linearly $\frac{a}{b}\to \frac{a}{b}C$. So $\Hom_{\mathbb{Z}}(\mathbb{Q}, \mathbb{Q})\simeq \mathbb{Q}$
+
+\textbf{(3)} We look for an element in $\Hom_{\mathbb{Z}}(\mathbb{Z} / (m), \mathbb{Q})$. Let $f(\overline{1})=r\in \mathbb{Q}$. Then 
+\[0=f(\overline{0})=f(\overline{m})=mf(\overline{1})=mr \Rightarrow r=0\]
+So the only possibility is the morphism $0$ and  $\Hom_{\mathbb{Z}}(\mathbb{Z} / (m), \mathbb{Q})=0$
 
 
 \end{document}

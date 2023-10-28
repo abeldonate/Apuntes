@@ -1,0 +1,87 @@
+\documentclass[leqno]{article}
+\usepackage{verbatim}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{multicol} \usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{amssymb}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,epsfig,epstopdf,titling,url,array}
+\usepackage{hyperref}
+\usepackage{eso-pic}
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{graphicx}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+
+% geometry
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+% paragraph length
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{proposition}{Proposition}
+\newtheorem*{definition}{Definition}
+\newtheorem*{observation}{Observation}
+
+\newcommand{\incfig}[1]{%
+\center
+\def\svgwidth{0.9\columnwidth}
+\import{./figures/}{#1.pdf_tex}
+}
+\newcommand{\incimg}[1]{%
+\center
+\includegraphics[width=0.9\columnwidth]{images/#1}
+}
+\pdfsuppresswarningpagegroup=1
+
+\title{Estado Sólido}
+\author{Abel Doñate Muñoz}
+\date{}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Tema 2 supongo}
+\subsection{Modelo de Einstein}
+Este modelo está basado en el oscilador harmónico cuántico. Si suponemos que en la red cristalina se comportan todos los átomos como osciladores harmónicos cuánticos, entonces podemos calcular su función grancanónica
+\[
+  E_n = \hbar \omega (n+\frac{1}{2}) \quad \Rightarrow \quad Z_1 = \frac{1}{2 \sinh(\frac{\beta \hbar \omega }{2})}, \quad \langle E_1 \rangle = - \frac{\partial }{\partial \beta } \ln Z_1 = \frac{\hbar\omega }{2} \coth \left( \frac{\beta \hbar \omega }{2} \right) 
+\] 
+Pero debemos tener en cuanta que hay 3 dimensiones y $N$ partículas, por lo que debemos multiplicar por 3 en la energía media. Ahora podemos calcular también la capacidad calorífica $C_v$.
+ \[
+\langle E\rangle = \frac{3}{2} N \hbar \omega \coth \left( \frac{\beta \hbar \omega  }{2} \right) \quad \Rightarrow \quad
+C_v = \frac{\partial \langle E\rangle}{\partial T}  = 3Nk_B (\beta \hbar \omega )^2 \frac{e^{\beta \hbar \omega }}{(e^{\beta \hbar \omega }-1)^2}
+\] 
+Definimos ahora $T_E = \frac{\hbar \omega_E}{k_B}$. Vamos a ver que pasa en los limites de temperatura.
+
+\begin{itemize}[topsep=-6pt, itemsep=0pt]
+  \item Si  $T\gg T_E \quad \Rightarrow \quad C_v = 3Nk_b$
+  \item Si  $T\ll T_E \quad \Rightarrow \quad C_v = 3Nk_b (\frac{T_E}{T})^2 \frac{1}{\sinh ^2(\frac{T_E}{2T})}$
+\end{itemize}
+
+Observamos que, como es de esperar, para temperaturas altas el modelo cumple la ley de Dulong-Petit, pero para bajas no cumple la expectativa experimental de $C_v \sim  T^3$.
+
+\subsection{Modelo de Debye}
+
+\end{document}
