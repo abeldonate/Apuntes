@@ -63,6 +63,13 @@
 \newpage
 
 \section{Tema 2 supongo}
+En esta sección veremos tres modelos diferentes de propagación de ondas por la red cristalina.
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item \textbf{Dulong-Petit} Los átomos vibran independientemente. Clásico. $C_v$ independiente de la temperatura.
+  \item \textbf{Einstein} Los átomos vibran independientemente. Cuántico. $C_v$ coincide para temperaturas altas pero falla para bajas.
+  \item \textbf{Debye} Los átomos vibran dependiendo del vecino próximo. Cuántico. Aproximación dispersión lineal. $C_v$ refleja la dependencia cúbica experimental para temperaturas bajas.
+\end{enumerate}
+\subsection{Dulong-Petit model}
 \subsection{Modelo de Einstein}
 Este modelo está basado en el oscilador harmónico cuántico. Si suponemos que en la red cristalina se comportan todos los átomos como osciladores harmónicos cuánticos, entonces podemos calcular su función grancanónica
 \[
@@ -83,5 +90,40 @@ Definimos ahora $T_E = \frac{\hbar \omega_E}{k_B}$. Vamos a ver que pasa en los 
 Observamos que, como es de esperar, para temperaturas altas el modelo cumple la ley de Dulong-Petit, pero para bajas no cumple la expectativa experimental de $C_v \sim  T^3$.
 
 \subsection{Modelo de Debye}
+Comenzamos analizando una cadena de átomos cuya única fuerza entre ellos es modelizable mediante la ley de Hook con una constante de muelle $k_s$. Si  $r_n$ es la posición de cada átomo y $x_n = r_n-na$ el desplazamiento con respecto al punto de equilibrio tenemos:
+ \[
+F_n =m\ddot{x}_n = k_s(x_{n+1}+x_{n-1}-2x_n)
+\] 
+Suponemos (oh, sorpresa) que la solución es una oscilación armónica de la forma $x_n = A e^{i(kna-\omega t)}$. Calculamos ahora como debe se la $\omega $ en función de la $k$.
+ \[
+   -m\omega ^2 Ae^{i(kna-\omega t)} = k_sAe^{i(kna-\omega t)}(e^{ika}+e^{-ika}-2) = -4k_s \sin^2\left( \frac{ka}{2} \right)  \Rightarrow \boxed{\omega = 2 \sqrt{\frac{k_s}{m}}\left|\sin \left( \frac{ka}{2} \right) \right| }
+\] 
+Lo que se conoce como ecuación de dispersión. Observamos que en la zona cercana a $k=0$ podemos aproximar a una dispersión casi lineal  $\omega =\nu k$. Si tomamos esta aproximación hasta una frecuencia de corte dada $\omega _D$, podemos calcular esta frecuencia de corte como
+\[
+  3N = \int_0^{\omega _D} 3g(\omega )d\omega =\int_0^{\omega _D}3 \frac{V}{2\pi^2\nu^3}\omega ^2 d\omega = \frac{V}{2\pi^2 \nu^3}\omega _D^3 \Rightarrow \boxed{\omega _D = \sqrt[3]{\frac{6\pi^2\nu^3N}{V}} }
+\] 
+donde hemos contado cada partícula y cada estado 3 veces y hemos usado
+\[
+\omega = \nu k, \qquad g(k)=\frac{V}{2\pi^2}k^2, \qquad g(\omega )= \frac{V}{2\pi^2 \nu^3}\omega ^2
+\]
+Calculamos ahora la energía media para calcular la capacidad calorífica
+\begin{align*}
+  \langle E \rangle &= \int_0^{\omega _D}\hbar \omega 3g(\omega )\left( \frac{1}{e^{\beta \hbar \omega }-1} +\frac{1}{2} \right) d\omega  = E_0 + \frac{3V\hbar }{2\pi^2\nu^3} \int_0^{\omega _D}\frac{\hbar \omega ^3}{e^{\beta \hbar \omega }-1} d\omega \\
+	   & (x=\frac{\hbar \omega }{k_B T}), \quad T_D := \frac{\hbar \omega }{k_B} \quad   \Rightarrow  \boxed{\langle E \rangle = \frac{3Vk_B^4T^4}{2\pi^2\nu^3\hbar ^3}\int_0^{\frac{T_D}{T}}\frac{x^3}{e^x-1}dx }
+\end{align*}
+Estudiamos ahora que pasa con capacidad calorífica $C_v = \frac{\partial \langle E \rangle }{\partial T}$ en los extremos:
+\begin{itemize}[topsep=-6pt, itemsep=0pt]
+  \item Si $T\gg T_D \quad \Rightarrow \quad \langle E \rangle \sim 3Nk_BT \quad \Rightarrow \quad C_v \sim  3Nk_B $
+  \item Si $T\ll T_D \quad \Rightarrow \quad \langle E \rangle \sim  \frac{3\pi^4Nk_BT^4}{5T_D^3}\quad\Rightarrow \quad C_v \sim  \frac{12\pi^4}{5}Nk_B \left( \frac{T}{T_D} \right)^3 $
+\end{itemize}
+donde hemos usado $\int_0^\infty \frac{x^3}{e^x-1}dx=\frac{\pi^4}{15}$.
+
+Observamos como este modelo si que refleja la dependencia cúbica observada experimentalmente.
+
+
+
+
+
+
 
 \end{document}
