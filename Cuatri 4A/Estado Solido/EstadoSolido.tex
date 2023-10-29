@@ -62,6 +62,77 @@
 \tableofcontents
 \newpage
 
+\section{Estructura cristalina}
+
+\subsection{Redes cristalinas, base primal y dual}
+\begin{definition}[Red] Una red es un conjunto infinito de puntos generado por el set de vectores
+   \[
+  R = n_1 \overline{a} + n_2 \overline{b} + n_3 \overline{c} \qquad n_i \in \mathbb{Z}
+  \] 
+\end{definition}
+
+\begin{definition}[Celda unidad] Una celda unidad es una region de el espacio que puede teselar el espacio. Si sólo contiene un punto de la red, se dice que es primitiva.
+\end{definition}
+
+\begin{definition}[Célula de Wigner-Seitz] Dado un punto de la red, la celda de Wigner-Seitz es el espacio de los puntos más cercanos a el punto que a cualquier otro punto.
+\end{definition}
+
+\begin{definition}[Base] Una base de un sistema cristalino es un conjunto de tres vectores linealmente independientes $\{\overline{a}, \overline{b}, \overline{c}\}$. Su base dual $ \{\overline{a}^*, \overline{b}^*, \overline{c}^*\}$ se puede calcular de las siguientes maneras:
+\[
+  a^* = \frac{b\times c}{V}, \quad b^* = \frac{c\times a}{V}  , \quad c^* = \frac{a\times b}{V} \qquad \text{ó}  \qquad (\overline{a}^*, \overline{b}^*, \overline{c}^*)=\begin{pmatrix} \overline{a}^T\\\overline{b}^T\\\overline{c}^T \end{pmatrix} ^{-1}
+\] 
+\end{definition}
+Formalmente la base dual debería ir multiplicada por $2\pi$ por estar en el espacio de las $k$, pero en estos apuntes multiplicaremos por  $2\pi$ cuando haga falta.
+
+Cada red primal tiene su red dual definida de la misma forma que definimos red, pero con combinaciones enteras de los vectores duales (multiplicados por $2\pi$). Cada red de Bravais transforma en una red de Bravais.
+
+\subsection{Clasificación de redes cristalinas}
+\subsubsection{Símbolo de Pearson}
+El símbolo de Pearson consiste en dos letras y un número con el formato $aA0$.
+La primera letra especifica la familia del cristal. La segunda el tipo de centro. El número final indica la cantidad de átomos en la célula unidad.
+
+\begin{minipage}{0.45\textwidth}
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+$a$ & triclínica  \\ \hline
+$m$ & monoclínica\\ \hline
+$o$ & ortorómbica\\ \hline
+$t$ & tetragonal \\ \hline
+$h$ & hexagonal\\ \hline
+$c$ & cúbica \\ \hline
+\end{tabular}
+\end{center}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+$P$ & Primitiva \\\hline
+$S$ & Centrada en una cara\\\hline
+$I$ & Centrada en el cuerpo\\\hline
+$R$ & Centrada romboidal\\\hline
+$F$ & Centrada en las caras \\\hline
+\end{tabular}
+\end{center}
+\end{minipage}
+
+Esto nos proporciona las 14 posibles redes de Bravais
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Triclínico & Monoclínico & Ortorómbico & Tetragonal & Hexagonal & Cúbico \\\hline
+$aP$ &  $mP, mS$ &  $oP, oS, oF, oI$ &  $tP, tI$ &  $hP, hR$ &  $cP, cF, cI$ \\\hline
+\end{tabular}
+\end{center}
+
+\subsubsection{Grupos de simetría}
+Pa otro dia jeje
+
+\subsection{Descripción de las redes cristalinas más comunes}
+\subsubsection{FCC}
+
+
 \section{Tema 2 supongo}
 En esta sección veremos tres modelos diferentes de propagación de ondas por la red cristalina.
 \begin{enumerate}[topsep=-6pt, itemsep=0pt]
@@ -69,6 +140,11 @@ En esta sección veremos tres modelos diferentes de propagación de ondas por la
   \item \textbf{Einstein} Los átomos vibran independientemente. Cuántico. $C_v$ coincide para temperaturas altas pero falla para bajas.
   \item \textbf{Debye} Los átomos vibran dependiendo del vecino próximo. Cuántico. Aproximación dispersión lineal. $C_v$ refleja la dependencia cúbica experimental para temperaturas bajas.
 \end{enumerate}
+
+La gráfica de los modelos teóricos es
+
+\includegraphics[width=\textwidth]{figures/comparisoncv.jpg}
+
 \subsection{Dulong-Petit model}
 \subsection{Modelo de Einstein}
 Este modelo está basado en el oscilador harmónico cuántico. Si suponemos que en la red cristalina se comportan todos los átomos como osciladores harmónicos cuánticos, entonces podemos calcular su función grancanónica
@@ -88,6 +164,7 @@ Definimos ahora $T_E = \frac{\hbar \omega_E}{k_B}$. Vamos a ver que pasa en los 
 \end{itemize}
 
 Observamos que, como es de esperar, para temperaturas altas el modelo cumple la ley de Dulong-Petit, pero para bajas no cumple la expectativa experimental de $C_v \sim  T^3$.
+
 
 \subsection{Modelo de Debye}
 Comenzamos analizando una cadena de átomos cuya única fuerza entre ellos es modelizable mediante la ley de Hook con una constante de muelle $k_s$. Si  $r_n$ es la posición de cada átomo y $x_n = r_n-na$ el desplazamiento con respecto al punto de equilibrio tenemos:
