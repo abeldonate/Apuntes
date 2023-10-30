@@ -1,0 +1,152 @@
+\documentclass[leqno]{article}
+\usepackage{verbatim}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{multicol} \usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{amssymb}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,epsfig,epstopdf,titling,url,array}
+\usepackage{hyperref}
+\usepackage{eso-pic}
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{graphicx}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+
+% geometry
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+% paragraph length
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\newcommand{\prob}[2]{\fbox{\parbox{\textwidth}{\textbf{#1} #2}}}
+
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{proposition}{Proposition}
+\newtheorem*{definition}{Definition}
+\newtheorem*{observation}{Observation}
+
+\newcommand{\incfig}[1]{%
+\center
+\def\svgwidth{0.9\columnwidth}
+\import{./figures/}{#1.pdf_tex}
+}
+\newcommand{\incimg}[1]{%
+\center
+\includegraphics[width=0.9\columnwidth]{images/#1}
+}
+\pdfsuppresswarningpagegroup=1
+
+\title{Problemas Estado Sólido}
+\author{Abel Doñate Muñoz}
+\date{}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Estructura cristalina}
+
+\section{Dinámica de los cristales}
+\prob{1}{
+Consideramos un cristal iónico unidimensional infinito, construido por una sucesión de átomos con masa $m$ y carga  $+q$ y  $-q$ alternativamente. El potencial interatómico es  $V_i(r_i)= \frac{A}{|r_i-r_{i-1}|^n} + \frac{A}{|r_{i+1}-r_i|^n} + \sum_{i\neq j}\varepsilon \frac{q_iq_j}{|r_i-r_j|}$. El parámetro de red $a$ corresponde a la posición de equilibrio en  $T=0$.
+ \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+   \item[a)] Calculad el valor de la constante $A$ en función del parámetru de red y demostrad que la energía de enlace es  $E_0= \frac{\varepsilon q^2\ln 2}{a}(1-\frac{1}{n})$ 
+   \item[b)] Calculad la compresibilidad del cristal y la velocidad del sonido.
+\end{enumerate}
+\vspace{1em}
+}
+
+\textbf{a)}
+(dibujito)
+Sea $r$ la distancia entre átomos cuando  $T=0$. Entonces  
+\[
+U_{T}=\frac{1}{2}(2N \frac{2A}{r^n} + \sum_{j=1}^{2N}\sum_{l\neq 0}(-1)^l \varepsilon  \frac{q^2}{|l|r} ) = \frac{2NA}{r^n}-\frac{2Nq^2\varepsilon \ln 2}{r}
+\] 
+Si diferenciamos con respecto a $r$ e igualamos a cero encontramos la posición de equilibrio
+ \[
+0=\frac{d U_T}{d r} = -\frac{2NAn}{a^{n+1}} + \frac{2nq^2\ln 2\varepsilon }{a^2} \quad \Rightarrow \quad \boxed{A = \frac{a^{n-1}\varepsilon \ln 2 q^2}{n}}
+\] 
+Y la energía por enlace es simplemente sustituyendo $\boxed{E_0 = - \frac{U_T}{2N} = \left( 1-\frac{1}{n} \right) \frac{\varepsilon q^2\ln 2}{a}}$
+
+\textbf{b)} (falta)
+
+\prob{2}{
+Calculad la relación de dispersión para una cadena unidimensional de átomos de masa $m$ conectadas por un muelle de constante  $k_1$ para los primeros vecinos y  $k_2$ para los segundos
+}
+
+(dibujito)
+
+Sea $x_n$ la posición respecto a la posición de equilibrio  $r_n = an$. Entonces las ecuaciones del movimiento son
+ \[
+F = m\ddot{x}_n = k_1(x_{n+1}+x_{n-1}-2x_n) + k_2(x_{n+2}+x_{n-2}-2x_n)
+\] 
+Suponiendo que se comporta como un oscilador armónico hacemos el siguiente ansatz: $x_n = Ae^{i(kna-\omega t)}$. Vemos ahora que deben cumplir la $\omega $ y la $k$.
+\begin{align*}
+-m\omega ^2 A e^{i(kna-\omega t)} = k_1Ae^{i(nka-\omega t)} \left( e^{ika} +e^{-ika} -2\right)  + k_2(e^{2ika}+e^{-2ika}-2)\\
+m\omega ^2 = 4k_1\left(\frac{\cos(ka)-1}{2}\right) + 4k_2\left(\frac{\cos(2ka)-1}{2}\right) = 4k_1\sin^2\left( \frac{ka}{2} \right) + 4k_2\sin^2(ka)
+\end{align*}
+Por tanto llegamos a la ecuación de dispersión $\displaystyle \boxed{\omega (k)= \sqrt{\frac{4}{m}\left( k_1\sin^2\left( \frac{ka}{2} \right) + k_2\sin^2(ka)  \right) }} $
+
+\prob{3}{
+Calculad la relación de dispersión para una cadena unidimensional de átomos de masa $m$ conectados con los primeros vecinos por muelles de constantes  $k_1$ y $k_2$ alternativamente.
+}
+
+\begin{minipage}{0.49\textwidth}
+\incimg{prob2_3chain.png}
+\end{minipage}
+\begin{minipage}{0.49\textwidth}
+\incimg{prob2_3.png}
+\end{minipage}
+
+Procedemos de manera parecida al ejercicio anterior, pero apreciamos algunos cambios. En primer lugar las amplitudes serán diferentes según el tipo de partícula (par o impar). Las posiciones de equilibrio ya no son equiespaciadas, sino que hay 2 distancias (la del muelle $k_1$ y la del $k_2$). Llamaremos $x_n$ e  $y_n$ a las variaciones con respecto al equilibrio respectivamente. Si planteamos el diagrama de fuerzas tenemos
+\[
+m\ddot{x}_n = k_1(y_{n-1}-x_n)+k_2(y_n-x_n), \quad 
+m\ddot{y}_n = k_1(x_{n+1}-y_n)+k_2(x_n-y_n)
+\] 
+
+Con todo esto podemos hacer nuestro ansatz como:
+\[
+x_n = A e^{i(kna-\omega t)} \qquad
+y_n = B e^{i(kna-\omega t)}
+\] 
+y obtenemos las ecuaciones
+\[
+-m\omega ^2 A = -A(k_1+k_2)+ B(k_1e^{ika}+k_2), \quad 
+-m\omega ^2 B = -A(k_1e^{ika}+k_2)+ B(-k_1-k_2)
+\] 
+Que puede ser escrito en forma matricial como
+\[
+  m\omega ^2 \begin{pmatrix} A\\B \end{pmatrix} = \begin{pmatrix} (k_1+k_2) & -k_2 -k_1e^{ika} \\ -k_2-k_1e^{ika} & (k_1+k_2) \end{pmatrix}  \begin{pmatrix} A\\B \end{pmatrix} = K\begin{pmatrix} A\\B \end{pmatrix} 
+\] 
+Con lo que $m\omega $ ha de ser valor propio de la matriz $K$. Imponiendo esta condición tenemos que
+ \[
+0 = \det(K-m\omega ^2I) = |(k_1+k_2)-m\omega ^2|^2 - |k_2 +k_1e^{ika}|^2
+\] 
+cuyas raíces son $m\omega^2 = (k_1+k_2) \pm |k_1+k_2e^{ika}|$. Simplificando el segundo término llegamos a la ecuación de dispersión 
+\[
+  \boxed{\omega _{\pm}(k) = \sqrt{ \frac{k_1+k_2}{m}\pm \frac{1}{m} \sqrt{(k_1+k_2)^2-4k_1k_2\sin^2(ka / 2)} } }
+\] 
+Cada rama del dibujo corresponde a un signo de la solución de la ecuación de dispersión. El negativo corresponde a la acústica y el positivo a la óptica.
+
+
+\end{document}
