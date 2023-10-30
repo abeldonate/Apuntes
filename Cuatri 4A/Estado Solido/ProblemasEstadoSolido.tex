@@ -4,6 +4,8 @@
 \usepackage{listings}
 \usepackage{fancyvrb}
 \usepackage{enumitem}
+\usepackage{siunitx}
+
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -147,6 +149,50 @@ cuyas raíces son $m\omega^2 = (k_1+k_2) \pm |k_1+k_2e^{ika}|$. Simplificando el
   \boxed{\omega _{\pm}(k) = \sqrt{ \frac{k_1+k_2}{m}\pm \frac{1}{m} \sqrt{(k_1+k_2)^2-4k_1k_2\sin^2(ka / 2)} } }
 \] 
 Cada rama del dibujo corresponde a un signo de la solución de la ecuación de dispersión. El negativo corresponde a la acústica y el positivo a la óptica.
+
+\prob{4}{
+  COnsideramos una cadena monoatómica de $1m$ de longitud, velocidad del sonido $\nu=1.08\times 10^4m / s$. Los átomos tienen una masa $m=6.81\times 10^{-26}kg$ y un parámetro de red de $a=4.85A$. Calculad la constante recuperadora de la fuerza atómica y la máxima frecuencia angular de los fonones.
+}
+
+Para valores pequeños de $k$ podemos realizar la siguiente aproximación
+ \[
+\omega = \sqrt{\frac{4K}{m}} \left|\sin\left( \frac{ka}{2} \right) \right|\sim  \sqrt{} 
+\] 
+
+\prob{5}{
+  Un sistema consta de $N=10^{23}$ osciladores armónicos unidimensionales de frecuencia propia  $\omega =2\pi \times 10^{13}$. Calculad la energía térmica media del sistema a $T=2, 20, 200, 2000K $. ¿En qué rango de temperatura se puede tratar el sistema clásicamente?
+}
+
+Calculamos la energía media del sistema
+\[
+\langle E \rangle = N\hbar \omega \left( \langle n \rangle +\frac{1}{2} \right) = N\hbar \omega \left( \frac{1}{2} + \frac{1}{e^{\frac{\hbar \omega }{k_BT}}-1} \right)  \Rightarrow 
+\begin{cases}
+  \langle E \rangle(T=2)  = 331J
+  \langle E \rangle(T=2)  = 331J
+  \langle E \rangle(T=2)  = 397J
+  \langle E \rangle(T=2)  = 2772J
+\end{cases}
+\] 
+Calculamos ahora la capacidad calorífica
+\[
+C_v = \frac{d \langle E \rangle }{d T}  = Nk_B\left( \frac{T_E}{T} \right) ^2 \frac{e^{\frac{T_E}{T}}}{(e^{\frac{T_E}{T}}-1)^2} \qquad \text{con} \qquad T_E = \frac{\hbar \omega }{k_B} = 480K
+\] 
+A partir de $T=1000K$ se debería comportar clásicamente.
+
+\prob{6}{
+La velocidad del sonido del Cu es $\nu_s =400m / s$. Calculad la frecuencia de Debye y la longitud de onda de las vibraciones atómicas con esta frecuencia, comparadla con el espaciado interatómico entre los átomos de Cu. Recordad que el cobre es una FCC con 4 átomos por celda unidad,  $M =63.546g / mol, \rho =8.92 g / cm^3$
+}
+
+Calculamos $a$ a través del siguiente factor de conversión
+\[
+  \rho = \frac{4 \text{ at. Cu}}{a^3} \frac{1 \text{ mol}}{N_A\text{ at. Cu}} \frac{63.546g}{1 \text{ mol}} = 8.92 g / cm^3 \Rightarrow a=3.615A \Rightarrow \frac{V}{N} = 11.81 A / \text{celda}
+\] 
+Calculamos la frecuencia de Debye y después la longitud de onda con las fórmulas
+\[
+  \omega _D = \left( \frac{6\pi^2\nu_S^3N}{V} \right) ^{\frac{1}{3}} = \boxed{6.846\times 10^{13} rad / s} , \qquad k_D = \frac{\omega _D}{\nu_S} = 1.7116 A^{-1} = \frac{2\pi}{\lambda_D} \Rightarrow \boxed{\lambda_D = 3.67A}
+\] 
+El espaciado interatómico es $a_p = \frac{a}{\sqrt{2} }=2.56A$
+
 
 
 \end{document}
