@@ -5,6 +5,7 @@
 \usepackage{fancyvrb}
 \usepackage{enumitem}
 
+
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
@@ -130,22 +131,91 @@ $aP$ &  $mP, mS$ &  $oP, oS, oF, oI$ &  $tP, tI$ &  $hP, hR$ &  $cP, cF, cI$ \\\
 Pa otro dia jeje
 
 \subsection{Descripción de las redes cristalinas más comunes}
-\subsubsection{FCC}
+\subsubsection{FCC y BCC}
+Calculamos ahora la base primal y dual de la célula FCC. Observamos que los vectores escogidos generan toda la red cristalina, por lo la célula que generan es una célula primitiva.
+\[
+\begin{cases}
+  \overline{a} = \frac{1}{2} (1\ 1\ 0) \\
+  \overline{b} = \frac{1}{2} (0\ 1\ 1) \\
+  \overline{c} = \frac{1}{2} (1\ 0\ 1)
+\end{cases} \quad 
+V = \frac{1}{8}\det(a\ b\ c) = \frac{1}{4} \quad \Rightarrow
+\begin{cases}
+  \overline{a}^* = (1\ 1\ -1)\\
+  \overline{b}^* = (-1\ 1\ 1 )\\
+  \overline{c}^* = (1\ -1\ 1)
+\end{cases} 
+\] 
 
 
-\section{Tema 2 supongo}
+Calculamos ahora la base primal y dual de la célula BCC. Como en el caso de la FCC, los vectores escogidos generan toda la red cristalina, por lo la célula que generan es una célula primitiva.
+\[
+\begin{cases}
+  \overline{a} = \frac{1}{2} (1\ 1\ -1) \\
+  \overline{b} = \frac{1}{2} (-1\ 1\ 1) \\
+  \overline{c} = \frac{1}{2} (1\ -1\ 1)
+\end{cases} \quad 
+V = \frac{1}{8}\det(a\ b\ c) = \frac{1}{2} \quad \Rightarrow 
+\begin{cases}
+  \overline{a}^* = (1\ 1\ 0)\\
+  \overline{b}^* = (0\ 1\ 1 )\\
+  \overline{c}^* = (1\ 0\ 1)
+\end{cases} 
+\] 
+De estos cálculos podemos deducir que las redes FCC y BCC son duales, es decir, cuando hacemos el dual de una de ellas con parámetro de red $a$ nos aparece la otra con parámetro de red  $\frac{2}{a}$, o $\frac{4\pi}{a}$ en el caso de que trabajemos en el espacio de las $k$. Este resultado es bastante importante tenerlo en cuenta a lo largo del curso, ya que las estructuras FCC y  BCC son de las más comunes en cristalografía.
+
+\subsubsection{Estructura hexagonal}
+Si tenemos la siguiente red cristalina (por ejemplo, sea grafeno), es importante notar que los átomos de esta red no forman una red de Bravais, ya que no son iguales desde cualquier átomo. La red de bravais vendrá dada por los vectores que hemos señalado, y tendrá un motivo de $2$ átomos.
+\[
+\begin{cases}
+  \overline{a} = (1, 0)\\
+  \overline{b} = (-\frac{1}{2}, \frac{\sqrt{3} }{2})
+\end{cases} \quad V = \det(\overline{a}\ \overline{b}) = \frac{\sqrt{3} }{2} \Rightarrow 
+\begin{cases}
+  \overline{a}^* = \frac{2 \sqrt{3} }{3}(\frac{\sqrt{3} }{2}, \frac{1}{2}) \\
+  \overline{b}^* = \frac{2 \sqrt{3} }{3}( 0, 1)
+\end{cases}
+\] 
+Por lo que la dual de una red hexagonal de parámetro $a$ es otra hexagonal de parámetro $\frac{2 \sqrt{3}}{3a}$
+
+\subsection{Difracción}
+La difracción de Bragg se produce cuando, al tener dos planos paralelos hacemos incidir una onda con un ángulo $\theta$. Para que tenga lugar la interferencia constructiva ha de cumplirse $n\lambda= 2d \sin\theta $, conocida como ley de Bragg.
+
+\begin{minipage}{0.4\textwidth}
+  \incfig{Bragg}
+\end{minipage}
+\begin{minipage}{0.6\textwidth}
+  \incfig{Bragg2}
+\end{minipage}
+
+\begin{definition}[Factor de estructura] Definimos el factor de estructura como
+  \[
+  F_{hkl} = \sum_p f_p e^{-i_2\pi \overline{g}_{hkl}\cdot \overline{r}_p}
+  \] 
+  Donde la suma es con respecto a todos los átomos de la celda unidad y $r_p$ es la posición de cada átomo dentro de la celda.
+\end{definition}
+
+Es interesante haber definido este factor de estructura porque cuando radiamos en el plano $\overline{g}_{hkl}$, la intensidad medida es $|F_{hkl}|^2$. Si el factor de estructura se extingue para ese plano, entonces no se medirá intensidad en esa dirección.
+
+
+
+\section{Dinámica de cristales}
 En esta sección veremos tres modelos diferentes de propagación de ondas por la red cristalina.
+
+\begin{minipage}{0.6\textwidth}
 \begin{enumerate}[topsep=-6pt, itemsep=0pt]
   \item \textbf{Dulong-Petit} Los átomos vibran independientemente. Clásico. $C_v$ independiente de la temperatura.
   \item \textbf{Einstein} Los átomos vibran independientemente. Cuántico. $C_v$ coincide para temperaturas altas pero falla para bajas.
   \item \textbf{Debye} Los átomos vibran dependiendo del vecino próximo. Cuántico. Aproximación dispersión lineal. $C_v$ refleja la dependencia cúbica experimental para temperaturas bajas.
 \end{enumerate}
-
-La gráfica de los modelos teóricos es
-
-\includegraphics[width=\textwidth]{figures/comparisoncv.jpg}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\incimg{comparisoncv.jpg}
+\end{minipage}
 
 \subsection{Dulong-Petit model}
+Este calculo se realiza utilizando física estadística básica y resulta en $C_v = 3Nk_b$. Sólo funciona para temperaturas altas, donde no hay prácticamente efectos cuánticos.
+
 \subsection{Modelo de Einstein}
 Este modelo está basado en el oscilador harmónico cuántico. Si suponemos que en la red cristalina se comportan todos los átomos como osciladores harmónicos cuánticos, entonces podemos calcular su función grancanónica
 \[
@@ -167,7 +237,12 @@ Observamos que, como es de esperar, para temperaturas altas el modelo cumple la 
 
 
 \subsection{Modelo de Debye}
+\begin{minipage}{0.7\textwidth}
 Comenzamos analizando una cadena de átomos cuya única fuerza entre ellos es modelizable mediante la ley de Hook con una constante de muelle $k_s$. Si  $r_n$ es la posición de cada átomo y $x_n = r_n-na$ el desplazamiento con respecto al punto de equilibrio tenemos:
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+  \incfig{Osciladorsimple}
+\end{minipage}
  \[
 F_n =m\ddot{x}_n = k_s(x_{n+1}+x_{n-1}-2x_n)
 \] 
