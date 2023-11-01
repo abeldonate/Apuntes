@@ -128,10 +128,45 @@ $aP$ &  $mP, mS$ &  $oP, oS, oF, oI$ &  $tP, tI$ &  $hP, hR$ &  $cP, cF, cI$ \\\
 \end{center}
 
 \subsubsection{Grupos de simetría}
-Pa otro dia jeje
+Un grupo de simetría está generado por reflexiones sobre un plano ($m$), inversiones ($\overline{1}$) y rotaciones ($n$) y rotoinversiones $\overline{n}$ (rotación + inversión).
+
+\begin{itemize}[topsep=-6pt, itemsep=0pt]
+  \item \textbf{Inversiones}. $\overline{1}$ cambia el signo a todo.   
+  \item \textbf{Reflexiones} $m_{100}$ hace una reflexión con respecto al plano normal de la primera dirección. 
+  \item  \textbf{Rotaciones}. $2_{100}, 3_{100}, 4_{100}, 6_{100}$ rotan sobre el vector de la primera dirección principal un ángulo de $180, 120, 90, 60$ respectivamente.
+  \item  \textbf{Rotoinversiones}. $\overline{n}_{100} = n_{100}\overline{1}$ hace una rotación seguida de una inversión (o viceversa, $\overline{1}$ conmuta con todo).
+\end{itemize}
+
+Si deseamos poner en forma matricial los elementos anteriores
+\[
+  \overline{1} = \begin{pmatrix} -1&0&0\\0&-1&0\\0&0&-1 \end{pmatrix} , \quad
+  m_{100} = \begin{pmatrix} -1&0&0\\0&1&0\\0&0&1 \end{pmatrix} , \quad
+  n_{001} = \begin{pmatrix} \cos\left( \frac{360}{n} \right) &-\sin\left( \frac{360}{n} \right) &0\\ \sin\left( \frac{360}{n} \right) &\cos\left( \frac{360}{n} \right) &0\\0&0&1 \end{pmatrix}
+\] 
+
+Si establecemos tres direcciones principales en el sistema coordenado de la base de la celda  $d_1=[\alpha _1 \beta _1 \gamma_1], d_2=[\alpha_2, \beta_2, \gamma_2], d_3 = [\alpha _3, \beta _3, \gamma_3]$, entonces el grupo puntual viene representado de la forma $a \ b\ c$, donde cada letra es  una reflexión, una inversión, una rotación, una rotoinversión o una combinación de ellas (indicada por un / entre las dos) en su dirección respectiva.
+
+Así pues, podemos describir todos los elementos $m, n, \overline{n}$ matricialmente, pero esto dependerá de la dirección principal. Por ejemplo, si tenemos las direcciones principales $d_1=[1 0 0], d_2=[010], d_3=[001]$ y el grupo $2\ m\ m$, el primer  $2$ nos indica una rotación de $180^\circ$ con eje $d_1$, que indicamos como $2_{100}$, la primera $m$ nos indica una re flexión en el plano normal a $d_2$ que indicamos como $m_{010}$ y la tercera una reflexión en el plano normal a $d_3$ que indicamos como $m_{001}$. Sus matrices son
+ \[
+   2_{100} = \begin{pmatrix} 1 & 0& 0 \\ 0 & -1 & 0 \\ 0 & 0 & -1 \end{pmatrix}, \quad  
+   m_{010} = \begin{pmatrix} 1 & 0& 0 \\ 0 & -1 & 0 \\ 0 & 0 & 1 \end{pmatrix}, \quad  
+   m_{001} = \begin{pmatrix} 1 & 0& 0 \\ 0 & 1 & 0 \\ 0 & 0 & -1 \end{pmatrix}, \quad  
+\] 
+Como $2_{100} = m_{010}\cdot m_{001}$, es fácil comprobar que el grupo que generan estos elementos es abeliano, y que además  el grupo tiene  $4$ elementos, todos ellos de orden  $2$, por lo que el grupo es isomorfo a  $ (\mathbb{Z} / 2\mathbb{Z} )^2$
+
+Otro ejemplo sería $2 / m$. Ahora ambas operaciones las debemos tomar el la dirección principal por estar separados por la barra. Tomando como dirección principal  $d_1=[100]$ tenemos
+\[
+   2_{100} = \begin{pmatrix} 1 & 0& 0 \\ 0 & -1 & 0 \\ 0 & 0 & -1 \end{pmatrix}, \quad  
+   m_{100} = \begin{pmatrix} -1 & 0& 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}, \quad  
+\]
+por lo que esta vez el grupo está formado por los elementos $\{Id, 2_{100}, m_{100}, 2_{100}\cdot m_{100}\}$, todos ellos de orden 2 y es abeliano. Por tanto el grupo es isomorfo a $(\mathbb{Z} / 2\mathbb{Z}) ^2$.
 
 \subsection{Descripción de las redes cristalinas más comunes}
 \subsubsection{FCC y BCC}
+\begin{minipage}{0.9\textwidth}
+\incfig{fcc}
+\end{minipage}
+
 Calculamos ahora la base primal y dual de la célula FCC. Observamos que los vectores escogidos generan toda la red cristalina, por lo la célula que generan es una célula primitiva.
 \[
 \begin{cases}
@@ -165,6 +200,10 @@ V = \frac{1}{8}\det(a\ b\ c) = \frac{1}{2} \quad \Rightarrow
 De estos cálculos podemos deducir que las redes FCC y BCC son duales, es decir, cuando hacemos el dual de una de ellas con parámetro de red $a$ nos aparece la otra con parámetro de red  $\frac{2}{a}$, o $\frac{4\pi}{a}$ en el caso de que trabajemos en el espacio de las $k$. Este resultado es bastante importante tenerlo en cuenta a lo largo del curso, ya que las estructuras FCC y  BCC son de las más comunes en cristalografía.
 
 \subsubsection{Estructura hexagonal}
+\begin{minipage}{\textwidth}
+  \incfig{hexagonal}
+\end{minipage}
+
 Si tenemos la siguiente red cristalina (por ejemplo, sea grafeno), es importante notar que los átomos de esta red no forman una red de Bravais, ya que no son iguales desde cualquier átomo. La red de bravais vendrá dada por los vectores que hemos señalado, y tendrá un motivo de $2$ átomos.
 \[
 \begin{cases}
@@ -177,6 +216,12 @@ Si tenemos la siguiente red cristalina (por ejemplo, sea grafeno), es importante
 \end{cases}
 \] 
 Por lo que la dual de una red hexagonal de parámetro $a$ es otra hexagonal de parámetro $\frac{2 \sqrt{3}}{3a}$
+
+Cosas importantes a tener en cuenta:
+\begin{itemize}[topsep=-6pt, itemsep=0pt]
+  \item En esta base los átomos se encuentran en posición $[\frac{2}{3}, \frac{1}{3}]$ y $[\frac{1}{3}, \frac{2}{3}]$.
+  \item La primera zona de Brillouin es la zona lila de la red dual.
+\end{itemize}
 
 \subsection{Difracción}
 La difracción de Bragg se produce cuando, al tener dos planos paralelos hacemos incidir una onda con un ángulo $\theta$. Para que tenga lugar la interferencia constructiva ha de cumplirse $n\lambda= 2d \sin\theta $, conocida como ley de Bragg.
@@ -246,11 +291,19 @@ Comenzamos analizando una cadena de átomos cuya única fuerza entre ellos es mo
  \[
 F_n =m\ddot{x}_n = k_s(x_{n+1}+x_{n-1}-2x_n)
 \] 
+
 Suponemos (oh, sorpresa) que la solución es una oscilación armónica de la forma $x_n = A e^{i(kna-\omega t)}$. Calculamos ahora como debe se la $\omega $ en función de la $k$.
  \[
    -m\omega ^2 Ae^{i(kna-\omega t)} = k_sAe^{i(kna-\omega t)}(e^{ika}+e^{-ika}-2) = -4k_s \sin^2\left( \frac{ka}{2} \right)  \Rightarrow \boxed{\omega = 2 \sqrt{\frac{k_s}{m}}\left|\sin \left( \frac{ka}{2} \right) \right| }
 \] 
+
+\begin{minipage}{0.2\textwidth}
+  \incfig{Dispersion}
+\end{minipage}
+\begin{minipage}{0.8\textwidth}
 Lo que se conoce como ecuación de dispersión. Observamos que en la zona cercana a $k=0$ podemos aproximar a una dispersión casi lineal  $\omega =\nu k$. Si tomamos esta aproximación hasta una frecuencia de corte dada $\omega _D$, podemos calcular esta frecuencia de corte como
+\end{minipage}
+
 \[
   3N = \int_0^{\omega _D} 3g(\omega )d\omega =\int_0^{\omega _D}3 \frac{V}{2\pi^2\nu^3}\omega ^2 d\omega = \frac{V}{2\pi^2 \nu^3}\omega _D^3 \Rightarrow \boxed{\omega _D = \sqrt[3]{\frac{6\pi^2\nu^3N}{V}} }
 \] 
@@ -272,10 +325,51 @@ donde hemos usado $\int_0^\infty \frac{x^3}{e^x-1}dx=\frac{\pi^4}{15}$.
 
 Observamos como este modelo si que refleja la dependencia cúbica observada experimentalmente.
 
+\subsection{Ecuación de dispersión}
+En el modelo de Debye ya hemos tenido nuestro primer contacto con una ecuación de dispersión muy simple. Ahora supondremos que las constantes de los muelles cambian alternadamente y son $k_1, k_2$.
 
+\begin{minipage}{0.49\textwidth}
+\incimg{prob2_3chain.png}
+\end{minipage}
+\begin{minipage}{0.49\textwidth}
+\incimg{prob2_3.png}
+\end{minipage}
 
+Procedemos de manera parecida a anteriormente, pero apreciamos algunos cambios. En primer lugar las amplitudes serán diferentes según el tipo de partícula (par o impar). Las posiciones de equilibrio ya no son equiespaciadas, sino que hay 2 distancias (la del muelle $k_1$ y la del $k_2$). Llamaremos $x_n$ e  $y_n$ a las variaciones con respecto al equilibrio respectivamente. Si planteamos el diagrama de fuerzas tenemos
+\[
+m\ddot{x}_n = k_1(y_{n-1}-x_n)+k_2(y_n-x_n), \quad 
+m\ddot{y}_n = k_1(x_{n+1}-y_n)+k_2(x_n-y_n)
+\] 
 
+Con todo esto podemos hacer nuestro ansatz como:
+\[
+x_n = A e^{i(kna-\omega t)} \qquad
+y_n = B e^{i(kna-\omega t)}
+\] 
+y obtenemos las ecuaciones
+\[
+-m\omega ^2 A = -A(k_1+k_2)+ B(k_1e^{ika}+k_2), \quad 
+-m\omega ^2 B = -A(k_1e^{ika}+k_2)+ B(-k_1-k_2)
+\] 
+Que puede ser escrito en forma matricial como
+\[
+  m\omega ^2 \begin{pmatrix} A\\B \end{pmatrix} = \begin{pmatrix} (k_1+k_2) & -k_2 -k_1e^{ika} \\ -k_2-k_1e^{ika} & (k_1+k_2) \end{pmatrix}  \begin{pmatrix} A\\B \end{pmatrix} = K\begin{pmatrix} A\\B \end{pmatrix} 
+\] 
+Con lo que $m\omega $ ha de ser valor propio de la matriz $K$. Imponiendo esta condición tenemos que
+ \[
+0 = \det(K-m\omega ^2I) = |(k_1+k_2)-m\omega ^2|^2 - |k_2 +k_1e^{ika}|^2
+\] 
+cuyas raíces son $m\omega^2 = (k_1+k_2) \pm |k_1+k_2e^{ika}|$. Simplificando el segundo término llegamos a la ecuación de dispersión 
+\[
+  \boxed{\omega _{\pm}(k) = \sqrt{ \frac{k_1+k_2}{m}\pm \frac{1}{m} \sqrt{(k_1+k_2)^2-4k_1k_2\sin^2(ka / 2)} } }
+\] 
+Cada rama del dibujo corresponde a un signo de la solución de la ecuación de dispersión. El negativo corresponde a la acústica y el positivo a la óptica.
 
+Lo mismo pasa si en lugar de ser diferentes las $k$ son las masas  $m_1\neq m_2$. En ese caso la solución a nuestra ecuación de dispersión sería
+\[
+  \boxed{\omega _{\pm}(k) = \sqrt{ (K_1+K_2)\pm \sqrt{(K_1+K_2)^2-4K_1K_2\sin^2(ka / 2)} } }
+\] 
+con $K_1= \frac{k}{m_1}$ y $K_2 = \frac{k}{m_2}$
 
 
 \end{document}
