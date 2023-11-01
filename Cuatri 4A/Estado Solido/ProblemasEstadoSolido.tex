@@ -68,6 +68,7 @@
 
 \section{Estructura cristalina}
 
+
 \section{Dinámica de los cristales}
 \prob{1}{
 Consideramos un cristal iónico unidimensional infinito, construido por una sucesión de átomos con masa $m$ y carga  $+q$ y  $-q$ alternativamente. El potencial interatómico es  $V_i(r_i)= \frac{A}{|r_i-r_{i-1}|^n} + \frac{A}{|r_{i+1}-r_i|^n} + \sum_{i\neq j}\varepsilon \frac{q_iq_j}{|r_i-r_j|}$. El parámetro de red $a$ corresponde a la posición de equilibrio en  $T=0$.
@@ -90,7 +91,11 @@ Si diferenciamos con respecto a $r$ e igualamos a cero encontramos la posición 
 \] 
 Y la energía por enlace es simplemente sustituyendo $\boxed{E_0 = - \frac{U_T}{2N} = \left( 1-\frac{1}{n} \right) \frac{\varepsilon q^2\ln 2}{a}}$
 
-\textbf{b)} (falta)
+\textbf{b)} Si el módulo de Young es $\gamma$ tenemos
+\[
+F = \gamma \frac{x}{Na} = \gamma \frac{N \frac{F}{C}}{Na} \Rightarrow \gamma = Ca
+\] 
+Si calculamos la velocidad del sonido $\nu_s = \sqrt{ \frac{\gamma }{\rho }} $
 
 \prob{2}{
 Calculad la relación de dispersión para una cadena unidimensional de átomos de masa $m$ conectadas por un muelle de constante  $k_1$ para los primeros vecinos y  $k_2$ para los segundos
@@ -266,6 +271,20 @@ Observamos como la única diferencia es la raíz de la integral en el segundo ap
 \prob{12}{
 Me da palo, la vd, viene bastante bien explicado en el pdf
 }
+
+\prob{14}{
+
+}
+\begin{minipage}{0.9\textwidth}
+  \incfig{prob2_14}
+\end{minipage}
+
+\textbf{a)} Vemos que la celda unidad tiene dos átomos de carbono situados en $(\frac{1}{3}, \frac{2}{3})$ y $(\frac{2}{3}, \frac{1}{3})$
+
+\textbf{b, c)} Como hemos calculado en la sección de la célula hexagonal de los apuntes, ahora si la distacia entre los carbonos es  $d = 1.42A$, entonces los vectores  $\overline{a}, \overline{b}$ tienen longitud $\sqrt{3}a$, y los vectores de la base dual miden $ \frac{4\pi \sqrt{3} }{3 \sqrt{3}a  } $. La distancia $|\Gamma -M| = |\overline{k}|_M$ será entonces la mitad de la longitud del vector de la base, y $|\Gamma -K|$ lo podemos multiplicar por trigonometría
+\[
+|\overline{k}_M| = 1.47A^{-1}, \qquad |\overline{k}_K| = 1.47\cdot \frac{2}{\sqrt{3} }= 1.70A^{-1}
+\] 
 
 \prob{15}{
 La estructura del ClCs tiene un símbolo de Pearson $cP2$ y un grupo $Pm \overline{3}m$. A $78K$ el parámetro de red es $a=4.088A$. Las curvas de dispersión fonónicas a esta temperatura en las direcciones  $\Gamma -X, \Gamma -M, \Gamma -R$ se representan en la figura con un eje de frecuencias en unidades de $10^{12}Hz$.
