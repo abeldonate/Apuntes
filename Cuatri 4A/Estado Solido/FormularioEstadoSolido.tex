@@ -100,7 +100,7 @@ Módulo de Young $\nu_s = \sqrt{\frac{\gamma}{\rho }} $
 
 Factor de estructura
 \begin{align*}
-  F_{hkl} = \sum_p f_p e^{-i_2\pi \overline{g}_{hkl}\cdot \overline{r}_p}, \quad I \propto |F_{hkl}|^2
+  F_{hkl} = \sum_p f_p e^{-i2\pi \overline{g}_{hkl}\cdot \overline{r}_p}, \quad I \propto |F_{hkl}|^2
 \end{align*}
 
 \subsection{Estructuras comunes}
@@ -153,6 +153,27 @@ Hexagonal
 
 
 \section{Dinámica de cristales}
+\subsection{Densidad de estados}
+\[
+  \overline{k} = \begin{pmatrix} \frac{2\pi}{L}n & \frac{2\pi}{L}m & \frac{2\pi}{L}l \end{pmatrix} \ \forall n, m, l \in \mathbb{Z}
+\] 
+Número de estados hasta $k$
+ \[
+N(k) = \int_{(\frac{2\pi}{L})^2(n^2 + m^2+l^2)\le k^2} dV \frac{L^3}{6\pi^2}k^3 = \frac{V}{6\pi^2}k^3
+\] 
+1, 2 y 3 dimensiones respectivamente (y se cumple $\omega = \nu_s k$)
+\begin{align*}
+  \begin{cases}
+    g(k) = \frac{L}{\pi} \\  g(\omega ) = \frac{L}{\pi \nu} 
+  \end{cases}
+  \begin{cases}
+    g(k) = \frac{L^2}{2\pi}k \\  g(\omega ) = \frac{L^2}{2\pi \nu^2}\omega 
+  \end{cases}
+  \begin{cases}
+    g(k) = \frac{V}{2\pi^2}k^2 \\  g(\omega ) = \frac{V}{2\pi^2 \nu_s^3}\omega ^2
+  \end{cases}
+\end{align*}
+
 \subsection{Dispersión}
 Oscilador con masa $m$ y constante $k_s$
 \[
