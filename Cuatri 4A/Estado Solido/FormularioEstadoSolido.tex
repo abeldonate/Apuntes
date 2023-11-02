@@ -146,11 +146,39 @@ Hexagonal
   \overline{b}^* = \frac{2 \sqrt{3} }{3}( 0, 1)
 \end{cases}
 \]
+\[
+  G = \begin{pmatrix} a^2 & -\frac{a^2}{2} & 0 \\ -\frac{a^2}{2} & a^2 & 0 \\ 0 & 0 & c^2\end{pmatrix} , \quad
+  G^* = \begin{pmatrix} \frac{4}{3a^2} & \frac{2}{3a^2} & 0 \\ \frac{2}{3a^2} & \frac{4}{3a^2} & 0 \\ 0 & 0 & \frac{1}{c^2}\end{pmatrix} 
+\] 
+
 \begin{minipage}{\columnwidth}
   \incfig{hexagonal}
 \end{minipage}
 
+En una hcp $c = 1.633a$
 
+\subsection{Grupos}
+\[
+  m_{100} = \begin{pmatrix} -1&0&0\\0&1&0\\0&0&1 \end{pmatrix} 
+  n_{001} = \begin{pmatrix} \cos\left( \frac{360}{n} \right) &-\sin\left( \frac{360}{n} \right) &0\\ \sin\left( \frac{360}{n} \right) &\cos\left( \frac{360}{n} \right) &0\\0&0&1 \end{pmatrix}
+\] 
+Cambio de base a $\mathcal{B}=\{\overline{u}, \overline{v}, \overline{w}\}$
+\[
+  M_{\mathcal{C}} = M_{\mathcal{B}\to \mathcal{C}} M_{C} M_{\mathcal{B}\to \mathcal{C}}^{-1}, \quad M_{\mathcal{B}\to \mathcal{C}} = (\overline{u}, \overline{v}, \overline{w})
+\] 
+
+Reflexión vector director $(a, b, c)$
+ \[
+   M = \frac{1}{a^2+b^2+c^2} \begin{pmatrix} -a^2 + b^2+c^2 & -2ab & -2ac \\ -2ab & a^2-b^2+c^2 & -2bc \\ -2ac & -2bc & a^2+b^2-c^2 \end{pmatrix} 
+\] 
+Rotación respecto $\hat{u}=(u_x, u_y, u_z)$ ($c=\cos\theta , \quad s=\sin \theta $). $R = $
+\[
+\begin{pmatrix} c+u_x^2(1-c) & u_xu_y(1-c)-u_zs & u_xu_z(1-c)+u_ys \\
+	u_yu_x(1-c)+u_zs & c+u_y^2(1-c) & u_yu_z(1-c)-u_xs\\
+	u_zu_x(1-c)-u_ys & u_zu_y(1-c) + u_xs & c + u_z^2(1-c)
+  \end{pmatrix} 
+\] 
+Centrosimétricos $(x, y, z)\to (-x, -y, -z)$ no tienen polarización espontánea
 
 \section{Dinámica de cristales}
 \subsection{Densidad de estados}
