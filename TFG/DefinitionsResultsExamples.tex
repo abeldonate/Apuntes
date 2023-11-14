@@ -1,0 +1,140 @@
+\documentclass[leqno]{article}
+\usepackage{verbatim}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{multicol} \usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{amssymb}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,epsfig,epstopdf,titling,url,array}
+\usepackage{hyperref}
+\usepackage{eso-pic}
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{graphicx}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+
+% geometry
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+% paragraph length
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\newtheorem{observation}{Observation}
+\newtheorem{example}{Example}
+
+\newcommand{\incfig}[1]{%
+\center
+\def\svgwidth{0.9\columnwidth}
+\import{./figures/}{#1.pdf_tex}
+}
+\newcommand{\incimg}[1]{%
+\center
+\includegraphics[width=0.9\columnwidth]{images/#1}
+}
+\pdfsuppresswarningpagegroup=1
+
+\title{Definitions, results and examples}
+\author{Abel Doñate Muñoz}
+\date{}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Rings}
+
+
+\section{Modules}
+\begin{definition}[Projective module] $P$ is projective if and only if for every surjective homomorphism $f:N\to M$ and every homomorphism $g:P\to M$, there exists a lifting $h:P\to N$ with the diagram commuting:
+  % https://q.uiver.app/#q=WzAsMyxbMCwxLCJQIl0sWzEsMSwiTSJdLFsxLDAsIk4iXSxbMiwxLCJmIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzAsMSwiZyJdLFswLDIsImgiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\[\begin{tikzcd}
+	& N \\
+	P & M
+	\arrow["f", two heads, from=1-2, to=2-2]
+	\arrow["g", from=2-1, to=2-2]
+	\arrow["h", dashed, from=2-1, to=1-2]
+\end{tikzcd}\]
+\end{definition}
+
+\begin{proposition}[Characterizations of projective modules] The following are equivalent:
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item $P$ is projective.
+  \item The SES $0\to A \to B\to P\to 0$ splits.
+  \item $Hom(P, -)$ is an exact functor.
+  \item $P$ is the direct sum of free modules.
+\end{enumerate}
+\end{proposition}
+
+\begin{definition}[Flat module] $M$ is flat if and only if for every injective homomorphism $f:K\to L$, the map $f \otimes _R id : K\otimes _{R} M \to L\otimes _R M$ is injective, that is:
+  % https://q.uiver.app/#q=WzAsNixbMCwwLCJLIl0sWzAsMSwiTCJdLFsyLDAsIktcXG90aW1lc19STSJdLFsxLDAsIlxcUmlnaHRhcnJvdyJdLFsxLDEsIlxcUmlnaHRhcnJvdyJdLFsyLDEsIkxcXG90aW1lcyBfUiBNIl0sWzAsMSwiZiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzIsNSwiZlxcb3RpbWVzIGlkIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XV0=
+\[\begin{tikzcd}
+	K & \Rightarrow & {K\otimes_RM} \\
+	L & \Rightarrow & {L\otimes _R M}
+	\arrow["f", hook, from=1-1, to=2-1]
+	\arrow["{f\otimes id}", hook, from=1-3, to=2-3]
+\end{tikzcd}\]
+\end{definition}
+
+\begin{proposition}[Characterizations of flat modules] The following are equivalent:
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item $M$ is flat.
+  \item $\otimes _RM$ is an exact functor.
+\end{enumerate}
+\end{proposition}
+
+\begin{definition}[Torsion-free module] $M$ is torsion free if and only if its torsion submodule (the module with all the zero-divisors) is \{0\}:
+
+\end{definition}
+
+\begin{proposition}
+In general we have the following implications of modules
+\[
+\text{Free} \Rightarrow \text{Projective} \Rightarrow \text{Flat} \Rightarrow \text{Torsion-free}
+\] 
+\end{proposition}
+
+\begin{example}[Counterexamples of implications] Some counterexamples
+\begin{itemize}[topsep=-6pt, itemsep=0pt]
+  \item Projective $\nRightarrow$ Free. $\mathbb{Z} / 2\mathbb{Z}$ as  $\mathbb{Z} / 6\mathbb{Z}$-module.
+  \item Flat $\nRightarrow$ Projective. $\mathbb{Q}$ as $\mathbb{Z}-$module.
+  \item Torsion-free $\nRightarrow$ Flat. The ideal $I=(x,y)$ as $K[x, y]-$module.
+\end{itemize}
+\end{example}
+
+
+
+
+\section{D-modules}
+
+\section{F-modules}
+For all this section $R$ is a commutative Noetherian ring with prime characteristic $p$.
+\begin{definition}[Frobenius endomorphism] homomorphism $f:R\to R $ where $f(r)=r^p$
+
+\end{definition}
+
+
+
+
+\end{document}

@@ -75,6 +75,42 @@
 
 
 \section{Estructura cristalina}
+\subsection{Redes de Bravais}
+\begin{minipage}{0.45\columnwidth}
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+$a$ & triclínica  \\ \hline
+$m$ & monoclínica\\ \hline
+$o$ & ortorómbica\\ \hline
+$t$ & tetragonal \\ \hline
+$h$ & hexagonal\\ \hline
+$c$ & cúbica \\ \hline
+\end{tabular}
+\end{center}
+\end{minipage}
+\begin{minipage}{0.45\columnwidth}
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+$P$ & Primitiva \\\hline
+$S$ & Centrada en una cara\\\hline
+$I$ & Centrada en el cuerpo\\\hline
+$R$ & Centrada romboidal\\\hline
+$F$ & Centrada en las caras \\\hline
+\end{tabular}
+\end{center}
+\end{minipage}
+
+14 posibles redes de Bravais
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Tric. & Monoc. & Ortor. & Tetra. & Hex. & Cúbico \\\hline
+$aP$ &  $mP, mS$ &  $oP, oS, oF, oI$ &  $tP, tI$ &  $hP, hR$ &  $cP, cF, cI$ \\\hline
+\end{tabular}
+\end{center}
+
 \subsection{Cosas}
 Base dual y matriz métrica
 \begin{align*}
@@ -164,7 +200,7 @@ En una hcp $c = 1.633a$
 \] 
 Cambio de base a $\mathcal{B}=\{\overline{u}, \overline{v}, \overline{w}\}$
 \[
-  M_{\mathcal{C}} = M_{\mathcal{B}\to \mathcal{C}} M_{C} M_{\mathcal{B}\to \mathcal{C}}^{-1}, \quad M_{\mathcal{B}\to \mathcal{C}} = (\overline{u}, \overline{v}, \overline{w})
+  M_{\mathcal{C}} = M_{\mathcal{B}\to \mathcal{C}} M_{\mathcal{B}} M_{\mathcal{B}\to \mathcal{C}}^{-1}, \quad M_{\mathcal{B}\to \mathcal{C}} = (\overline{u}, \overline{v}, \overline{w})
 \] 
 
 Reflexión vector director $(a, b, c)$
@@ -187,7 +223,7 @@ Centrosimétricos $(x, y, z)\to (-x, -y, -z)$ no tienen polarización espontáne
 \] 
 Número de estados hasta $k$
  \[
-N(k) = \int_{(\frac{2\pi}{L})^2(n^2 + m^2+l^2)\le k^2} dV \frac{L^3}{6\pi^2}k^3 = \frac{V}{6\pi^2}k^3
+N(k) = \int_{(\frac{2\pi}{L})^2(n^2 + m^2+l^2)\le k^2} dV =\frac{L^3}{6\pi^2}k^3 = \frac{V}{6\pi^2}k^3
 \] 
 1, 2 y 3 dimensiones respectivamente (y se cumple $\omega = \nu_s k$)
 \begin{align*}
