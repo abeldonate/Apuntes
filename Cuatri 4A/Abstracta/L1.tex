@@ -94,25 +94,25 @@ Suppose $i$ is an isomorphism. Thus, it must exists  $g:\mathbb{Q}\to \mathbb{Z}
 
 \prob{2}{Show that in the category of finite dimensional vector spaces over a field $\mathbb{K}$ we have a natural equivalente of functors between the identity $Id$ and the bidual  $(-)^{**}$}
 
-We start by noticing if we have a finite dimensional vector space we can think as morphisms as matrices. Let $X^*=Hom(X,\mathbb{R})$ and $Y^*=Hom(Y, \mathbb{R})$. Let $F$ be the contravariant functor that dualizes. We have the following diagrams:
+We consider the map $\tau :X\to X^{* *}$ that sends $v \mapsto \text{eval}(v)$, where eval$(v)\in \Hom(\Hom(X, \mathbb{R}), \mathbb{R})$ is the evaluation in $v$ morphism.
 
-% https://q.uiver.app/#q=WzAsNixbMCwwLCJYIl0sWzAsMSwiWSJdLFsxLDAsIlheKiJdLFsyLDAsIlheeyoqfVxcY29uZyBYIl0sWzIsMSwiWV57Kip9XFxjb25nIFkiXSxbMSwxLCJZXioiXSxbMCwyLCJGIl0sWzIsMywiRiJdLFs1LDQsIkYiXSxbMSw1LCJGIl0sWzAsMSwiQSIsMl0sWzUsMiwiQV5UIl0sWzMsNCwiQT1BXntUVH0iLDJdXQ==
+% https://q.uiver.app/#q=WzAsNCxbMCwwLCJYIl0sWzEsMCwiWF57Kip9Il0sWzAsMSwiWSJdLFsxLDEsIlleeyp9Il0sWzAsMSwiXFx0YXUiXSxbMiwzLCJcXHRhdSJdLFswLDIsImYiLDJdLFsxLDMsIkcoZikiXV0=
 \[\begin{tikzcd}
-	X & {X^*} & {X^{**}\cong X} \\
-	Y & {Y^*} & {Y^{**}\cong Y}
-	\arrow["F", from=1-1, to=1-2]
-	\arrow["F", from=1-2, to=1-3]
-	\arrow["F", from=2-2, to=2-3]
-	\arrow["F", from=2-1, to=2-2]
-	\arrow["A"', from=1-1, to=2-1]
-	\arrow["{A^T}", from=2-2, to=1-2]
-	\arrow["{A=A^{TT}}"', from=1-3, to=2-3]
+	X & {X^{**}} \\
+	Y & {Y^{*}}
+	\arrow["\tau", from=1-1, to=1-2]
+	\arrow["\tau", from=2-1, to=2-2]
+	\arrow["f"', from=1-1, to=2-1]
+	\arrow["{G(f)}", from=1-2, to=2-2]
 \end{tikzcd}\]
 
+Now we have to see that the diagram commutes. We will see that the construction $G(f):\text{eval}(v)\mapsto \text{eval}(f(v))$ works. If we pick $v\in X$, then
+\[
+G(f)(\tau (v))= \text{eval}(f(v)) = \text{eval}(w) = \tau (f(v)) \quad \Rightarrow \tau \circ f = G(f)\circ \tau 
+\] 
+Proving the commutativity of the diagram.
 
-Let  $x, y$ be the dimensions of  $X$ and  $Y$ respectively. We can express  $f$ as an  $y\times x$ matrix. For the contravariance of the functor we have that the morphism $Y^* \to X^*$ must be $A^T$. If we repeat this process we are given that $F(F(A))=(A^T)^T=A \ \forall A$, and we get the natural transformation.
-
-
+(terminar)
 
 \prob{3}{Show that two categories $\mathcal{B}$ and $\mathcal{C}$ are naturally equivalent if and only if there exists a fully faithful and essentially surjective covariant functor $F:\mathcal{B}\to \mathcal{C}$.
 }
