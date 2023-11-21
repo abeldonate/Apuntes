@@ -99,7 +99,7 @@ We consider the map $\tau :X\to X^{* *}$ that sends $v \mapsto \text{eval}(v)$, 
 % https://q.uiver.app/#q=WzAsNCxbMCwwLCJYIl0sWzEsMCwiWF57Kip9Il0sWzAsMSwiWSJdLFsxLDEsIlleeyp9Il0sWzAsMSwiXFx0YXUiXSxbMiwzLCJcXHRhdSJdLFswLDIsImYiLDJdLFsxLDMsIkcoZikiXV0=
 \[\begin{tikzcd}
 	X & {X^{**}} \\
-	Y & {Y^{*}}
+	Y & {Y^{**}}
 	\arrow["\tau", from=1-1, to=1-2]
 	\arrow["\tau", from=2-1, to=2-2]
 	\arrow["f"', from=1-1, to=2-1]
@@ -110,13 +110,87 @@ Now we have to see that the diagram commutes. We will see that the construction 
 \[
 G(f)(\tau (v))= \text{eval}(f(v)) = \text{eval}(w) = \tau (f(v)) \quad \Rightarrow \tau \circ f = G(f)\circ \tau 
 \] 
-Proving the commutativity of the diagram.
+Proving the commutativity of the diagram. Now we left to proof that $\tau $ is an isomorphism $\ \forall X$, but this is immediate since we can construct the inverse $\tau ^{-1} : \text{eval}(v)\to v$ provided every element of $X^{* *}$ is of the form  $\text{eval}(v)$ (recall we are working in a finite dimensional vector space).
 
-(terminar)
 
 \prob{3}{Show that two categories $\mathcal{B}$ and $\mathcal{C}$ are naturally equivalent if and only if there exists a fully faithful and essentially surjective covariant functor $F:\mathcal{B}\to \mathcal{C}$.
 }
+\fbox{$\Rightarrow$} Suppose $F$ defines an equivalence of categories. Then, there exists a $G: \mathcal{C}\to \mathcal{B}$ such that we have $F\circ G \simeq Id_{\mathcal{C}}$ and $G\circ F \simeq Id_{\mathcal{B}}$.
 
+To prove that is essentially surjective we choose $M'\in \mathbb{C}$ and
+ \[
+M = G(M') \Rightarrow F(M) = F\circ G(M') \simeq M'
+\] 
+
+We prove now that is faithful considering $f_1, f_2:M\to N$ with $M, N\in \mathcal{B}$ such that $F(f_1)=F(f_2)$. Since we have the isomorphisms $u_M: M \to G(F(M))$ and $u_N: N \to G(F(M))$ with the commuting diagram
+% https://q.uiver.app/#q=WzAsNCxbMCwwLCJNIl0sWzAsMSwiTiJdLFsxLDAsIkcoRihNKSkiXSxbMSwxLCJHKEYoTikpIl0sWzAsMSwiZl9pIiwyXSxbMCwyLCJ1X00iXSxbMSwzLCJ1X04iLDJdLFsyLDMsIkcoRihmX2kpKSJdXQ==
+\[\begin{tikzcd}
+	M & {G(F(M))} \\
+	N & {G(F(N))}
+	\arrow["{f_i}"', from=1-1, to=2-1]
+	\arrow["{u_M}", from=1-1, to=1-2]
+	\arrow["{u_N}"', from=2-1, to=2-2]
+	\arrow["{G(F(f_i))}", from=1-2, to=2-2]
+\end{tikzcd}\]
+
+So we have $f_i = u_N^{-1}\circ G(F(f_i))\circ u_M$ and $G(F(f_1))=G(F(f_2))\Rightarrow f_1= u^{-1}_N\circ G(F(f_1))\circ u_M = u^{-1}_N\circ G(F(f_2))\circ u_M  = f_2$, proving that is faithful.
+
+Last thing we have to prove is that $F$ is full, that is, for all morphism  $f':F(M)\to F(N)$ exists $f: M\to N$ that makes the diagram commutative
+% https://q.uiver.app/#q=WzAsOCxbMCwwLCJNIl0sWzAsMSwiTiJdLFsxLDAsIkcoRihNKSkiXSxbMSwxLCJHKEYoTikpIl0sWzMsMCwiTSJdLFszLDEsIk4iXSxbNCwwLCJHKEYoTSkpIl0sWzQsMSwiRyhGKE4pKSJdLFsxLDMsInVfTiJdLFswLDIsInVfTSJdLFswLDEsImYiLDJdLFsyLDMsIkcoZicpIl0sWzQsNSwiZiIsMl0sWzQsNiwidV9NIl0sWzUsNywidV9OIl0sWzYsNywiRyhGKGYpKSJdXQ==
+\[\begin{tikzcd}
+	M & {G(F(M))} && M & {G(F(M))} \\
+	N & {G(F(N))} && N & {G(F(N))}
+	\arrow["{u_N}", from=2-1, to=2-2]
+	\arrow["{u_M}", from=1-1, to=1-2]
+	\arrow["f"', from=1-1, to=2-1]
+	\arrow["{G(f')}", from=1-2, to=2-2]
+	\arrow["f"', from=1-4, to=2-4]
+	\arrow["{u_M}", from=1-4, to=1-5]
+	\arrow["{u_N}", from=2-4, to=2-5]
+	\arrow["{G(F(f))}", from=1-5, to=2-5]
+\end{tikzcd}\]
+
+But setting $f=u_N^{-1}\circ G(f')\circ u_M$ we have $G(F(f))=G(f')$, but since  $G$ is faithful we have  $F(f)=f'$.
+
+\fbox{$\Leftarrow$} We start with $M'\in \mathcal{C}$. Since $F$ is full we have  $M\in \mathcal{B}$ such that there exists an isomorphism $u_{M'}: M'\to F(M)$. Let $G(M')=M$.
+
+Let now a morphism $f':M'\to N'$. Defining $f=G(f')$ such that the following diagram commutes
+
+% https://q.uiver.app/#q=WzAsNCxbMCwwLCJNJyJdLFswLDEsIk4nIl0sWzEsMCwiRyhGKE0nKSkiXSxbMSwxLCJHKEYoTicpKSJdLFswLDEsImYnIiwyXSxbMCwyLCJ1X3tNJ30iXSxbMSwzLCJ1X3tOJ30iLDJdLFsyLDMsIkcoRihmJykpPUYoZikiXV0=
+\[\begin{tikzcd}
+	{M'} & {G(F(M'))} \\
+	{N'} & {G(F(N'))}
+	\arrow["{f'}"', from=1-1, to=2-1]
+	\arrow["{u_{M'}}", from=1-1, to=1-2]
+	\arrow["{u_{N'}}"', from=2-1, to=2-2]
+	\arrow["{G(F(f'))=F(f)}", from=1-2, to=2-2]
+\end{tikzcd}\]
+
+in such a way that $F(f)=u_{N'}\circ f'\circ u_{M'}^{-1}$ by construction. Since $F$ is fully faithful, there exists a unique morphism  $f:M\to N$ accomplishing the condition, and thus $G(f')=f$ is well defined.
+
+We prove now that $G$ behaves like a functor, that is $G(g'\circ f')=G(g')\circ G(f')$. Since $F$ is full, it is equivalent to show that $F\circ G$ is a functor. Considering the following diagram:
+% https://q.uiver.app/#q=WzAsNixbMSwxLCJOJyJdLFsyLDEsIkYoTikiXSxbMCwwLCJNJyJdLFswLDIsIlAnIl0sWzMsMCwiRihNKSJdLFszLDIsIkYoUCkiXSxbMiwwLCJmJyJdLFszLDUsInVfe1AnfSIsMl0sWzQsNSwiRihHKGcnXFxjaXJjIGYnKSkiXSxbMiw0LCJ1X3tNJ30iXSxbMiwzLCJnJ1xcY2lyYyBmJyIsMl0sWzMsMCwiZyciLDJdLFswLDEsInVfe04nfSIsMl0sWzEsNCwiRihHKGYnKSkiLDJdLFsxLDUsIkYoRyhnJykpIiwxXV0=
+\[\begin{tikzcd}
+	{M'} &&& {F(M)} \\
+	& {N'} & {F(N)} \\
+	{P'} &&& {F(P)}
+	\arrow["{f'}", from=1-1, to=2-2]
+	\arrow["{u_{P'}}"', from=3-1, to=3-4]
+	\arrow["{F(G(g'\circ f'))}", from=1-4, to=3-4]
+	\arrow["{u_{M'}}", from=1-1, to=1-4]
+	\arrow["{g'\circ f'}"', from=1-1, to=3-1]
+	\arrow["{g'}", from=2-2, to=3-1]
+	\arrow["{u_{N'}}"', from=2-2, to=2-3]
+	\arrow["{F(G(f'))}"', from=1-4, to=2-3]
+	\arrow["{F(G(g'))}"', from=2-3, to=3-4]
+\end{tikzcd}\]
+it can be deduced the functorial nature of $F\circ G$ and, thus, of $G$.
+
+The last thing we have to do is the construction of the functorial isomorphisms of $F\circ G$ and $G\circ F$. But considering the first diagram of the exercise, te goal now is to construct the isomorphisms $u_M$ and  $u_N$ for the diagram to commute. But, since $F$ is full the only thing to check is 
+ \[
+F(G(F(f)))\circ F(u_{M}) = F(u_{M})\circ F(f)
+\] 
+which is true by definition of $F(f)$.
 
 \prob{4}{
 \textit{Pullbacks in the category of abelian groups:} Let $A$ and  $B$ be abelian groups together with homomorphisms $f:A\to S$ and $g:B\to S$. Prove that 
@@ -158,8 +232,12 @@ Now we construct $h$ from  $h_A$ and  $h_B$. Note that, for the two triangular d
   \pi_B(h(c))=h_B(c)
 \end{cases} \ \forall c\in C \quad \Rightarrow \quad h = (h_A, h_B)
 \]
-and the $h$ is unique, concluding the proof.
-
+and the $h$ is unique. We also note that the resulting set $U$ has an abelian group strucutre, since it is close under the operation, every element has an inverse and is commutative
+\begin{align*}
+(a_1, b_1), (a_2, b_2)\in  A\times _SB \Rightarrow f(a_1)=g(b_1), f(a_2)=g(b_2)\Rightarrow f(a_1+a_2)=g(b_1+b_2) \\
+(a, b) \in A\times _SB \Rightarrow f(a)=g(b)\Rightarrow f(a^{-1})=g(b^{-1})\Rightarrow (a, b)^{-1}:=(a^{-1}, b^{-1})\in A\times _SB
+\end{align*}
+concluding the proof.
 
 \prob{5}{
 \textit{Pushouts in the category of abelian groups:} Let $A$ and  $B$ be abelian groups together with homomorphisms $f:S\to A$ and $g:S\to B$. Prove that 
@@ -206,7 +284,9 @@ Now we construct the morphism $h$ through  $h_A$ and  $h_B$. We construct it in 
 	h([(0,b)])=h_B(b)
   \end{cases} \Rightarrow h([(a,b)])=h([(a,0)]+[(0,b)])=h([(a,0)])+h([(0,b)]) = h_A(a)+h_B(b)
 \] 
-and clearly this is well defined and unique as morphism in the category of abelian groups, so the other triangular diagrams commute as well and we conclude with the proof.
+and clearly this is well defined and unique as morphism in the category of abelian groups, so the other triangular diagrams commute as well.
+
+Finally we check that $U$ is, in fact, an abelian group. Obviously is closed, has an inverse and is commutative by inheritance of $A$ and  $B$, so it is abelian.
 
 \prob{6}{\textit{Inverse limits in the category of sets / groups / abelian groups / modules}: Let $(\{A_i\}, \{f_{ji}\})$ be an inverse system over a preordered set $I$. Prove that
   \[
@@ -232,6 +312,12 @@ Let $U=\{(a_i)\in \prod A_i | f_{ji}(a_j)=a_i \ i\le j\}$. We will prove that th
 We can easily check the commutativity of the right part of the diagram because $f_{ji}\circ \lambda_j((a_k))=f_{ji}(a_j)=a_i = \lambda_i((a_k))$.
 
 We now prove that the morphism $h$ is unique.  $h$ must be of the form  $h(c)=(h_k(c))$, but, since the upper and lower part of the diagram must commute, we have $\lambda_i\circ h(c)=f_i(c)\Rightarrow h_i=f_i$, so the morphism we are looking form is $h=(h_k)$, and is unique.
+
+Finally we must prove that the structure of $U$ is the same than the structure in  $A_i$. For sets is trivial. For groups 
+\begin{align*}
+   (a_i), (b_i)\in U \Rightarrow f_{ji}(a_j)=a_i, f_{ji}(b_j)=b_i \Rightarrow f_{ji}(a_j+b_j)=a_i+b_i \Rightarrow (a_i)+(b_i)\in U\\
+   (a_i)\in U \Rightarrow f_{ji}(a_j)=a_i \Rightarrow f_{ji}(a_j^{-1}) = a_i^{-1} \Rightarrow (a_i)^{-1}\in U
+\end{align*}
 
 
 \prob{7}{ \textit{Direct limits in the category of sets / groups / abelian groups / modules / rings with unit}: Let $(\{A_i\}, \{f_ij\})$ be a direct system over a directed set  $I$. Prove that
@@ -303,9 +389,24 @@ We draw our commutative diagram. For being abelian the morphism $\overline{g}$ m
 
 \fbox{$\Rightarrow$} If $f$ is mono, that means  $f\circ k =f\circ l \Rightarrow k=l$. Let $k = i, l = 0$, then $0=f\circ i=f\circ 0\Rightarrow i=0$. Since there exists a unique morphism $\overline{g}:C\to \ker f$, then $\ker f$ is the unique terminal element of the abelian category $0$.
 
+\fbox{$\Leftarrow$}
+\[
+  (f\circ g = f\circ h \Rightarrow f\circ (g-h) ) \quad \iff \quad (f\circ (g-h)=0 \Rightarrow g-h=0 ) \quad \iff \quad (f\circ k =0 \Rightarrow k=0)
+\] 
+
+So proving that $f$ is mono is the same as proving that $f\circ g = 0 \Rightarrow g=0$. But if $\ker f = 0$, that means the morphism  $i=0$ is the zero morphism, and since the category is abelian  $\ \forall g:C\to A$ such that $f\circ g=0$ there exists a $\overline{g}$ such that $i\circ \overline{g}=g$. But since $i=0 \Rightarrow g=0$ proving $f\circ g =0 \Rightarrow g=0$ and then $f$ is mono.
+
+
 \textbf{(b)}
 
 \fbox{$\Rightarrow$} If $f$ is mono, that means  $k\circ f =l\circ f \Rightarrow k=l$. Let $k = \pi, l = 0$, then $0=\pi\circ f=0\circ f\Rightarrow \pi=0$. Since there exists a unique morphism $\overline{h}:\coker f\to D$, then $\coker f$ is the unique initial element of the abelian category $0$.
+
+\fbox{$\Leftarrow$} it is completely analogous to (a).
+
+\textbf{(e)} 
+
+Since $\tau $ is epi, $j$ is mono and  $\overline{f}$ is iso, then $\overline{f}\circ \tau $ is epi, and following the diagram $f = j\circ \overline{f} \circ \tau  = j\circ (\overline{f}\circ \tau)$, which is the desired composition.
+
 
 \end{document}
 

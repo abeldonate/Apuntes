@@ -52,6 +52,10 @@
 \center
 \includegraphics[width=0.9\columnwidth]{images/#1}
 }
+
+\DeclareMathOperator{\Hom}{\mathnormal{Hom}}
+\DeclareMathOperator{\ord}{\mathnormal{ord}}
+
 \pdfsuppresswarningpagegroup=1
 
 \title{Definitions, results and examples}
@@ -64,6 +68,18 @@
 \newpage
 
 \section{Rings}
+\begin{definition}[Krull dimension] Supremum of the lengths of all chains of prime ideals. \[
+\mathfrak{p}_0 \subsetneq \mathfrak{p}_1 \subsetneq \ldots \subsetneq \mathfrak{p}_n  \Rightarrow \dim R = n
+\] 
+
+\end{definition}
+
+\begin{definition}[Regular ring] The minimal number of generators of its maximal ideal is the Krull dimension.
+
+\end{definition}
+
+\begin{definition}[Simple ring] Ring with no two-sided ideal besides zero and itself.
+\end{definition}
 
 
 \section{Modules}
@@ -128,11 +144,64 @@ In general we have the following implications of modules
 
 \section{D-modules}
 
+\begin{definition}[Ring / Module/ Weyl algebra] $A_n = \{\mathbb{C} \langle x_1, \ldots, x_n, \partial_1, \ldots, \partial_n \rangle \}$ that has the structure of a ring a module or an algebra.
+
+\end{definition}
+
+\begin{proposition} $A_n$ is:
+  \begin{itemize}[topsep=-6pt, itemsep=0pt]
+    \item A simple ring
+	\item Noetherian
+  \end{itemize}
+\end{proposition}
+
+\begin{proposition}
+  Set of monomials $\mathcal{B}= \{x^\alpha \partial^\beta: \alpha , \beta \in \mathbb{N}^n\}$  is a basis of $A_n$. Then we can write every element as
+  \[
+	P = \sum_{\alpha , \beta } p_{\alpha \beta }x^\alpha \partial^\beta = \sum_{\beta } p_\beta (x) \partial^\beta 
+  \] 
+\end{proposition}
+
+We denote $|\beta |=\sum \beta _i$.
+
+\begin{definition}[Order and total order].
+	\[
+  \begin{tabular}{ccc}
+	\text{Order} & \ord(P) = \max \beta  & \sigma (P) = \sum_{|\beta| = \ord(P) }p_{\beta }(x) \xi ^\beta \\
+	\text{Total Order} & \ord^T = \max |\alpha +\beta | & \sigma (P)=\sum _{|\alpha +\beta |=\ord^T(P)} p_{\alpha \beta } x^\alpha \xi^\beta  
+  \end{tabular}
+	\] 
+\end{definition}
+
+\begin{definition}[Filtrations] Respectively Order and Total order filtrations:
+  \[
+	F_k(A_n)=\{P\in A_n : \ord(P)\le k\} , \qquad
+	B_k(A_n)=\{P\in A_n : \ord^T(P)\le k\}
+  \] 
+\end{definition}
+
 \section{F-modules}
 For all this section $R$ is a commutative Noetherian ring with prime characteristic $p$.
 \begin{definition}[Frobenius endomorphism] homomorphism $f:R\to R $ where $f(r)=r^p$
-
 \end{definition}
+
+\begin{definition}[Frobenius module] $M^{(e)}$ is the $R$-module $M$ endowed with the action  $r\cdot m= f^{e}(r)m$. We denote $M':=M^{(1)}$.
+\end{definition}
+
+\begin{definition}[Frobenius functor] The application $F$ that sends $M\to R'\otimes _RM$ and $\varphi :M\to N$ to $Id\otimes \varphi : R'\otimes _R M \to R'\otimes _RN $ is a functor.
+\end{definition}
+
+\begin{definition}[Frobenius powers] If $I=(x_1, \ldots, x_n)$ is an ideal or $R$. We define
+   \[
+	 I^{[p^e]}:= (x_1^{p^e}, \ldots, x_n^{p^e})R
+  \] 
+\end{definition}
+
+\begin{proposition} $F^e(R / I)\cong  R / I^{[p^e]}$ 
+\end{proposition}
+
+
+
 
 
 
