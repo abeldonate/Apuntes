@@ -92,18 +92,65 @@ Now let $h, k \in \Hom_{rings}(\mathbb{Z}, A)$ such that  $h\circ i = k\circ i$.
 Suppose $i$ is an isomorphism. Thus, it must exists  $g:\mathbb{Q}\to \mathbb{Z}$ such that $i\circ g = Id_\mathbb{Q}$ and $g\circ i = Id_\mathbb{Z}$. Let $a\in \mathbb{Z}$ such that $g(\frac{1}{2})=a$. Then $i\circ g (\frac{1}{2}) = i(a)=a \neq \frac{1}{2}$, so $i\circ g \neq Id_{\mathbb{Q}}$, concluding $f$ is not an isomorphism.
 
 
-\prob{2}{Show that in the category of finite dimensional vector spaces over a field $\mathbb{K}$ we have a natural equivalente of functors between the identity $Id$ and the bidual  $(-)^{**}$}
+\prob{2}{Show that in the category of finite dimensional vector spaces over a field $\mathbb{K}$ we have a natural equivalence of functors between the identity $Id$ and the bidual  $(-)^{**}$}
 
-We consider the map $\tau :X\to X^{* *}$ that sends $v \mapsto \text{eval}(v)$, where eval$(v)\in \Hom(\Hom(X, \mathbb{R}), \mathbb{R})$ is the evaluation in $v$ morphism.
+We must prove that the following diagram commutes:
 
 % https://q.uiver.app/#q=WzAsNCxbMCwwLCJYIl0sWzEsMCwiWF57Kip9Il0sWzAsMSwiWSJdLFsxLDEsIlleeyp9Il0sWzAsMSwiXFx0YXUiXSxbMiwzLCJcXHRhdSJdLFswLDIsImYiLDJdLFsxLDMsIkcoZikiXV0=
 \[\begin{tikzcd}
 	X & {X^{**}} \\
 	Y & {Y^{**}}
-	\arrow["\tau", from=1-1, to=1-2]
-	\arrow["\tau", from=2-1, to=2-2]
+	\arrow["\tau_X", from=1-1, to=1-2]
+	\arrow["\tau_Y", from=2-1, to=2-2]
 	\arrow["f"', from=1-1, to=2-1]
-	\arrow["{G(f)}", from=1-2, to=2-2]
+	\arrow["{G(f)=f^{* *}}", from=1-2, to=2-2]
+\end{tikzcd}\]
+
+We will see that for the map $\tau _X(v)(w) = w(v)$ it holds. This is also call evaluation morphism $\tau_X (v): w \mapsto w(v)$, that maps each element $v\in X$ into the evaluation in itself of the element in the dual space $w\in X^{*}$.
+
+The morphisms $f, f^*$ and $f^{* *}$ are given by
+
+\begin{minipage}{0.3\textwidth}
+\begin{align*}
+f:X&\to  Y\\
+v&\mapsto f(v)
+\end{align*}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+\begin{align*}
+f^*:Y^*&\to  X^*\\
+w&\mapsto f^*(w)=w\circ f
+\end{align*}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+\begin{align*}
+  f^{* *}:X ^{* *}&\to  Y ^{* *} \\
+  v&\mapsto f^{* *}(v)=v\circ f^*
+\end{align*}
+\end{minipage}
+
+Now we see that the diagram commutes taking both paths. For $v\in X, w\in Y^*$
+\begin{align*}
+  &(\tau_Y\circ f)(v)(w) = \tau _Y(f(v))(w) = w(f(v)) \\
+  &(f ^{* *} \circ \tau _X ) (v) (w) = \tau _X (v)\circ f^*(w) = \tau _X (v) (w\circ f) = w(f(v))
+\end{align*}
+proving that the diagram commutes. Thus, we have a natural equivalence.
+
+
+
+
+\begin{comment}
+  
+We consider the map $\tau_X :X\to X^{* *}$ that sends $v \mapsto \text{eval}(v)$, where eval$(v)\in \Hom(\Hom(X, \mathbb{R}), \mathbb{R})$ is the evaluation in $v$ morphism.
+
+% https://q.uiver.app/#q=WzAsNCxbMCwwLCJYIl0sWzEsMCwiWF57Kip9Il0sWzAsMSwiWSJdLFsxLDEsIlleeyp9Il0sWzAsMSwiXFx0YXUiXSxbMiwzLCJcXHRhdSJdLFswLDIsImYiLDJdLFsxLDMsIkcoZikiXV0=
+\[\begin{tikzcd}
+	X & {X^{**}} \\
+	Y & {Y^{**}}
+	\arrow["\tau_X", from=1-1, to=1-2]
+	\arrow["\tau_Y", from=2-1, to=2-2]
+	\arrow["f"', from=1-1, to=2-1]
+	\arrow["{G(f)=f^{* *}}", from=1-2, to=2-2]
 \end{tikzcd}\]
 
 Now we have to see that the diagram commutes. We will see that the construction $G(f):\text{eval}(v)\mapsto \text{eval}(f(v))$ works. If we pick $v\in X$, then
@@ -111,7 +158,7 @@ Now we have to see that the diagram commutes. We will see that the construction 
 G(f)(\tau (v))= \text{eval}(f(v)) = \text{eval}(w) = \tau (f(v)) \quad \Rightarrow \tau \circ f = G(f)\circ \tau 
 \] 
 Proving the commutativity of the diagram. Now we left to proof that $\tau $ is an isomorphism $\ \forall X$, but this is immediate since we can construct the inverse $\tau ^{-1} : \text{eval}(v)\to v$ provided every element of $X^{* *}$ is of the form  $\text{eval}(v)$ (recall we are working in a finite dimensional vector space).
-
+\end{comment}
 
 \prob{3}{Show that two categories $\mathcal{B}$ and $\mathcal{C}$ are naturally equivalent if and only if there exists a fully faithful and essentially surjective covariant functor $F:\mathcal{B}\to \mathcal{C}$.
 }

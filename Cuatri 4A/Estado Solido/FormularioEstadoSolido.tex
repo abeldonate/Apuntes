@@ -327,12 +327,69 @@ La capacidad calorífica $C_v = \frac{\partial \langle E \rangle }{\partial T}$ 
   \item Si $T\ll T_D \quad \Rightarrow \quad \langle E \rangle \sim  \frac{3\pi^4Nk_BT^4}{5T_D^3}\quad\Rightarrow \quad C_v \sim  \frac{12\pi^4}{5}Nk_B \left( \frac{T}{T_D} \right)^3 $
 \end{itemize}
 
+\section{No se, cuanticocosas}
+\subsection{Gas de electrones libre}
+\begin{align*}
+\overline{k}=\frac{2\pi}{L}(n_1, n_2, n_3), \quad E(\overline{k})=\frac{\hbar ^2}{2m}|\overline{k}|^2, \quad n_F(x)=\frac{1}{e^x+1}\\
+N = 2\sum_{\overline{k}} n_F(\beta(E(\overline{k})- \mu)) = 2 \frac{V}{(2\pi)^3}\int d \overline{k}n_F(\beta (E( \overline{k})-\mu))
+\end{align*}
+
+Fermi energy $(E_F = \mu (T\to 0))$
+\begin{align*}
+&E_F = \frac{\hbar ^2k_F^2}{2m}=k_BT_F, \quad p_F = \hbar k_F \\
+&N = 2 \frac{V}{(2\pi)^3}\int _{|k|<k_F} dk \Rightarrow k_F = (3\pi ^2n)^{\frac{1}{3}}, \quad E_F = \frac{\hbar ^2(3\pi ^2n)^{\frac{2}{3}}}{2m}
+\end{align*}
+
+\subsection{Capacidad calorífica}
+$g$ densidad de estados / $V$
+\begin{align*}
+  &g(\varepsilon ) = \frac{3n}{2(E_F)^{\frac{3}{2}}}\varepsilon ^{\frac{1}{2}} = \frac{(2m)^{\frac{3}{2}}}{2\pi ^2\hbar ^3}\varepsilon ^{\frac{1}{2}} , \quad k = \sqrt{\frac{2\varepsilon m}{\hbar ^2}}  \\
+  & N = \int_0^\infty d\varepsilon g(\varepsilon )n_F(\beta (\varepsilon -\mu )), \quad 
+  E_T = \int_0^\infty d\varepsilon \varepsilon g(\varepsilon )n_F(\beta (\varepsilon -\mu ))\\
+  & C = \frac{\pi ^2}{3}\left( \frac{3Nk_B}{2} \right) \left( \frac{T}{T_F} \right) 
+\end{align*}
+
+Teorema de Bloch
+\begin{align*}
+  \psi _{\overline{k}} (\overline{r}) = u_{\overline{k}}(\overline{r})e^{i \overline{k}\cdot \overline{r}}, \quad E(\overline{k}) = E(\overline{k}+\overline{G})
+\end{align*}
+Electrones casi-libres
+\begin{align*}
+  &\psi _+ \sim \cos (\pi \frac{x}{a}), \quad \psi _- \sim  \sin(\pi \frac{x}{a})\\
+  &E^{\pm} = \frac{1}{2}(E^0_{\overline{k}-\overline{G}} + E^0_{\overline{k}})\pm \sqrt{\frac{1}{4}(E^0_{{\overline{k}}-\overline{G}}-E^0_{\overline{k}}) + |V_{\overline{G}}|^2} 
+\end{align*}
+
+Enlace fuerte, celda primitiva cúbica
+\begin{align*}
+  &E(\overline{k}) \approx E_i-A-2B (\cos k_xa + \cos k_ya + \cos k_za)\\
+  &A = -\langle \varphi _{i, n} | v | \varphi _{i,n} \rangle , \quad 
+  B = -\langle \varphi _{i, m} | v | \varphi _{i,n} \rangle\\
+  &\overline{v} = \nabla _{\overline{k}} \omega (\overline{k}) = \frac{1}{\hbar}\nabla _{\overline{k}}E(\overline{k})
+\end{align*}
+
+Carga de un campo $\overline{\mathcal{E}}$
+\begin{align*}
+  \dot{v}_i = \frac{1}{\hbar ^2}\sum_{j} \frac{\partial^2E}{\partial k_i\partial k_j} (-e\mathcal{E}_j), \quad \left( \frac{1}{m^*} \right)_{ij} = \frac{1}{\hbar ^2} \frac{\partial ^2E(\overline{k})}{\partial k_i\partial k_j}
+\end{align*}
+
+Caso totalmente degenerado
+\begin{align*}
+  m^* = \frac{\hbar ^2}{\left( \frac{d^2E}{dk^2} \right) }, \quad E(\overline{k}) = E_0 + \frac{\hbar^2}{2m^*}|k|^2, \quad \sigma \simeq \frac{e^2\tau (E_F)n}{m^*}
+\end{align*}
+
+
+\section{Semiconductores}
+
+
+
+
 \section{Mates}
 \begin{align*}
 &\sin^2 \left(\frac{x}{2}\right) = \frac{1-\cos a}{2}\\
-&\int_0^\infty \frac{x}{e^x-1}dx = \frac{\pi^2}{6} \\
-&\int_0^\infty \frac{x^2}{e^x-1}dx = 2\zeta(3)\approx 2.40411 \\
-&\int_0^\infty \frac{x^3}{e^x-1}dx = \frac{\pi^4}{15} 
+&\int_0^\infty \frac{1}{e^x-1}dx = +\infty, \quad \int_0^\infty \frac{1}{e^x+1}dx = \ln(2)\\
+&\int_0^\infty \frac{x}{e^x-1}dx = \frac{\pi^2}{6}, \quad \int_0^\infty \frac{x}{e^x+1}dx = \frac{\pi^2}{12} \\
+&\int_0^\infty \frac{x^2}{e^x-1}dx = 2\zeta(3), \quad \int_0^\infty \frac{x^2}{e^x+1}dx = \frac{3}{2}\zeta(3)\\
+&\int_0^\infty \frac{x^3}{e^x-1}dx = \frac{\pi^4}{15}, \quad \int_0^\infty \frac{x^3}{e^x+1}dx = \frac{7\pi^4}{120} 
 \end{align*}
 
 \end{multicols}
