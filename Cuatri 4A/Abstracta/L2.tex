@@ -155,5 +155,71 @@ That means our morphism $f_C$ is uniquely determined by the choice of  $C\in \ma
 \[0=f(\overline{0})=f(\overline{m})=mf(\overline{1})=mr \Rightarrow r=0\]
 So the only possibility is the morphism $0$ and  $\Hom_{\mathbb{Z}}(\mathbb{Z} / (m), \mathbb{Q})=0$
 
+\prob{10}{
+Let $A$ be a ring,  $M$ an  $A-$module and  $I\subseteq A$ an ideal. Prove 
+\[
+A / I \otimes_A A / J \cong A / (I+J)
+\] 
+}
+
+\prob{11}{Let $A$ be a ring and $I, J\subseteq A$ ideals. Prove
+  \[
+  A /I \otimes _A A / J \cong A / (I+J)
+  \] 
+}
+
+We construct the following maps and see that they are well-defined
+
+\begin{minipage}{0.5\textwidth}
+\begin{align*}
+  f: A / I \otimes _A A / J &\to A / (I+J)\\
+  (x+I)\otimes _A (y+J) &\mapsto xy + (I+J)
+\end{align*}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{align*}
+  g: A / (I+J) &\to  A / I \otimes _A A / J\\ 
+  z+(I+J) &\mapsto (z+I)\otimes _A (1+J) 
+\end{align*}
+\end{minipage}
+
+if we pick $x'\sim x$ and $y'\sim y $ that means $x' = x+i, y'=y+j$ with  $i\in I, j\in J$ and we have 
+\[
+f((x'+I)\otimes (y'+J)) = x'y' + (I+J) = xy + iy'+x'j+ij +I+J = xy + (I+J) = f((x+I)\otimes (y+J))
+\]
+so $f$ is well-defined.
+
+If we pick $z'\sim z$  that means $z'=z+i+j$ with  $i\in I, j\in J$ and we have
+\[
+g(z'+(I+J))= (z'+I)\otimes (1+J) = (z+i+j )\otimes (1+J)
+\] 
+
+\prob{12}{
+Let $A$ be a ring, $M, N$ finitely generated $A-$ modules. Prove:
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item $M\otimes _A N$ is a finitely generated $A-$module 
+  \item If $A$ is Noetherian, then $\Hom _A(M, N)$ is a finitely generated $A-$module
+\end{enumerate}
+\vspace{1em}
+}
+
+\prob{13}{
+Let $A$ be a local ring,  $M, N$ finitely generated  $A-$modules. Prove that
+\[
+  M\otimes _A N = 0 \iff (M=0 \quad \text{ó} \quad N=0)
+\] 
+}
+
+\prob{14}{
+Let $M$ be a finitely generated $A-$module and let  $S\subseteq A$ be a multiplicatively closed set. Prove that 
+\[
+S^{-1}M=0 \iff \ \exists s\in S : sM=0
+\] 
+}
+
+\prob{15}{
+Let $S\subseteq  A$ be a multiplicatively closed set. Prove that the localization functor $S^{-1}-$ is exact.
+}
+
 
 \end{document}
