@@ -158,9 +158,51 @@ So the only possibility is the morphism $0$ and  $\Hom_{\mathbb{Z}}(\mathbb{Z} /
 \prob{10}{
 Let $A$ be a ring,  $M$ an  $A-$module and  $I\subseteq A$ an ideal. Prove 
 \[
-A / I \otimes_A A / J \cong A / (I+J)
+  M / IM \cong A / I \otimes _A M
 \] 
 }
+
+
+We construct the following maps and see that they are well-defined
+
+\begin{minipage}{0.5\textwidth}
+\begin{align*}
+  f: M / IM &\to  A / I \otimes _AM \\
+  x+IM &\mapsto  (1+I)\otimes_A x
+\end{align*}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{align*}
+  g: A / I\otimes _A M &\to M / IM\\
+  (a+I) \otimes _A y &\mapsto ay+IM
+\end{align*}
+\end{minipage}
+
+If we pick $x'\sim_{IM} x \Rightarrow x'= x+n$ for $n\in IM$ and we have
+\[
+f(x'+IM) = (1+I)\otimes_A (x+n)) = (1+I)\otimes _A x + (1+I) \otimes _A n = (1+I) \otimes _A x = f(x+I)
+\] 
+Since the second term of the sum vanishes as $n= \sum i_km_k$ for $i_k\in I, m_k\in M$, so
+\[
+  (1+I)\otimes _A \sum i_km_k = \sum (i_k+I) \otimes _A m_k = \sum (0+I) \otimes _A m_k = 0
+\] 
+Therefore the application $f$ is well-defined.
+
+If we pick $a'\sim_A a \Rightarrow a'= a+i$ for $i\in I$ and we have
+\[
+g((a'+I)\otimes _A y) = (a+i)y +IM = ay + iy + IM = ay + IM = g((a+I)\otimes _A y)
+\] 
+proving that the application is well defined.
+
+It is trivial to check that $f$ and  $g$ satisfy all the necessary conditions in order to be morphisms of modules, since only quotients, multiplications and tensor products are involved.
+
+Finally we see $f\circ g = Id$ and $g\circ f = Id$:
+\begin{align*}
+& f(g((a+I)\otimes _Ay)) = f(ay+IM) = (1+I)\otimes _A ay = (a+I)\otimes _A y &\Rightarrow \quad f\circ g = Id\\
+& g(f(x+IM)) = g((1+I)\otimes _A x) = x+IM &\Rightarrow \quad g\circ f = Id
+\end{align*}
+finishing the proof.
+
 
 \prob{11}{Let $A$ be a ring and $I, J\subseteq A$ ideals. Prove
   \[
@@ -183,16 +225,28 @@ We construct the following maps and see that they are well-defined
 \end{align*}
 \end{minipage}
 
-if we pick $x'\sim x$ and $y'\sim y $ that means $x' = x+i, y'=y+j$ with  $i\in I, j\in J$ and we have 
+If we pick $x'\sim x$ and $y'\sim y $ that means $x' = x+i, y'=y+j$ with  $i\in I, j\in J$ and we have 
 \[
 f((x'+I)\otimes (y'+J)) = x'y' + (I+J) = xy + iy'+x'j+ij +I+J = xy + (I+J) = f((x+I)\otimes (y+J))
 \]
 so $f$ is well-defined.
 
 If we pick $z'\sim z$  that means $z'=z+i+j$ with  $i\in I, j\in J$ and we have
-\[
-g(z'+(I+J))= (z'+I)\otimes (1+J) = (z+i+j )\otimes (1+J)
-\] 
+\begin{align*}
+&g(z'+(I+J))= (z'+I)\otimes (1+J) = (z+i+j +I)\otimes (1+J) = z\otimes_A (1+J) + (i+I) \otimes (1+J) +\\
+&+ (j+I) \otimes_A (1+J) = (z+I)\otimes _A (1+J) + (0+I)\otimes _A (1+J) + (1+I)\otimes _A (0+J)  = g(z+(I+J))
+\end{align*}
+
+It is trivial to check that $f$ and  $g$ satisfy all the necessary conditions in order to be morphisms of modules, since only quotients, multiplications and tensor products are involved.
+
+Finally we see $f\circ g = Id$ and $g\circ f = Id$:
+\begin{align*}
+  &f(g(z+(I+J))) = f((z+I)\otimes _A (1+J)) = z+(I+J) & \Rightarrow \quad f\circ g = Id\\
+  &g(f((x+I)\otimes _A (y+J))) = g(xy + (I+J)) = (xy+I) \otimes (1+J) = (x+I) \otimes _A (y+J)& \Rightarrow \quad g\circ f = Id
+\end{align*}
+finishing the proof.
+
+
 
 \prob{12}{
 Let $A$ be a ring, $M, N$ finitely generated $A-$ modules. Prove:
