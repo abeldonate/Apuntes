@@ -45,6 +45,7 @@
 
 \DeclareMathOperator{\Hom}{Hom}
 \newcommand{\prob}[2]{\fbox{\parbox{\textwidth}{\textbf{#1} #2}}}
+\newcommand{\com}[1]{\textcolor{red}{#1}}
 \newcommand{\incfig}[1]{%
 \center
 \def\svgwidth{0.9\columnwidth}
@@ -72,11 +73,11 @@ First we prove a characterization of the elements of $J$, the Jacobson radical: 
 
 (prove it)
 
-We suppose $M\neq 0$. Let  $x_1, x_2,\ldots,x_n$ be a minimal set of generators of the module  $M$. Because  $M=IM$ we can express the element  $x_1= a_1x_1 + a_2x_2 + \cdots + a_nx_n$, where $a_i \in I$. Then let $b$ the inverse of $1-a_1$ (that we have previously seen that exists).
+We suppose $M\neq 0$. Let  $x_1, x_2,\ldots,x_n$ be a minimal set of generators of the module  $M$. Because  $M=IM$ we can express the element  $x_1= a_1x_1 + a_2x_2 + \cdots + a_nx_n$, where $a_i \in I$. Then let $b$ the inverse of $1-a_1$ (whose existence has been previously proved).
 \[
-  (1-a_1)x_1 = a_2x_2+\cdots + a_nx_n = 0 \Rightarrow b(a_1-1)x_1= x_1 = ba_2x_2 + \cdots ba_nx_n 
+  (1-a_1)x_1 = a_2x_2+\cdots + a_nx_n = 0 \Rightarrow b(a_1-1)x_1= x_1 = ba_2x_2 + \cdots + ba_nx_n 
 \]
-entering in contradiction with $\{x_i\}$ being a minimal set unless  $x_i=0$, thus  $M=0$
+entering in contradiction with $\{x_i\}$ being a minimal set unless  $x_i=0 \ \forall i$, thus  $M=0$.
 
 
 (rehacer)
@@ -90,6 +91,27 @@ entering in contradiction with $\{x_i\}$ being a minimal set unless  $x_i=0$, th
   \end{enumerate}
   \vspace{1em}
 }
+
+\textbf{(1)} Using the exercise 10 we have  $0=A / I \otimes _A M \cong M / IM$, so by Nakayama's lemma since $IM=M \Rightarrow M = 0$.
+
+\textbf{(2)} We start by considering the following equality in the quotient module
+\[
+I (M / N) = \sum a_i(m_i+N) = \sum a_im_i + N = \frac{IM+N}{N} = \frac{M}{N}
+\] 
+Therefore, since $I (M /N) = M / N$, by Nakayama's lemma we have  $M / N = 0 \Rightarrow M=N$ as desired.
+
+\textbf{(3)} We consider the following surjective map induced by $f:N\to M$ such that $f(n)=m$:
+% https://q.uiver.app/#q=WzAsNixbMCwwLCJOIl0sWzEsMCwiTi9JTiJdLFsyLDAsIk0vSU0iXSxbMCwxLCJuIl0sWzEsMSwibitJTiJdLFsyLDEsImYobikrSU0iXSxbMCwxLCJcXHBpIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzEsMiwiXFxiYXJ7Zn0iLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMyw0LCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtYXBzIHRvIn19fV0sWzQsNSwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dXQ==
+\[\begin{tikzcd}
+	N & {N/IN} & {M/IM} \\
+	n & {n+IN} & {f(n)+IM}
+	\arrow["\pi", two heads, from=1-1, to=1-2]
+	\arrow["{\bar{f}}", two heads, from=1-2, to=1-3]
+	\arrow[maps to, from=2-1, to=2-2]
+	\arrow[maps to, from=2-2, to=2-3]
+\end{tikzcd}\]
+In order of $\overline{f}$ to be surjective it must be accomplished $f(N) +IM= M$. By the last exercice if  $M=IM+f(N) \Rightarrow M=f(N)$, since $f(N)$ is a submodule of $M$ so $f$ is surjective.
+
 
 \prob{3}{Let $A$ be a non-local ring. Prove that the  $A-$module  $A$ has two minimal system of generators with a different number of generators.
 }
@@ -137,6 +159,7 @@ We search for an ascending chain of ideals $I_1\subseteq I_2\subseteq \ldots$ in
 \end{enumerate}
 \vspace{1em}
 }
+
 \textbf{(1)} We look for an element in $\Hom_{\mathbb{Z}}(\mathbb{Q}, \mathbb{Z})$. Let $f(\frac{1}{n})=x_n$ for $n$ a nonzero integer and $f(1)=C \in \mathbb{Z}$. Then we have
 \[
 C=f(1) = f\left(\frac{n}{n}\right) = nf\left(\frac{1}{n}\right) = nx_n.  \quad \Rightarrow \quad
@@ -165,6 +188,7 @@ Let $A$ be a ring,  $M$ an  $A-$module and  $I\subseteq A$ an ideal. Prove
 
 We construct the following maps and see that they are well-defined
 
+\vspace{-1.5em}
 \begin{minipage}{0.5\textwidth}
 \begin{align*}
   f: M / IM &\to  A / I \otimes _AM \\
@@ -212,6 +236,7 @@ finishing the proof.
 
 We construct the following maps and see that they are well-defined
 
+\vspace{-1.5em}
 \begin{minipage}{0.5\textwidth}
 \begin{align*}
   f: A / I \otimes _A A / J &\to A / (I+J)\\
@@ -264,16 +289,75 @@ Let $A$ be a local ring,  $M, N$ finitely generated  $A-$modules. Prove that
 \] 
 }
 
+\fbox{$\Leftarrow$} Trivial
+
+\fbox{$\Rightarrow$} Let $k := A / \mathfrak{m}$ a field. We make use of the following facts:
+
+(1) $k \otimes _A M \cong M / \mathfrak{m}M$ (exercise 10 with $I=\mathfrak{m}$)
+
+(2) $k\otimes _A (M\otimes _AN) = \cong (k\otimes_A M)\otimes _k (k\otimes _AM)$. \com{proof this}
+
+We have the following implications
+\[
+M\otimes _AN = 0 \Rightarrow k\otimes _A(M\otimes_A N) = 0 \Rightarrow (k\otimes_A M)\otimes _k (k\otimes _A N)=0 \Rightarrow M / \mathfrak{m}M \otimes _k N / \mathfrak{m}M 
+\] 
+And since $M / \mathfrak{m}M$ and $N / \mathfrak{m}N$ are both finite vector spaces with dimension $m$ and  $n$ respectively, then the tensor product is the usual tensor product of vector spaces, with dimension $nm$, that only vanishes if  $M / \mathfrak{m}M$ or $N / \mathfrak{m}N$ is zero.
+
+Without loss of generality say $M / \mathfrak{m}M = 0$, meaning $\mathfrak{m}M = M$. Since $A$ is local, then it only has  $\mathfrak{m}$ as maximal ideal, and thus the Jacobson ideal is precisely $\mathfrak{m}$ and we can apply Nakayama's lemma, meaning $\mathfrak{m}M = M \Rightarrow M = 0$, finishing the proof.
+
 \prob{14}{
 Let $M$ be a finitely generated $A-$module and let  $S\subseteq A$ be a multiplicatively closed set. Prove that 
 \[
 S^{-1}M=0 \iff \ \exists s\in S : sM=0
 \] 
 }
+Suppose $M=<x_1, \ldots, x_n>$. We prove both implications.
+
+\fbox{$\Leftarrow$}
+Say $\ \exists s^*\in S$ such that $sM =0$. Then $\frac{m}{t}\sim \frac{m'}{t'} \iff \ \exists s\in S: smt'=sm't$. Setting $s=s^*$ we have zero in both sides, as  $sM=0$, concluding the only element is  $0$.
+
+\fbox{$\Rightarrow$} 
+Since the module $S^{-1}M=0$, then any fraction of the form $\frac{x_i}{1}\sim \frac{0}{1}$. From this fact for each  $x_i$ we can find an  $s_i$ such that  $s_ix_i=0$. Considering the element  $s^* = \prod_{i=1}^n s_i\in S$, we have that $s^*x_i = 0$, and thus, because every element of  $M$ can be expressed as the sum  $m = \sum_{i=1}^n a_ix_i$, then $s^*m = \sum _{i=1}^n a_is^*x_i = 0$, and $s^*M = 0$.
 
 \prob{15}{
-Let $S\subseteq  A$ be a multiplicatively closed set. Prove that the localization functor $S^{-1}-$ is exact.
+Let $S\subseteq  A$ be a multiplicatively closed set. Prove that the localization functor $S^{-1}(-)$ is exact.
 }
+
+Exactness means that for every short exact sequence, the sequence induced by the functor $S^{-1}(-)$ $f'(\frac{m}{s}):= \frac{f(m)}{s}$ is also exact.
+% https://q.uiver.app/#q=WzAsMTAsWzAsMCwiMCJdLFsxLDAsIk0nIl0sWzIsMCwiTSJdLFszLDAsIk0nJyJdLFs0LDAsIjAiXSxbMCwxLCIwIl0sWzEsMSwiU157LTF9TSciXSxbMiwxLCJTXnstMX1NIl0sWzMsMSwiU157LTF9TScnIl0sWzQsMSwiMCJdLFswLDFdLFsxLDIsImYiXSxbMiwzLCJnIl0sWzMsNF0sWzUsNl0sWzYsNywiZiciXSxbNyw4LCJnJyJdLFs4LDldXQ==
+\[\begin{tikzcd}
+	0 & {M'} & M & {M''} & 0 \\
+	0 & {S^{-1}M'} & {S^{-1}M} & {S^{-1}M''} & 0
+	\arrow[from=1-1, to=1-2]
+	\arrow["f", from=1-2, to=1-3]
+	\arrow["g", from=1-3, to=1-4]
+	\arrow[from=1-4, to=1-5]
+	\arrow[from=2-1, to=2-2]
+	\arrow["{f'}", from=2-2, to=2-3]
+	\arrow["{g'}", from=2-3, to=2-4]
+	\arrow[from=2-4, to=2-5]
+\end{tikzcd}\]
+This is, if $f$ is injective,  $g$ surjective and  $\im(f)=\ker (g)$, then $f'$ is injective,  $g'$ is surjective and  $\im(f')=\ker(g')$.
+
+\fbox{$f'$ injective} We prove that $\ker(f')=0$. Indeed  
+\[
+f'(\frac{m}{s})=0 \iff \frac{f(m)}{s} = 0 \iff \ \exists t\in S: tf(m) = 0
+\] 
+But since $f$ is an  $A-$module morphism and $t\in S\subseteq A$, then $0=tf(m)=f(tm)$, which means  $tm=0$ by injectivity of $f$. Thus  $\frac{m}{s}=\frac{0}{1}$ and the kernel is the zero module.
+
+\fbox{$g'$ surjective} Let $\frac{m''}{s}\in S^{-1}M''$, we want to prove the existence of $\frac{m}{s}\in M$ such that $g(\frac{m}{s}) = \frac{m''}{s}$. But this trivially holds setting $m$ such that  $g(m)=m''$, which is well-defined by surjectivity of the $g$. We check indeed  $g(\frac{m}{s}) = \frac{g(m)}{s} = \frac{m''}{s}$.
+
+
+\fbox{$\im(f')\subseteq \ker(g')$} We consider $f'(\frac{m}{s})= \frac{f(m)}{s} \in \im(f')$, then $g'(f'(\frac{m}{s}))= \frac{g(f(m))}{s}=\frac{0}{s}=\frac{0}{1}$.
+
+
+\fbox{$\ker(g')\subseteq \im(f')$} We will prove that if $g'(\frac{m}{s})=0$, then $ \frac{m}{s}$ is element of the image of $f'$.
+
+\[
+g'(\frac{m}{s})=\frac{0}{1} \Rightarrow \ \exists t\in S : tg(m)=g(tm) = 0 \Rightarrow \ \exists m': f(m') =tm 
+\]
+where the last condition arises from the exactness of the original sequence. Considering the element  $\frac{m'}{ts}\in S^{-1}M'$, we see that $f'(\frac{m'}{ts}) = \frac{f(m')}{ts}=\frac{tm}{ts} = \frac{m}{s}$ concluding the proof.
+
 
 
 \end{document}
