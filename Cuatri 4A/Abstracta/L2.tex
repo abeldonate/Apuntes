@@ -315,6 +315,18 @@ Let $A$ be a ring, $M, N$ finitely generated $A-$ modules. Prove:
 \] 
 Then $\{x_i\otimes _A y_j\}$ is a set of generators of $M \otimes _AN$.
 
+\textbf{(2)} Notice that since $A$ is Noetherian, every submodule of $M$ and  $N$ are finitely generated. Let $M \cong A^m /I, N \cong A^n / J$ , then clearly we have the isomorphism
+\begin{align*}
+  \Hom _A(A^m, N) \cong N^m \quad \text{ since } \quad
+  \Hom_A(A, N) \cong N
+\end{align*}
+with $\{x_i\}$ a set of generators of  $N$. Knowing there exists an injection 
+\[
+\Hom _A(M, N) \hookrightarrow \Hom(A^m, N) \cong N^m
+\]
+and since $N^n$ is Noetherian, thus every submodule is finitely generated, in particular  $\Hom _{A}(M, N)$.
+
+
 \prob{13}{
 Let $A$ be a local ring,  $M, N$ finitely generated  $A-$modules. Prove that
 \[
@@ -328,7 +340,20 @@ Let $A$ be a local ring,  $M, N$ finitely generated  $A-$modules. Prove that
 
 (1) $k \otimes _A M \cong M / \mathfrak{m}M$ (exercise 10 with $I=\mathfrak{m}$)
 
-(2) $k\otimes _A (M\otimes _AN) = \cong (k\otimes_A M)\otimes _k (k\otimes _AM)$. \com{proof this}
+(2) $k\otimes _A (M\otimes _AN) \cong (k\otimes_A M)\otimes _k (k\otimes _AN)$
+
+To prove (2) we can consider the following applications
+  \begin{align*}
+	f: k\otimes _A (M\otimes _AN) &\to (k\otimes _AM) \otimes _k (k\otimes _AN)\\
+	a \otimes _A (m\otimes_A n) &\mapsto ((a \otimes_A m)+\mathfrak{m}) \otimes _k ((1\otimes _An)+\mathfrak{m})
+  \end{align*}
+  and
+  \begin{align*}
+	g: (k\otimes _AM)\otimes _k (k\otimes _AN) &\to  k\otimes _A (M\otimes _AN)\\
+	((a \otimes_A m)+\mathfrak{m}) \otimes _k ((b\otimes _An)+\mathfrak{m}) &\mapsto  (ab)\otimes _A (m\otimes_A n)
+  \end{align*}
+
+It can be seen in a similar way as problems 10 and 11, that $f$ and  $g$ are morphisms of modules that are well-defined and are inverses, so this defines an isomorphism.
 
 We have the following implications
 \[
@@ -344,7 +369,8 @@ Let $M$ be a finitely generated $A-$module and let  $S\subseteq A$ be a multipli
 S^{-1}M=0 \iff \ \exists s\in S : sM=0
 \] 
 }
-Suppose $M=<x_1, \ldots, x_n>$. We prove both implications.
+
+Suppose $\{x_1, \ldots, x_n\}$ is a set of generators of $M$. We prove both implications.
 
 \fbox{$\Leftarrow$}
 Say $\ \exists s^*\in S$ such that $sM =0$. Then $\frac{m}{t}\sim \frac{m'}{t'} \iff \ \exists s\in S: smt'=sm't$. Setting $s=s^*$ we have zero in both sides, as  $sM=0$, concluding the only element is  $0$.
@@ -390,7 +416,6 @@ But since $f$ is an  $A-$module morphism and $t\in S\subseteq A$, then $0=tf(m)=
 g'(\frac{m}{s})=\frac{0}{1} \Rightarrow \ \exists t\in S : tg(m)=g(tm) = 0 \Rightarrow \ \exists m': f(m') =tm 
 \]
 where the last condition arises from the exactness of the original sequence. Considering the element  $\frac{m'}{ts}\in S^{-1}M'$, we see that $f'(\frac{m'}{ts}) = \frac{f(m')}{ts}=\frac{tm}{ts} = \frac{m}{s}$ concluding the proof.
-
 
 
 \end{document}
