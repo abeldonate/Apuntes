@@ -1,0 +1,100 @@
+\documentclass[leqno]{article}
+\usepackage{verbatim}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{multicol} \usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{amssymb}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,epsfig,epstopdf,titling,url,array}
+\usepackage{hyperref}
+\usepackage{eso-pic}
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{graphicx}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+
+% geometry
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+% paragraph length
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{proposition}{Proposition}
+
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+\newtheorem*{observation}{Observation}
+\newtheorem*{note}{Note}
+
+
+\newcommand{\com}[1]{\textcolor{red}{#1}}
+\newcommand{\incfig}[1]{%
+\center
+\def\svgwidth{0.9\columnwidth}
+\import{./figures/}{#1.pdf_tex}
+}
+\newcommand{\incimg}[1]{%
+\center
+\includegraphics[width=0.9\columnwidth]{images/#1}
+}
+\pdfsuppresswarningpagegroup=1
+
+\title{F-Modules}
+\author{Abel Doñate Muñoz}
+\date{}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introduction}
+We will work in positive characteristic. Let $R$ commutative unital ring of prime characteristic $p$.
+
+\section{The Frobenius functor}
+
+\begin{definition}[Frobenius endomorphism] The map
+\[
+  f: R \to R \quad \text{such that} \quad f(r) = r^p
+\] 
+defines a ring morphism in a ring of characteristic $p$ known as Frobenius endomorphism.
+\end{definition}
+
+Notice that the application is, in fact, a morphism. The behaviour for the product $f(ab)=(ab)^p=a^pb^p=f(a)f(b)$, and for the sum we have to make use of binomial expansion
+\[
+  f(a+b) = (a+b)^p = a^p + \binom{p}{1} a^{p-1}b^1 + \cdots + \binom{p}{p-1}a^{1}b^{p-1} + b^p = a^p + b^p = f(a) + f(b)
+\] 
+since $p|\binom{p}{k} \ \forall k=1, \ldots, p-1$.
+
+\begin{observation} $f$ is not necessarily injective nor surjective. Some counterexamples are
+   \begin{enumerate}[topsep=-6pt, itemsep=0pt]
+	 \item 
+  \end{enumerate}
+\end{observation}
+
+
+
+
+
+
+\end{document}
