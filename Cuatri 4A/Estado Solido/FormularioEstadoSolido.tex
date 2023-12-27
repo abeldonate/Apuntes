@@ -329,7 +329,21 @@ La capacidad calorífica $C_v = \frac{\partial \langle E \rangle }{\partial T}$ 
 
 \section{No se, cuanticocosas}
 \subsection{Drude model}
+\begin{align*}
+  &n=\frac{N}{V}; \quad\frac{dp}{dt} = F-\frac{p}{\tau}, \overline{j} = -ne \overline{v} = \sigma \overline{E}\\
+  & mv=p=-e\tau E; \quad R_H = \frac{-1}{ne} = \frac{\rho_{yx}}{|B|}\\
+  &\overline{E} = \tilde{\rho }\overline{j}; \quad \rho _{x x} = \rho _{yy}=\rho _{zz} \frac{m}{ne^2\tau }
+\end{align*}
 
+Hall resistivity $\rho _{xy}=-\rho_{yx} = \frac{B}{ne}$ $(\overline{B}\propto \hat{z} )$
+
+Peltier coefficient $\Pi = -\frac{k_BT}{2e}= \frac{-c_vT}{3e}$
+
+Seebeck coefficient $S = \frac{\Pi}{T}$
+
+\begin{align*}
+  <v>_{gas id.} = \sqrt{\frac{8k_BT}{\pi m}} ; \quad \kappa = \frac{1}{3} nc<v>^2\tau = \frac{4}{\pi }\frac{n\tau k_B^2T}{m}
+\end{align*}
 
 \subsection{Gas de electrones libre}
 \begin{align*}
@@ -347,12 +361,15 @@ Fermi energy $(E_F = \mu (T\to 0))$
 $g$ densidad de estados / $V$
 \begin{align*}
   &g(\varepsilon ) = \frac{3n}{2(E_F)^{\frac{3}{2}}}\varepsilon ^{\frac{1}{2}} = \frac{(2m)^{\frac{3}{2}}}{2\pi ^2\hbar ^3}\varepsilon ^{\frac{1}{2}} , \quad k = \sqrt{\frac{2\varepsilon m}{\hbar ^2}}  \\
-  & N = \int_0^\infty d\varepsilon g(\varepsilon )n_F(\beta (\varepsilon -\mu )), \quad 
-  E_T = \int_0^\infty d\varepsilon \varepsilon g(\varepsilon )n_F(\beta (\varepsilon -\mu ))\\
+  & N = \int_0^\infty \hspace{-0.5em} d\varepsilon g(\varepsilon )n_F(\beta (\varepsilon -\mu )), \quad
+  E_T = \int_0^\infty \hspace{-0.5em} d\varepsilon \varepsilon g(\varepsilon )n_F(\beta (\varepsilon -\mu ))\\
   & C = \frac{\pi ^2}{3}\left( \frac{3Nk_B}{2} \right) \left( \frac{T}{T_F} \right) 
 \end{align*}
+\[
+\overline{M} = g(E_F)\mu _B^2 \overline{B}; \quad \mu _B = 0.67 \left( \frac{K}{Tesla} \right) k_B
+\] 
 
-Teorema de Bloch
+\subsection{Teorema de Bloch}
 \begin{align*}
   \psi _{\overline{k}} (\overline{r}) = u_{\overline{k}}(\overline{r})e^{i \overline{k}\cdot \overline{r}}, \quad E(\overline{k}) = E(\overline{k}+\overline{G})
 \end{align*}
@@ -382,6 +399,29 @@ Caso totalmente degenerado
 
 
 \section{Semiconductores}
+Densidad de estados
+\begin{align*}
+&D_C = \frac{(2m^*_n) ^{2 /3}}{2\pi ^2\hbar ^3}\sqrt{E-E_C} , \quad 
+D_V = \frac{(2m^*_p) ^{2 /3}}{2\pi ^2\hbar ^3}\sqrt{E_V-E} \\
+&n = 2\left(\frac{2\pi m^*_nk_BT}{h^2}\right)^{3 /2} e ^{\beta(E_F-E_C)} = N_{eff}^C e ^{\beta (E_F-E_C)}\\
+&p = 2\left(\frac{2\pi m^*_pk_BT}{h^2}\right)^{3 /2} e ^{\beta(E_V-E_F)} = N_{eff}^V e ^{\beta (E_V-E_F)}\\
+& np = N_{eff}^CN_{eff}^V e ^{-\beta E_g} = 4 \left(\frac{k_BT}{2\pi \hbar ^2}\right)^3(m_n^*m_p^*)^{3 / 2}e ^{-\beta E_g}\\
+& e ^{2\beta E_F} = \frac{N_{eff}^V}{N_{eff}^C} e ^{\beta (E_V + E_C)}, \quad
+E_F = \frac{E_C+E_V}{2} + \frac{3}{4}k_BT\ln\left( \frac{m_p^*}{m_n^*} \right) \\
+& \mu = \frac{e\tau }{m^*}, \quad \sigma  = e(n\mu _n+ p\mu _p), \quad E_g = E_C-E_V
+\end{align*}
+Semiconductores dopados
+\begin{align*}
+  &E_n = \frac{m^*e^4}{2(4\pi \varepsilon \hbar )^2} \frac{1}{n^2}, \quad r = \varepsilon \frac{h^2}{\pi m^*e^2}\\
+  &n \approx \frac{2N_D}{1+\sqrt{1+4 \frac{N_D}{N_{eff}^C} e ^{\beta E_d} }} 
+\end{align*}
+Unión p-n
+\begin{align*}
+  &n_n = N^C_{eff} e ^{\beta (E_F-E_C^n)}; \quad p_p = N_{eff}^Ve ^{\beta (E_V-E_F)}\\
+  &d^0_n = \sqrt{ \frac{2\varepsilon V_D}{e} \frac{N_A / N_D}{N_A+N_D}}; \quad d_p^0 = \sqrt{\frac{2\varepsilon V_D}{e}\frac{N_D / N_A}{N_A+N_D}} \\
+  & d_n(U) = d_n^0 \sqrt{1- \frac{U}{V_D}}; \quad d_p(U) = d_p^0 \sqrt{1- \frac{U}{V_D}}\\
+  &eV_D=k_BT\ln\left( \frac{n_np_p}{n^2_i}\right); \quad I(U) = (I_n ^{gen} +I_p ^{gen})(e ^{\beta eU}-1)
+\end{align*}
 
 
 
