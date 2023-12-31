@@ -408,4 +408,52 @@ Lo mismo pasa si en lugar de ser diferentes las $k$ son las masas  $m_1\neq m_2$
 con $K_1= \frac{k}{m_1}$ y $K_2 = \frac{k}{m_2}$
 
 
+
+\section{Estructura electrónica de los cristales}
+\subsection{Modelo de Drude}
+
+\subsection{Teorema de Bloch}
+Consideramos ahora la configuración donde tenemos una estructura cristalina y queremos ver cómo se comporta un electrón dentro de ella. Observamos que el potencial es periódico con periodo dependiente del parámetro de red. Consideramos, pues un potencial periódico $V(\overline{r})$, el teorema de Bloch nos dice que las soluciones de la Ecuación de Schrödinger vienen dadas por 
+\[
+H\psi = \left( -\frac{\hbar ^2}{2m}\nabla ^2 + V(\overline{r}) \right) \psi = E\psi \quad \Rightarrow \quad \psi (\overline{r}) = \sum _{\overline{k}} u_{\overline{k}}(\overline{r}) e ^{i \overline{k}\cdot \overline{r}}
+\] 
+donde las $u_{\overline{k}}(\overline{r})$ son periódicas.
+
+\underline{\textbf{Caso gas de electrones libre $V(\overline{r})=0$}}
+
+(gráfico)
+
+En el caso de un gas de electrones libres tenemos la ecuación de dispersión
+\[
+E(k) = \frac{\hbar ^2 k^2}{2m}
+\] 
+Vale la pena pararse a discutir sobre cómo es el problema en este momento. Distinguiremos entre dos tipos de contornos:
+\begin{itemize}[topsep=-6pt, itemsep=0pt]
+  \item Volúmico, es decir, suficientemente grande en las tres direcciones. Aplicamos
+	\[
+	\overline{k} = \frac{2\pi }{L} (n_x, n_y, n_z) \text{ con } n_x, n_y, n_z \in \mathbb{Z}
+	\] 
+  \item Si alguna dimensión es pequeña comparada con las otras consideramos (la $\hat{z}$, por ejemplo)
+	\[
+	k_z = \frac{\pi}{L_z} n_z \text{ con } n_z \in \mathbb{N}
+	\] 
+\end{itemize}
+
+
+Vemos primero en el primer caso la forma de las posibles $k'$s
+\[
+  \overline{k} = \frac{2\pi }{L} \begin{pmatrix} n_x\\n_y\\n_z \end{pmatrix}, \quad n_x, n_y, n_z\in \mathbb{Z} \quad \Rightarrow \quad k^2 = \left( \frac{2\pi }{L} \right)^2 (n_x^2+n_y^2+n_z^2)  
+\] 
+Considerando los dos espines (multiplicamos por 2), vemos la relación entre el número total de estados $N_T$ y las $n'$s tal que la $k$ sea máxima
+\[
+N_T = 2 \cdot \left( \frac{4}{3}\pi (n_x^2+n_y^2+n_z^2)^{3 / 2} \right) \quad \Rightarrow \quad k_{max}^2 = k_F^2 = (3n\pi ^2) ^{ \frac{2}{3}}
+\] 
+
+Para el segundo caso habría que llevar mas cuidado. Si, por ejemplo, la dimensión en $\hat{z}$ $L_z\ll L_x=L_y$, entonces los estados energéticos se van llenando con la $k_{z, min} = \frac{\pi}{L_z}$ y las $k_x, k_y$ formando un círculo. Si no es suficiente hay que saltar de  $k_z$ hasta rellenar con los estados $N_T$.
+
+(Dibujito esfera)
+
+\underline{\textbf{Caso electrones casi-libres}}
+
+
 \end{document}
