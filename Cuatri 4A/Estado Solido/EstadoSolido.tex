@@ -13,7 +13,7 @@
 \usepackage{amsmath}
 \usepackage{wrapfig}
 \usepackage{amssymb}
-\usepackage{amsmath,amsfonts,amssymb,amsthm,epsfig,epstopdf,titling,url,array}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,epsfig,epstopdf,titling,url,array,svg}
 \usepackage{hyperref}
 \usepackage{eso-pic}
 \usepackage{pgf}
@@ -419,9 +419,27 @@ H\psi = \left( -\frac{\hbar ^2}{2m}\nabla ^2 + V(\overline{r}) \right) \psi = E\
 \] 
 donde las $u_{\overline{k}}(\overline{r})$ son periódicas.
 
-\underline{\textbf{Caso gas de electrones libre $V(\overline{r})=0$}}
+En una dimensión, al ser periódico podemos descomponer el potencial en series de Fourier de dos maneras:
+\[
+V(x)=V_0 + \sum _{j=1}^\infty V_j\cos\left( \frac{2\pi j}{a}x \right)  \quad \text{ ó } \quad 
+V(x)=\sum_{j=-\infty}^\infty V_{\frac{2\pi j}{a}} e ^{\frac{2\pi j}{a}ix}
+\]
+Con las relaciones $V_j = 2 V_{\frac{2\pi j}{a}}$, y donde los coeficientes son
+\[
+  V_j = \frac{2}{a} \int _{-\frac{a}{2}} ^{\frac{a}{2}} dx V(x)\cos\left( \frac{2\pi }{a}jx \right) , \quad \text{ y } \quad 
+  V_{\frac{2\pi j}{a}} = \frac{1}{a} \int _{-\frac{a}{2}} ^{\frac{a}{2}} dx V(x)e ^{\frac{-2\pi }{a}ijx}
+\] 
 
-(gráfico)
+Veremos que los coeficientes $V_{j} = 2V_{\frac{2\pi }{a}j}$ son los gap energy de las bandas como se observa en la figura siguiente. La primera figura es un modelo de electrones libres sin potencial y la segunda uno casi-libre con potencial.
+
+\begin{minipage}{0.5\textwidth}
+  \incfig{freemodel}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+  \incfig{quasifreemodel}
+\end{minipage}
+
+\underline{\textbf{Caso gas de electrones libre $V(\overline{r})=0$}}
 
 En el caso de un gas de electrones libres tenemos la ecuación de dispersión
 \[
@@ -455,5 +473,7 @@ Para el segundo caso habría que llevar mas cuidado. Si, por ejemplo, la dimensi
 
 \underline{\textbf{Caso electrones casi-libres}}
 
+
+\incfig{brillouinejemplo}
 
 \end{document}
