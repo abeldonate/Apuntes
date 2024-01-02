@@ -45,9 +45,10 @@
 \newtheorem*{observation}{Observation}
 
 \newcommand{\incfig}[1]{%
-\center
+\begin{center}
 \def\svgwidth{0.9\columnwidth}
 \import{./figures/}{#1.pdf_tex}
+\end{center}
 }
 \newcommand{\incimg}[1]{%
 \center
@@ -345,18 +346,6 @@ Seebeck coefficient $S = \frac{\Pi}{T}$
   <v>_{gas id.} = \sqrt{\frac{8k_BT}{\pi m}} ; \quad \kappa = \frac{1}{3} nc<v>^2\tau = \frac{4}{\pi }\frac{n\tau k_B^2T}{m}
 \end{align*}
 
-\subsection{Gas de electrones libre}
-\begin{align*}
-\overline{k}=\frac{2\pi}{L}(n_1, n_2, n_3), \quad E(\overline{k})=\frac{\hbar ^2}{2m}|\overline{k}|^2, \quad n_F(x)=\frac{1}{e^x+1}\\
-N = 2\sum_{\overline{k}} n_F(\beta(E(\overline{k})- \mu)) = 2 \frac{V}{(2\pi)^3}\int d \overline{k}n_F(\beta (E( \overline{k})-\mu))
-\end{align*}
-
-Fermi energy $(E_F = \mu (T\to 0))$
-\begin{align*}
-&E_F = \frac{\hbar ^2k_F^2}{2m}=k_BT_F, \quad p_F = \hbar k_F \\
-&N = 2 \frac{V}{(2\pi)^3}\int _{|k|<k_F} dk \Rightarrow k_F = (3\pi ^2n)^{\frac{1}{3}}, \quad E_F = \frac{\hbar ^2(3\pi ^2n)^{\frac{2}{3}}}{2m}
-\end{align*}
-
 \subsection{Capacidad calorífica}
 $g$ densidad de estados / $V$
 \begin{align*}
@@ -368,18 +357,53 @@ $g$ densidad de estados / $V$
 \[
 \overline{M} = g(E_F)\mu _B^2 \overline{B}; \quad \mu _B = 0.67 \left( \frac{K}{Tesla} \right) k_B
 \] 
+\incfig{freemodel}
+\incfig{quasifreemodel}
+\incfig{brillouinejemplo}
 
-\subsection{Teorema de Bloch}
-\begin{align*}
+\textbf{Teorema de Bloch} ($V(\overline{r})$ periódico)
+\[
   \psi _{\overline{k}} (\overline{r}) = u_{\overline{k}}(\overline{r})e^{i \overline{k}\cdot \overline{r}}, \quad E(\overline{k}) = E(\overline{k}+\overline{G})
+\] 
+(1D) Fourier del potencial de dos formas
+\[
+V(x)=V_0 + \sum _{j=1}^\infty V_j\cos\left( \frac{2\pi j}{a}x \right)  \quad \text{ ó } \quad 
+V(x)=\sum_{j=-\infty}^\infty V_{\frac{2\pi j}{a}} e ^{\frac{2\pi j}{a}ix}
+\]
+Con las relaciones $V_j = 2 V_{\frac{2\pi j}{a}}$, y donde los coeficientes son
+\[
+  V_j = \frac{2}{a} \int _{-\frac{a}{2}} ^{\frac{a}{2}} dx V(x)\cos\left( \frac{2\pi }{a}jx \right); \quad
+  V_{\frac{2\pi j}{a}} = \frac{1}{a} \int _{-\frac{a}{2}} ^{\frac{a}{2}} dx V(x)e ^{\frac{-2\pi }{a}ijx}
+\]
+
+\underline{Gas de electrones libres}
+\begin{align*}
+\overline{k}=\frac{2\pi}{L}(n_x, n_y, n_z), \quad E(\overline{k})=\frac{\hbar ^2}{2m}|\overline{k}|^2, \quad n_F(x)=\frac{1}{e^x+1}\\
+N = 2\sum_{\overline{k}} n_F(\beta(E(\overline{k})- \mu)) = 2 \frac{V}{(2\pi)^3}\int d \overline{k}n_F(\beta (E( \overline{k})-\mu))
 \end{align*}
-Electrones casi-libres
+
+Fermi energy $(E_F = \mu (T\to 0))$
+\begin{align*}
+&E_F = \frac{\hbar ^2k_F^2}{2m}=k_BT_F, \quad p_F = \hbar k_F \\
+&N = 2 \frac{V}{(2\pi)^3}\int _{|k|<k_F} dk \Rightarrow k_F = (3\pi ^2n)^{\frac{1}{3}}, \quad E_F = \frac{\hbar ^2(3\pi ^2n)^{\frac{2}{3}}}{2m}
+\end{align*}
+
+\[
+  \overline{k} = \frac{2\pi }{L} \begin{pmatrix} n_x\\n_y\\n_z \end{pmatrix}, \quad n_x, n_y, n_z\in \mathbb{Z} \Rightarrow k^2 = \left( \frac{2\pi }{L} \right)^2 (n_x^2+n_y^2+n_z^2)  
+\] 
+Considerando los dos espines (multiplicamos por 2)
+\[
+N_T = 2 \cdot \left( \frac{4}{3}\pi (n_x^2+n_y^2+n_z^2)^{3 / 2} \right) \quad \Rightarrow \quad k_{max}^2 = k_F^2 = (3n\pi ^2) ^{ \frac{2}{3}}
+\]
+
+
+\underline{Electrones casi-libres}
 \begin{align*}
   &\psi _+ \sim \cos (\pi \frac{x}{a}), \quad \psi _- \sim  \sin(\pi \frac{x}{a})\\
   &E^{\pm} = \frac{1}{2}(E^0_{\overline{k}-\overline{G}} + E^0_{\overline{k}})\pm \sqrt{\frac{1}{4}(E^0_{{\overline{k}}-\overline{G}}-E^0_{\overline{k}})^2 + |V_{\overline{G}}|^2} 
 \end{align*}
 
-Enlace fuerte, celda primitiva cúbica
+\underline{Enlace fuerte, celda primitiva cúbica}
 \begin{align*}
   &E(\overline{k}) \approx E_i-A-2B (\cos k_xa + \cos k_ya + \cos k_za)\\
   &A = -\langle \varphi _{i, n} | v | \varphi _{i,n} \rangle , \quad 
@@ -397,6 +421,15 @@ Caso totalmente degenerado
   m^* = \frac{\hbar ^2}{\left( \frac{d^2E}{dk^2} \right) }, \quad E(\overline{k}) = E_0 + \frac{\hbar^2}{2m^*}|k|^2, \quad \sigma \simeq \frac{e^2\tau (E_F)n}{m^*}
 \end{align*}
 
+\incfig{fermisufraces}
+
+\underline{Tipos de materiales}
+
+\textbf{Aislante:} Banda llena (2$e^-$). $V_g>4eV$\\
+\textbf{Semiconductor} Banda llena ($2e^-$).  $V_g<4eV$.\\
+\textbf{Metal} Banda semillena ($1e^2$ ó $2e^-$ con bandas solapantes).
+
+\incfig{tiposmateriales}
 
 \section{Semiconductores}
 Densidad de estados
