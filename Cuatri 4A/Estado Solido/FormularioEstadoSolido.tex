@@ -125,7 +125,7 @@ Cambio de base
   (x, y, z) = (x^*, y^*, z^*)P, \quad \begin{pmatrix} a'^* \\ b'^* \\z'^* \end{pmatrix} =P^{-1} \begin{pmatrix} a^*\\b^*\\c^* \end{pmatrix} 
 \end{align*}
 
-Red recíproca y distancia interplanar $g_{hkl}= \frac{1}{d_{hkl}}$
+Distancia interplanar $g_{hkl}= \frac{2}{d_{hkl}}; \quad g_{hkl}^2 = (hkl)G^*\begin{pmatrix} h\\k\\l \end{pmatrix}  $
 
 Transferencia de momento $Q = \frac{4\pi \sin\theta }{\lambda}$
 
@@ -196,7 +196,7 @@ En una hcp $c = 1.633a$
 
 \subsection{Grupos}
 \[
-  m_{100} = \begin{pmatrix} -1&0&0\\0&1&0\\0&0&1 \end{pmatrix} 
+  m_{100} = \begin{pmatrix} -1&0&0\\0&1&0\\0&0&1 \end{pmatrix};
   n_{001} = \begin{pmatrix} \cos\left( \frac{360}{n} \right) &-\sin\left( \frac{360}{n} \right) &0\\ \sin\left( \frac{360}{n} \right) &\cos\left( \frac{360}{n} \right) &0\\0&0&1 \end{pmatrix}
 \] 
 Cambio de base a $\mathcal{B}=\{\overline{u}, \overline{v}, \overline{w}\}$
@@ -288,6 +288,12 @@ Si $m_1\neq m_2$ y $k_s$ es la misma, sea  $K_i = \frac{k}{m_i}$, entonces
 \begin{minipage}{0.5\columnwidth}
 \incfig{dispersion2}
 \end{minipage}
+
+Si hay $N$ átomos / celda:  $3N$ ramas:
+\begin{itemize}[topsep=-6pt, itemsep=0pt]
+  \item 3 acústicas (2 trans. < 1 long.)
+  \item $3N-3$ ópticas
+\end{itemize}
 
 \subsection{Modelo de Einstein}
 \begin{align*}
@@ -403,7 +409,7 @@ N_T = 2 \cdot \left( \frac{4}{3}\pi (n_x^2+n_y^2+n_z^2)^{3 / 2} \right) \quad \R
   &E^{\pm} = \frac{1}{2}(E^0_{\overline{k}-\overline{G}} + E^0_{\overline{k}})\pm \sqrt{\frac{1}{4}(E^0_{{\overline{k}}-\overline{G}}-E^0_{\overline{k}})^2 + |V_{\overline{G}}|^2} 
 \end{align*}
 
-\underline{Enlace fuerte, celda primitiva cúbica}
+\underline{Enlace fuerte, celda primitiva cúbica} ($B=\gamma, A = \beta $)
 \begin{align*}
   &E(\overline{k}) \approx E_i-A-2B (\cos k_xa + \cos k_ya + \cos k_za)\\
   &A = -\langle \varphi _{i, n} | v | \varphi _{i,n} \rangle , \quad 
