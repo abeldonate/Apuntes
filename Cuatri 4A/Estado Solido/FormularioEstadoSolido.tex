@@ -56,7 +56,7 @@
 }
 \pdfsuppresswarningpagegroup=1
 
-\title{Formulario Estadística}
+\title{Formulario Estado Sólido}
 \author{Abel Doñate Muñoz}
 \date{}
 
@@ -66,7 +66,7 @@
 
 \textbf{Constantes}
 \begin{align*}
-&k_B = 1.381\times 10^{-23}JK^{-1} = 8.26\times 10^{-5}eVK^{-1}\\
+&k_B = 1.381\times 10^{-23}JK^{-1} = 8.62\times 10^{-5}eVK^{-1}\\
 &m_e = 9.11\times 10^{-31}kg = 0.511MeVc^{-2}\\
 &m_p = 1.67\times 10^{-27}kg = 938MeVc^{-2}\\
 &\varepsilon _0 = \frac{1}{4\pi K} = 8.85\times 10^{-12} Fm^{-1}\\
@@ -188,9 +188,11 @@ Hexagonal
   G = \begin{pmatrix} a^2 & -\frac{a^2}{2} & 0 \\ -\frac{a^2}{2} & a^2 & 0 \\ 0 & 0 & c^2\end{pmatrix} , \quad
   G^* = \begin{pmatrix} \frac{4}{3a^2} & \frac{2}{3a^2} & 0 \\ \frac{2}{3a^2} & \frac{4}{3a^2} & 0 \\ 0 & 0 & \frac{1}{c^2}\end{pmatrix} 
 \] 
-
-\begin{minipage}{\columnwidth}
+\begin{minipage}{0.7\columnwidth}
   \incfig{hexagonal}
+\end{minipage}
+\begin{minipage}{0.3\columnwidth}
+  \incfig{brillouinezones}
 \end{minipage}
 
 En una hcp $c = 1.633a$
@@ -445,20 +447,20 @@ Densidad de estados ($n$ electrones, $p$ holes)
 g_V(\varepsilon ) = \frac{(2m^*_p) ^{2 /3}}{2\pi ^2\hbar ^3}\sqrt{\varepsilon _V-\varepsilon } \\
 &n = \frac{1}{4}\left(\frac{2 m^*_nk_BT}{\pi \hbar ^2}\right)^{3 /2} e ^{\beta(\mu -\varepsilon _C)} = N_{eff}^C e ^{\beta (\mu -\varepsilon _C)}\\
 &p = \frac{1}{4}\left(\frac{2 m^*_pk_BT}{\pi \hbar ^2}\right)^{3 /2} e ^{\beta(\varepsilon _V-\mu )} = N_{eff}^V e ^{\beta (\varepsilon _V-\mu )}\\
-& np = N_{eff}^CN_{eff}^V e ^{-\beta E_g} = 4 \left(\frac{k_BT}{2\pi \hbar ^2}\right)^3(m_n^*m_p^*)^{3 / 2}e ^{-\beta E_g}\\
-& e ^{2\beta \mu } = \frac{N_{eff}^V}{N_{eff}^C} e ^{\beta (\varepsilon _V + \varepsilon _C)}, \quad
+& np = N_CN_V e ^{-\beta E_g} = 4 \left(\frac{k_BT}{2\pi \hbar ^2}\right)^3(m_n^*m_p^*)^{3 / 2}e ^{-\beta E_g}\\
+& e ^{2\beta \mu } = \frac{N_V}{N_C} e ^{\beta (\varepsilon _V + \varepsilon _C)}, \quad
 \mu  = \frac{\varepsilon _C+\varepsilon _V}{2} + \frac{3}{4}k_BT\ln\left( \frac{m_p^*}{m_n^*} \right) \\
 & \mu = \frac{e\tau }{m^*}, \quad \sigma  = e(n\mu _n+ p\mu _p), \quad E_g = \varepsilon _C-\varepsilon _V\\
-& n = p = \sqrt{N_{eff}^CN^V_{eff}}e ^{-\frac{\beta E_g}{2}} \quad \text{ si intrínseco}
+& n = p = \sqrt{N_CN_V}e ^{-\frac{\beta E_g}{2}} \quad \text{ si intrínseco}
 \end{align*}
 Semiconductores dopados ($n=1$ ionización) $\varepsilon = \varepsilon _0\varepsilon_r$
 \begin{align*}
   &E_n = \frac{m^*e^4}{2(4\pi \varepsilon \hbar )^2} \frac{1}{n^2}, \quad r_n = \varepsilon \frac{4\pi \hbar ^2}{m^*e^2}n^2\\
-  &n \approx \frac{2N_D}{1+\sqrt{1+4 \frac{N_D}{N_{eff}^C} e ^{\beta E_d} }} 
+  &n \approx \frac{2N_D}{1+\sqrt{1+4 \frac{N_D}{N_C} e ^{\beta E_d} }} 
 \end{align*}
 Unión p-n
 \begin{align*}
-  &n_n = N^C_{eff} e ^{\beta (\mu -\varepsilon _C^n)}; \quad p_p = N_{eff}^Ve ^{\beta (\varepsilon _V^p-\mu )}\\
+  &n_n = N_C e ^{\beta (\mu -\varepsilon _C^n)}; \quad p_p = N_V e ^{\beta (\varepsilon _V^p-\mu )}\\
   &d^0_n = \sqrt{ \frac{2\varepsilon V_D}{e} \frac{N_A / N_D}{N_A+N_D}}; \quad d_p^0 = \sqrt{\frac{2\varepsilon V_D}{e}\frac{N_D / N_A}{N_A+N_D}} \\
   & d_n(U) = d_n^0 \sqrt{1- \frac{U}{V_D}}; \quad d_p(U) = d_p^0 \sqrt{1- \frac{U}{V_D}}\\
   &eV_D=k_BT\ln\left( \frac{n_np_p}{n^2_i}\right); \quad I(U) = (I_n ^{gen} +I_p ^{gen})(e ^{\beta eU}-1)
