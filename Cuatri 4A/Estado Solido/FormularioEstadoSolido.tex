@@ -68,9 +68,13 @@
 \begin{align*}
 &k_B = 1.381\times 10^{-23}JK^{-1} = 8.26\times 10^{-5}eVK^{-1}\\
 &m_e = 9.11\times 10^{-31}kg = 0.511MeVc^{-2}\\
+&m_p = 1.67\times 10^{-27}kg = 938MeVc^{-2}\\
 &\varepsilon _0 = \frac{1}{4\pi K} = 8.85\times 10^{-12} Fm^{-1}\\
 &\hbar = 1.055\times 10^{-34} Js = 6.58\times 10^{-16}eVs \\
-&e = 1.602 \times 10^{-19} C
+&e = 1.602 \times 10^{-19} C\\
+&\text{Fermions: }e^-, p, n \quad (n_F(E) = \frac{1}{e ^{\beta E}+1})\\
+& \text{Bosons: phonon, photon} \quad (n_B(E)=\frac{1}{e ^{\beta E} -1})\\
+& n\sim 10 ^{22}cm ^{-3}; \tau \sim 10 ^{-15}s; v\sim 10 ^{-5}\frac{m}{s}
 \end{align*}
 
 
@@ -135,14 +139,11 @@ Ley de Bragg $g_{hkl} = \frac{2\sin \theta_{hkl}}{\lambda}$
 
 Módulo de Young $\nu_s = \sqrt{\frac{\gamma}{\rho }} $
 
-Factor de estructura
-\begin{align*}
-  F_{hkl} = \sum_p f_p e^{-i2\pi \overline{g}_{hkl}\cdot \overline{r}_p}, \quad I \propto |F_{hkl}|^2
-\end{align*}
+Factor de estructura $F_{hkl} = \sum_p f_p e^{-i2\pi \overline{g}_{hkl}\cdot \overline{r}_p}; I \propto |F_{hkl}|^2 $
 
 \subsection{Estructuras comunes}
 
-FCC
+FCC (primitiva volumen 1/4)
 \[
 \begin{cases}
   \overline{a} = \frac{1}{2} (1\ 1\ 0) \\
@@ -155,7 +156,7 @@ FCC
   \overline{c}^* = (1\ -1\ 1)
 \end{cases} 
 \]
-BCC
+BCC (primitiva volumen 1/2)
 \[
 \begin{cases}
   \overline{a} = \frac{1}{2} (1\ 1\ -1) \\
@@ -337,23 +338,24 @@ La capacidad calorífica $C_v = \frac{\partial \langle E \rangle }{\partial T}$ 
 \section{No se, cuanticocosas}
 \subsection{Drude model}
 \begin{align*}
-  &n=\frac{N}{V}; \quad\frac{dp}{dt} = F-\frac{p}{\tau}, \overline{j} = -ne \overline{v} = \sigma \overline{E}\\
+  &n=\frac{N}{V}; \quad\frac{dp}{dt} = -\frac{p}{\tau}+F; \quad \overline{j} = -ne \overline{v} = \sigma \overline{E}\\
+  & \sigma _0 = \frac{e^2\tau n}{m}; \quad \text{si } F -e\text{Re}[E_0e ^{i\omega t}] \Rightarrow \sigma (\omega ) = \frac{\sigma _0}{1-i\omega t}\\
   & mv=p=-e\tau E; \quad R_H = \frac{-1}{ne} = \frac{\rho_{yx}}{|B|}\\
-  &\overline{E} = \tilde{\rho }\overline{j}; \quad \rho _{x x} = \rho _{yy}=\rho _{zz} \frac{m}{ne^2\tau }
+  &\overline{E} = \tilde{\rho }\overline{j}; \quad \rho _{x x} = \rho _{yy}=\rho _{zz} \frac{m}{ne^2\tau }; \quad \frac{1}{2}mv_0^2= \frac{3}{2}k_BT
 \end{align*}
+
+(COSAS DEL EFECTO HALL PROBLEMA 4)
 
 Hall resistivity $\rho _{xy}=-\rho_{yx} = \frac{B}{ne}$ $(\overline{B}\propto \hat{z} )$
 
 Peltier coefficient $\Pi = -\frac{k_BT}{2e}= \frac{-c_vT}{3e}$
 
 Seebeck coefficient $S = \frac{\Pi}{T}$
-
-\begin{align*}
-  <v>_{gas id.} = \sqrt{\frac{8k_BT}{\pi m}} ; \quad \kappa = \frac{1}{3} nc<v>^2\tau = \frac{4}{\pi }\frac{n\tau k_B^2T}{m}
-\end{align*}
-
+\[
+  \langle v\rangle_{gas id.} = \sqrt{\frac{8k_BT}{\pi m}} ; \quad \kappa = \frac{1}{3} nc\langle v\rangle ^2\tau = \frac{4}{\pi }\frac{n\tau k_B^2T}{m}
+\] 
 \subsection{Capacidad calorífica}
-$g$ densidad de estados / $V$
+$g = \frac{\text{densidad de estados}}{V}$
 \begin{align*}
   &g(\varepsilon ) = \frac{3n}{2(E_F)^{\frac{3}{2}}}\varepsilon ^{\frac{1}{2}} = \frac{(2m)^{\frac{3}{2}}}{2\pi ^2\hbar ^3}\varepsilon ^{\frac{1}{2}} , \quad k = \sqrt{\frac{2\varepsilon m}{\hbar ^2}}  \\
   & N = \int_0^\infty \hspace{-0.5em} d\varepsilon g(\varepsilon )n_F(\beta (\varepsilon -\mu )), \quad
@@ -374,12 +376,12 @@ $g$ densidad de estados / $V$
 (1D) Fourier del potencial de dos formas
 \[
 V(x)=V_0 + \sum _{j=1}^\infty V_j\cos\left( \frac{2\pi j}{a}x \right)  \quad \text{ ó } \quad 
-V(x)=\sum_{j=-\infty}^\infty V_{\frac{2\pi j}{a}} e ^{\frac{2\pi j}{a}ix}
+V(x)=\sum_{j=-\infty}^\infty V_{\frac{2\pi j}{a}} e ^{i\frac{2\pi j}{a}x}
 \]
 Con las relaciones $V_j = 2 V_{\frac{2\pi j}{a}}$, y donde los coeficientes son
 \[
-  V_j = \frac{2}{a} \int _{-\frac{a}{2}} ^{\frac{a}{2}} dx V(x)\cos\left( \frac{2\pi }{a}jx \right); \quad
-  V_{\frac{2\pi j}{a}} = \frac{1}{a} \int _{-\frac{a}{2}} ^{\frac{a}{2}} dx V(x)e ^{\frac{-2\pi }{a}ijx}
+  V_j = \frac{2}{a} \int _{-\frac{a}{2}} ^{\frac{a}{2}} dx V(x)\cos\left( \frac{2\pi j}{a}x \right); \quad
+  V_{\frac{2\pi j}{a}} = \frac{1}{a} \int _{-\frac{a}{2}} ^{\frac{a}{2}} dx V(x)e ^{-i\frac{2\pi j }{a}x}
 \]
 
 \underline{Gas de electrones libres}
@@ -388,15 +390,11 @@ Con las relaciones $V_j = 2 V_{\frac{2\pi j}{a}}$, y donde los coeficientes son
 N = 2\sum_{\overline{k}} n_F(\beta(E(\overline{k})- \mu)) = 2 \frac{V}{(2\pi)^3}\int d \overline{k}n_F(\beta (E( \overline{k})-\mu))
 \end{align*}
 
-Fermi energy $(E_F = \mu (T\to 0))$
+Fermi energy $(E_F = \mu (T\to 0))$ (d numero de dimensiones)
 \begin{align*}
-&E_F = \frac{\hbar ^2k_F^2}{2m}=k_BT_F, \quad p_F = \hbar k_F \\
-&N = 2 \frac{V}{(2\pi)^3}\int _{|k|<k_F} dk \Rightarrow k_F = (3\pi ^2n)^{\frac{1}{3}}, \quad E_F = \frac{\hbar ^2(3\pi ^2n)^{\frac{2}{3}}}{2m}
+&\varepsilon _F = \frac{\hbar ^2k_F^2}{2m}=k_BT_F; \quad p_F = \hbar k_F; \quad U_T=\frac{3}{5}\varepsilon _FN \\
+&N = 2 \frac{V}{(2\pi)^d}\int _{|k|<k_F} dk \Rightarrow k_F = (3\pi ^2n)^{\frac{1}{3}}, \quad \varepsilon _F = \frac{\hbar ^2(3\pi ^2n)^{\frac{2}{3}}}{2m}
 \end{align*}
-
-\[
-  \overline{k} = \frac{2\pi }{L} \begin{pmatrix} n_x\\n_y\\n_z \end{pmatrix}, \quad n_x, n_y, n_z\in \mathbb{Z} \Rightarrow k^2 = \left( \frac{2\pi }{L} \right)^2 (n_x^2+n_y^2+n_z^2)  
-\] 
 Considerando los dos espines (multiplicamos por 2)
 \[
 N_T = 2 \cdot \left( \frac{4}{3}\pi (n_x^2+n_y^2+n_z^2)^{3 / 2} \right) \quad \Rightarrow \quad k_{max}^2 = k_F^2 = (3n\pi ^2) ^{ \frac{2}{3}}
@@ -438,25 +436,29 @@ Caso totalmente degenerado
 \incfig{tiposmateriales}
 
 \section{Semiconductores}
-Densidad de estados
+extrínseco = dopado\\
+Opacos si $h \nu > E_g$\\
+Nivel de Fermi $E_F = \mu$\\
+Densidad de estados ($n$ electrones, $p$ holes)
 \begin{align*}
-&D_C = \frac{(2m^*_n) ^{2 /3}}{2\pi ^2\hbar ^3}\sqrt{E-E_C} , \quad 
-D_V = \frac{(2m^*_p) ^{2 /3}}{2\pi ^2\hbar ^3}\sqrt{E_V-E} \\
-&n = 2\left(\frac{2\pi m^*_nk_BT}{h^2}\right)^{3 /2} e ^{\beta(E_F-E_C)} = N_{eff}^C e ^{\beta (E_F-E_C)}\\
-&p = 2\left(\frac{2\pi m^*_pk_BT}{h^2}\right)^{3 /2} e ^{\beta(E_V-E_F)} = N_{eff}^V e ^{\beta (E_V-E_F)}\\
+&g_C(\varepsilon ) = \frac{(2m^*_n) ^{2 /3}}{2\pi ^2\hbar ^3}\sqrt{\varepsilon -\varepsilon _C} ; 
+g_V(\varepsilon ) = \frac{(2m^*_p) ^{2 /3}}{2\pi ^2\hbar ^3}\sqrt{\varepsilon _V-\varepsilon } \\
+&n = \frac{1}{4}\left(\frac{2 m^*_nk_BT}{\pi \hbar ^2}\right)^{3 /2} e ^{\beta(\mu -\varepsilon _C)} = N_{eff}^C e ^{\beta (\mu -\varepsilon _C)}\\
+&p = \frac{1}{4}\left(\frac{2 m^*_pk_BT}{\pi \hbar ^2}\right)^{3 /2} e ^{\beta(\varepsilon _V-\mu )} = N_{eff}^V e ^{\beta (\varepsilon _V-\mu )}\\
 & np = N_{eff}^CN_{eff}^V e ^{-\beta E_g} = 4 \left(\frac{k_BT}{2\pi \hbar ^2}\right)^3(m_n^*m_p^*)^{3 / 2}e ^{-\beta E_g}\\
-& e ^{2\beta E_F} = \frac{N_{eff}^V}{N_{eff}^C} e ^{\beta (E_V + E_C)}, \quad
-E_F = \frac{E_C+E_V}{2} + \frac{3}{4}k_BT\ln\left( \frac{m_p^*}{m_n^*} \right) \\
-& \mu = \frac{e\tau }{m^*}, \quad \sigma  = e(n\mu _n+ p\mu _p), \quad E_g = E_C-E_V
+& e ^{2\beta \mu } = \frac{N_{eff}^V}{N_{eff}^C} e ^{\beta (\varepsilon _V + \varepsilon _C)}, \quad
+\mu  = \frac{\varepsilon _C+\varepsilon _V}{2} + \frac{3}{4}k_BT\ln\left( \frac{m_p^*}{m_n^*} \right) \\
+& \mu = \frac{e\tau }{m^*}, \quad \sigma  = e(n\mu _n+ p\mu _p), \quad E_g = \varepsilon _C-\varepsilon _V\\
+& n = p = \sqrt{N_{eff}^CN^V_{eff}}e ^{-\frac{\beta E_g}{2}} \quad \text{ si intrínseco}
 \end{align*}
-Semiconductores dopados
+Semiconductores dopados ($n=1$ ionización) $\varepsilon = \varepsilon _0\varepsilon_r$
 \begin{align*}
-  &E_n = \frac{m^*e^4}{2(4\pi \varepsilon \hbar )^2} \frac{1}{n^2}, \quad r = \varepsilon \frac{h^2}{\pi m^*e^2}\\
+  &E_n = \frac{m^*e^4}{2(4\pi \varepsilon \hbar )^2} \frac{1}{n^2}, \quad r_n = \varepsilon \frac{4\pi \hbar ^2}{m^*e^2}n^2\\
   &n \approx \frac{2N_D}{1+\sqrt{1+4 \frac{N_D}{N_{eff}^C} e ^{\beta E_d} }} 
 \end{align*}
 Unión p-n
 \begin{align*}
-  &n_n = N^C_{eff} e ^{\beta (E_F-E_C^n)}; \quad p_p = N_{eff}^Ve ^{\beta (E_V-E_F)}\\
+  &n_n = N^C_{eff} e ^{\beta (\mu -\varepsilon _C^n)}; \quad p_p = N_{eff}^Ve ^{\beta (\varepsilon _V^p-\mu )}\\
   &d^0_n = \sqrt{ \frac{2\varepsilon V_D}{e} \frac{N_A / N_D}{N_A+N_D}}; \quad d_p^0 = \sqrt{\frac{2\varepsilon V_D}{e}\frac{N_D / N_A}{N_A+N_D}} \\
   & d_n(U) = d_n^0 \sqrt{1- \frac{U}{V_D}}; \quad d_p(U) = d_p^0 \sqrt{1- \frac{U}{V_D}}\\
   &eV_D=k_BT\ln\left( \frac{n_np_p}{n^2_i}\right); \quad I(U) = (I_n ^{gen} +I_p ^{gen})(e ^{\beta eU}-1)
