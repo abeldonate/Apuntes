@@ -439,14 +439,22 @@ Caso totalmente degenerado
 extrínseco = dopado\\
 Opacos si $h \nu > E_g$\\
 Nivel de Fermi $E_F = \mu$\\
-Densidad de estados ($n$ electrones, $p$ holes)
+Densidad de estados ($n$ electrones, $p$ holes)\\
+\begin{center}
+\begin{tabular}{c|c|c}
+  $n$ (negativo) & $N_C$ (conducción) & $N_D$ (donadores)\\
+  $p$ (positivo) & $N_V$ (valencia) & $N_A$ (aceptores)
+\hline
+
+\end{tabular}
+\end{center}
 \begin{align*}
 &g_C(\varepsilon ) = \frac{(2m^*_n) ^{2 /3}}{2\pi ^2\hbar ^3}\sqrt{\varepsilon -\varepsilon _C} ; 
 g_V(\varepsilon ) = \frac{(2m^*_p) ^{2 /3}}{2\pi ^2\hbar ^3}\sqrt{\varepsilon _V-\varepsilon } \\
 & n = \int_{\varepsilon _C}^\infty d\varepsilon g_C(\varepsilon )n_F(\beta (\varepsilon -\mu ))\approx \int _{\varepsilon _C}^\infty d\varepsilon g_C(\varepsilon ) e ^{\beta (\mu -\varepsilon )}\\
 & p = \int^{\varepsilon _V}_{-\infty} d\varepsilon g_V(\varepsilon )(1-n_F(\beta (\varepsilon -\mu )))\approx \int ^{\varepsilon _V}_{-\infty} d\varepsilon g_V(\varepsilon ) e ^{\beta (\varepsilon-\mu )}\\
-&n = \frac{1}{4}\left(\frac{2 m^*_nk_BT}{\pi \hbar ^2}\right)^{3 /2} e ^{\beta(\mu -\varepsilon _C)} = N_{eff}^C e ^{\beta (\mu -\varepsilon _C)}\\
-&p = \frac{1}{4}\left(\frac{2 m^*_pk_BT}{\pi \hbar ^2}\right)^{3 /2} e ^{\beta(\varepsilon _V-\mu )} = N_{eff}^V e ^{\beta (\varepsilon _V-\mu )}\\
+&n = \frac{1}{4}\left(\frac{2 m^*_nk_BT}{\pi \hbar ^2}\right)^{3 /2} e ^{\beta(\mu -\varepsilon _C)} = N_C e ^{\beta (\mu -\varepsilon _C)}\\
+&p = \frac{1}{4}\left(\frac{2 m^*_pk_BT}{\pi \hbar ^2}\right)^{3 /2} e ^{\beta(\varepsilon _V-\mu )} = N_V e ^{\beta (\varepsilon _V-\mu )}\\
 & np = N_CN_V e ^{-\beta E_g} = 4 \left(\frac{k_BT}{2\pi \hbar ^2}\right)^3(m_n^*m_p^*)^{3 / 2}e ^{-\beta E_g}\\
 & e ^{2\beta \mu } = \frac{N_V}{N_C} e ^{\beta (\varepsilon _V + \varepsilon _C)}, \quad
 \mu  = \frac{\varepsilon _C+\varepsilon _V}{2} + \frac{3}{4}k_BT\ln\left( \frac{m_p^*}{m_n^*} \right) \\
@@ -456,14 +464,15 @@ g_V(\varepsilon ) = \frac{(2m^*_p) ^{2 /3}}{2\pi ^2\hbar ^3}\sqrt{\varepsilon _V
 Semiconductores dopados ($n=1$ ionización) $\varepsilon = \varepsilon _0\varepsilon_r$
 \begin{align*}
   &E_n = \frac{m^*e^4}{2(4\pi \varepsilon \hbar )^2} \frac{1}{n^2}, \quad r_n = \varepsilon \frac{4\pi \hbar ^2}{m^*e^2}n^2\\
-  &n \approx \frac{2N_D}{1+\sqrt{1+4 \frac{N_D}{N_C} e ^{\beta E_d} }} 
+  &n_n \approx \frac{2N_D}{1+\sqrt{1+4 \frac{N_D}{N_C} e ^{\beta E_d} }} 
 \end{align*}
 Unión p-n
 \begin{align*}
   &n_n = N_C e ^{\beta (\mu -\varepsilon _C^n)}; \quad p_p = N_V e ^{\beta (\varepsilon _V^p-\mu )}\\
   &d^0_n = \sqrt{ \frac{2\varepsilon V_D}{e} \frac{N_A / N_D}{N_A+N_D}}; \quad d_p^0 = \sqrt{\frac{2\varepsilon V_D}{e}\frac{N_D / N_A}{N_A+N_D}} \\
-  & d_n(U) = d_n^0 \sqrt{1- \frac{U}{V_D}}; \quad d_p(U) = d_p^0 \sqrt{1- \frac{U}{V_D}}\\
-  &eV_D=k_BT\ln\left( \frac{n_np_p}{n^2_i}\right); \quad I(U) = (I_n ^{gen} +I_p ^{gen})(e ^{\beta eU}-1)
+  & d_n(V) = d_n^0 \sqrt{\frac{V_D-V}{V_D}}; \quad d_p(V) = d_p^0 \sqrt{\frac{V_D-V}{V_D}}\\
+  &\text{ancho de zona de carga espacial} = d_n(V)+d_p(V)\\
+  &eV_D=k_BT\ln\left( \frac{n_np_p}{n^2_i}\right); \quad I(V) = (I_n ^{gen} +I_p ^{gen})(e ^{\beta eV}-1)
 \end{align*}
 
 
