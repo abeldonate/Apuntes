@@ -72,8 +72,8 @@
 &\varepsilon _0 = \frac{1}{4\pi K} = 8.85\times 10^{-12} Fm^{-1}\\
 &\hbar = 1.055\times 10^{-34} Js = 6.58\times 10^{-16}eVs \\
 &e = 1.602 \times 10^{-19} C\\
-&\text{Fermions: }e^-, p, n \quad (n_F(E) = \frac{1}{e ^{\beta E}+1})\\
-& \text{Bosons: phonon, photon} \quad (n_B(E)=\frac{1}{e ^{\beta E} -1})\\
+&\text{Fermions: }e^-, p, n \quad (n_F(x) = \frac{1}{e ^{x}+1})\\
+& \text{Bosons: phonon, photon} \quad (n_B(x)=\frac{1}{e ^{x} -1})\\
 & n\sim 10 ^{22}cm ^{-3}; \tau \sim 10 ^{-15}s; v\sim 10 ^{-5}\frac{m}{s}
 \end{align*}
 
@@ -360,9 +360,9 @@ Seebeck coefficient $S = \frac{\Pi}{T}$
 $g = \frac{\text{densidad de estados}}{V}$
 \begin{align*}
   &g(\varepsilon ) = \frac{3n}{2(E_F)^{\frac{3}{2}}}\varepsilon ^{\frac{1}{2}} = \frac{(2m)^{\frac{3}{2}}}{2\pi ^2\hbar ^3}\varepsilon ^{\frac{1}{2}} , \quad k = \sqrt{\frac{2\varepsilon m}{\hbar ^2}}  \\
-  & N = \int_0^\infty \hspace{-0.5em} d\varepsilon g(\varepsilon )n_F(\beta (\varepsilon -\mu )), \quad
-  E_T = \int_0^\infty \hspace{-0.5em} d\varepsilon \varepsilon g(\varepsilon )n_F(\beta (\varepsilon -\mu ))\\
-  & C = \frac{\pi ^2}{3}\left( \frac{3Nk_B}{2} \right) \left( \frac{T}{T_F} \right) 
+  & n = \int_0^\infty \hspace{-0.5em} d\varepsilon g(\varepsilon )n_F(\beta (\varepsilon -\mu )), \quad
+  \frac{E_T}{V} = \int_0^\infty \hspace{-0.5em} d\varepsilon \varepsilon g(\varepsilon )n_F(\beta (\varepsilon -\mu ))\\
+  & C = \frac{\pi ^2}{3}\left( \frac{3Nk_B}{2} \right) \left( \frac{T}{T_F} \right)
 \end{align*}
 \[
 \overline{M} = g(E_F)\mu _B^2 \overline{B}; \quad \mu _B = 0.67 \left( \frac{K}{Tesla} \right) k_B
@@ -381,9 +381,7 @@ V(x)=V_0 + \sum _{j=1}^\infty V_j\cos\left( \frac{2\pi j}{a}x \right)  \quad \te
 V(x)=\sum_{j=-\infty}^\infty V_{\frac{2\pi j}{a}} e ^{i\frac{2\pi j}{a}x}
 \]
 Con las relaciones $V_j = 2 V_{\frac{2\pi j}{a}}$, y donde los coeficientes son
-\[
-  V_j = \frac{2}{a} \int _{-\frac{a}{2}} ^{\frac{a}{2}} dx V(x)\cos\left( \frac{2\pi j}{a}x \right); \quad
-  V_{\frac{2\pi j}{a}} = \frac{1}{a} \int _{-\frac{a}{2}} ^{\frac{a}{2}} dx V(x)e ^{-i\frac{2\pi j }{a}x}
+\[ V_j = \frac{2}{a} \int _{-\frac{a}{2}} ^{\frac{a}{2}} dx V(x)\cos\left( \frac{2\pi j}{a}x \right); \quad V_{\frac{2\pi j}{a}} = \frac{1}{a} \int _{-\frac{a}{2}} ^{\frac{a}{2}} dx V(x)e ^{-i\frac{2\pi j }{a}x}
 \]
 
 \underline{Gas de electrones libres}
@@ -445,6 +443,8 @@ Densidad de estados ($n$ electrones, $p$ holes)
 \begin{align*}
 &g_C(\varepsilon ) = \frac{(2m^*_n) ^{2 /3}}{2\pi ^2\hbar ^3}\sqrt{\varepsilon -\varepsilon _C} ; 
 g_V(\varepsilon ) = \frac{(2m^*_p) ^{2 /3}}{2\pi ^2\hbar ^3}\sqrt{\varepsilon _V-\varepsilon } \\
+& n = \int_{\varepsilon _C}^\infty d\varepsilon g_C(\varepsilon )n_F(\beta (\varepsilon -\mu ))\approx \int _{\varepsilon _C}^\infty d\varepsilon g_C(\varepsilon ) e ^{\beta (\mu -\varepsilon )}\\
+& p = \int^{\varepsilon _V}_{-\infty} d\varepsilon g_V(\varepsilon )(1-n_F(\beta (\varepsilon -\mu )))\approx \int ^{\varepsilon _V}_{-\infty} d\varepsilon g_V(\varepsilon ) e ^{\beta (\varepsilon-\mu )}\\
 &n = \frac{1}{4}\left(\frac{2 m^*_nk_BT}{\pi \hbar ^2}\right)^{3 /2} e ^{\beta(\mu -\varepsilon _C)} = N_{eff}^C e ^{\beta (\mu -\varepsilon _C)}\\
 &p = \frac{1}{4}\left(\frac{2 m^*_pk_BT}{\pi \hbar ^2}\right)^{3 /2} e ^{\beta(\varepsilon _V-\mu )} = N_{eff}^V e ^{\beta (\varepsilon _V-\mu )}\\
 & np = N_CN_V e ^{-\beta E_g} = 4 \left(\frac{k_BT}{2\pi \hbar ^2}\right)^3(m_n^*m_p^*)^{3 / 2}e ^{-\beta E_g}\\
