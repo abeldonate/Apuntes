@@ -323,13 +323,13 @@ Aproximamos la ecuación de dispersión para $k$ baja como  $\omega = \nu k$
 \] 
 donde hemos contado cada partícula y cada estado 3 veces y hemos usado
 \[
-\omega = \nu k, \qquad g(k)=\frac{V}{2\pi^2}k^2, \qquad g(\omega )= \frac{V}{2\pi^2 \nu^3}\omega ^2
+\omega = \nu k, \qquad g(k)=\frac{V}{2\pi^2}k^2, \qquad g(\omega )= \frac{V}{2\pi^2 \nu^3}\omega ^2 = 9N \frac{\omega ^2}{\omega ^3_D}
 \]
 La energía y la capacidad calorífica
 \begin{align*}
   \langle E \rangle &= \int_0^{\omega _D}\hbar \omega 3g(\omega )\left( \frac{1}{e^{\beta \hbar \omega }-1} +\frac{1}{2} \right) d\omega  =\\
 					&=E_0 + \frac{3V\hbar }{2\pi^2\nu^3} \int_0^{\omega _D}\frac{\hbar \omega ^3}{e^{\beta \hbar \omega }-1} d\omega \qquad (x=\frac{\hbar \omega }{k_B T})\\
-  T_D :&= \frac{\hbar \omega }{k_B} \quad   \Rightarrow  \boxed{\langle E \rangle = \frac{3Vk_B^4T^4}{2\pi^2\nu^3\hbar ^3}\int_0^{\frac{T_D}{T}}\frac{x^3}{e^x-1}dx }
+  T_D :&= \frac{\hbar \omega_D }{k_B} \quad   \Rightarrow  \boxed{\langle E \rangle = \frac{3Vk_B^4T^4}{2\pi^2\nu^3\hbar ^3}\int_0^{\frac{T_D}{T}}\frac{x^3}{e^x-1}dx }
 \end{align*}
 La capacidad calorífica $C_v = \frac{\partial \langle E \rangle }{\partial T}$ en los extremos:
 \begin{itemize}[topsep=-6pt, itemsep=0pt]
@@ -440,12 +440,12 @@ extrínseco = dopado\\
 Opacos si $h \nu > E_g$\\
 Nivel de Fermi $E_F = \mu$\\
 Densidad de estados ($n$ electrones, $p$ holes)\\
+Energía de donadores / impurezas $E_D$
 \begin{center}
 \begin{tabular}{c|c|c}
   $n$ (negativo) & $N_C$ (conducción) & $N_D$ (donadores)\\
-  $p$ (positivo) & $N_V$ (valencia) & $N_A$ (aceptores)
 \hline
-
+  $p$ (positivo) & $N_V$ (valencia) & $N_A$ (aceptores)
 \end{tabular}
 \end{center}
 \begin{align*}
@@ -474,7 +474,12 @@ Unión p-n
   &\text{ancho de zona de carga espacial} = d_n(V)+d_p(V)\\
   &eV_D=k_BT\ln\left( \frac{n_np_p}{n^2_i}\right); \quad I(V) = (I_n ^{gen} +I_p ^{gen})(e ^{\beta eV}-1)
 \end{align*}
-
+p-Dopado ($N_A\gg N_D$):
+\begin{itemize}[topsep=-6pt, itemsep=0pt]
+  \item $T$ bajas  $\Rightarrow p\approx N_Ve ^{-\beta E_A}$
+  \item $T$ intermedias  $\Rightarrow p\approx N_A-N_D $
+  \item $T$ alta  $\Rightarrow p=n = \sqrt{N_CN_V}e ^{-\beta \frac{E_g}{2}} $
+\end{itemize}
 
 
 
