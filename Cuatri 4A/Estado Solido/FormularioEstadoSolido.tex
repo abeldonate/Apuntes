@@ -64,8 +64,9 @@
 
 \begin{multicols}{2}[\columnsep2em]
 
-\textbf{Constantes}
+\textbf{Constantes y aclaraciones}
 \begin{align*}
+& G(x) = \frac{dN}{dx} = \text{dens. de est.}; \quad g(x)= \frac{dn}{dx} = \frac{\text{dens. de est.}}{V}\\
 &k_B = 1.381\times 10^{-23}JK^{-1} = 8.62\times 10^{-5}eVK^{-1}\\
 &m_e = 9.11\times 10^{-31}kg = 0.511MeVc^{-2}\\
 &m_p = 1.67\times 10^{-27}kg = 938MeVc^{-2}\\
@@ -76,7 +77,18 @@
 & \text{Bosons: phonon, photon} \quad (n_B(x)=\frac{1}{e ^{x} -1})\\
 & n\sim 10 ^{22}cm ^{-3}; \tau \sim 10 ^{-15}s; v\sim 10 ^{-5}\frac{m}{s}
 \end{align*}
+\begin{minipage}{0.5\columnwidth}
+\incfig{fermibose}
+\end{minipage}
+\begin{minipage}{0.7\columnwidth}
+  \underline{$T$ bajas}\\
+ $n_F(x) \approx n_B(x)\approx e ^{-x}$
 
+  \underline{$T$ altas}\\
+ $n_F(x) \approx \frac{1}{2+x}$ \\
+ $n_B(x) \approx \frac{1}{x}$
+
+\end{minipage}
 
 
 \section{Estructura cristalina}
@@ -129,7 +141,7 @@ Cambio de base
   (x, y, z) = (x^*, y^*, z^*)P, \quad \begin{pmatrix} a'^* \\ b'^* \\z'^* \end{pmatrix} =P^{-1} \begin{pmatrix} a^*\\b^*\\c^* \end{pmatrix} 
 \end{align*}
 
-Distancia interplanar $g_{hkl}= \frac{2}{d_{hkl}}; \quad g_{hkl}^2 = (hkl)G^*\begin{pmatrix} h\\k\\l \end{pmatrix}  $
+Distancia interplanar $g_{hkl}= \frac{1}{d_{hkl}}; \quad g_{hkl}^2 = (hkl)G^*\begin{pmatrix} h\\k\\l \end{pmatrix}  $
 
 Transferencia de momento $Q = \frac{4\pi \sin\theta }{\lambda}$
 
@@ -232,13 +244,13 @@ N(k) = \int_{(\frac{2\pi}{L})^2(n^2 + m^2+l^2)\le k^2} dV =\frac{L^3}{6\pi^2}k^3
 1, 2 y 3 dimensiones respectivamente (y se cumple $\omega = \nu_s k$)
 \begin{align*}
   \begin{cases}
-    g(k) = \frac{L}{\pi} \\  g(\omega ) = \frac{L}{\pi \nu} 
+    G(k) = \frac{L}{\pi} \\  G(\omega ) = \frac{L}{\pi \nu} 
   \end{cases}
   \begin{cases}
-    g(k) = \frac{L^2}{2\pi}k \\  g(\omega ) = \frac{L^2}{2\pi \nu^2}\omega 
+    G(k) = \frac{L^2}{2\pi}k \\  G(\omega ) = \frac{L^2}{2\pi \nu^2}\omega 
   \end{cases}
   \begin{cases}
-    g(k) = \frac{V}{2\pi^2}k^2 \\  g(\omega ) = \frac{V}{2\pi^2 \nu_s^3}\omega ^2
+    G(k) = \frac{V}{2\pi^2}k^2 \\  G(\omega ) = \frac{V}{2\pi^2 \nu_s^3}\omega ^2
   \end{cases}
 \end{align*}
 
@@ -319,15 +331,15 @@ Definimos ahora $T_E = \frac{\hbar \omega_E}{k_B}$. En los límites
 \subsection{Modelo de Debye}
 Aproximamos la ecuación de dispersión para $k$ baja como  $\omega = \nu k$
 \[
-  3N = \int_0^{\omega _D} 3g(\omega )d\omega = \frac{V}{2\pi^2 \nu^3}\omega _D^3 \Rightarrow \boxed{\omega _D = \sqrt[3]{\frac{6\pi^2\nu^3N}{V}} }
+  3N = \int_0^{\omega _D} 3G(\omega )d\omega = \frac{V}{2\pi^2 \nu^3}\omega _D^3 \Rightarrow \boxed{\omega _D = \sqrt[3]{\frac{6\pi^2\nu^3N}{V}} }
 \] 
 donde hemos contado cada partícula y cada estado 3 veces y hemos usado
 \[
-\omega = \nu k, \qquad g(k)=\frac{V}{2\pi^2}k^2, \qquad g(\omega )= \frac{V}{2\pi^2 \nu^3}\omega ^2 = 9N \frac{\omega ^2}{\omega ^3_D}
+\omega = \nu k, \qquad G(k)=\frac{V}{2\pi^2}k^2, \qquad G(\omega )= \frac{V}{2\pi^2 \nu^3}\omega ^2 = 3N \frac{\omega ^2}{\omega ^3_D}
 \]
 La energía y la capacidad calorífica
 \begin{align*}
-  \langle E \rangle &= \int_0^{\omega _D}\hbar \omega 3g(\omega )\left( \frac{1}{e^{\beta \hbar \omega }-1} +\frac{1}{2} \right) d\omega  =\\
+  \langle E \rangle &= \int_0^{\omega _D}\hbar \omega 3G(\omega )\left( \frac{1}{e^{\beta \hbar \omega }-1} +\frac{1}{2} \right) d\omega  =\\
 					&=E_0 + \frac{3V\hbar }{2\pi^2\nu^3} \int_0^{\omega _D}\frac{\hbar \omega ^3}{e^{\beta \hbar \omega }-1} d\omega \qquad (x=\frac{\hbar \omega }{k_B T})\\
   T_D :&= \frac{\hbar \omega_D }{k_B} \quad   \Rightarrow  \boxed{\langle E \rangle = \frac{3Vk_B^4T^4}{2\pi^2\nu^3\hbar ^3}\int_0^{\frac{T_D}{T}}\frac{x^3}{e^x-1}dx }
 \end{align*}
@@ -357,7 +369,6 @@ Seebeck coefficient $S = \frac{\Pi}{T}$
   \langle v\rangle_{gas id.} = \sqrt{\frac{8k_BT}{\pi m}} ; \quad \kappa = \frac{1}{3} nc\langle v\rangle ^2\tau = \frac{4}{\pi }\frac{n\tau k_B^2T}{m}
 \] 
 \subsection{Capacidad calorífica}
-$g = \frac{\text{densidad de estados}}{V}$
 \begin{align*}
   &g(\varepsilon ) = \frac{3n}{2(E_F)^{\frac{3}{2}}}\varepsilon ^{\frac{1}{2}} = \frac{(2m)^{\frac{3}{2}}}{2\pi ^2\hbar ^3}\varepsilon ^{\frac{1}{2}} , \quad k = \sqrt{\frac{2\varepsilon m}{\hbar ^2}}  \\
   & n = \int_0^\infty \hspace{-0.5em} d\varepsilon g(\varepsilon )n_F(\beta (\varepsilon -\mu )), \quad
