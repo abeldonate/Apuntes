@@ -349,8 +349,8 @@ La capacidad calorífica $C_v = \frac{\partial \langle E \rangle }{\partial T}$ 
   \item Si $T\ll T_D \quad \Rightarrow \quad \langle E \rangle \sim  \frac{3\pi^4Nk_BT^4}{5T_D^3}\quad\Rightarrow \quad C_v \sim  \frac{12\pi^4}{5}Nk_B \left( \frac{T}{T_D} \right)^3 $
 \end{itemize}
 
-\section{No se, cuanticocosas}
-\subsection{Drude model}
+\section{Electrones en los sólidos}
+\underline{Modelo de Drude}
 \begin{align*}
   &n=\frac{N}{V}; \quad\frac{dp}{dt} = -\frac{p}{\tau}+F; \quad \overline{j} = -ne \overline{v} = \sigma \overline{E}\\
   & \sigma _0 = \frac{e^2\tau n}{m}; \quad \text{si } F -e\text{Re}[E_0e ^{i\omega t}] \Rightarrow \sigma (\omega ) = \frac{\sigma _0}{1-i\omega t}\\
@@ -358,8 +358,10 @@ La capacidad calorífica $C_v = \frac{\partial \langle E \rangle }{\partial T}$ 
   &\overline{E} = \tilde{\rho }\overline{j}; \quad \rho _{x x} = \rho _{yy}=\rho _{zz} \frac{m}{ne^2\tau }; \quad \frac{1}{2}mv_0^2= \frac{3}{2}k_BT
 \end{align*}
 
-(COSAS DEL EFECTO HALL PROBLEMA 4)
-
+Efecto Hall (2 portadores con la misma carga opuesta)
+\[
+\mu_i =\frac{\tau_i }{m_i};\quad \sigma =ne^2(\mu _1+\mu _2);\quad R_H=\frac{\mu _2^2-\mu _1^2}{n_0e(\mu _1+\mu _2)^2}e ^{\beta E}
+\] 
 Hall resistivity $\rho _{xy}=-\rho_{yx} = \frac{B}{ne}$ $(\overline{B}\propto \hat{z} )$
 
 Peltier coefficient $\Pi = -\frac{k_BT}{2e}= \frac{-c_vT}{3e}$
@@ -367,8 +369,8 @@ Peltier coefficient $\Pi = -\frac{k_BT}{2e}= \frac{-c_vT}{3e}$
 Seebeck coefficient $S = \frac{\Pi}{T}$
 \[
   \langle v\rangle_{gas id.} = \sqrt{\frac{8k_BT}{\pi m}} ; \quad \kappa = \frac{1}{3} nc\langle v\rangle ^2\tau = \frac{4}{\pi }\frac{n\tau k_B^2T}{m}
-\] 
-\subsection{Capacidad calorífica}
+\]
+\underline{Capacidad Calorífica}
 \begin{align*}
   &g(\varepsilon ) = \frac{3n}{2(E_F)^{\frac{3}{2}}}\varepsilon ^{\frac{1}{2}} = \frac{(2m)^{\frac{3}{2}}}{2\pi ^2\hbar ^3}\varepsilon ^{\frac{1}{2}} , \quad k = \sqrt{\frac{2\varepsilon m}{\hbar ^2}}  \\
   & n = \int_0^\infty \hspace{-0.5em} d\varepsilon g(\varepsilon )n_F(\beta (\varepsilon -\mu )), \quad
@@ -410,6 +412,10 @@ Considerando los dos espines (multiplicamos por 2)
 \[
 N_T = 2 \cdot \left( \frac{4}{3}\pi (n_x^2+n_y^2+n_z^2)^{3 / 2} \right) \quad \Rightarrow \quad k_{max}^2 = k_F^2 = (3n\pi ^2) ^{ \frac{2}{3}}
 \]
+$e^-$ excitados por encima de  $\varepsilon _F$
+\[
+n_{e^-} = 2 \cdot \frac{1}{2} \cdot (2k_BT) (\frac{1}{2}g(\varepsilon _F))=k_BTg(\varepsilon _F); \quad \frac{n_{e^-}}{n}=\frac{3}{4}\frac{k_BT}{\varepsilon _F}
+\] 
 
 
 \underline{Electrones casi-libres}
@@ -420,6 +426,7 @@ N_T = 2 \cdot \left( \frac{4}{3}\pi (n_x^2+n_y^2+n_z^2)^{3 / 2} \right) \quad \R
 
 \underline{Enlace fuerte, celda primitiva cúbica} ($B=\gamma, A = \beta $)
 \begin{align*}
+  &\varepsilon(\overline{k}) = E- \left( \frac{\beta +\sum _{r_i\neq 0}\gamma(r_i)e ^{i \overline{k}\cdot \overline{r}_i}}{1+\sum_{r_i\neq 0}\alpha (r_i)e ^{i \overline{k}\cdot \overline{r}_i}} \right) \\
   &E(\overline{k}) \approx E_i-A-2B (\cos k_xa + \cos k_ya + \cos k_za)\\
   &A = -\langle \varphi _{i, n} | v | \varphi _{i,n} \rangle , \quad 
   B = -\langle \varphi _{i, m} | v | \varphi _{i,n} \rangle\\
@@ -496,7 +503,7 @@ p-Dopado ($N_A\gg N_D$):
 
 \section{Mates}
 \begin{align*}
-&\sin^2 \left(\frac{x}{2}\right) = \frac{1-\cos a}{2}\\
+&\sin^2 \left(\frac{x}{2}\right) = \frac{1-\cos x}{2}\\
 &\int_0^\infty \frac{1}{e^x-1}dx = +\infty, \quad \int_0^\infty \frac{1}{e^x+1}dx = \ln(2)\\
 &\int_0^\infty \frac{x}{e^x-1}dx = \frac{\pi^2}{6}, \quad \int_0^\infty \frac{x}{e^x+1}dx = \frac{\pi^2}{12} \\
 &\int_0^\infty \frac{x^2}{e^x-1}dx = 2\zeta(3), \quad \int_0^\infty \frac{x^2}{e^x+1}dx = \frac{3}{2}\zeta(3)\\
