@@ -198,6 +198,8 @@ The choice of Frobenius functor as a tool in rings of positive characteristic is
 \end{enumerate}
 We provide sketches of the proof of some of them:
 
+(1) If $R$ is flat from Kunz's theorem we have that the Frobenius endomorphism is flat, and thus $R'$ is flat. Thus, since the functor  $F$ is constructed by tensoring the module with a flat module, the functor is exact.
+
 (6) Since $R$ is regular, then the Frobenius functor is exact. We only need to prove that exact functors preserve cohomology.
 
 We start the proof considering the following diagram
@@ -268,18 +270,38 @@ F(H_n(M)) \cong  \frac{F(Z_n)}{F(B_n)} \cong  \frac{Z_n'}{B_n'} \cong H_n(F(M))
 Proving that an exact functor commutes with cohomology (and homology).
 \end{observation}
 
-(As we have seen, some of the properties we may expect from a useful functor come from assuming the regularity of $R$.)
+As we have seen, some of the properties we may expect from a useful functor come from assuming the regularity of $R$. We will assume in advance that $R$ is regular.
 
 \begin{definition}[Frobenius power ideal] Given  $I = (x_1, \ldots, x_n)$ an ideal of $R$, we define its Frobenius $e-$power ideal as
    \[
 	 I ^{[p^e]} := (x_1^{p^e}, \ldots, x_n ^{p^e})R
   \] 
 \end{definition}
-Notice that the ideal $I ^{[p^e]}$ does not depend on the choice of the elements $x_i$. (\com{demostrar})
+Notice that the ideal $I ^{[p^e]}$ does not depend on the choice of the elements $x_i$. The proof begins with $I ^{[p^e]} = (x_1, \ldots, x_n) = (y_1, \ldots, y_n)$. Then, there exists $r_1, \ldots, r_n \in R$ such that $y_1 = r_1x_1+\ldots+ r_nx_n$. Then $y_1 ^{p^e} = r_1 ^{p^e}x_1 ^{p^e} + \ldots+ r_n^{p^e}x_n^{p^e}$, which means $y_1 ^{p^e} \in (x_1 ^{p^e}, \ldots, x_n ^{p^e})$, and thus $(y_1 ^{p^e}, \ldots, y_n ^{p^e})\subseteq (x_1 ^{p^e}, \ldots, x_n ^{p^e})$. By symmetry we also have the inverse containment, so both ideals are equal.
+
+Now we have defined the ideal $I ^{[p]}$, we see why this ideal naturally arises from the following example.
+
+\begin{example} Let $I = (x_1, \ldots, x_n)$. Then $F(R / I) \cong R / I ^{[p]}$. For the proof we consider the following right exact sequence:
+  % https://q.uiver.app/#q=WzAsNCxbMiwwLCJSIl0sWzMsMCwiUi9JIl0sWzQsMCwiMCJdLFswLDAsIlJebiJdLFswLDEsIlxccGkiXSxbMSwyXSxbMywwLCJnID0gKHhfMSBcXGxkb3RzIHhfbikiXV0=
+\[\begin{tikzcd}
+	{R^n} && R & {R/I} & 0
+	\arrow["\pi", from=1-3, to=1-4]
+	\arrow[from=1-4, to=1-5]
+	\arrow["{g = (x_1 \ldots x_n)}", from=1-1, to=1-3]
+\end{tikzcd}\]
+ From the exactness of the Frobenius functor and the fact that $F(R)\cong R \Rightarrow F(R^n)\cong R^n$, the short exact sequence transforms into
+ % https://q.uiver.app/#q=WzAsNCxbMiwwLCJGKFIpXFxjb25nIFIiXSxbMywwLCJGKFIvSSkiXSxbNCwwLCIwIl0sWzAsMCwiRihSXm4pXFxjb25nIFJebiJdLFswLDEsIlxccGknIl0sWzEsMl0sWzMsMCwiZycgPSAoeF8xXnAgXFxsZG90cyB4X25ecCkiXV0=
+\[\begin{tikzcd}
+	{F(R^n)\cong R^n} && {F(R)\cong R} & {F(R/I)} & 0
+	\arrow["{\pi'}", from=1-3, to=1-4]
+	\arrow[from=1-4, to=1-5]
+	\arrow["{g' = (x_1^p \ldots x_n^p)}", from=1-1, to=1-3]
+\end{tikzcd}\]
+which means that, by the first isomorphism theorem $F(R / I) \cong R / \ker \pi' \cong R / \im g' \cong R / I^{[p]} $, since clearly the image of $g'$ is  $I ^{[p]}$.
+\end{example}
 
 
 
-\com{Properties of Frobenius functors}
 
 \section{F-modules}
 
@@ -336,6 +358,9 @@ Assuming the ring is local sometimes is very strong and we need some notion of r
 
   (3) The ring $R = k[[x_1, \ldots, x_d]]$ is local and regular. The locality came from the fact that $\mathfrak{m} = (x_1, \ldots, x_n)$ is the only maximal ideal since every other element is invertible. Furthermore, is regular because we can consider the chain $\mathfrak{p}_i = (x_1, \ldots, x_i)$ and see that $\dim R = n$.
 \end{example}
+
+\begin{theorem}[Kunz] The ring  $R$ is regular if and only if the Frobenius endomorphism $f:R\to R$ is flat.
+\end{theorem}
 
 
 
