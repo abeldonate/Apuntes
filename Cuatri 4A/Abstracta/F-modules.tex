@@ -165,6 +165,9 @@ g(h(r)) = g(r\otimes 1) = 1, \quad h(g(r'\otimes r)) = h(r'r^p) = (r'r^p)\otimes
 Thus, we have the isomorphism.
 
 
+
+
+
 \begin{definition}[Frobenius of a complex] Given the complex $M^{\bullet}$, we define its induced complex $F(M^{\bullet})$ as the complex
   % https://q.uiver.app/#q=WzAsMTAsWzEsMCwiTV97ay0xfSJdLFsyLDAsIk1fe2t9Il0sWzMsMCwiTV97aysxfSJdLFsxLDEsIkYoTV97ay0xfSkiXSxbMywxLCJGKE1fe2srMX0pIl0sWzIsMSwiRihNX3trfSkiXSxbMCwwLCJcXGNkb3RzIl0sWzQsMCwiXFxjZG90cyJdLFs0LDEsIlxcY2RvdHMiXSxbMCwxLCJcXGNkb3RzIl0sWzAsMywiRiJdLFsxLDUsIkYiXSxbMiw0LCJGIl0sWzAsMSwiaF97ay0xfSJdLFsxLDIsImhfayJdLFszLDUsIkYoaF97ay0xfSkiXSxbNSw0LCJGKGhfaykiXSxbNiwwXSxbMiw3XSxbNCw4XSxbOSwzXV0=
 \[\begin{tikzcd}
@@ -289,7 +292,7 @@ Now we have defined the ideal $I ^{[p]}$, we see why this ideal naturally arises
 	\arrow[from=1-4, to=1-5]
 	\arrow["{g = (x_1 \ldots x_n)}", from=1-1, to=1-3]
 \end{tikzcd}\]
- From the exactness of the Frobenius functor and the fact that $F(R)\cong R \Rightarrow F(R^n)\cong R^n$, the short exact sequence transforms into
+ From the exactness of the Frobenius functor and the fact that $F(R)\cong R \Rightarrow F(R^n)\cong R^n$, the right exact sequence transforms into
  % https://q.uiver.app/#q=WzAsNCxbMiwwLCJGKFIpXFxjb25nIFIiXSxbMywwLCJGKFIvSSkiXSxbNCwwLCIwIl0sWzAsMCwiRihSXm4pXFxjb25nIFJebiJdLFswLDEsIlxccGknIl0sWzEsMl0sWzMsMCwiZycgPSAoeF8xXnAgXFxsZG90cyB4X25ecCkiXV0=
 \[\begin{tikzcd}
 	{F(R^n)\cong R^n} && {F(R)\cong R} & {F(R/I)} & 0
@@ -301,6 +304,28 @@ which means that, by the first isomorphism theorem $F(R / I) \cong R / \ker \pi'
 \end{example}
 
 
+\begin{example} Let $I = (x_1, \ldots, x_n)$. Then $F(I) \cong I ^{[p]}$. In the same way as we did before, we consider the functor applied to a, this time, short exact sequence
+% https://q.uiver.app/#q=WzAsNSxbMCwwLCIwIl0sWzEsMCwiSSJdLFsyLDAsIlIiXSxbMywwLCJSL0kiXSxbNCwwLCIwIl0sWzAsMV0sWzEsMiwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbMiwzLCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMyw0XV0=
+\[\begin{tikzcd}
+	0 & I & R & {R/I} & 0
+	\arrow[from=1-1, to=1-2]
+	\arrow[hook, from=1-2, to=1-3]
+	\arrow[two heads, from=1-3, to=1-4]
+	\arrow[from=1-4, to=1-5]
+\end{tikzcd}\]
+From the exactness of the Frobenius functor and the fact that $F(R)\cong R, F(R / I) \cong R / I ^{[p]}$, the short exact sequence transforms into
+% https://q.uiver.app/#q=WzAsNSxbMCwwLCIwIl0sWzEsMCwiRihJKSJdLFsyLDAsIlIiXSxbMywwLCJSL0lee1twXX0iXSxbNCwwLCIwIl0sWzAsMV0sWzEsMiwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbMiwzLCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMyw0XV0=
+\[\begin{tikzcd}
+	0 & {F(I)} & R & {R/I^{[p]}} & 0
+	\arrow[from=1-1, to=1-2]
+	\arrow[hook, from=1-2, to=1-3]
+	\arrow[two heads, from=1-3, to=1-4]
+	\arrow[from=1-4, to=1-5]
+\end{tikzcd}\]
+meaning that $R / I ^{[p]} \cong R / F(I) \Rightarrow F(I)\cong I ^{[p]}$.
+\end{example}
+
+
 
 
 \section{F-modules}
@@ -308,6 +333,94 @@ which means that, by the first isomorphism theorem $F(R / I) \cong R / \ker \pi'
 \begin{definition}[F-Module] An $F-module$ is an $R-$module $M$ equipped with an $R-$isomorphism  $\theta:M \to F(M)$ called the structure morphism.
 \end{definition}
 
+We will denote an $F-$module as  $(M, \theta_M)$, being $M$ an  $R-$module and  $\theta _M$ its structure morphism.
+
+\begin{observation} In \cite{blickle} the $R-$ module is defined with an equipped $R-$ linear map $\vartheta : F(M)\to M$, that needs not to be an isomorphism. Those modules in which $\vartheta$ induces an isomorphism are called \textbf{unit} $F-$modules. We will only work in this article with them.
+\end{observation}
+
+\begin{definition}[Morphism of $F-$modules] Given two  $F-$ modules  $(M, \theta _M)$ and $(N, \theta _N)$, we say $f:M\to N$ is a morphism of $F-$modules if the following diagram commutes
+  % https://q.uiver.app/#q=WzAsNCxbMCwwLCJNIl0sWzEsMCwiTiJdLFswLDEsIkYoTSkiXSxbMSwxLCJGKE4pIl0sWzAsMiwiXFx0aGV0YV9NIl0sWzEsMywiXFx0aGV0YV9OIl0sWzAsMSwiZyJdLFsyLDMsIkYoZykiXV0=
+\[\begin{tikzcd}
+	M & N \\
+	{F(M)} & {F(N)}
+	\arrow["{\theta_M}", from=1-1, to=2-1]
+	\arrow["{\theta_N}", from=1-2, to=2-2]
+	\arrow["g", from=1-1, to=1-2]
+	\arrow["{F(g)}", from=2-1, to=2-2]
+\end{tikzcd}\]
+\end{definition}
+
+\begin{example} In the case $M=R$ is the ring itself with  $R-$module structure, we have a natural isomorphism  $\theta : R \to F(R)$, which makes $(R, \theta )$ an $F-$module. This isomorphism is given by
+  \begin{align*}
+	\theta : R &\to F(R)\cong R' \otimes _R R \\
+	r &\mapsto r \otimes 1
+  \end{align*}
+
+\end{example}
+
+Another important example is the $F-$module of the localization by a multiplicative set $S$ of the ring $R$.
+
+\begin{example} Let  $M=S ^{-1}R$, then we have the isomorphism of $R-$modules $F(S^{-1}R)\cong S^{-1}R$. This is shown from the commutativity of the Frobenius functor with localization $F(S^{-1}R)\cong S^{-1}F(R)\cong S^{-1}R$. The natural isomorphism is given by
+   \begin{align*}
+	\theta : S ^{-1}R & \to R'\otimes _R S ^{-1}R\\
+	\frac{r}{s} &\mapsto rs ^{p-1} \otimes \frac{1}{s}
+   \end{align*}
+To explicitly prove this isomorphism we consider the two maps
+
+\begin{minipage}{0.5\textwidth}
+   \begin{align*}
+	g : S ^{-1}R & \to R'\otimes _R S ^{-1}R\\
+	\frac{r}{s} &\mapsto rs ^{p-1} \otimes \frac{1}{s}
+   \end{align*}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+   \begin{align*}
+	 h : R'\otimes _R S ^{-1}R & \to  S^{-1}R\\
+	 r' \otimes \frac{r}{s} & \mapsto \frac{r'r^p}{s^p}
+   \end{align*}
+\end{minipage}
+
+To see that the morphisms are well-defined note that
+\[
+g\left(a \cdot \frac{r}{s}\right) = g\left(\frac{ar}{s}\right) = a^prs ^{p-1} \otimes \frac{1}{s} = a \cdot g\left(\frac{r}{s}\right)
+\] 
+and 
+\[
+h\left(a \cdot r'\otimes \frac{r}{s}\right) = h\left(\left(a^pr'\right)\otimes \frac{r}{s}\right) = h\left(r'\otimes \frac{ar}{s}\right) = \frac{a^pr'r^p}{s^p} = a\cdot h\left(r'\otimes \frac{r}{s}\right)
+\] 
+with frobenius action. Finally we see that they are inverse each other
+\[
+  g\left(h\left(r'\otimes \frac{r}{s}\right)\right) = g\left(\frac{r'r^p}{s^p}\right) = r'r^p s ^{p\left({p-1}\right)} \otimes \frac{1}{s^p} = rs^{p-1} \cdot \left(r' \otimes \frac{1}{s^p}\right) = r' \otimes \frac{rs ^{p-1}}{s^p} = r' \otimes \frac{r}{s} \Rightarrow g\circ h = Id
+\] 
+and 
+\[
+h\left( g \left( \frac{r}{s} \right)  \right) = h \left( rs ^{p-1} \otimes \frac{1}{s} \right) = \frac{rs ^{p-1}\cdot 1}{s^p} = \frac{r}{s} \Rightarrow h\circ g = Id
+\] 
+\end{example}
+
+The key point is that $F-$modules form an Abelian category whose objects are  $F-$modules itself and the morphisms are the latter defined  $F-$modules morphisms.
+
+We introduce now  $F-$modules in the study of local cohomology. Firs we present two equivalent forms of computing the local cohomology of an ideal  $I\subseteq R$.
+
+\begin{definition}[Local cohomology (version 1)] Let $\Gamma_I= \{m\in M : I^nm = 0 \text{ for some }n\in \mathbb{N} \}$. One can check this induces the so-called functor that transform the functions in the following natural way
+  % https://q.uiver.app/#q=WzAsNCxbMCwwLCJNIl0sWzEsMCwiTiJdLFswLDEsIlxcR2FtbWFfSShNKSJdLFsxLDEsIlxcR2FtbWFfSShOKSJdLFswLDIsIlxcR2FtbWFfSSJdLFsxLDMsIlxcR2FtbWFfSSJdLFswLDEsImciXSxbMiwzLCJcXEdhbW1hX0koZykiXV0=
+\[\begin{tikzcd}
+	M & N \\
+	{\Gamma_I(M)} & {\Gamma_I(N)}
+	\arrow["{\Gamma_I}", from=1-1, to=2-1]
+	\arrow["{\Gamma_I}", from=1-2, to=2-2]
+	\arrow["g", from=1-1, to=1-2]
+	\arrow["{\Gamma_I(g)}", from=2-1, to=2-2]
+\end{tikzcd}\]
+Then taking an injective resolution $E^\bullet$ of $M$, we define the j-th local cohomology module of $M$ with support in  $I$ as the  $j-$th right derived functor of $\Gamma_I $, that is
+\[
+H_I^j(M)=H^j(\Gamma _I (E^\bullet) )
+\] 
+\end{definition}
+
+\begin{definition}[Local cohomology (version 2)] Let 
+
+\end{definition}
 
 
 \section{Appendix}
@@ -364,8 +477,7 @@ Assuming the ring is local sometimes is very strong and we need some notion of r
 
 
 
-
-
-
-
+\nocite{*}
+\bibliographystyle{alpha}
+\bibliography{refs}
 \end{document}
