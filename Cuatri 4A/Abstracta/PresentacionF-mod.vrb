@@ -1,0 +1,16 @@
+\frametitle{$F-$module}
+\begin{block}{Definition of $F-$module}
+An $F-module$ is an $R-$module $M$ equipped with an $R-$isomorphism  $\theta:M \to F(M)$ called the structure morphism.
+\end{block}
+\begin{block}{Morphism of $F-$modules}
+Given two  $F-$ modules  $(M, \theta _M)$ and $(N, \theta _N)$, we say $f:M\to N$ is a morphism of $F-$modules if the following diagram commutes
+  % https://q.uiver.app/#q=WzAsNCxbMCwwLCJNIl0sWzEsMCwiTiJdLFswLDEsIkYoTSkiXSxbMSwxLCJGKE4pIl0sWzAsMiwiXFx0aGV0YV9NIl0sWzEsMywiXFx0aGV0YV9OIl0sWzAsMSwiZyJdLFsyLDMsIkYoZykiXV0=
+\[\begin{tikzcd}
+	M & N \\
+	{F(M)} & {F(N)}
+	\arrow["{\theta_M}", from=1-1, to=2-1]
+	\arrow["{\theta_N}", from=1-2, to=2-2]
+	\arrow["g", from=1-1, to=1-2]
+	\arrow["{F(g)}", from=2-1, to=2-2]
+\end{tikzcd}\]
+\end{block}

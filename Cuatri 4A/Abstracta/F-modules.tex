@@ -84,6 +84,20 @@ We will work in positive characteristic. Let $R$ a commutative Noetherian unitar
 
 Throughout the article we will need some previous knowledge of definitions and properties of rings. For those unfamiliar with basic notions of dimension theory, it is suggested to read the appendix, in which some definitions and basic properties for the development of the article are needed.
 
+The sources from which we are building this article are mainly \cite{quingles}, \cite{blickle} and \cite{lyu97}. Other references consulted as well can be found at the end of the article. The notation used in the article is very similar to the one used in \cite{quingles}. We will stablish a comparison between them throughout the article.
+
+The study of $F-$modules is stimulated by the set of problems known as \textit{Huneke list}:
+\begin{enumerate}[topsep=-6pt, itemsep=0pt]
+  \item When is $H_I^j(M)=0$?
+  \item When is  $H_I^j(M)$ finitely generated? 
+  \item When is $H_{I}^j$ artinian?
+  \item If  $M$ is finitely generated, is the number of associated primes of  $H_I^j(M)$ always finite?
+  \item What annihilates  $H_I^j$?
+\end{enumerate}
+
+Since structure of this modules is very hard to characterize, much more compute, $F-$modules provided a fresh approach in the study of such cohomology modules, completely settling the list for the case of modules over regular rings with prime characteristic.
+
+The task for the article is to give the fundamental tools for starting the study and first properties of  $F-$modules via some useful examples.
 
 \section{The Frobenius functor}
 
@@ -277,14 +291,14 @@ As we have seen, some of the properties we may expect from a useful functor come
 
 \begin{definition}[Frobenius power ideal] Given  $I = (x_1, \ldots, x_n)$ an ideal of $R$, we define its Frobenius $e-$power ideal as
    \[
-	 I ^{[p^e]} := (x_1^{p^e}, \ldots, x_n ^{p^e})R
+	 I _{p^e} := (x_1^{p^e}, \ldots, x_n ^{p^e})R
   \] 
 \end{definition}
-Notice that the ideal $I ^{[p^e]}$ does not depend on the choice of the elements $x_i$. The proof begins with $I ^{[p^e]} = (x_1, \ldots, x_n) = (y_1, \ldots, y_n)$. Then, there exists $r_1, \ldots, r_n \in R$ such that $y_1 = r_1x_1+\ldots+ r_nx_n$. Then $y_1 ^{p^e} = r_1 ^{p^e}x_1 ^{p^e} + \ldots+ r_n^{p^e}x_n^{p^e}$, which means $y_1 ^{p^e} \in (x_1 ^{p^e}, \ldots, x_n ^{p^e})$, and thus $(y_1 ^{p^e}, \ldots, y_n ^{p^e})\subseteq (x_1 ^{p^e}, \ldots, x_n ^{p^e})$. By symmetry we also have the inverse containment, so both ideals are equal.
+Notice that the ideal $I _{p^e}$ does not depend on the choice of the elements $x_i$. The proof begins with $I _{p^e} = (x_1, \ldots, x_n) = (y_1, \ldots, y_n)$. Then, there exists $r_1, \ldots, r_n \in R$ such that $y_1 = r_1x_1+\ldots+ r_nx_n$. Then $y_1 ^{p^e} = r_1 ^{p^e}x_1 ^{p^e} + \ldots+ r_n^{p^e}x_n^{p^e}$, which means $y_1 ^{p^e} \in (x_1 ^{p^e}, \ldots, x_n ^{p^e})$, and thus $(y_1 ^{p^e}, \ldots, y_n ^{p^e})\subseteq (x_1 ^{p^e}, \ldots, x_n ^{p^e})$. By symmetry we also have the inverse containment, so both ideals are equal.
 
-Now we have defined the ideal $I ^{[p]}$, we see why this ideal naturally arises from the following example.
+Now we have defined the ideal $I _{p}$, we see why this ideal naturally arises from the following example.
 
-\begin{example} Let $I = (x_1, \ldots, x_n)$. Then $F(R / I) \cong R / I ^{[p]}$. For the proof we consider the following right exact sequence:
+\begin{example} Let $I = (x_1, \ldots, x_n)$. Then $F(R / I) \cong R / I _{p}$. For the proof we consider the following right exact sequence:
   % https://q.uiver.app/#q=WzAsNCxbMiwwLCJSIl0sWzMsMCwiUi9JIl0sWzQsMCwiMCJdLFswLDAsIlJebiJdLFswLDEsIlxccGkiXSxbMSwyXSxbMywwLCJnID0gKHhfMSBcXGxkb3RzIHhfbikiXV0=
 \[\begin{tikzcd}
 	{R^n} && R & {R/I} & 0
@@ -300,11 +314,11 @@ Now we have defined the ideal $I ^{[p]}$, we see why this ideal naturally arises
 	\arrow[from=1-4, to=1-5]
 	\arrow["{g' = (x_1^p \ldots x_n^p)}", from=1-1, to=1-3]
 \end{tikzcd}\]
-which means that, by the first isomorphism theorem $F(R / I) \cong R / \ker \pi' \cong R / \im g' \cong R / I^{[p]} $, since clearly the image of $g'$ is  $I ^{[p]}$.
+which means that, by the first isomorphism theorem $F(R / I) \cong R / \ker \pi' \cong R / \im g' \cong R / I_{p} $, since clearly the image of $g'$ is  $I _{p}$.
 \end{example}
 
 
-\begin{example} Let $I = (x_1, \ldots, x_n)$. Then $F(I) \cong I ^{[p]}$. In the same way as we did before, we consider the functor applied to a, this time, short exact sequence
+\begin{example} Let $I = (x_1, \ldots, x_n)$. Then $F(I) \cong I _{p}$. In the same way as we did before, we consider the functor applied to a, this time, short exact sequence
 % https://q.uiver.app/#q=WzAsNSxbMCwwLCIwIl0sWzEsMCwiSSJdLFsyLDAsIlIiXSxbMywwLCJSL0kiXSxbNCwwLCIwIl0sWzAsMV0sWzEsMiwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbMiwzLCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMyw0XV0=
 \[\begin{tikzcd}
 	0 & I & R & {R/I} & 0
@@ -313,7 +327,7 @@ which means that, by the first isomorphism theorem $F(R / I) \cong R / \ker \pi'
 	\arrow[two heads, from=1-3, to=1-4]
 	\arrow[from=1-4, to=1-5]
 \end{tikzcd}\]
-From the exactness of the Frobenius functor and the fact that $F(R)\cong R, F(R / I) \cong R / I ^{[p]}$, the short exact sequence transforms into
+From the exactness of the Frobenius functor and the fact that $F(R)\cong R, F(R / I) \cong R / I _{p}$, the short exact sequence transforms into
 % https://q.uiver.app/#q=WzAsNSxbMCwwLCIwIl0sWzEsMCwiRihJKSJdLFsyLDAsIlIiXSxbMywwLCJSL0lee1twXX0iXSxbNCwwLCIwIl0sWzAsMV0sWzEsMiwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbMiwzLCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMyw0XV0=
 \[\begin{tikzcd}
 	0 & {F(I)} & R & {R/I^{[p]}} & 0
@@ -322,7 +336,7 @@ From the exactness of the Frobenius functor and the fact that $F(R)\cong R, F(R 
 	\arrow[two heads, from=1-3, to=1-4]
 	\arrow[from=1-4, to=1-5]
 \end{tikzcd}\]
-meaning that $R / I ^{[p]} \cong R / F(I) \Rightarrow F(I)\cong I ^{[p]}$.
+meaning that $R / I _{p} \cong R / F(I) \Rightarrow F(I)\cong I _{p}$.
 \end{example}
 
 
@@ -402,7 +416,7 @@ The key point is that $F-$modules form an Abelian category whose objects are  $F
 
 We introduce now  $F-$modules in the study of local cohomology. Firs we present two equivalent forms of computing the local cohomology of an ideal  $I\subseteq R$.
 
-\begin{definition}[Local cohomology (version 1)] Let $\Gamma_I= \{m\in M : I^nm = 0 \text{ for some }n\in \mathbb{N} \}$. One can check this induces the so-called functor that transform the functions in the following natural way
+\begin{definition}[Local cohomology (via torsion functor)] Let $\Gamma_I= \{m\in M : I^nm = 0 \text{ for some }n\in \mathbb{N} \}$. One can check this induces the so-called functor that transform the functions in the following natural way
   % https://q.uiver.app/#q=WzAsNCxbMCwwLCJNIl0sWzEsMCwiTiJdLFswLDEsIlxcR2FtbWFfSShNKSJdLFsxLDEsIlxcR2FtbWFfSShOKSJdLFswLDIsIlxcR2FtbWFfSSJdLFsxLDMsIlxcR2FtbWFfSSJdLFswLDEsImciXSxbMiwzLCJcXEdhbW1hX0koZykiXV0=
 \[\begin{tikzcd}
 	M & N \\
@@ -418,9 +432,38 @@ H_I^j(M)=H^j(\Gamma _I (E^\bullet) )
 \] 
 \end{definition}
 
-\begin{definition}[Local cohomology (version 2)] Let 
-
+\begin{definition}[Local cohomology (via \v{C}ech complex)] Let $I=(x_1, \ldots, x_n)\subseteq R$. We define the \v{C}ech complex $\check{C}^{\bullet}(M, I)$ on the ideal $I$ as
+% https://q.uiver.app/#q=WzAsNyxbMCwwLCIwIl0sWzEsMCwiTSJdLFsyLDAsIlxcZGlzcGxheXN0eWxle1xcYmlnb3BsdXNfezFcXGxlIGlcXGxlIG59IE1fe3hfaX19Il0sWzMsMCwiXFxkaXNwbGF5c3R5bGV7XFxiaWdvcGx1c197MVxcbGUgaTxqXFxsZSBufSBNX3t4X2l4X2p9fSJdLFs0LDAsIlxcY2RvdHMiXSxbNSwwLCJNX3t4XzFcXGNkb3RzIHhfbn0iXSxbNiwwLCIwIl0sWzAsMV0sWzEsMiwiZF8wIl0sWzIsMywiZF8xIl0sWzMsNCwiZF8yIl0sWzQsNSwiZF97bi0xfSJdLFs1LDZdXQ==
+\[\begin{tikzcd}
+	0 & M & {\displaystyle{\bigoplus_{1\le i\le n} M_{x_i}}} & {\displaystyle{\bigoplus_{1\le i<j\le n} M_{x_ix_j}}} & \cdots & {M_{x_1\cdots x_n}} & 0
+	\arrow[from=1-1, to=1-2]
+	\arrow["{d_0}", from=1-2, to=1-3]
+	\arrow["{d_1}", from=1-3, to=1-4]
+	\arrow["{d_2}", from=1-4, to=1-5]
+	\arrow["{d_{n-1}}", from=1-5, to=1-6]
+	\arrow[from=1-6, to=1-7]
+\end{tikzcd}\]
+where de differential maps $d_i$ are defined via the canonical localization morphism and alternating the sign in order to have $d_i\circ d_{i-1}=0$. Explicitly we have the morphisms of every component $d_p: M_{x_{i_1}\cdots x_{i_p}} \to M_{x_{j_1}\cdots x_{j_{p+1}}}$ as
+\[
+  d_p(m) = \begin{cases}
+	(-1)^{k+1} \frac{m}{1} &\text{ if } \{i_1, \ldots, i_p\} = \{j_1, \ldots, \hat{j}_k,\ldots, j_{p+1}\}\\ 0 &\text{ otherwise}
+  \end{cases}
+\] 
 \end{definition}
+
+\begin{observation}The \v{C}ech complex can also be thought as a direct limit of a Koszul complex
+  \[
+	\check{C}^{\bullet}(M; x_1, \ldots, x_n) = \varinjlim_{l} K^{\bullet}(M; x_1^l, \ldots, x_n^l)
+  \] 
+\end{observation}
+
+The key observation is that if we have compute the local cohomology modules of some module M, then the cohomology of the $F-$module $(M, \theta_M)$ can be computed via the induced $F-$module structure of the cohomology modules of $M$. This fact is a direct consequence of the commutativity of the Frobenius functor with cohomology of complexes, since local cohomology can be computed by the cohomology of an injective resolution.
+
+Thus, given the structure morphism of $M$, the structure morphism of $H_I^j(M)$ are determined
+ \[
+\theta_M : M \to F(M)  \qquad \Longrightarrow \qquad
+\theta_{H_I^j (M)} : H_{I}^j(M) \to F(H_I^j(M))
+\] 
 
 
 \section{Appendix}

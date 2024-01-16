@@ -1,0 +1,199 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{svg}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+
+\newcommand{\catname}[1]{{\mathbf{#1}}}
+\newcommand{\Set}{\catname{Set}}
+\newcommand{\Mod}{\catname{R-Mod}}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\coker}{Coker}
+\DeclareMathOperator{\coim}{Coim}
+\DeclareMathOperator{\heigth}{ht}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Ann}{Ann}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+%------------------------------------------------------------
+%This block of code defines the information to appear in the
+%Title page
+\title[F-módulos] %optional
+{$F-$módulos}
+
+%\subtitle{}
+
+\author[Abel Doñate] % (optional)
+{Abel Doñate Muñoz}
+
+\institute[UPC] % (optional)
+{
+  Universitat Politècica de Catalunya
+}
+
+\date[Enero 2024] % (optional)
+{Presentación del trabajo final, Enero 2024}
+
+%\logo{\includegraphics[height=1cm]{overleaf-logo}}
+
+%End of title page configuration block
+%------------------------------------------------------------
+
+
+
+%------------------------------------------------------------
+%The next block of commands puts the table of contents at the 
+%beginning of each section and highlights the current section:
+
+%------------------------------------------------------------
+
+
+\begin{document}
+
+%The next statement creates the title page.
+\frame{\titlepage}
+
+
+%---------------------------------------------------------
+%This block of code is for the table of contents after
+%the title page
+\begin{frame}
+\frametitle{Table of Contents}
+\tableofcontents
+\end{frame}
+%---------------------------------------------------------
+
+
+\section{Functor de Frobenius}
+
+%---------------------------------------------------------
+\begin{frame}{}
+\begin{block}{Endomorfismo de Frobenius}
+Sea $R$ un anillo con característica $p>0$. Definimos el endomorfismo de Frobenius como el mapa
+\begin{align*}
+f: R &\to R \\
+r &\to r^p
+\end{align*}
+\end{block}    
+
+\begin{block}{Observación}
+    Este morfismo en general no es inyectivo ni exhaustivo.
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{Module with Frobenius action} Given $M$ an  $R-$Module, we define the module  $M^{(e)}$ induced by  $f^{(e)}$ as the abelian group $M$ endowed with the action
+  \[
+  r \cdot  m  = f ^{(e)}(r)m = r ^{p^e} m
+  \] 
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Functor de Frobenius}
+\begin{block}{Functor de Frobenius}
+  Definimos el functor de Frobenius como el el functor $F:\Mod \to \Mod$ que envía
+  \[\begin{tikzcd}[column sep=small]
+	M & {R'\otimes_RM,} & {(M} & {N)} & {R'\otimes_R M} & {R'\otimes_RN}
+	\arrow["\phi", from=1-3, to=1-4]
+	\arrow["{id\otimes_R\phi}", from=1-5, to=1-6]
+	\arrow[maps to, from=1-4, to=1-5]
+	\arrow[maps to, from=1-1, to=1-2]
+\end{tikzcd}\]
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{}
+\begin{block}{Frobenius of a complex}
+  Given the complex $M^{\bullet}$, we define its induced complex $F(M^{\bullet})$ as the complex
+\[\begin{tikzcd}
+	\cdots & {M_{k-1}} & {M_{k}} & {M_{k+1}} & \cdots \\
+	\cdots & {F(M_{k-1})} & {F(M_{k})} & {F(M_{k+1})} & \cdots
+	\arrow["F", from=1-2, to=2-2]
+	\arrow["F", from=1-3, to=2-3]
+	\arrow["F", from=1-4, to=2-4]
+	\arrow["{h_{k-1}}", from=1-2, to=1-3]
+	\arrow["{h_k}", from=1-3, to=1-4]
+	\arrow["{F(h_{k-1})}", from=2-2, to=2-3]
+	\arrow["{F(h_k)}", from=2-3, to=2-4]
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=1-4, to=1-5]
+	\arrow[from=2-4, to=2-5]
+	\arrow[from=2-1, to=2-2]
+\end{tikzcd}\]
+Exactly the same construction works for $F ^{(e)}$.
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Properties}
+\begin{block}{Properties of Frobenius functor}
+\begin{enumerate}
+  \item $F$ is right exact. Furthermore, if $R$ is regular, then $R'$ is flat and  $F$ is exact.
+  \item $F$ commutes with direct sums.
+  \item $F$ commutes with localization.
+  \item $F$ commutes with direct limits. 
+  \item $F$ preserves finitely generation of modules.
+  \item If $R$ is regular, then $F$ commutes with cohomology of complexes.
+\end{enumerate}
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Properties}
+\begin{block}{Frobenius power ideal}
+ Given  $I = (x_1, \ldots, x_n)$ an ideal of $R$, we define its Frobenius $e-$power ideal as
+   \[
+	 I _{p^e} := (x_1^{p^e}, \ldots, x_n ^{p^e})R
+  \] 
+\end{block}
+\begin{block}{Some examples of transformations}
+  \begin{itemize}
+	\item $F(I) \cong I_{p^e}$
+	\item $F(R / I)\cong R / I_{p^e}$
+  \end{itemize}
+\end{block}
+\end{frame}
+
+%---------------------------------------------------
+%---------------------------------------------------
+
+\section{$F-$modules}
+
+\begin{frame}[fragile]{$F-$module}
+\begin{block}{Definition of $F-$module}
+An $F-module$ is an $R-$module $M$ equipped with an $R-$isomorphism  $\theta:M \to F(M)$ called the structure morphism.
+\end{block}
+\begin{block}{Morphism of $F-$modules}
+Given two  $F-$ modules  $(M, \theta _M)$ and $(N, \theta _N)$, we say $f:M\to N$ is a morphism of $F-$modules if the following diagram commutes
+  % https://q.uiver.app/#q=WzAsNCxbMCwwLCJNIl0sWzEsMCwiTiJdLFswLDEsIkYoTSkiXSxbMSwxLCJGKE4pIl0sWzAsMiwiXFx0aGV0YV9NIl0sWzEsMywiXFx0aGV0YV9OIl0sWzAsMSwiZyJdLFsyLDMsIkYoZykiXV0=
+\[\begin{tikzcd}
+	M & N \\
+	{F(M)} & {F(N)}
+	\arrow["{\theta_M}", from=1-1, to=2-1]
+	\arrow["{\theta_N}", from=1-2, to=2-2]
+	\arrow["g", from=1-1, to=1-2]
+	\arrow["{F(g)}", from=2-1, to=2-2]
+\end{tikzcd}\]
+\end{block}
+\end{frame}
+
+
+
+\end{document}
+
+
+\begin{frame}[fragile]{Properties}
+\begin{block}{Frobenius power ideal}
+\end{block}
+\end{frame}
