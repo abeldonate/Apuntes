@@ -352,6 +352,10 @@ We will denote an $F-$module as  $(M, \theta_M)$, being $M$ an  $R-$module and  
 \begin{observation} In \cite{blickle} the $R-$ module is defined with an equipped $R-$ linear map $\vartheta : F(M)\to M$, that needs not to be an isomorphism. Those modules in which $\vartheta$ induces an isomorphism are called \textbf{unit} $F-$modules. We will only work in this article with them.
 \end{observation}
 
+$F-$modules can also be thought as a module over the ring  $R[F]$, that is, the ring  $R$ in which we have adjoined the non-commutative variable  $F$ with the relations  $r^pF = Fr \ \forall r\in R$. This characterization is presented in \cite{blickle}, and the notation $R[F]-$module taken in the thesis is very suggestive once we know where it comes from.
+
+
+
 \begin{definition}[Morphism of $F-$modules] Given two  $F-$ modules  $(M, \theta _M)$ and $(N, \theta _N)$, we say $f:M\to N$ is a morphism of $F-$modules if the following diagram commutes
   % https://q.uiver.app/#q=WzAsNCxbMCwwLCJNIl0sWzEsMCwiTiJdLFswLDEsIkYoTSkiXSxbMSwxLCJGKE4pIl0sWzAsMiwiXFx0aGV0YV9NIl0sWzEsMywiXFx0aGV0YV9OIl0sWzAsMSwiZyJdLFsyLDMsIkYoZykiXV0=
 \[\begin{tikzcd}
@@ -414,6 +418,36 @@ h\left( g \left( \frac{r}{s} \right)  \right) = h \left( rs ^{p-1} \otimes \frac
 
 The key point is that $F-$modules form an Abelian category whose objects are  $F-$modules itself and the morphisms are the latter defined  $F-$modules morphisms.
 
+We introduce now a powerful tool in the theory of $F-$modules, which is the concept of  $F-$finite module. For this task we will need some previous definitions.
+
+\begin{definition}[Generating morphism] Given an $F-$module  $(M, \theta )$ we define its generating morphism  $\theta_0 :M_0 \to F(M_0)$ as the morphisms in the direct system 
+  % https://q.uiver.app/#q=WzAsMTAsWzAsMCwiTV8wIl0sWzAsMSwiRihNXzApIl0sWzEsMCwiRihNXzApIl0sWzEsMSwiRl4yKE1fMCkiXSxbMiwxLCJGXjMoTV8wKSJdLFsyLDAsIkZeMihNXzApIl0sWzMsMCwiXFxjZG90cyJdLFszLDEsIlxcY2RvdHMiXSxbNCwwLCJNIl0sWzQsMSwiRihNKSJdLFswLDIsIlxcdGhldGFfMCJdLFsxLDMsIkYoXFx0aGV0YV8wKSJdLFszLDQsIkZeMihcXHRoZXRhXzApIl0sWzIsNSwiRihcXHRoZXRhXzApIl0sWzAsMSwiXFx0aGV0YV8wIl0sWzIsMywiRihcXHRoZXRhXzApIl0sWzUsNCwiRihcXHRoZXRhXzApIl0sWzUsNiwiRl4yKFxcdGhldGFfMCkiXSxbNCw3LCJGXjMoXFx0aGV0YV8wKSIsMV0sWzgsOSwiXFx0aGV0YSJdXQ==
+\[\begin{tikzcd}
+	{M_0} & {F(M_0)} & {F^2(M_0)} & \cdots & M \\
+	{F(M_0)} & {F^2(M_0)} & {F^3(M_0)} & \cdots & {F(M)}
+	\arrow["{\theta_0}", from=1-1, to=1-2]
+	\arrow["{F(\theta_0)}", from=2-1, to=2-2]
+	\arrow["{F^2(\theta_0)}", from=2-2, to=2-3]
+	\arrow["{F(\theta_0)}", from=1-2, to=1-3]
+	\arrow["{\theta_0}", from=1-1, to=2-1]
+	\arrow["{F(\theta_0)}", from=1-2, to=2-2]
+	\arrow["{F(\theta_0)}", from=1-3, to=2-3]
+	\arrow["{F^2(\theta_0)}", from=1-3, to=1-4]
+	\arrow["{F^3(\theta_0)}"{description}, from=2-3, to=2-4]
+	\arrow["\theta", from=1-5, to=2-5]
+\end{tikzcd}\]
+whose limit is the module $M$ and the morphism $\theta$ 
+\end{definition}
+
+\begin{definition}[$F-$finite module] We say that the module $M$ is  $F-$finite if  $M$ has a generating morphism  $\theta _0 : M_0 \to F(M_0)$ with $M$ a finitely generated  $R-$module.
+\end{definition}
+
+
+
+
+
+
+
 We introduce now  $F-$modules in the study of local cohomology. Firs we present two equivalent forms of computing the local cohomology of an ideal  $I\subseteq R$.
 
 \begin{definition}[Local cohomology (via torsion functor)] Let $\Gamma_I= \{m\in M : I^nm = 0 \text{ for some }n\in \mathbb{N} \}$. One can check this induces the so-called functor that transform the functions in the following natural way
@@ -457,6 +491,12 @@ where de differential maps $d_i$ are defined via the canonical localization morp
   \] 
 \end{observation}
 
+We list the main properties of local cohomology. Let $I$ an ideal of  $R$, $M$ and $N$ an $R-$module and $A-$module respectively. Then
+\begin{itemize}[topsep=-6pt, itemsep=0pt]
+  \item $H^\bullet_I(M) = H^\bullet_{\sqrt{I} }(M)$ 
+  \item I $f:R\to A$ is flat, then $A\otimes _RH^\bullet_I(N) \cong H_{IA}^\bullet(A\otimes_R N)$
+\end{itemize}
+
 The key observation is that if we have compute the local cohomology modules of some module M, then the cohomology of the $F-$module $(M, \theta_M)$ can be computed via the induced $F-$module structure of the cohomology modules of $M$. This fact is a direct consequence of the commutativity of the Frobenius functor with cohomology of complexes, since local cohomology can be computed by the cohomology of an injective resolution.
 
 Thus, given the structure morphism of $M$, the structure morphism of $H_I^j(M)$ are determined
@@ -464,6 +504,83 @@ Thus, given the structure morphism of $M$, the structure morphism of $H_I^j(M)$ 
 \theta_M : M \to F(M)  \qquad \Longrightarrow \qquad
 \theta_{H_I^j (M)} : H_{I}^j(M) \to F(H_I^j(M))
 \] 
+
+\begin{proposition} If the ring is local and regular $(R, \mathfrak{m})$, then for every ideal $I\subseteq R$ we have $F(H_I^j(R)) \cong  H_{I}^j(R)$
+\end{proposition}
+
+The proofs is based on two of the properties we have presented earlier. Notice that $\sqrt{I}=\sqrt{I_p}$. Pick $A = R'$ and $f$ as t he Frobenius endomorphism (notice that since $R$ is regular, $f$ is flat). We have
+\[
+F(H_I^j(R)) = R'\otimes _RH_I^j(R) \cong H_{IR'}^j(R'\otimes _R R) \cong H_{I_p}^j(R) = H_{\sqrt{I_p}}^j(R) = H_{\sqrt{I}}^j(R)= H_{I}^j(R)
+\] 
+finishing the proof.
+
+Now we get back to the concept of $F-$finitess in modules, which is crucial to understand how local cohomology behaves when viewing the modules as $F-$modules.
+
+ \begin{proposition} Given an ideal $I$ of $R$, if $M$ is $F-$finite, then  $H^j_I(M)$ is  $F-$finite.
+\end{proposition}
+
+Observe this is not the classical behaviour of finitely generated $R-$modules, since in general  for finitely generated module $M$ we will have non-finitely generated $H^j_I(M)$.
+
+\begin{example} Local cohomology of $R = \frac{\mathbb{Z}}{p\mathbb{Z}}[x]$ with $I = (x)$.
+  \begin{align*}
+	0 \to R & \to R_x \to 0 \\
+	r &\to \frac{r}{1}
+  \end{align*}
+If we compute the local cohomology modules we get $H^0_{I} = \frac{\ker(d_0)}{0} = 0$, $H^1_{I} = \frac{R_x}{\im(d_0)} = \frac{}{}$
+\end{example}
+
+
+\section{Injective modules}
+
+\begin{definition}[Injective module] We say the $R-$module $E$ is injective if for all $R-$modules $M, N$ and morphisms $f:M\to N$ injective and $g:M\to E$ arbitrary there exists a morphism  $h:N\to E$ such that $h\circ f=g$. This is, the following d This is, the following diagram commutes:
+  % https://q.uiver.app/#q=WzAsNCxbMCwxLCIwIl0sWzEsMSwiTSJdLFsyLDEsIk4iXSxbMSwwLCJFIl0sWzAsMV0sWzEsMywiZyJdLFsxLDIsImYiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFsyLDMsImgiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\[\begin{tikzcd}
+	& E \\
+	0 & M & N
+	\arrow[from=2-1, to=2-2]
+	\arrow["g", from=2-2, to=1-2]
+	\arrow["f", hook, from=2-2, to=2-3]
+	\arrow["h"', dashed, from=2-3, to=1-2]
+\end{tikzcd}\]
+\end{definition}
+
+There are three equivalent characterizations, meaning that the following statements are equivalent
+\begin{itemize}[topsep=-6pt, itemsep=0pt]
+  \item $E$ is an injective module.
+  \item Any short exact sequence $0\to E \to M \to N \to 0$ splits.
+  \item If $E$ is a submodule of $M$, then there exists another submodule $N\subseteq M$ such that $E \oplus N = M$.
+  \item The functor  $\Hom(-,E)$ is exact.
+\end{itemize}
+
+\begin{definition}[Injective hull] Given a module $M$, we define its injective hull as the maximal essential extension $N = E_R(M)$. That is, given an injective $\theta :M\to N$, if $\varphi \circ \theta $  is injective, then $\varphi $ is also injective.
+% https://q.uiver.app/#q=WzAsNCxbMCwxLCIwIl0sWzEsMSwiTSJdLFsyLDEsIk4iXSxbMiwwLCJFIl0sWzAsMV0sWzEsMiwiXFx0aGV0YSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzIsMywiXFx2YXJwaGkiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSwzLCJcXHZhcnBoaVxcY2lyY1xcdGhldGEiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dXQ==
+\[\begin{tikzcd}
+	&& E \\
+	0 & M & N
+	\arrow[from=2-1, to=2-2]
+	\arrow["\theta", hook, from=2-2, to=2-3]
+	\arrow["\varphi", dashed, hook, from=2-3, to=1-3]
+	\arrow["\varphi\circ\theta", hook, from=2-2, to=1-3]
+\end{tikzcd}\]
+\end{definition}
+
+\begin{example} The localization of a ring $S^{-1}R$ (as an $R-$module) is an essential extension
+\end{example}
+
+The main property of injective modules is that they decompose into another injective modules in a precise fashion, which we are discussing in the following theorem.
+
+\begin{theorem}[Structure theorem] Every injective $R-$module $E$ is the direct sum of indecomposable injective modules with the form
+  \[
+	E \cong \bigoplus _{\mathfrak{p}\in \Spec (R)} E_R( R / \mathfrak{p})^{\mu _{\mathfrak{p}}}
+  \] 
+with the \textit{Bass numbers} $\mu _{\mathfrak{p}}$ independent of the decomposition.
+\end{theorem}
+
+
+
+
+
+
 
 
 \section{Appendix}
