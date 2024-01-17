@@ -96,6 +96,9 @@ r &\to r^p
   r \cdot  m  = f ^{(e)}(r)m = r ^{p^e} m
   \] 
 \end{block}
+\begin{block}{Notation} For simplicity we will write $M^{(1)}$ as  $M'$ and $R^{(1)}$ as  $R'$.
+\end{block}
+
 \end{frame}
 
 \begin{frame}[fragile]{Functor de Frobenius}
@@ -159,6 +162,7 @@ Exactly the same construction works for $F ^{(e)}$.
 \end{block}
 \begin{block}{Some examples of transformations}
   \begin{itemize}
+	\item $F(R)\cong R$
 	\item $F(I) \cong I_{p^e}$
 	\item $F(R / I)\cong R / I_{p^e}$
   \end{itemize}
@@ -189,8 +193,69 @@ Given two  $F-$ modules  $(M, \theta _M)$ and $(N, \theta _N)$, we say $f:M\to N
 \end{frame}
 
 
+\begin{frame}[fragile]{}
+\begin{block}{An alternative form}
+$F-$modules can also be thought as a module over the ring  $R[F]$, that is, the ring  $R$ in which we have adjoined the non-commutative variable  $F$ with the relations  $r^pF = Fr \ \forall r\in R$. This characterization is presented in \cite{blickle}, and the notation $R[F]-$module taken in the thesis is very suggestive once we know where it comes from.
+\end{block}
+\end{frame}
 
+\begin{frame}[fragile]{Two important cases}
+\begin{block}{}
+  In the case $M=R$ is the ring itself with  $R-$module structure, we have a natural isomorphism  $\theta : R \to F(R)$, which makes $(R, \theta )$ an $F-$module. This isomorphism is given by
+  \begin{align*}
+	\theta : R &\to F(R)\cong R' \otimes _R R \\
+	r &\mapsto r \otimes 1
+  \end{align*}
+\end{block}
+\begin{block}{}
+Let  $M=S ^{-1}R$, then we have the isomorphism of $R-$modules $F(S^{-1}R)\cong S^{-1}R$. This is shown from the commutativity of the Frobenius functor with localization $F(S^{-1}R)\cong S^{-1}F(R)\cong S^{-1}R$. The natural isomorphism is given by
+   \begin{align*}
+	\theta : S ^{-1}R & \to R'\otimes _R S ^{-1}R\\
+	\frac{r}{s} &\mapsto rs ^{p-1} \otimes \frac{1}{s}
+   \end{align*}
+\end{block}
+\end{frame}
+
+
+\begin{frame}[fragile]{$F-$finite modules}
+\begin{block}{Generating morphism}
+Given an $F-$module  $(M, \theta )$ we define its generating morphism  $\theta_0 :M_0 \to F(M_0)$ as the morphisms in the direct system 
+\[\begin{tikzcd}
+	{M_0} & {F(M_0)} & {F^2(M_0)} & \cdots & M \\
+	{F(M_0)} & {F^2(M_0)} & {F^3(M_0)} & \cdots & {F(M)}
+	\arrow["{\theta_0}", from=1-1, to=1-2]
+	\arrow["{F(\theta_0)}", from=2-1, to=2-2]
+	\arrow["{F^2(\theta_0)}", from=2-2, to=2-3]
+	\arrow["{F(\theta_0)}", from=1-2, to=1-3]
+	\arrow["{\theta_0}", from=1-1, to=2-1]
+	\arrow["{F(\theta_0)}", from=1-2, to=2-2]
+	\arrow["{F(\theta_0)}", from=1-3, to=2-3]
+	\arrow["{F^2(\theta_0)}", from=1-3, to=1-4]
+	\arrow["{F^3(\theta_0)}", from=2-3, to=2-4]
+	\arrow["\theta", from=1-5, to=2-5]
+\end{tikzcd}\]
+whose limit is the module $M$ and the morphism $\theta$ 
+\end{block}
+\begin{block}{$F-$finite module}
+We say that the module $M$ is  $F-$finite if  $M$ has a generating morphism  $\theta _0 : M_0 \to F(M_0)$ with $M$ a finitely generated  $R-$module.
+\end{block}
+\end{frame}
+
+
+\begin{frame}{Local cohomology}
+  \begin{block}{LC via torsion functor}
+  \end{block}
+\end{frame}
+
+
+
+
+\nocite{*}
+\bibliographystyle{alpha}
+\bibliography{refs}
 \end{document}
+
+
 
 
 \begin{frame}[fragile]{Properties}

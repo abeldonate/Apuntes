@@ -30,7 +30,7 @@
 
 % geometry
 \usepackage{geometry}
-\geometry{a4paper, margin=1in}
+\geometry{a4paper, margin=1.3in}
 
 % paragraph length
 \setlength{\parindent}{0em}
@@ -51,7 +51,9 @@
 \newcommand{\Set}{\catname{Set}}
 \newcommand{\Mod}{\catname{R-Mod}}
 \DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Ext}{Ext}
 \DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\cd}{cd}
 \DeclareMathOperator{\coker}{Coker}
 \DeclareMathOperator{\coim}{Coim}
 \DeclareMathOperator{\heigth}{ht}
@@ -149,6 +151,8 @@ We will write for the cases in which $e=1$ for simplicity $M':=M ^{(1)}$, $R':=R
 \end{tikzcd}\]
 is called the Frobenius functor. In the same way the functor $F ^{(e)}$ can be defined replacing $R'$ by  $R ^{(e)}$.
 \end{definition}
+
+The Frobenius functor can also be found in the literature as the Peskine-Szpiro functor, first introduced by the authors on \cite{pesk}.
 
 \begin{example} Let $M = R$, then we have the isomorphism of $R-$modules $F(R) \cong R$ with Frobenius action.
 
@@ -433,7 +437,7 @@ We introduce now a powerful tool in the theory of $F-$modules, which is the conc
 	\arrow["{F(\theta_0)}", from=1-2, to=2-2]
 	\arrow["{F(\theta_0)}", from=1-3, to=2-3]
 	\arrow["{F^2(\theta_0)}", from=1-3, to=1-4]
-	\arrow["{F^3(\theta_0)}"{description}, from=2-3, to=2-4]
+	\arrow["{F^3(\theta_0)}", from=2-3, to=2-4]
 	\arrow["\theta", from=1-5, to=2-5]
 \end{tikzcd}\]
 whose limit is the module $M$ and the morphism $\theta$ 
@@ -491,6 +495,16 @@ where de differential maps $d_i$ are defined via the canonical localization morp
   \] 
 \end{observation}
 
+Once we know what is local cohomology, we can define the cohomological dimension of a module.
+
+\begin{definition}[Cohomological dimension] Let $M$ be an  $R-$module and  $I\subseteq R$ an ideal. The cohomological dimension of $M$ with support in  $I$ is defined as
+   \[
+	 \cd_I(M)   = \sup \{k : H_I^k(M) \neq 0\}
+  \] 
+\end{definition}
+
+The problem of finding the cohomological dimension is, in fact, similar to the problem to compute the vanishing cohomological modules. This problem has been studied by many authors, and is still open in the majority of the cases. However, in positive characteristic working with $F-$modules some results can be obtained.
+
 We list the main properties of local cohomology. Let $I$ an ideal of  $R$, $M$ and $N$ an $R-$module and $A-$module respectively. Then
 \begin{itemize}[topsep=-6pt, itemsep=0pt]
   \item $H^\bullet_I(M) = H^\bullet_{\sqrt{I} }(M)$ 
@@ -505,7 +519,7 @@ Thus, given the structure morphism of $M$, the structure morphism of $H_I^j(M)$ 
 \theta_{H_I^j (M)} : H_{I}^j(M) \to F(H_I^j(M))
 \] 
 
-\begin{proposition} If the ring is local and regular $(R, \mathfrak{m})$, then for every ideal $I\subseteq R$ we have $F(H_I^j(R)) \cong  H_{I}^j(R)$
+\begin{proposition} If the ring is regular $(R, \mathfrak{m})$, then for every ideal $I\subseteq R$ we have $F(H_I^j(R)) \cong  H_{I}^j(R)$
 \end{proposition}
 
 The proofs is based on two of the properties we have presented earlier. Notice that $\sqrt{I}=\sqrt{I_p}$. Pick $A = R'$ and $f$ as t he Frobenius endomorphism (notice that since $R$ is regular, $f$ is flat). We have
@@ -521,13 +535,39 @@ Now we get back to the concept of $F-$finitess in modules, which is crucial to u
 
 Observe this is not the classical behaviour of finitely generated $R-$modules, since in general  for finitely generated module $M$ we will have non-finitely generated $H^j_I(M)$.
 
-\begin{example} Local cohomology of $R = \frac{\mathbb{Z}}{p\mathbb{Z}}[x]$ with $I = (x)$.
+\begin{example} Local cohomology of $R = \mathbb{Z} / p\mathbb{Z}[x]$ with $I = (x)$.
   \begin{align*}
 	0 \to R & \to R_x \to 0 \\
-	r &\to \frac{r}{1}
+	r &\mapsto \frac{r}{1}
   \end{align*}
-If we compute the local cohomology modules we get $H^0_{I} = \frac{\ker(d_0)}{0} = 0$, $H^1_{I} = \frac{R_x}{\im(d_0)} = \frac{}{}$
+  If we compute the local cohomology modules we get 
+  \[
+  H^0_{I} = \frac{\ker(d_0)}{0} = 0, \quad H^1_{I} = \frac{R_x}{\im(d_0)} \cong  \frac{R_x}{R}=  \mathbb{Z} / p\mathbb{Z}\langle \frac{1}{x^k}: k>0 \rangle 
+\]
+  which is not finitely generated.
 \end{example}
+
+\begin{proposition} Given $(M, \theta )$ an $F-$module, $I\subseteq R$ an ideal and $H^j_I(M)$ the local cohomology modules of $M$ with  $F-$module structure. Then
+   \[
+  \beta :\Ext_{R}^j (R / I, M) \to F(\Ext_R^j(R / I, M)) = \Ext_R^j(F(R / I), F(M))
+  \] 
+  induced by the maps
+  \[
+  \theta : M \to F(M) , \qquad F(R / I) = R'\otimes _R (R / I) \to R / I
+  \] 
+  is a generating morphism of $H_I^j(M)$.
+\end{proposition}
+
+
+
+
+
+
+
+
+
+
+
 
 
 \section{Injective modules}
@@ -608,13 +648,18 @@ Following the definition of height and Krull dimension for a ring, an analogous 
   \[
 	\ell(M)= \sup \{n: 0 = M_0\subsetneq M_1 \subsetneq \cdots \subsetneq M_n = M\}
   \] 
-
 \end{definition}
 
 \begin{observation} If $R = K$ a field, and $M$ is a free finitely generated $R-module$, then the length of  $M$ coincides with the usual dimension of $M$ as vector space.
 \end{observation}
 
-\com{little example}
+\begin{example} Let $R = \mathbb{R}$ and $M = R\langle x_1, \ldots, x_n\rangle$, that can be thought as a vector space over $\mathbb{R}$ of dimension $n$. Then one maximal chain of modules is
+  \[
+  0\subsetneq R\langle x_1\rangle \subsetneq R \langle x_1 , x_2\rangle \subsetneq \ldots \subsetneq R\langle  x_1, \ldots, x_n \rangle = M
+  \]
+  and indeed the dimension agrees with the length.
+
+\end{example}
 
 \begin{definition}[Regular local ring] Let $(R, \mathfrak{m})$ a Noetherian local ring and $\{x_1, \ldots, x_n\}$ a minimal set of generators of $\mathfrak{m}$. We say $R$ is regular if $\dim R=n$, where  $\dim$ is the Krull dimension.
 \end{definition}
