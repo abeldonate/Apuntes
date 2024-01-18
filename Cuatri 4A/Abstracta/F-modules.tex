@@ -78,14 +78,77 @@
 \date{}
 
 \begin{document}
-\maketitle
-\tableofcontents
+
+\begin{titlepage} % Suppresses headers and footers on the title page
+
+	\centering % Centre everything on the title page
+	
+	\scshape % Use small caps for all text on the title page
+	
+	\vspace*{\baselineskip} % White space at the top of the page
+	
+	%------------------------------------------------
+	%	Title
+	%------------------------------------------------
+	
+	\rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt} % Thick horizontal rule
+	\rule{\textwidth}{0.4pt} % Thin horizontal rule
+	
+	\vspace{0.75\baselineskip} % Whitespace above the title
+	
+	{\LARGE $F-$modules} 
+	
+	\vspace{0.75\baselineskip} % Whitespace below the title
+	
+	\rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt} % Thin horizontal rule
+	\rule{\textwidth}{1.6pt} % Thick horizontal rule
+	
+	\vspace{2\baselineskip} % Whitespace after the title block
+	
+	%------------------------------------------------
+	%	Subtitle
+	%------------------------------------------------
+
+	Article presented for the subject of Abstract Algebra
+	
+	\vspace*{3\baselineskip} % Whitespace under the subtitle
+	
+	%------------------------------------------------
+	%	Editor(s)
+	%------------------------------------------------
+
+	\vspace{0.5\baselineskip} % Whitespace before the editors
+	
+	{\scshape\Large Abel Doñate Muñoz} % Editor list
+	
+	\vspace{0.5\baselineskip} % Whitespace below the editor list
+	
+	\textit{Universitat Politècnica de Catalunya (UPC)} % Editor affiliation
+	
+	\vfill % Whitespace between editor names and publisher logo
+	
+	%------------------------------------------------
+	%	Publisher
+	%------------------------------------------------
+	
+	
+	\vspace{0.3\baselineskip} % Whitespace under the publisher logo
+	
+	2024, January % Publication year
+	
+	%{\large publisher} % Publisher
+
+\end{titlepage}
+
 \newpage
 
-\section{Introduction}
-We will work in positive characteristic. Let $R$ a commutative Noetherian unitary ring of prime characteristic $p$.
+\begin{abstract}
+  $F-$modules were first introduce by Gennady Lyubeznik in \cite{lyu97} in an attempt to partially solve problems related with the homological complexity of modules stated in \cite{hun92} in the case of rings of positive characteristic. We will properly define what is an  $F-$module, and discuss some properties and basic results that have allowed proving local cohomology results with the aid of this extra structure.
+\end{abstract}
 
-Throughout the article we will need some previous knowledge of definitions and properties of rings. For those unfamiliar with basic notions of dimension theory, it is suggested to read the appendix, in which some definitions and basic properties for the development of the article are needed.
+\section{Introduction}
+
+In this article $R$ will always denote a noetherian ring with positive characteristic $p>0$. Throughout the article we will need some previous knowledge of definitions and properties of rings. For those unfamiliar with basic notions of dimension theory, it is suggested to read the appendix, in which some definitions and basic properties for the development of the article are needed.
 
 The sources from which we are building this article are mainly \cite{quingles}, \cite{blickle} and \cite{lyu97}. Other references consulted as well can be found at the end of the article. The notation used in the article is very similar to the one used in \cite{quingles}. We will stablish a comparison between them throughout the article.
 
@@ -207,9 +270,9 @@ Thus, we have the isomorphism.
 Exactly the same construction works for $F ^{(e)}$.
 \end{definition}
 
-The choice of Frobenius functor as a tool in rings of positive characteristic is not arbitrary. This functor has fairly good functorial properties. We list the most important for the developement of this article in the following observation.
+The choice of Frobenius functor as a tool in rings of positive characteristic is not arbitrary. This functor has fairly good functorial properties. We list the most important for the developement of this article in the following proposition.
 
-\begin{observation} Some properties of the Frobenius functor are
+\begin{proposition} Some properties of the Frobenius functor are
 \begin{enumerate}[topsep=-6pt, itemsep=0pt]
   \item $F$ is right exact. Furthermore, if $R$ is regular, then $R'$ is flat and  $F$ is exact.
   \item $F$ commutes with direct sums.
@@ -218,6 +281,7 @@ The choice of Frobenius functor as a tool in rings of positive characteristic is
   \item $F$ preserves finitely generation of modules.
   \item If $R$ is regular, then $F$ commutes with cohomology of complexes.
 \end{enumerate}
+\end{proposition}
 We provide sketches of the proof of some of them:
 
 (1) If $R$ is flat from Kunz's theorem we have that the Frobenius endomorphism is flat, and thus $R'$ is flat. Thus, since the functor  $F$ is constructed by tensoring the module with a flat module, the functor is exact.
@@ -290,7 +354,6 @@ and from exactness of $F$ we have
 F(H_n(M)) \cong  \frac{F(Z_n)}{F(B_n)} \cong  \frac{Z_n'}{B_n'} \cong H_n(F(M))
 \] 
 Proving that an exact functor commutes with cohomology (and homology).
-\end{observation}
 
 As we have seen, some of the properties we may expect from a useful functor come from assuming the regularity of $R$. We will assume in advance that $R$ is regular.
 
@@ -645,7 +708,7 @@ One of the main questions on injective modules is the finiteness of these Bass n
 
 We end this section by stating an theorem on positive characteristic rings.
 
-\begin{theorem}[Huneke,-Sharp] Let $(R, \mathfrak{m})$ a regular local ring of characteristic $p$. Then the Bass numbers $\mu_{i}(\mathfrak{p}, H_I^j(R))$ are finite.
+\begin{theorem}[Huneke-Sharp] Let $(R, \mathfrak{m})$ a regular local ring of characteristic $p$. Then the Bass numbers $\mu_{i}(\mathfrak{p}, H_I^j(R))$ are finite.
 \end{theorem}
 
 
