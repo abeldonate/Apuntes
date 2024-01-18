@@ -57,6 +57,7 @@
 \DeclareMathOperator{\coker}{Coker}
 \DeclareMathOperator{\coim}{Coim}
 \DeclareMathOperator{\heigth}{ht}
+\DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\Spec}{Spec}
 \DeclareMathOperator{\Ann}{Ann}
 
@@ -360,7 +361,7 @@ $F-$modules can also be thought as a module over the ring  $R[F]$, that is, the 
 
 
 
-\begin{definition}[Morphism of $F-$modules] Given two  $F-$ modules  $(M, \theta _M)$ and $(N, \theta _N)$, we say $f:M\to N$ is a morphism of $F-$modules if the following diagram commutes
+\begin{definition}[Morphism of $F-$modules] Given two  $F-$ modules  $(M, \theta _M)$ and $(N, \theta _N)$, we say $g:M\to N$ is a morphism of $F-$modules if the following diagram commutes
   % https://q.uiver.app/#q=WzAsNCxbMCwwLCJNIl0sWzEsMCwiTiJdLFswLDEsIkYoTSkiXSxbMSwxLCJGKE4pIl0sWzAsMiwiXFx0aGV0YV9NIl0sWzEsMywiXFx0aGV0YV9OIl0sWzAsMSwiZyJdLFsyLDMsIkYoZykiXV0=
 \[\begin{tikzcd}
 	M & N \\
@@ -481,7 +482,7 @@ H_I^j(M)=H^j(\Gamma _I (E^\bullet) )
 	\arrow["{d_{n-1}}", from=1-5, to=1-6]
 	\arrow[from=1-6, to=1-7]
 \end{tikzcd}\]
-where de differential maps $d_i$ are defined via the canonical localization morphism and alternating the sign in order to have $d_i\circ d_{i-1}=0$. Explicitly we have the morphisms of every component $d_p: M_{x_{i_1}\cdots x_{i_p}} \to M_{x_{j_1}\cdots x_{j_{p+1}}}$ as
+where the differential maps $d_i$ are defined via the canonical localization morphism and alternating the sign in order to have $d_i\circ d_{i-1}=0$. Explicitly we have the morphisms of every component $d_p: M_{x_{i_1}\cdots x_{i_p}} \to M_{x_{j_1}\cdots x_{j_{p+1}}}$ as
 \[
   d_p(m) = \begin{cases}
 	(-1)^{k+1} \frac{m}{1} &\text{ if } \{i_1, \ldots, i_p\} = \{j_1, \ldots, \hat{j}_k,\ldots, j_{p+1}\}\\ 0 &\text{ otherwise}
@@ -505,13 +506,15 @@ Once we know what is local cohomology, we can define the cohomological dimension
 
 The problem of finding the cohomological dimension is, in fact, similar to the problem to compute the vanishing cohomological modules. This problem has been studied by many authors, and is still open in the majority of the cases. However, in positive characteristic working with $F-$modules some results can be obtained.
 
-We list the main properties of local cohomology. Let $I$ an ideal of  $R$, $M$ and $N$ an $R-$module and $A-$module respectively. Then
+We list two of the main properties of local cohomology, these will be useful later. Let $I$ an ideal of  $R$, $M$ and $N$ an $R-$module and $A-$module respectively. Then
 \begin{itemize}[topsep=-6pt, itemsep=0pt]
-  \item $H^\bullet_I(M) = H^\bullet_{\sqrt{I} }(M)$ 
-  \item I $f:R\to A$ is flat, then $A\otimes _RH^\bullet_I(N) \cong H_{IA}^\bullet(A\otimes_R N)$
+  \item $H^j_I(M) = H^j_{\sqrt{I} }(M)$ 
+  \item If $f:R\to A$ is flat, then $A\otimes _RH^j_I(N) \cong H_{IA}^j(A\otimes_R N)$
 \end{itemize}
 
-The key observation is that if we have compute the local cohomology modules of some module M, then the cohomology of the $F-$module $(M, \theta_M)$ can be computed via the induced $F-$module structure of the cohomology modules of $M$. This fact is a direct consequence of the commutativity of the Frobenius functor with cohomology of complexes, since local cohomology can be computed by the cohomology of an injective resolution.
+\vspace{0.5em}
+
+The key observation is that if we have computed the local cohomology modules of some module M, then the cohomology of the $F-$module $(M, \theta_M)$ can be computed via the induced $F-$module structure of the cohomology modules of $M$. This fact is a direct consequence of the commutativity of the Frobenius functor with cohomology of complexes, since local cohomology can be computed by the cohomology of an injective resolution.
 
 Thus, given the structure morphism of $M$, the structure morphism of $H_I^j(M)$ are determined
  \[
@@ -519,7 +522,7 @@ Thus, given the structure morphism of $M$, the structure morphism of $H_I^j(M)$ 
 \theta_{H_I^j (M)} : H_{I}^j(M) \to F(H_I^j(M))
 \] 
 
-\begin{proposition} If the ring is regular $(R, \mathfrak{m})$, then for every ideal $I\subseteq R$ we have $F(H_I^j(R)) \cong  H_{I}^j(R)$
+\begin{proposition} If the ring $R$ is regular, then for every ideal $I\subseteq R$ we have $F(H_I^j(R)) \cong  H_{I}^j(R)$
 \end{proposition}
 
 The proofs is based on two of the properties we have presented earlier. Notice that $\sqrt{I}=\sqrt{I_p}$. Pick $A = R'$ and $f$ as t he Frobenius endomorphism (notice that since $R$ is regular, $f$ is flat). We have
@@ -570,7 +573,12 @@ Observe this is not the classical behaviour of finitely generated $R-$modules, s
 
 
 
+
 \section{Injective modules}
+
+Injective modules form an important and heavily studied subset of the category of modules. Most of the importance relies in the fact that we can always consider an injective resolution of a module. Knowing precisely how injective modules behave can simplify the understanding and the computation of homological complexity of a module.
+
+In this section we provide an introduction of these modules and we will provide some propositions and theorems that has been proved with the aid of $F-$module structure.
 
 \begin{definition}[Injective module] We say the $R-$module $E$ is injective if for all $R-$modules $M, N$ and morphisms $f:M\to N$ injective and $g:M\to E$ arbitrary there exists a morphism  $h:N\to E$ such that $h\circ f=g$. This is, the following d This is, the following diagram commutes:
   % https://q.uiver.app/#q=WzAsNCxbMCwxLCIwIl0sWzEsMSwiTSJdLFsyLDEsIk4iXSxbMSwwLCJFIl0sWzAsMV0sWzEsMywiZyJdLFsxLDIsImYiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFsyLDMsImgiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
@@ -616,7 +624,29 @@ The main property of injective modules is that they decompose into another injec
 with the \textit{Bass numbers} $\mu _{\mathfrak{p}}$ independent of the decomposition.
 \end{theorem}
 
+Bass numbers can be computed as the rank of the $\Hom$ sets of residue fields in the following way:
+ \[
+\mu _{\mathfrak{p}} =\Hom _{R_{\mathfrak{p}}}(k(\mathfrak{p}), E_{\mathfrak{p}})
+\] 
 
+Notice all $R-$modules admit a minimal injective resolution  $E^\bullet$. Applying structure theorem to all the $E^j$ we have the bass numbers  $\mu _i(\mathfrak{p}, M)$ such that 
+\[
+E^i = \bigoplus_{\mathfrak{p}\in \Spec (R)} E_R(R / \mathfrak{p}) ^{\mu _i(\mathfrak{p}, M)}
+\] 
+in which the Bass numbers are computed as follows
+\[
+  \mu _i(\mathfrak{p}, M) = \rank _{k(\mathfrak{p})}\Ext ^i_{R_{\mathfrak{p}}} (k(\mathfrak{p}), M_{\mathfrak{p}})
+\] 
+
+One of the main questions on injective modules is the finiteness of these Bass numbers. One classic result is that if $M$ finitely generated, then . Another important result in injective modules is the following proposition.
+
+ \begin{proposition} If $R$ is regular, and $E$ is an injective $R-$module then $F(E)\cong E$.
+\end{proposition}
+
+We end this section by stating an theorem on positive characteristic rings.
+
+\begin{theorem}[Huneke,-Sharp] Let $(R, \mathfrak{m})$ a regular local ring of characteristic $p$. Then the Bass numbers $\mu_{i}(\mathfrak{p}, H_I^j(R))$ are finite.
+\end{theorem}
 
 
 
